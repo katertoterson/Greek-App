@@ -208,6 +208,8 @@ var Engine = (function() {
     var target = pickRandom(pool);
     var distractors = pick(Data.alphabet.map(function(l) { return l.pron; }), 3, target.pron);
     var options = shuffle([target.pron].concat(distractors));
+    var pronHtmlMap = {};
+    Data.alphabet.forEach(function(l) { pronHtmlMap[l.pron] = l.pronHtml || l.pron; });
     return {
       type: 'mc',
       graded: true,
@@ -215,7 +217,8 @@ var Engine = (function() {
       display: target.upper + ' ' + target.lower,
       displayGreek: true,
       correct: target.pron,
-      options: options
+      options: options,
+      optionsHtml: options.map(function(o) { return pronHtmlMap[o] || o; })
     };
   }
 
@@ -255,7 +258,7 @@ var Engine = (function() {
       });
     } else if (def.matchType === 'sound') {
       pairs = selected.map(function(l) {
-        return [l.name, l.pron];
+        return [l.name, l.pronHtml || l.pron];
       });
     } else {
       pairs = selected.map(function(l) {

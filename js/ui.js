@@ -214,41 +214,43 @@ var UI = (function() {
     var optionsDiv = el('div', { className: 'mc-options' });
     var answered = false;
 
-    exercise.options.forEach(function(opt) {
+    exercise.options.forEach(function(opt, i) {
       var btnClass = 'mc-btn';
       if (exercise.optionsGreek) btnClass += ' greek';
-      // Auto-size long option text
-      if (opt.length > 40) btnClass += ' small';
-      else if (opt.length > 25) btnClass += ' medium';
+      // Auto-size using plain text length (strip any HTML tags)
+      var optText = opt.replace(/<[^>]+>/g, '');
+      if (optText.length > 40) btnClass += ' small';
+      else if (optText.length > 25) btnClass += ' medium';
 
-      var btn = el('button', {
-        className: btnClass,
-        textContent: opt,
-        onClick: function() {
-          if (answered) return;
-          answered = true;
-          var isCorrect = opt === exercise.correct;
+      var btn = el('button', { className: btnClass, 'data-value': opt });
+      var optHtml = exercise.optionsHtml ? exercise.optionsHtml[i] : null;
+      if (optHtml && optHtml !== opt) btn.innerHTML = optHtml;
+      else btn.textContent = opt;
 
-          // Highlight
-          var btns = optionsDiv.querySelectorAll('.mc-btn');
-          btns.forEach(function(b) {
-            if (b.textContent === exercise.correct) b.classList.add('correct');
-            if (b === btn && !isCorrect) b.classList.add('wrong');
-            b.style.pointerEvents = 'none';
-          });
+      btn.addEventListener('click', function() {
+        if (answered) return;
+        answered = true;
+        var isCorrect = opt === exercise.correct;
 
-          AudioFX.play(isCorrect ? 'correct' : 'wrong');
+        // Highlight correct and wrong
+        var btns = optionsDiv.querySelectorAll('.mc-btn');
+        btns.forEach(function(b) {
+          if (b.dataset.value === exercise.correct) b.classList.add('correct');
+          if (b === btn && !isCorrect) b.classList.add('wrong');
+          b.style.pointerEvents = 'none';
+        });
 
-          // Show continue
-          var cont = el('button', {
-            className: 'btn-continue',
-            textContent: 'Continue',
-            onClick: function() {
-              onAnswer(isCorrect);
-            }
-          });
-          area.appendChild(cont);
-        }
+        AudioFX.play(isCorrect ? 'correct' : 'wrong');
+
+        // Show continue
+        var cont = el('button', {
+          className: 'btn-continue',
+          textContent: 'Continue',
+          onClick: function() {
+            onAnswer(isCorrect);
+          }
+        });
+        area.appendChild(cont);
       });
       optionsDiv.appendChild(btn);
     });
@@ -353,23 +355,22 @@ var UI = (function() {
     });
 
     rightItems.forEach(function(item) {
-      var isGreek = /[\u0370-\u03FF\u1F00-\u1FFF]/.test(item);
+      var itemText = item.replace(/<[^>]+>/g, '');
+      var isGreek = /[\u0370-\u03FF\u1F00-\u1FFF]/.test(itemText);
       var tileClass = 'match-tile' + (isGreek ? ' greek' : '');
-      if (item.length > 30) tileClass += ' small';
-      else if (item.length > 20) tileClass += ' medium';
+      if (itemText.length > 30) tileClass += ' small';
+      else if (itemText.length > 20) tileClass += ' medium';
 
-      var tile = el('div', {
-        className: tileClass,
-        textContent: item,
-        'data-value': item,
-        onClick: function() {
-          if (matched[item]) return;
-          AudioFX.play('tap');
-          rightCol.querySelectorAll('.match-tile').forEach(function(t) { t.classList.remove('selected'); });
-          tile.classList.add('selected');
-          selectedRight = item;
-          checkMatch();
-        }
+      var tile = el('div', { className: tileClass, 'data-value': item });
+      if (item !== itemText) tile.innerHTML = item;
+      else tile.textContent = item;
+      tile.addEventListener('click', function() {
+        if (matched[item]) return;
+        AudioFX.play('tap');
+        rightCol.querySelectorAll('.match-tile').forEach(function(t) { t.classList.remove('selected'); });
+        tile.classList.add('selected');
+        selectedRight = item;
+        checkMatch();
       });
       rightCol.appendChild(tile);
     });

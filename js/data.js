@@ -2,30 +2,30 @@ var Data = (function() {
 
   // ===== ALPHABET =====
   var alphabet = [
-    { upper: 'Α', lower: 'α', name: 'Alpha',   pron: 'father (long ᾱ) / drama (short)', ipa: 'a/aː' },
-    { upper: 'Β', lower: 'β', name: 'Beta',    pron: 'bit',           ipa: 'b' },
-    { upper: 'Γ', lower: 'γ', name: 'Gamma',   pron: 'get',           ipa: 'ɡ' },
-    { upper: 'Δ', lower: 'δ', name: 'Delta',   pron: 'den',           ipa: 'd' },
-    { upper: 'Ε', lower: 'ε', name: 'Epsilon', pron: 'get (always short)', ipa: 'e' },
-    { upper: 'Ζ', lower: 'ζ', name: 'Zeta',    pron: 'adds, gadzooks (= dz)', ipa: 'dz' },
-    { upper: 'Η', lower: 'η', name: 'Eta',     pron: 'wait, bait (always long)', ipa: 'ɛː' },
-    { upper: 'Θ', lower: 'θ', name: 'Theta',   pron: 'thought',       ipa: 'tʰ' },
-    { upper: 'Ι', lower: 'ι', name: 'Iota',    pron: 'meet (long ῑ) / bit (short)', ipa: 'i/iː' },
-    { upper: 'Κ', lower: 'κ', name: 'Kappa',   pron: 'kit',           ipa: 'k' },
-    { upper: 'Λ', lower: 'λ', name: 'Lambda',  pron: 'lit',           ipa: 'l' },
-    { upper: 'Μ', lower: 'μ', name: 'Mu',      pron: 'meet',          ipa: 'm' },
-    { upper: 'Ν', lower: 'ν', name: 'Nu',      pron: 'neat',          ipa: 'n' },
-    { upper: 'Ξ', lower: 'ξ', name: 'Xi',      pron: 'coax, taxi (= ks)', ipa: 'ks' },
-    { upper: 'Ο', lower: 'ο', name: 'Omicron', pron: 'thought, bought (always short)', ipa: 'o' },
-    { upper: 'Π', lower: 'π', name: 'Pi',      pron: 'pen',           ipa: 'p' },
-    { upper: 'Ρ', lower: 'ρ', name: 'Rho',     pron: 'drama (slightly rolled)', ipa: 'r' },
-    { upper: 'Σ', lower: 'σ/ς', name: 'Sigma', pron: 'set (ς at word end)', ipa: 's' },
-    { upper: 'Τ', lower: 'τ', name: 'Tau',     pron: 'ten',           ipa: 't' },
-    { upper: 'Υ', lower: 'υ', name: 'Upsilon', pron: 'boot (long ῡ) / put (short)', ipa: 'u/uː' },
-    { upper: 'Φ', lower: 'φ', name: 'Phi',     pron: 'fit',           ipa: 'pʰ' },
-    { upper: 'Χ', lower: 'χ', name: 'Chi',     pron: 'backhand, German lachen', ipa: 'kʰ' },
-    { upper: 'Ψ', lower: 'ψ', name: 'Psi',     pron: 'flaps, upset (= ps)', ipa: 'ps' },
-    { upper: 'Ω', lower: 'ω', name: 'Omega',   pron: 'total (always long)', ipa: 'ɔː' }
+    { upper: 'Α', lower: 'α', name: 'Alpha',   pron: 'father (long ᾱ) / drama (short)', pronHtml: '(long: ᾱ) f<strong>a</strong>ther / (short: α) dram<strong>a</strong>', ipa: 'a/aː' },
+    { upper: 'Β', lower: 'β', name: 'Beta',    pron: 'bit',           pronHtml: '<strong>b</strong>it', ipa: 'b' },
+    { upper: 'Γ', lower: 'γ', name: 'Gamma',   pron: 'get',           pronHtml: '<strong>g</strong>et', ipa: 'ɡ' },
+    { upper: 'Δ', lower: 'δ', name: 'Delta',   pron: 'den',           pronHtml: '<strong>d</strong>en', ipa: 'd' },
+    { upper: 'Ε', lower: 'ε', name: 'Epsilon', pron: 'get (always short)', pronHtml: '(always short) g<strong>e</strong>t', ipa: 'e' },
+    { upper: 'Ζ', lower: 'ζ', name: 'Zeta',    pron: 'adds, gadzooks (= dz)', pronHtml: 'a<strong>dds</strong>, ga<strong>dz</strong>ooks (= dz)', ipa: 'dz' },
+    { upper: 'Η', lower: 'η', name: 'Eta',     pron: 'wait, bait (always long)', pronHtml: '(always long) w<strong>ai</strong>t, b<strong>ai</strong>t', ipa: 'ɛː' },
+    { upper: 'Θ', lower: 'θ', name: 'Theta',   pron: 'thought',       pronHtml: '<strong>th</strong>ought', ipa: 'tʰ' },
+    { upper: 'Ι', lower: 'ι', name: 'Iota',    pron: 'meet (long ῑ) / bit (short)', pronHtml: '(long: ῑ) m<strong>ee</strong>t / (short: ι) b<strong>i</strong>t', ipa: 'i/iː' },
+    { upper: 'Κ', lower: 'κ', name: 'Kappa',   pron: 'kit',           pronHtml: '<strong>k</strong>it', ipa: 'k' },
+    { upper: 'Λ', lower: 'λ', name: 'Lambda',  pron: 'lit',           pronHtml: '<strong>l</strong>it', ipa: 'l' },
+    { upper: 'Μ', lower: 'μ', name: 'Mu',      pron: 'meet',          pronHtml: '<strong>m</strong>eet', ipa: 'm' },
+    { upper: 'Ν', lower: 'ν', name: 'Nu',      pron: 'neat',          pronHtml: '<strong>n</strong>eat', ipa: 'n' },
+    { upper: 'Ξ', lower: 'ξ', name: 'Xi',      pron: 'coax, taxi (= ks)', pronHtml: 'coa<strong>x</strong>, ta<strong>x</strong>i (= ks)', ipa: 'ks' },
+    { upper: 'Ο', lower: 'ο', name: 'Omicron', pron: 'thought, bought (always short)', pronHtml: '(always short) th<strong>oug</strong>ht, b<strong>ough</strong>t', ipa: 'o' },
+    { upper: 'Π', lower: 'π', name: 'Pi',      pron: 'pen',           pronHtml: '<strong>p</strong>en', ipa: 'p' },
+    { upper: 'Ρ', lower: 'ρ', name: 'Rho',     pron: 'drama (slightly rolled)', pronHtml: 'd<strong>r</strong>ama (slightly rolled)', ipa: 'r' },
+    { upper: 'Σ', lower: 'σ/ς', name: 'Sigma', pron: 'set (ς at word end)', pronHtml: '<strong>s</strong>et (ς at word end)', ipa: 's' },
+    { upper: 'Τ', lower: 'τ', name: 'Tau',     pron: 'ten',           pronHtml: '<strong>t</strong>en', ipa: 't' },
+    { upper: 'Υ', lower: 'υ', name: 'Upsilon', pron: 'boot (long ῡ) / put (short)', pronHtml: '(long: ῡ) b<strong>oo</strong>t / (short: υ) p<strong>u</strong>t', ipa: 'u/uː' },
+    { upper: 'Φ', lower: 'φ', name: 'Phi',     pron: 'fit',           pronHtml: '<strong>f</strong>it', ipa: 'pʰ' },
+    { upper: 'Χ', lower: 'χ', name: 'Chi',     pron: 'backhand, German lachen', pronHtml: 'bac<strong>kh</strong>and, German la<strong>ch</strong>en', ipa: 'kʰ' },
+    { upper: 'Ψ', lower: 'ψ', name: 'Psi',     pron: 'flaps, upset (= ps)', pronHtml: 'fla<strong>ps</strong>, u<strong>ps</strong>et (= ps)', ipa: 'ps' },
+    { upper: 'Ω', lower: 'ω', name: 'Omega',   pron: 'total (always long)', pronHtml: '(always long) t<strong>o</strong>tal', ipa: 'ɔː' }
   ];
 
   // Alphabet groups for lessons
@@ -3891,7 +3891,7 @@ var Data = (function() {
     html += '<tr><th>Upper</th><th>Lower</th><th>Name</th><th>Sound</th></tr>';
     for (var i = 0; i < group.length; i++) {
       var l = group[i];
-      html += '<tr><td class="greek">' + l.upper + '</td><td class="greek">' + l.lower + '</td><td>' + l.name + '</td><td style="font-size:13px">' + l.pron + '</td></tr>';
+      html += '<tr><td class="greek">' + l.upper + '</td><td class="greek">' + l.lower + '</td><td>' + l.name + '</td><td style="font-size:13px">' + (l.pronHtml || l.pron) + '</td></tr>';
     }
     html += '</table>';
     return html;
