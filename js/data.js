@@ -770,11 +770,11 @@ var Data = (function() {
         {
           type: 'match',
           pairs: [
-            ['η (eta)', 'Always long (η)'],
-            ['ε (epsilon)', 'Always short (ε)'],
+            ['η (eta)', 'Always long'],
+            ['ε (epsilon)', 'Always short'],
             ['α (alpha)', 'Long or short'],
-            ['ω (omega)', 'Always long (ω)'],
-            ['ο (omicron)', 'Always short (ο)']
+            ['ω (omega)', 'Always long'],
+            ['ο (omicron)', 'Always short']
           ]
         },
         {
@@ -787,11 +787,11 @@ var Data = (function() {
         {
           type: 'match',
           pairs: [
-            ['ι (iota)', 'Long or short (ι)'],
-            ['υ (upsilon)', 'Long or short (υ)'],
+            ['ι (iota)', 'Long or short'],
+            ['υ (upsilon)', 'Long or short'],
             ['ε (epsilon)', 'Always short'],
             ['η (eta)', 'Always long'],
-            ['ω (omega)', 'Always long (ω)']
+            ['ω (omega)', 'Always long']
           ]
         },
         {
