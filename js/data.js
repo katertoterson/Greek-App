@@ -1201,15 +1201,15 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'φ + σ = ?',
           display: '',
-          correct: 'ψ (labial + σ → ψ)',
-          options: ['ψ (labial + σ → ψ)', 'ξ', 'ζ', 'φσ']
+          correct: 'ψ',
+          options: ['ψ', 'ξ', 'ζ', 'φσ']
         },
         {
           type: 'mc-translate',
           prompt: 'χ + σ = ?',
           display: '',
-          correct: 'ξ (palatal + σ → ξ)',
-          options: ['ξ (palatal + σ → ξ)', 'ψ', 'χσ', 'ζ']
+          correct: 'ξ',
+          options: ['ξ', 'ψ', 'χσ', 'ζ']
         }
       ]
     },
