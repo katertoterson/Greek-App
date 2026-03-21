@@ -97,8 +97,8 @@ var UI = (function() {
           };
         })(lesson, status)
       }, [
-        el('div', { className: 'lesson-icon greek', textContent: lesson.icon }),
-        el('div', { className: 'lesson-num', textContent: lesson.id })
+        el('div', { className: 'lesson-title', textContent: lesson.title }),
+        el('div', { className: 'lesson-subtitle', textContent: lesson.subtitle })
       ]);
 
       if (completed) {
