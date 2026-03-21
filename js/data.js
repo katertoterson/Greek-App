@@ -200,6 +200,107 @@ var Data = (function() {
     { greek: 'ὁ ἀδελφὸς βιβλίον ἐκ τῆς ἀγορᾶς εἰς τὴν νῆσον πέμπει.', english: 'The brother sends a book from the marketplace to the island.' }
   ];
 
+  // ===== UNIT 2 DATA =====
+
+  var unit2Vocab = [
+    // Group 0: All Unit 2 nouns
+    [
+      { greek: 'ἄγγελος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'messenger' },
+      { greek: 'ζῷον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'animal' },
+      { greek: 'ξένος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'guest-friend, stranger' },
+      { greek: 'πόλεμος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'war' },
+      { greek: 'στέφανος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'crown, wreath' },
+      { greek: 'φίλος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'friend' },
+      { greek: 'φιλίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'friendship' },
+      { greek: 'χρῡσός', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'gold' }
+    ]
+  ];
+
+  var unit2VocabAll = [];
+  unit2Vocab.forEach(function(group) {
+    group.forEach(function(w) { unit2VocabAll.push(w); });
+  });
+
+  var allVocabAll = unit1VocabAll.concat(unit2VocabAll);
+
+  var unit2Verbs = [
+    { verb: 'παιδεύω', meaning: 'educate, teach',
+      pp: ['παιδεύω', 'παιδεύσω', 'ἐπαίδευσα', 'πεπαίδευκα', 'πεπαίδευμαι', 'ἐπαιδεύθην'],
+      present: ['παιδεύω', 'παιδεύεις', 'παιδεύει', 'παιδεύομεν', 'παιδεύετε', 'παιδεύουσι(ν)'],
+      imperfect: ['ἐπαίδευον', 'ἐπαίδευες', 'ἐπαίδευε(ν)', 'ἐπαιδεύομεν', 'ἐπαιδεύετε', 'ἐπαίδευον'],
+      future: ['παιδεύσω', 'παιδεύσεις', 'παιδεύσει', 'παιδεύσομεν', 'παιδεύσετε', 'παιδεύσουσι(ν)'],
+      aorist: ['ἐπαίδευσα', 'ἐπαίδευσας', 'ἐπαίδευσε(ν)', 'ἐπαιδεύσαμεν', 'ἐπαιδεύσατε', 'ἐπαίδευσαν'],
+      presInf: 'παιδεύειν', aorInf: 'παιδεῦσαι' },
+    { verb: 'κελεύω', meaning: 'order, command',
+      pp: ['κελεύω', 'κελεύσω', 'ἐκέλευσα', 'κεκέλευκα', 'κεκέλευσμαι', 'ἐκελεύσθην'],
+      present: ['κελεύω', 'κελεύεις', 'κελεύει', 'κελεύομεν', 'κελεύετε', 'κελεύουσι(ν)'],
+      imperfect: ['ἐκέλευον', 'ἐκέλευες', 'ἐκέλευε(ν)', 'ἐκελεύομεν', 'ἐκελεύετε', 'ἐκέλευον'],
+      future: ['κελεύσω', 'κελεύσεις', 'κελεύσει', 'κελεύσομεν', 'κελεύσετε', 'κελεύσουσι(ν)'],
+      aorist: ['ἐκέλευσα', 'ἐκέλευσας', 'ἐκέλευσε(ν)', 'ἐκελεύσαμεν', 'ἐκελεύσατε', 'ἐκέλευσαν'],
+      presInf: 'κελεύειν', aorInf: 'κελεῦσαι' },
+    { verb: 'λύω', meaning: 'unbind, free, destroy',
+      pp: ['λύω', 'λύσω', 'ἔλῡσα', 'λέλυκα', 'λέλυμαι', 'ἐλύθην'],
+      present: ['λύω', 'λύεις', 'λύει', 'λύομεν', 'λύετε', 'λύουσι(ν)'],
+      imperfect: ['ἔλῡον', 'ἔλῡες', 'ἔλῡε(ν)', 'ἐλύομεν', 'ἐλύετε', 'ἔλῡον'],
+      future: ['λύσω', 'λύσεις', 'λύσει', 'λύσομεν', 'λύσετε', 'λύσουσι(ν)'],
+      aorist: ['ἔλῡσα', 'ἔλῡσας', 'ἔλῡσε(ν)', 'ἐλύσαμεν', 'ἐλύσατε', 'ἔλῡσαν'],
+      presInf: 'λύειν', aorInf: 'λῦσαι' },
+    { verb: 'πέμπω', meaning: 'send',
+      pp: ['πέμπω', 'πέμψω', 'ἔπεμψα', 'πέπομφα', 'πέπεμμαι', 'ἐπέμφθην'],
+      present: ['πέμπω', 'πέμπεις', 'πέμπει', 'πέμπομεν', 'πέμπετε', 'πέμπουσι(ν)'],
+      imperfect: ['ἔπεμπον', 'ἔπεμπες', 'ἔπεμπε(ν)', 'ἐπέμπομεν', 'ἐπέμπετε', 'ἔπεμπον'],
+      future: ['πέμψω', 'πέμψεις', 'πέμψει', 'πέμψομεν', 'πέμψετε', 'πέμψουσι(ν)'],
+      aorist: ['ἔπεμψα', 'ἔπεμψας', 'ἔπεμψε(ν)', 'ἐπέμψαμεν', 'ἐπέμψατε', 'ἔπεμψαν'],
+      presInf: 'πέμπειν', aorInf: 'πέμψαι' }
+  ];
+
+  var personLabels = ['1st sing.', '2nd sing.', '3rd sing.', '1st pl.', '2nd pl.', '3rd pl.'];
+
+  var unit2Particles = [
+    { greek: 'ἀπό', english: 'from, away from (+ gen.)' },
+    { greek: 'ἆρα', english: 'introduces a question' },
+    { greek: 'γάρ', english: 'for (postpositive conj.)' },
+    { greek: 'δέ', english: 'but, and (postpositive conj.)' },
+    { greek: 'ἕξ', english: 'six' },
+    { greek: 'εὖ', english: 'well' },
+    { greek: 'ἤ', english: 'or; ἤ...ἤ = either...or' },
+    { greek: 'νῦν', english: 'now' },
+    { greek: 'οὐ, οὐκ, οὐχ', english: 'not' },
+    { greek: 'παρά', english: 'from / at / to the side of' },
+    { greek: 'πέντε', english: 'five' },
+    { greek: 'πρό', english: 'before, in front of (+ gen.)' }
+  ];
+
+  var unit2Cognates = [
+    ['ἄγγελος', 'angel (messenger of God)'],
+    ['ἀπό', 'apogee (farthest from earth)'],
+    ['ἕξ', 'hexagon (six-sided)'],
+    ['εὖ', 'eugenics (well-produced)'],
+    ['ζῷον', 'zoology (study of animals)'],
+    ['λύω', 'analysis (loosening apart)'],
+    ['ξένος', 'xenophobia (fear of strangers)'],
+    ['οὐ', 'utopia (no-place)'],
+    ['πέντε', 'pentagon (five-sided)'],
+    ['πόλεμος', 'polemic (warlike speech)'],
+    ['πρό', 'prologue (spoken before)'],
+    ['στέφανος', 'Stephen (crowned one)'],
+    ['φίλος', 'philosophy (love of wisdom)'],
+    ['χρῡσός', 'chrysanthemum (golden flower)']
+  ];
+
+  var unit2Sentences = [
+    { greek: 'οἱ θεοὶ δῶρα ἔπεμπον εἰς τὴν χώρᾱν.', english: 'The gods used to send gifts into the land.' },
+    { greek: 'πέντε βιβλία τοῖς ξένοις ἔπεμψεν ὁ Ὅμηρος.', english: 'Homer sent five books to the guest-friends.' },
+    { greek: 'ἆρα λύσετε καὶ τὴν τῆς θεοῦ φιλίᾱν;', english: 'Will you destroy even the friendship of the goddess?' },
+    { greek: 'τοῖς μὲν ξένοις στεφάνους πέμψομεν, τοῖς δὲ φίλοις βιβλία.', english: 'To the strangers we shall send crowns, but to the friends, books.' },
+    { greek: 'ὁ θεὸς τὸν Ὅμηρον λῦσαι τοὺς ἀνθρώπους ἐκέλευσεν.', english: 'The god ordered Homer to free the men.' },
+    { greek: 'ὦ ξένε, ζῷα πέμπεις εἰς ἀγορὰν ἢ οὔ;', english: 'Stranger, are you sending animals to the marketplace or not?' },
+    { greek: 'τοὺς πολέμους ἢ λόγοις ἢ ἔργοις ἐλύομεν.', english: 'We used to resolve the wars either by words or by deeds.' },
+    { greek: 'ὁ Ὅμηρος τοὺς ἐν τῇ οἰκίᾳ φίλους εὖ παιδεύσει.', english: 'Homer will educate the friends in the house well.' },
+    { greek: 'ἔργῳ, οὐ λόγῳ, τοὺς φίλους ἔλῡον.', english: 'By deed, not by word, I used to free my friends.' },
+    { greek: 'οἱ ἕξ ἀδελφοὶ χρῡσοῦ στέφανον ἔπεμπον παρὰ τὸν Ὅμηρον.', english: 'The six brothers were sending a crown of gold to Homer.' }
+  ];
+
   // ===== LESSON DEFINITIONS =====
   var lessons = [
     // ---- Section 1: The Alphabet ----
@@ -2616,6 +2717,1171 @@ var Data = (function() {
           options: ['Homer educates the men in the marketplace.', 'The men educate Homer in the marketplace.', 'Homer sends the men from the marketplace.', 'The marketplace educates the men.']
         }
       ]
+    },
+
+    // ---- Section 5: Unit 2 — Verbs ----
+
+    // Lesson 26: Verbs Overview — Person & Number
+    {
+      id: 26,
+      title: 'Verbs: Overview',
+      subtitle: 'Person & Number',
+      section: 'Unit 2: Verbs',
+      icon: 'ω',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Greek Verbs',
+          cards: [
+            { html: '<p>Like nouns, Greek verbs are <strong>inflected</strong>.</p><p>Nouns are <em>declined</em> (have a declension).<br/>Verbs are <em>conjugated</em> (have a conjugation).</p>' },
+            { html: '<p>Most verb forms express five properties:</p><div class="info-box"><p>1. <strong>Person</strong> (1st, 2nd, 3rd)</p><p>2. <strong>Number</strong> (singular, plural)</p><p>3. <strong>Tense</strong> (time + aspect)</p><p>4. <strong>Mood</strong></p><p>5. <strong>Voice</strong></p></div>' },
+            { html: '<p><strong>Person</strong> tells who is acting:</p><div class="info-box"><p><strong>1st person</strong>: I / we</p><p><strong>2nd person</strong>: you</p><p><strong>3rd person</strong>: he, she, it / they</p></div><p>Greek verb endings encode person — no separate pronoun is needed!</p>' },
+            { html: '<p><strong>Number</strong> tells how many:</p><div class="info-box"><p><strong>Singular</strong>: one subject (I, you, he/she/it)</p><p><strong>Plural</strong>: multiple subjects (we, you, they)</p></div><p>Greek originally had a <strong>dual</strong> number (for pairs), but it is rare in Attic Greek.</p>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does it mean to say a verb is "inflected"?',
+          correct: 'It changes form by adding endings to stems',
+          options: ['It changes form by adding endings to stems', 'It always stays the same', 'It only changes in poetry', 'It has no endings']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"I" or "we" as the subject indicates:',
+          correct: 'First person',
+          options: ['First person', 'Second person', 'Third person', 'No person']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"You" as the subject indicates:',
+          correct: 'Second person',
+          options: ['Second person', 'First person', 'Third person', 'Dual number']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"He," "she," "it," or "they" indicates:',
+          correct: 'Third person',
+          options: ['Third person', 'First person', 'Second person', 'Vocative']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'A verb with a single subject is:',
+          correct: 'Singular',
+          options: ['Singular', 'Plural', 'Dual', 'Infinite']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['I educate', '1st person singular'],
+            ['you educate', '2nd person singular'],
+            ['he educates', '3rd person singular'],
+            ['we educate', '1st person plural'],
+            ['they educate', '3rd person plural']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'How does Greek differ from English regarding pronouns with verbs?',
+          correct: 'Greek verb endings encode person — no pronoun needed',
+          options: ['Greek verb endings encode person — no pronoun needed', 'Greek always requires a pronoun', 'Greek has no person system', 'Greek uses word order instead']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The dual number in Attic Greek is:',
+          correct: 'Rare — it indicates a pair of subjects',
+          options: ['Rare — it indicates a pair of subjects', 'Very common', 'Used for all plurals', 'Used only in questions']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'A verb is "conjugated." A noun is:',
+          correct: 'Declined',
+          options: ['Declined', 'Conjugated', 'Inflated', 'Compounded']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['Person', 'who is acting (1st/2nd/3rd)'],
+            ['Number', 'how many (sing./pl.)'],
+            ['Tense', 'time + aspect'],
+            ['Mood', 'type of statement'],
+            ['Voice', 'how subject relates to action']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"The men educate" — what person and number?',
+          correct: '3rd person plural',
+          options: ['3rd person plural', '1st person plural', '2nd person plural', '3rd person singular']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Greek has separate forms for 2nd person singular and plural. English:',
+          correct: 'Uses "you" for both singular and plural',
+          options: ['Uses "you" for both singular and plural', 'Also has separate forms', 'Has no 2nd person', 'Uses the plural as a polite singular']
+        }
+      ]
+    },
+
+    // Lesson 27: Time & Aspect
+    {
+      id: 27,
+      title: 'Time & Aspect',
+      subtitle: 'The Seven Tenses',
+      section: 'Unit 2: Verbs',
+      icon: 'χ',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Time & Aspect',
+          cards: [
+            { html: '<p><strong>Tense</strong> in Greek ALWAYS conveys <strong>aspect</strong> and SOMETIMES conveys <strong>time</strong>.</p><div class="info-box"><p><strong>Time</strong>: present, past, future</p><p><strong>Aspect</strong>: how the action is viewed</p></div>' },
+            { html: '<p>Greek has three <strong>aspects</strong>:</p><div class="info-box"><p><strong>Simple</strong>: action simply occurs<br/>"We fell." (once)</p><p><strong>Progressive/Repeated</strong>: action in progress or habitual<br/>"We were falling." / "We used to fall."</p><p><strong>Completed</strong>: action already finished<br/>"We had fallen."</p></div>' },
+            { html: '<p>Greek has <strong>seven tenses</strong> in the indicative mood:</p><table class="intro-table"><tr><th></th><th>Simple</th><th>Progr./Repeated</th><th>Completed</th></tr><tr><td>Present</td><td></td><td><strong>Present</strong><br/><span style="font-size:12px">I am falling</span></td><td><strong>Perfect</strong><br/><span style="font-size:12px">I have fallen</span></td></tr><tr><td>Past</td><td><strong>Aorist</strong><br/><span style="font-size:12px">I fell</span></td><td><strong>Imperfect</strong><br/><span style="font-size:12px">I was falling</span></td><td><strong>Pluperfect</strong><br/><span style="font-size:12px">I had fallen</span></td></tr><tr><td>Future</td><td colspan="2"><strong>Future</strong><br/><span style="font-size:12px">I shall fall</span></td><td><span style="font-size:12px">(rare)</span></td></tr></table>' },
+            { html: '<p><strong>Primary tenses</strong> = present or future time:<br/>Present, Future, Perfect</p><p><strong>Secondary tenses</strong> = past time:<br/>Aorist, Imperfect, Pluperfect</p><p>Secondary tenses receive the <strong>past indicative augment</strong> ἐ- prefixed to the stem.</p>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Tense in Greek ALWAYS conveys:',
+          correct: 'Aspect',
+          options: ['Aspect', 'Time only', 'Mood', 'Voice']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"We were falling" has what aspect?',
+          correct: 'Progressive/repeated aspect',
+          options: ['Progressive/repeated aspect', 'Simple aspect', 'Completed aspect', 'No aspect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"We fell" (once) has what aspect?',
+          correct: 'Simple aspect',
+          options: ['Simple aspect', 'Progressive/repeated aspect', 'Completed aspect', 'Future aspect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"We had fallen" has what aspect?',
+          correct: 'Completed aspect',
+          options: ['Completed aspect', 'Simple aspect', 'Progressive/repeated aspect', 'Past aspect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which tense combines PAST time + SIMPLE aspect?',
+          correct: 'Aorist',
+          options: ['Aorist', 'Imperfect', 'Present', 'Perfect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which tense combines PAST time + PROGRESSIVE/REPEATED aspect?',
+          correct: 'Imperfect',
+          options: ['Imperfect', 'Aorist', 'Present', 'Pluperfect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which tense combines PRESENT time + COMPLETED aspect?',
+          correct: 'Perfect',
+          options: ['Perfect', 'Pluperfect', 'Present', 'Aorist']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['Present', 'present time + progr./rep.'],
+            ['Aorist', 'past time + simple'],
+            ['Imperfect', 'past time + progr./rep.'],
+            ['Perfect', 'present time + completed'],
+            ['Pluperfect', 'past time + completed']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Primary tenses describe actions in:',
+          correct: 'Present or future time',
+          options: ['Present or future time', 'Past time only', 'All times equally', 'No specific time']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Secondary tenses receive the:',
+          correct: 'Past indicative augment (ἐ-)',
+          options: ['Past indicative augment (ἐ-)', 'Future prefix (σ-)', 'Reduplication', 'No changes']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The future tense can express:',
+          correct: 'Both simple and progressive/repeated aspect',
+          options: ['Both simple and progressive/repeated aspect', 'Simple aspect only', 'Completed aspect only', 'No aspect']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['Present tense', 'primary (present time)'],
+            ['Imperfect tense', 'secondary (past time)'],
+            ['Aorist tense', 'secondary (past time)'],
+            ['Future tense', 'primary (future time)'],
+            ['Perfect tense', 'primary (present time)']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"I used to fall" — which Greek tense?',
+          correct: 'Imperfect (past + progressive/repeated)',
+          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple)', 'Present', 'Perfect']
+        }
+      ]
+    },
+
+    // Lesson 28: Mood & Voice
+    {
+      id: 28,
+      title: 'Mood & Voice',
+      subtitle: 'Indicative, Active, Middle, Passive',
+      section: 'Unit 2: Verbs',
+      icon: 'μ',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Mood & Voice',
+          cards: [
+            { html: '<p><strong>Mood</strong> indicates the type of statement:</p><div class="info-box"><p><strong>Indicative</strong>: factual statements & questions<br/>"Homer educates." "Does Homer educate?"</p><p><strong>Subjunctive</strong>: "If we see..." "Let us see!"</p><p><strong>Optative</strong>: "We might see..." "May we see!"</p><p><strong>Imperative</strong>: commands — "Look! See!"</p></div><p>We will focus on the <strong>indicative</strong> mood first.</p>' },
+            { html: '<p><strong>Voice</strong> defines how the subject relates to the action:</p><div class="info-box"><p><strong>Active</strong>: subject <em>performs</em> the action<br/>"Homer educates his brother."</p><p><strong>Passive</strong>: subject <em>receives</em> the action<br/>"Homer is educated by his brother."</p><p><strong>Middle</strong>: subject performs the action with <em>special personal involvement</em><br/>(unique to Greek!)</p></div>' },
+            { html: '<p>The <strong>middle voice</strong> is unique to Greek. It indicates the subject has a special interest in the action:</p><div class="info-box"><p>Active: Homer educates his brother.<br/>(simple action)</p><p>Middle: Homer has his brother educated.<br/>(personal involvement/interest)</p></div><p>The middle voice will be introduced later.</p>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The indicative mood is used for:',
+          correct: 'Factual statements and questions',
+          options: ['Factual statements and questions', 'Commands only', 'Wishes only', 'Hypothetical situations only']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The imperative mood is used for:',
+          correct: 'Commands ("Look! See!")',
+          options: ['Commands ("Look! See!")', 'Factual statements', 'Wishes', 'Past actions']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'When a verb is in the active voice, the subject:',
+          correct: 'Performs the action',
+          options: ['Performs the action', 'Receives the action', 'Is unrelated to the action', 'Commands the action']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'When a verb is in the passive voice, the subject:',
+          correct: 'Receives the action from an outside agency',
+          options: ['Receives the action from an outside agency', 'Performs the action', 'Has personal involvement', 'Gives a command']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The middle voice is unique to Greek. It indicates:',
+          correct: 'The subject performs the action with special personal involvement',
+          options: ['The subject performs the action with special personal involvement', 'The subject receives the action', 'A command', 'A hypothetical action']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['Indicative', 'factual statements & questions'],
+            ['Subjunctive', '"if we see...", "let us see!"'],
+            ['Optative', '"we might see...", "may we see!"'],
+            ['Imperative', 'commands ("Look!")'],
+            ['Active voice', 'subject performs the action']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'How many moods does Greek have?',
+          correct: 'Four (indicative, subjunctive, optative, imperative)',
+          options: ['Four (indicative, subjunctive, optative, imperative)', 'Two (active and passive)', 'Three (past, present, future)', 'Six']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'How many voices does Greek have?',
+          correct: 'Three (active, middle, passive)',
+          options: ['Three (active, middle, passive)', 'Two (active and passive)', 'Four', 'One']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['Active voice', 'subject performs action'],
+            ['Passive voice', 'subject receives action'],
+            ['Middle voice', 'subject acts with personal interest'],
+            ['Indicative mood', 'mood of facts'],
+            ['Imperative mood', 'mood of commands']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"Homer is educated by his brother" — what voice?',
+          correct: 'Passive',
+          options: ['Passive', 'Active', 'Middle', 'Subjunctive']
+        },
+        {
+          type: 'mc-translate',
+          prompt: '"Homer educates his brother" — what voice?',
+          correct: 'Active',
+          options: ['Active', 'Passive', 'Middle', 'Imperative']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'A verb with no direct object specified is called:',
+          correct: 'Intransitive',
+          options: ['Intransitive', 'Transitive', 'Middle', 'Passive']
+        }
+      ]
+    },
+
+    // Lesson 29: Principal Parts
+    {
+      id: 29,
+      title: 'Principal Parts',
+      subtitle: 'The Six Forms of a Verb',
+      section: 'Unit 2: Verbs',
+      icon: 'π',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Principal Parts',
+          cards: [
+            { html: '<p>To generate all forms of a Greek verb, you need its <strong>six principal parts</strong>.</p><p>Compare English: <em>sing, sang, sung</em> (3 parts).</p><p>Greek has <strong>six</strong> — ALL must be learned for each verb!</p>' },
+            { html: '<p>The six principal parts of <span class="greek" style="font-size:22px">παιδεύω</span> (educate):</p><table class="intro-table"><tr><th>#</th><th>Form</th><th>Identification</th></tr><tr><td>I</td><td class="greek">παιδεύω</td><td>Present Ind. Act.</td></tr><tr><td>II</td><td class="greek">παιδεύσω</td><td>Future Ind. Act.</td></tr><tr><td>III</td><td class="greek">ἐπαίδευσα</td><td>Aorist Ind. Act.</td></tr><tr><td>IV</td><td class="greek">πεπαίδευκα</td><td>Perfect Ind. Act.</td></tr><tr><td>V</td><td class="greek">πεπαίδευμαι</td><td>Perfect Ind. Pass.</td></tr><tr><td>VI</td><td class="greek">ἐπαιδεύθην</td><td>Aorist Ind. Pass.</td></tr></table>' },
+            { html: '<p>Each principal part provides a <strong>tense stem</strong>. Different <strong>endings</strong> are added to produce all forms.</p><div class="info-box"><p>PP II & III often have σ in the stem</p><p>PP IV & V often show <strong>reduplication</strong>:<br/><span class="greek">παιδεύω → πε-παίδευκα</span></p><p>PP VI often has θ in the stem</p><p>PP III & VI have the past augment ἐ-</p></div>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'How many principal parts does a Greek verb have?',
+          correct: 'Six',
+          options: ['Six', 'Three', 'Four', 'Two']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Principal Part I is the:',
+          display: 'παιδεύω', displayGreek: true,
+          correct: '1st person singular, present indicative active',
+          options: ['1st person singular, present indicative active', 'Future indicative active', 'Aorist indicative active', 'Perfect indicative active']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Principal Part III (ἐπαίδευσα) is the:',
+          display: 'ἐπαίδευσα', displayGreek: true,
+          correct: 'Aorist indicative active',
+          options: ['Aorist indicative active', 'Present indicative active', 'Imperfect indicative active', 'Future indicative active']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which principal part shows the perfect indicative active?',
+          correct: 'PP IV (πεπαίδευκα)',
+          options: ['PP IV (πεπαίδευκα)', 'PP III (ἐπαίδευσα)', 'PP II (παιδεύσω)', 'PP V (πεπαίδευμαι)'],
+          optionsGreek: false
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['PP I: παιδεύω', 'present ind. active'],
+            ['PP II: παιδεύσω', 'future ind. active'],
+            ['PP III: ἐπαίδευσα', 'aorist ind. active'],
+            ['PP IV: πεπαίδευκα', 'perfect ind. active'],
+            ['PP V: πεπαίδευμαι', 'perfect ind. passive']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'PP IV and V often show:',
+          display: 'πεπαίδευκα, πεπαίδευμαι', displayGreek: true,
+          correct: 'Reduplication (initial consonant doubled with ε)',
+          options: ['Reduplication (initial consonant doubled with ε)', 'The past augment ἐ-', 'A sigma suffix', 'No changes to the stem']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which principal parts have the past indicative augment ἐ-?',
+          correct: 'PP III and PP VI',
+          options: ['PP III and PP VI', 'PP I and PP II', 'PP IV and PP V', 'All of them']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Greek verbs are named by which principal part?',
+          correct: 'Principal Part I (the present)',
+          options: ['Principal Part I (the present)', 'Principal Part III (the aorist)', 'Principal Part VI (the passive)', 'The infinitive']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Can one principal part be derived from another?',
+          correct: 'No — all six must be learned separately',
+          options: ['No — all six must be learned separately', 'Yes, always', 'Only PP II from PP I', 'Only in regular verbs']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['παιδεύω', 'I educate (PP I)'],
+            ['παιδεύσω', 'I shall educate (PP II)'],
+            ['ἐπαίδευσα', 'I educated (PP III)'],
+            ['πεπαίδευκα', 'I have educated (PP IV)'],
+            ['ἐπαιδεύθην', 'I was educated (PP VI)']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'PP VI (ἐπαιδεύθην) is the:',
+          display: 'ἐπαιδεύθην', displayGreek: true,
+          correct: 'Aorist indicative passive',
+          options: ['Aorist indicative passive', 'Aorist indicative active', 'Perfect indicative passive', 'Imperfect indicative active']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Verb forms are identified by stating:',
+          correct: 'Person, number, tense, mood, voice',
+          options: ['Person, number, tense, mood, voice', 'Just the tense', 'Case, number, gender', 'Only person and number']
+        }
+      ]
+    },
+
+    // Lesson 30: Present Indicative Active
+    {
+      id: 30,
+      title: 'Present Ind. Active',
+      subtitle: 'παιδεύω conjugation',
+      section: 'Unit 2: Verbs',
+      icon: 'ε',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Present Indicative Active',
+          cards: [
+            { html: '<p>To form the <strong>present indicative active</strong>:</p><div class="info-box"><p>1. Drop <span class="greek">-ω</span> from PP I to get the <strong>present tense stem</strong></p><p><span class="greek">παιδεύω → παιδευ-</span></p><p>2. Add the <strong>primary active endings</strong></p></div>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-ω</td><td class="greek">-ομεν</td></tr><tr><td>2nd</td><td class="greek">-εις</td><td class="greek">-ετε</td></tr><tr><td>3rd</td><td class="greek">-ει</td><td class="greek">-ουσι(ν)</td></tr></table><p style="margin-top:8px">The (ν) is <strong>nu-movable</strong> — added before vowels or at sentence end.</p>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Form</th><th>Translation</th></tr><tr><td>1s</td><td class="greek">παιδεύω</td><td>I educate</td></tr><tr><td>2s</td><td class="greek">παιδεύεις</td><td>you educate</td></tr><tr><td>3s</td><td class="greek">παιδεύει</td><td>he/she/it educates</td></tr><tr><td>1p</td><td class="greek">παιδεύομεν</td><td>we educate</td></tr><tr><td>2p</td><td class="greek">παιδεύετε</td><td>you (pl.) educate</td></tr><tr><td>3p</td><td class="greek">παιδεύουσι(ν)</td><td>they educate</td></tr></table>' },
+            { html: '<p>Most verb forms have a <strong>recessive accent</strong> — the accent falls as far from the end as the rules allow.</p><div class="info-box"><p><span class="greek">παιδεύ<strong>ει</strong></span> — long ultima → accent on penult</p><p><span class="greek">παιδεύ<strong>ομεν</strong></span> — short ultima → accent on antepenult</p></div>' }
+          ]
+        },
+        { type: 'verb-form-id', tense: 'present', verbIndex: 0 },
+        { type: 'verb-form-id', tense: 'present', verbIndex: 0 },
+        {
+          type: 'mc-translate',
+          prompt: 'What is the present tense stem of παιδεύω?',
+          display: 'παιδεύω', displayGreek: true,
+          correct: 'παιδευ-',
+          options: ['παιδευ-', 'παιδεύσ-', 'ἐπαιδευ-', 'πεπαιδευ-'],
+          optionsGreek: true
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What is the 1st person plural present ending?',
+          correct: '-ομεν',
+          options: ['-ομεν', '-ετε', '-ουσι(ν)', '-ω'],
+          optionsGreek: true
+        },
+        { type: 'verb-form-select', tense: 'present', verbIndex: 0 },
+        { type: 'verb-form-select', tense: 'present', verbIndex: 0 },
+        {
+          type: 'match',
+          pairs: [
+            ['παιδεύω', 'I educate'],
+            ['παιδεύεις', 'you educate'],
+            ['παιδεύει', 'he/she/it educates'],
+            ['παιδεύομεν', 'we educate'],
+            ['παιδεύουσι(ν)', 'they educate']
+          ]
+        },
+        { type: 'verb-form-id', tense: 'present', verbIndex: 2 },
+        { type: 'verb-form-select', tense: 'present', verbIndex: 3 },
+        {
+          type: 'mc-translate',
+          prompt: 'What is nu-movable?',
+          correct: 'ν added to certain endings before vowels or at sentence end',
+          options: ['ν added to certain endings before vowels or at sentence end', 'A special accent mark', 'An extra syllable added in poetry', 'A prefix for past tense']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Most verb forms have what kind of accent?',
+          correct: 'Recessive (as far from the end as possible)',
+          options: ['Recessive (as far from the end as possible)', 'Persistent (stays on the same syllable)', 'No accent', 'Circumflex always']
+        },
+        { type: 'verb-form-id', tense: 'present', verbIndex: 1 },
+        { type: 'verb-form-select', tense: 'present', verbIndex: 2 }
+      ]
+    },
+
+    // Lesson 31: Imperfect Indicative Active
+    {
+      id: 31,
+      title: 'Imperfect Ind. Active',
+      subtitle: 'Past progressive/repeated',
+      section: 'Unit 2: Verbs',
+      icon: 'ἐ',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Imperfect Indicative Active',
+          cards: [
+            { html: '<p>The <strong>imperfect</strong> describes an action in <strong>past time</strong> with <strong>progressive/repeated aspect</strong>.</p><div class="info-box"><p>"I was educating" (progressive)</p><p>"I used to educate" (repeated)</p><p>"I educated (habitually)" (repeated)</p></div>' },
+            { html: '<p>To form the imperfect:</p><div class="info-box"><p>1. Prefix the <strong>augment ἐ-</strong> to the present stem</p><p><span class="greek">παιδευ- → ἐπαιδευ-</span></p><p>2. Add <strong>secondary active endings</strong></p></div>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-ον</td><td class="greek">-ομεν</td></tr><tr><td>2nd</td><td class="greek">-ες</td><td class="greek">-ετε</td></tr><tr><td>3rd</td><td class="greek">-ε(ν)</td><td class="greek">-ον</td></tr></table><p style="margin-top:8px">Note: 1st/2nd plural endings are the <em>same</em> as the present!</p>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Form</th><th>Translation</th></tr><tr><td>1s</td><td class="greek">ἐπαίδευον</td><td>I was educating</td></tr><tr><td>2s</td><td class="greek">ἐπαίδευες</td><td>you were educating</td></tr><tr><td>3s</td><td class="greek">ἐπαίδευε(ν)</td><td>he/she/it was educating</td></tr><tr><td>1p</td><td class="greek">ἐπαιδεύομεν</td><td>we were educating</td></tr><tr><td>2p</td><td class="greek">ἐπαιδεύετε</td><td>you (pl.) were educating</td></tr><tr><td>3p</td><td class="greek">ἐπαίδευον</td><td>they were educating</td></tr></table><p style="margin-top:8px">Note: 1st sing. and 3rd plural are <em>identical</em>!</p>' }
+          ]
+        },
+        { type: 'verb-form-id', tense: 'imperfect', verbIndex: 0 },
+        { type: 'verb-form-id', tense: 'imperfect', verbIndex: 0 },
+        {
+          type: 'mc-translate',
+          prompt: 'What distinguishes the imperfect from the present?',
+          correct: 'The augment ἐ- and different endings',
+          options: ['The augment ἐ- and different endings', 'A σ in the stem', 'Reduplication', 'Nothing — they are the same']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The imperfect tense expresses:',
+          correct: 'Past time + progressive/repeated aspect',
+          options: ['Past time + progressive/repeated aspect', 'Past time + simple aspect', 'Present time + progressive aspect', 'Future time']
+        },
+        { type: 'verb-form-select', tense: 'imperfect', verbIndex: 0 },
+        { type: 'verb-form-select', tense: 'imperfect', verbIndex: 0 },
+        {
+          type: 'match',
+          pairs: [
+            ['ἐπαίδευον', 'I was educating (or: they)'],
+            ['ἐπαίδευες', 'you were educating'],
+            ['ἐπαίδευε(ν)', 'he/she/it was educating'],
+            ['ἐπαιδεύομεν', 'we were educating'],
+            ['ἐπαιδεύετε', 'you (pl.) were educating']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'ἐπαίδευον can mean:',
+          display: 'ἐπαίδευον', displayGreek: true,
+          correct: 'Both "I was educating" and "they were educating"',
+          options: ['Both "I was educating" and "they were educating"', 'Only "I was educating"', 'Only "they were educating"', '"We were educating"']
+        },
+        { type: 'verb-form-id', tense: 'imperfect', verbIndex: 2 },
+        { type: 'verb-form-id', tense: 'imperfect', verbIndex: 3 },
+        { type: 'verb-form-select', tense: 'imperfect', verbIndex: 1 },
+        {
+          type: 'mc-translate',
+          prompt: 'The vowel in secondary endings before μ and ν is:',
+          correct: 'ο (the thematic vowel)',
+          options: ['ο (the thematic vowel)', 'ε', 'α', 'η']
+        }
+      ]
+    },
+
+    // Lesson 32: Future Indicative Active
+    {
+      id: 32,
+      title: 'Future Ind. Active',
+      subtitle: 'παιδεύσω — I shall educate',
+      section: 'Unit 2: Verbs',
+      icon: 'σ',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Future Indicative Active',
+          cards: [
+            { html: '<p>To form the <strong>future indicative active</strong>:</p><div class="info-box"><p>1. Drop <span class="greek">-ω</span> from PP II to get the <strong>future tense stem</strong></p><p><span class="greek">παιδεύσω → παιδεύσ-</span></p><p>2. Add the <strong>same endings as the present!</strong></p></div><p>The σ in the stem is what distinguishes future from present.</p>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Form</th><th>Translation</th></tr><tr><td>1s</td><td class="greek">παιδεύσω</td><td>I shall educate</td></tr><tr><td>2s</td><td class="greek">παιδεύσεις</td><td>you will educate</td></tr><tr><td>3s</td><td class="greek">παιδεύσει</td><td>he/she/it will educate</td></tr><tr><td>1p</td><td class="greek">παιδεύσομεν</td><td>we shall educate</td></tr><tr><td>2p</td><td class="greek">παιδεύσετε</td><td>you (pl.) will educate</td></tr><tr><td>3p</td><td class="greek">παιδεύσουσι(ν)</td><td>they will educate</td></tr></table>' },
+            { html: '<p>Compare present vs. future — only the stem differs:</p><div class="info-box"><p><span class="greek"><strong>παιδεύ</strong>ομεν</span> — we educate (present)</p><p><span class="greek"><strong>παιδεύσ</strong>ομεν</span> — we shall educate (future)</p></div><p>The future can have <em>simple</em> or <em>progressive/repeated</em> aspect.</p>' }
+          ]
+        },
+        { type: 'verb-form-id', tense: 'future', verbIndex: 0 },
+        { type: 'verb-form-id', tense: 'future', verbIndex: 0 },
+        {
+          type: 'mc-translate',
+          prompt: 'The future uses the same endings as which tense?',
+          correct: 'The present',
+          options: ['The present', 'The imperfect', 'The aorist', 'The perfect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What distinguishes the future from the present?',
+          correct: 'The σ in the future tense stem',
+          options: ['The σ in the future tense stem', 'The augment ἐ-', 'Different endings', 'Reduplication']
+        },
+        { type: 'verb-form-select', tense: 'future', verbIndex: 0 },
+        { type: 'verb-form-select', tense: 'future', verbIndex: 0 },
+        {
+          type: 'match',
+          pairs: [
+            ['παιδεύσω', 'I shall educate'],
+            ['παιδεύσεις', 'you will educate'],
+            ['παιδεύσει', 'he/she/it will educate'],
+            ['παιδεύσομεν', 'we shall educate'],
+            ['παιδεύσουσι(ν)', 'they will educate']
+          ]
+        },
+        { type: 'verb-form-id', tense: 'future', verbIndex: 3 },
+        { type: 'verb-form-select', tense: 'future', verbIndex: 2 },
+        {
+          type: 'mc-translate',
+          prompt: 'The future tense of πέμπω uses which stem?',
+          display: 'πέμψω', displayGreek: true,
+          correct: 'πέμψ- (from PP II)',
+          options: ['πέμψ- (from PP II)', 'πέμπ- (from PP I)', 'ἐπεμπ- (augmented)', 'πεπεμπ- (reduplicated)']
+        },
+        { type: 'verb-form-id', tense: 'future', verbIndex: 1 },
+        {
+          type: 'mc-translate',
+          prompt: 'παιδεύσομεν can mean:',
+          display: 'παιδεύσομεν', displayGreek: true,
+          correct: 'Both "we shall educate" and "we shall be educating"',
+          options: ['Both "we shall educate" and "we shall be educating"', 'Only "we shall educate (once)"', 'Only "we shall be educating"', '"We educated"']
+        }
+      ]
+    },
+
+    // Lesson 33: Aorist Indicative Active
+    {
+      id: 33,
+      title: 'Aorist Ind. Active',
+      subtitle: 'ἐπαίδευσα — I educated',
+      section: 'Unit 2: Verbs',
+      icon: 'α',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Aorist Indicative Active',
+          cards: [
+            { html: '<p>The <strong>aorist</strong> describes a <strong>past</strong> action with <strong>simple aspect</strong> — it happened once and for all.</p><div class="info-box"><p>"I educated" (once, not habitually)</p><p>"He sent" (a single completed action)</p></div>' },
+            { html: '<p>To form the aorist indicative active:</p><div class="info-box"><p>1. Drop <span class="greek">-α</span> from PP III</p><p><span class="greek">ἐπαίδευσα → ἐπαιδευσ-</span></p><p>This gives the <strong>augmented aorist tense stem</strong></p><p>2. Add <strong>aorist active endings</strong></p></div>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-α</td><td class="greek">-αμεν</td></tr><tr><td>2nd</td><td class="greek">-ας</td><td class="greek">-ατε</td></tr><tr><td>3rd</td><td class="greek">-ε(ν)</td><td class="greek">-αν</td></tr></table><p style="margin-top:8px">Note the <strong>tense vowel α</strong> (instead of thematic ε/ο) in most endings.</p>' },
+            { html: '<table class="intro-table"><tr><th></th><th>Form</th><th>Translation</th></tr><tr><td>1s</td><td class="greek">ἐπαίδευσα</td><td>I educated</td></tr><tr><td>2s</td><td class="greek">ἐπαίδευσας</td><td>you educated</td></tr><tr><td>3s</td><td class="greek">ἐπαίδευσε(ν)</td><td>he/she/it educated</td></tr><tr><td>1p</td><td class="greek">ἐπαιδεύσαμεν</td><td>we educated</td></tr><tr><td>2p</td><td class="greek">ἐπαιδεύσατε</td><td>you (pl.) educated</td></tr><tr><td>3p</td><td class="greek">ἐπαίδευσαν</td><td>they educated</td></tr></table>' }
+          ]
+        },
+        { type: 'verb-form-id', tense: 'aorist', verbIndex: 0 },
+        { type: 'verb-form-id', tense: 'aorist', verbIndex: 0 },
+        {
+          type: 'mc-translate',
+          prompt: 'The aorist tense has:',
+          correct: 'Simple aspect (action occurred once)',
+          options: ['Simple aspect (action occurred once)', 'Progressive/repeated aspect', 'Completed aspect', 'No aspect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Aorist endings use the tense vowel:',
+          correct: 'α (instead of thematic ε/ο)',
+          options: ['α (instead of thematic ε/ο)', 'ε/ο (thematic vowel)', 'η', 'ω']
+        },
+        { type: 'verb-form-select', tense: 'aorist', verbIndex: 0 },
+        { type: 'verb-form-select', tense: 'aorist', verbIndex: 0 },
+        {
+          type: 'match',
+          pairs: [
+            ['ἐπαίδευσα', 'I educated'],
+            ['ἐπαίδευσας', 'you educated'],
+            ['ἐπαίδευσε(ν)', 'he/she/it educated'],
+            ['ἐπαιδεύσαμεν', 'we educated'],
+            ['ἐπαίδευσαν', 'they educated']
+          ]
+        },
+        { type: 'verb-form-id', tense: 'aorist', verbIndex: 3 },
+        { type: 'verb-form-select', tense: 'aorist', verbIndex: 2 },
+        {
+          type: 'mc-translate',
+          prompt: '"I fell once" vs "I used to fall" — which is aorist?',
+          correct: '"I fell once" (simple, single occurrence)',
+          options: ['"I fell once" (simple, single occurrence)', '"I used to fall" (habitual)', 'Both are aorist', 'Neither is aorist']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The 3rd person singular aorist ending -ε(ν) is like which imperfect ending?',
+          correct: 'The 3rd person singular imperfect ending -ε(ν)',
+          options: ['The 3rd person singular imperfect ending -ε(ν)', 'The 1st person singular', 'The 2nd person plural', 'No similarity']
+        },
+        { type: 'verb-form-id', tense: 'aorist', verbIndex: 1 },
+        { type: 'verb-form-select', tense: 'aorist', verbIndex: 3 }
+      ]
+    },
+
+    // Lesson 34: Agreement & Questions
+    {
+      id: 34,
+      title: 'Agreement & Questions',
+      subtitle: 'Subject-verb agreement, ἆρα',
+      section: 'Unit 2: Verbs',
+      icon: ';',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Agreement & Questions',
+          cards: [
+            { html: '<p>Each Greek verb form can stand alone as a complete sentence:</p><div class="info-box"><p><span class="greek" style="font-size:20px">παιδεύομεν.</span></p><p>= "We educate." (one word!)</p></div><p>When a noun or pronoun accompanies the verb, it must <strong>agree</strong> in number.</p>' },
+            { html: '<p><strong>Agreement rules:</strong></p><div class="info-box"><p>Singular noun → singular verb</p><p>Plural noun → plural verb</p><p><strong>BUT: neuter plural nouns take SINGULAR verbs!</strong></p></div><div class="info-box"><p><span class="greek">οἱ ἄνθρωποι παιδεύ<strong>ουσιν</strong>.</span><br/>The men educate. (pl. + pl.)</p><p><span class="greek">τὰ ἔργα παιδεύ<strong>ει</strong>.</span><br/>The deeds educate. (neut. pl. + sing.!)</p></div>' },
+            { html: '<p><strong>Questions</strong> in Greek:</p><div class="info-box"><p>Indicated by a <strong>question mark</strong> (which looks like our semicolon: <strong>;</strong>)</p><p>Optionally introduced by <span class="greek" style="font-size:20px">ἆρα</span> (not separately translated)</p></div><p>Unlike English, Greek does <strong>not</strong> change word order for questions.</p><div class="info-box"><p><span class="greek">ὁ ἄνθρωπος παιδεύει;</span><br/>Does the man educate?</p><p><span class="greek">ἆρα ὁ ἄνθρωπος παιδεύει;</span><br/>Does the man educate?</p></div>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Can a single Greek verb form express a complete sentence?',
+          correct: 'Yes — it encodes person and number in its ending',
+          options: ['Yes — it encodes person and number in its ending', 'No — a pronoun is always required', 'Only in poetry', 'Only with 3rd person']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Neuter plural nouns take:',
+          correct: 'Singular verbs',
+          options: ['Singular verbs', 'Plural verbs', 'No verb at all', 'Dual verbs']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: τὰ τῶν θεῶν ἔργα τοὺς ἀνθρώπους παιδεύει.',
+          display: 'τὰ τῶν θεῶν ἔργα τοὺς ἀνθρώπους παιδεύει.', displayGreek: true,
+          correct: 'The deeds of the gods educate the men.',
+          options: ['The deeds of the gods educate the men.', 'The gods\' deeds are educated by men.', 'The men educate the deeds of the gods.', 'The deed of the god educates the man.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Why is παιδεύει (singular) used with τὰ ἔργα (plural)?',
+          correct: 'Neuter plural subjects take singular verbs',
+          options: ['Neuter plural subjects take singular verbs', 'It is a mistake in the text', 'ἔργα is actually singular', 'The verb agrees with θεῶν']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The Greek question mark looks like:',
+          correct: 'An English semicolon (;)',
+          options: ['An English semicolon (;)', 'An English question mark (?)', 'A raised dot (·)', 'An exclamation mark (!)']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'ἆρα at the start of a clause indicates:',
+          display: 'ἆρα', displayGreek: true,
+          correct: 'A question is being asked (not separately translated)',
+          options: ['A question is being asked (not separately translated)', '"Therefore"', '"But"', '"And"']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: ἆρα ὁ ἄνθρωπος παιδεύει;',
+          display: 'ἆρα ὁ ἄνθρωπος παιδεύει;', displayGreek: true,
+          correct: 'Does the man educate? / Is the man educating?',
+          options: ['Does the man educate? / Is the man educating?', 'Therefore the man educates.', 'The man does not educate.', 'The man educated.']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['οἱ ἄνθρωποι παιδεύουσιν', 'the men educate (pl. verb)'],
+            ['τὰ ἔργα παιδεύει', 'the deeds educate (sing. verb!)'],
+            ['ἆρα παιδεύεις;', 'do you educate?'],
+            ['παιδεύομεν.', 'we educate (no pronoun needed)'],
+            ['ὁ ἄνθρωπος παιδεύει;', 'does the man educate?']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Does Greek change word order to form questions?',
+          correct: 'No — only the question mark (and optionally ἆρα) signals a question',
+          options: ['No — only the question mark (and optionally ἆρα) signals a question', 'Yes, the verb moves to the front', 'Yes, like English', 'Only in formal prose']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: οἱ ἄνθρωποι τοὺς ἀδελφοὺς παιδεύουσιν.',
+          display: 'οἱ ἄνθρωποι τοὺς ἀδελφοὺς παιδεύουσιν.', displayGreek: true,
+          correct: 'The men educate their brothers.',
+          options: ['The men educate their brothers.', 'The man educates his brother.', 'The brothers educate the men.', 'The men were educating.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: παιδεύει.',
+          display: 'παιδεύει.', displayGreek: true,
+          correct: 'He/she/it educates. (subject in the verb form)',
+          options: ['He/she/it educates. (subject in the verb form)', 'We educate.', 'You educate.', 'I educate.']
+        }
+      ]
+    },
+
+    // Lesson 35: Infinitives
+    {
+      id: 35,
+      title: 'Infinitives',
+      subtitle: 'παιδεύειν, παιδεῦσαι',
+      section: 'Unit 2: Verbs',
+      icon: 'ν',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Infinitives',
+          cards: [
+            { html: '<p>The <strong>infinitive</strong> is a <em>non-finite</em> verb form — it does not specify person or number.</p><p>It has only <strong>tense</strong> (= aspect) and <strong>voice</strong>.</p><p>English: "to educate"</p>' },
+            { html: '<p><strong>Present Infinitive Active:</strong></p><div class="info-box"><p>Present stem + <span class="greek" style="font-size:22px">-ειν</span></p><p><span class="greek" style="font-size:22px">παιδεύ<strong>ειν</strong></span> — to be educating / to educate (habitually)</p></div><p>Aspect: <em>progressive/repeated</em> (NOT present time!)</p>' },
+            { html: '<p><strong>Aorist Infinitive Active:</strong></p><div class="info-box"><p>Unaugmented aorist stem + <span class="greek" style="font-size:22px">-αι</span></p><p><span class="greek" style="font-size:22px">παιδεῦσ<strong>αι</strong></span> — to educate (once and for all)</p></div><p>Aspect: <em>simple</em>. Note: the augment ἐ- is <strong>dropped</strong>!</p><p>The accent is always on the <strong>penult</strong> (not recessive).</p>' },
+            { html: '<p><strong>Using the infinitive</strong> — with verbs of ordering:</p><div class="info-box"><p><span class="greek">ὁ θεὸς τὸν Ὅμηρον <strong>παιδεύειν</strong> τὸν ἀδελφὸν ἐκέλευσεν.</span></p><p>The god ordered Homer <strong>to be educating</strong> his brother.</p><p><span class="greek">ὁ θεὸς τὸν Ὅμηρον <strong>παιδεῦσαι</strong> τὸν ἀδελφὸν ἐκέλευσεν.</span></p><p>The god ordered Homer <strong>to educate</strong> his brother (once).</p></div>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The present infinitive active ending is:',
+          correct: '-ειν',
+          options: ['-ειν', '-αι', '-ω', '-ομεν'],
+          optionsGreek: true
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The aorist infinitive active ending is:',
+          correct: '-αι',
+          options: ['-αι', '-ειν', '-ον', '-ας'],
+          optionsGreek: true
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What is the present infinitive active of λύω?',
+          display: 'λύω', displayGreek: true,
+          correct: 'λύειν',
+          options: ['λύειν', 'λῦσαι', 'λύω', 'ἔλῡον'],
+          optionsGreek: true
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What is the aorist infinitive active of λύω?',
+          display: 'PP III: ἔλῡσα', displayGreek: true,
+          correct: 'λῦσαι (drop augment, add -αι)',
+          options: ['λῦσαι (drop augment, add -αι)', 'λύειν', 'ἐλῦσαι', 'λύσειν'],
+          optionsGreek: false
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'In the infinitive, tense indicates:',
+          correct: 'Aspect only (NOT time)',
+          options: ['Aspect only (NOT time)', 'Time only', 'Both time and aspect', 'Neither']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'παιδεύειν has what aspect?',
+          display: 'παιδεύειν', displayGreek: true,
+          correct: 'Progressive/repeated ("to be educating")',
+          options: ['Progressive/repeated ("to be educating")', 'Simple ("to educate once")', 'Completed', 'No aspect']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'παιδεῦσαι has what aspect?',
+          display: 'παιδεῦσαι', displayGreek: true,
+          correct: 'Simple ("to educate once and for all")',
+          options: ['Simple ("to educate once and for all")', 'Progressive/repeated', 'Completed', 'No aspect']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['παιδεύειν', 'to be educating (pres. inf.)'],
+            ['παιδεῦσαι', 'to educate once (aor. inf.)'],
+            ['πέμπειν', 'to be sending (pres. inf.)'],
+            ['πέμψαι', 'to send once (aor. inf.)'],
+            ['κελεύειν', 'to be ordering (pres. inf.)']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The aorist infinitive drops which element from PP III?',
+          correct: 'The past indicative augment ἐ-',
+          options: ['The past indicative augment ἐ-', 'The sigma', 'The ending -α', 'Nothing — it uses the full PP III']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What is the aorist infinitive active of πέμπω?',
+          display: 'PP III: ἔπεμψα', displayGreek: true,
+          correct: 'πέμψαι',
+          options: ['πέμψαι', 'πέμπειν', 'ἐπέμψαι', 'πεμψειν'],
+          optionsGreek: true
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: τὸν Ὅμηρον ἐκελεύομεν βιβλία πέμψαι.',
+          display: 'τὸν Ὅμηρον ἐκελεύομεν βιβλία πέμψαι.', displayGreek: true,
+          correct: 'We were ordering Homer to send books.',
+          options: ['We were ordering Homer to send books.', 'Homer was ordering us to send books.', 'We order Homer to send books.', 'Homer sent books to us.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'The accent on the aorist infinitive active is:',
+          correct: 'Always on the penult (not recessive)',
+          options: ['Always on the penult (not recessive)', 'Always recessive', 'On the ultima', 'On the antepenult']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['λύειν', 'to be freeing (present inf.)'],
+            ['λῦσαι', 'to free once (aorist inf.)'],
+            ['κελεῦσαι', 'to order once (aorist inf.)'],
+            ['κελεύειν', 'to be ordering (present inf.)'],
+            ['πέμπειν', 'to be sending (present inf.)']
+          ]
+        }
+      ]
+    },
+
+    // Lesson 36: Unit 2 Vocabulary I — Nouns
+    {
+      id: 36,
+      title: 'Vocabulary I',
+      subtitle: 'Unit 2 Nouns',
+      section: 'Unit 2: Verbs',
+      icon: 'φ',
+      exercises: [
+        { type: 'u2vocab-intro', vocabGroup: 0 },
+        { type: 'u2vocab-gre', vocabGroup: 0 },
+        { type: 'u2vocab-gre', vocabGroup: 0 },
+        { type: 'u2vocab-eng', vocabGroup: 0 },
+        { type: 'u2vocab-eng', vocabGroup: 0 },
+        { type: 'u2vocab-match', vocabGroup: 0 },
+        { type: 'u2vocab-gre', vocabGroup: 0 },
+        { type: 'u2vocab-eng', vocabGroup: 0 },
+        { type: 'u2vocab-gender', vocabGroup: 0 },
+        { type: 'u2vocab-gender', vocabGroup: 0 },
+        {
+          type: 'match',
+          pairs: [
+            ['ἄγγελος', 'angel (messenger)'],
+            ['ζῷον', 'zoology (animals)'],
+            ['ξένος', 'xenophobia (strangers)'],
+            ['πόλεμος', 'polemic (warlike)'],
+            ['χρῡσός', 'chrysanthemum (golden)']
+          ]
+        },
+        { type: 'u2vocab-gre', vocabGroup: 0 },
+        { type: 'u2vocab-eng', vocabGroup: 0 },
+        { type: 'u2vocab-match', vocabGroup: 0 }
+      ]
+    },
+
+    // Lesson 37: Unit 2 Vocabulary II — Verbs, Particles, Prepositions
+    {
+      id: 37,
+      title: 'Vocabulary II',
+      subtitle: 'Particles & Prepositions',
+      section: 'Unit 2: Verbs',
+      icon: 'γ',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Unit 2 Vocabulary: Verbs',
+          cards: [
+            { html: '<p>Four verbs to learn with all six principal parts:</p><table class="intro-table"><tr><th>Verb</th><th>Meaning</th></tr><tr><td class="greek">κελεύω</td><td>order, command</td></tr><tr><td class="greek">λύω</td><td>unbind, free, destroy</td></tr><tr><td class="greek">παιδεύω</td><td>educate, teach</td></tr><tr><td class="greek">πέμπω</td><td>send</td></tr></table>' },
+            { html: '<p><strong>Particles, Conjunctions & Adverbs:</strong></p><div class="info-box"><p><span class="greek">γάρ</span> — for (postpositive: never first in clause)</p><p><span class="greek">δέ</span> — but, and (postpositive)</p><p><span class="greek">μέν...δέ</span> — on the one hand...on the other</p><p><span class="greek">ἆρα</span> — introduces a question</p><p><span class="greek">ἤ</span> — or; <span class="greek">ἤ...ἤ</span> — either...or</p></div>' },
+            { html: '<div class="info-box"><p><span class="greek">οὐ, οὐκ, οὐχ</span> — not (proclitic)</p><p style="font-size:13px"><span class="greek">οὐ</span> before consonants, <span class="greek">οὐκ</span> before smooth breathing, <span class="greek">οὐχ</span> before rough breathing</p><p><span class="greek">εὖ</span> — well</p><p><span class="greek">νῦν</span> — now</p><p><span class="greek">ἕξ</span> — six (indeclinable)</p><p><span class="greek">πέντε</span> — five (indeclinable)</p></div>' },
+            { html: '<p><strong>New prepositions:</strong></p><div class="info-box"><p><span class="greek">ἀπό</span> + gen. = from, away from</p><p><span class="greek">παρά</span> + gen. = from (the side of)</p><p><span class="greek">παρά</span> + dat. = at (the side of), at the house of</p><p><span class="greek">παρά</span> + acc. = to (the side of), beside; contrary to</p><p><span class="greek">πρό</span> + gen. = before, in front of</p></div>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does γάρ mean?',
+          display: 'γάρ', displayGreek: true,
+          correct: 'for (explanatory, postpositive)',
+          options: ['for (explanatory, postpositive)', 'but', 'and', 'therefore']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'A postpositive conjunction:',
+          correct: 'Never stands first in its clause',
+          options: ['Never stands first in its clause', 'Always stands first', 'Has no position rule', 'Comes only at the end']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'μέν...δέ expresses:',
+          display: 'μέν...δέ', displayGreek: true,
+          correct: 'On the one hand...on the other hand',
+          options: ['On the one hand...on the other hand', 'Because...therefore', 'If...then', 'Both...and']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'When is οὐχ used instead of οὐ or οὐκ?',
+          correct: 'Before words with a rough breathing',
+          options: ['Before words with a rough breathing', 'Before consonants', 'Before smooth breathing', 'At the end of sentences']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['γάρ', 'for (postpositive)'],
+            ['δέ', 'but, and (postpositive)'],
+            ['ἆρα', 'introduces a question'],
+            ['ἤ', 'or'],
+            ['οὐ', 'not']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does ἀπό + genitive mean?',
+          display: 'ἀπό', displayGreek: true,
+          correct: 'From, away from',
+          options: ['From, away from', 'Into, toward', 'In, at', 'Before']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'παρά + dative means:',
+          display: 'παρά + dat.', displayGreek: true,
+          correct: 'At the side of, at the house of',
+          options: ['At the side of, at the house of', 'From the side of', 'To the side of', 'Before']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'πρό + genitive means:',
+          display: 'πρό', displayGreek: true,
+          correct: 'Before, in front of',
+          options: ['Before, in front of', 'After, behind', 'From, away from', 'Into']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['ἀπό + gen.', 'from, away from'],
+            ['παρά + gen.', 'from (the side of)'],
+            ['παρά + dat.', 'at (the side of)'],
+            ['παρά + acc.', 'to (the side of), beside'],
+            ['πρό + gen.', 'before, in front of']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: πρὸ τοῦ πολέμου',
+          display: 'πρὸ τοῦ πολέμου', displayGreek: true,
+          correct: 'Before the war',
+          options: ['Before the war', 'After the war', 'During the war', 'Into the war']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate: παρὰ τοῦ Ὁμήρου',
+          display: 'παρὰ τοῦ Ὁμήρου', displayGreek: true,
+          correct: 'From (the side of) Homer',
+          options: ['From (the side of) Homer', 'At Homer\'s house', 'To Homer', 'Before Homer']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['εὖ', 'well'],
+            ['νῦν', 'now'],
+            ['ἕξ', 'six'],
+            ['πέντε', 'five'],
+            ['ἤ...ἤ', 'either...or']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does λύω mean?',
+          display: 'λύω', displayGreek: true,
+          correct: 'Unbind, free, destroy',
+          options: ['Unbind, free, destroy', 'Send', 'Order', 'Educate']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does κελεύω mean?',
+          display: 'κελεύω', displayGreek: true,
+          correct: 'Order, command',
+          options: ['Order, command', 'Educate', 'Send', 'Free']
+        }
+      ]
+    },
+
+    // Lesson 38: Unit 2 Review — Sentences
+    {
+      id: 38,
+      title: 'Unit 2 Review',
+      subtitle: 'Translate Sentences',
+      section: 'Unit 2: Verbs',
+      icon: '📖',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Unit 2 Review',
+          cards: [
+            { html: '<p>Time to put Unit 2 together! You\'ll translate sentences using:</p><ul style="text-align:left;line-height:2"><li>Present, imperfect, future, and aorist tenses</li><li>New vocabulary: verbs, nouns, particles</li><li>Infinitives with κελεύω</li><li>Prepositions: ἀπό, παρά, πρό</li><li>Connectives: γάρ, δέ, μέν...δέ</li></ul>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'οἱ θεοὶ δῶρα ἔπεμπον εἰς τὴν χώρᾱν.', displayGreek: true,
+          correct: 'The gods used to send gifts into the land.',
+          options: ['The gods used to send gifts into the land.', 'The gods will send gifts into the land.', 'The gods send gifts into the land.', 'The gods sent gifts into the land (once).']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'ἔπεμπον is what tense?',
+          display: 'ἔπεμπον', displayGreek: true,
+          correct: 'Imperfect (past + progressive/repeated)',
+          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple)', 'Present', 'Future']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'πέντε βιβλία τοῖς ξένοις ἔπεμψεν ὁ Ὅμηρος.', displayGreek: true,
+          correct: 'Homer sent five books to the guest-friends.',
+          options: ['Homer sent five books to the guest-friends.', 'Homer was sending five books.', 'Homer will send five books.', 'The guest-friends sent Homer five books.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'ἔπεμψεν is what tense?',
+          display: 'ἔπεμψεν', displayGreek: true,
+          correct: 'Aorist (past + simple — a single action)',
+          options: ['Aorist (past + simple — a single action)', 'Imperfect (past + progressive)', 'Present', 'Future']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ἆρα λύσετε καὶ τὴν τῆς θεοῦ φιλίᾱν;', displayGreek: true,
+          correct: 'Will you (pl.) destroy even the friendship of the goddess?',
+          options: ['Will you (pl.) destroy even the friendship of the goddess?', 'Did you destroy the goddess\'s friendship?', 'You are destroying the goddess\'s friendship.', 'The goddess destroyed your friendship.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'τοῖς μὲν ξένοις στεφάνους πέμψομεν, τοῖς δὲ φίλοις βιβλία.', displayGreek: true,
+          correct: 'To the strangers we shall send crowns, but to the friends, books.',
+          options: ['To the strangers we shall send crowns, but to the friends, books.', 'The strangers sent crowns, the friends sent books.', 'We were sending crowns and books.', 'The friends and strangers send crowns.']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['ἔπεμπον', 'imperfect (was sending)'],
+            ['ἔπεμψεν', 'aorist (sent, once)'],
+            ['πέμψομεν', 'future (we shall send)'],
+            ['πέμπει', 'present (sends)'],
+            ['πέμπειν', 'present infinitive (to send)']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ θεὸς τὸν Ὅμηρον λῦσαι τοὺς ἀνθρώπους ἐκέλευσεν.', displayGreek: true,
+          correct: 'The god ordered Homer to free the men (once and for all).',
+          options: ['The god ordered Homer to free the men (once and for all).', 'The god was ordering Homer to free the men.', 'Homer ordered the god to free the men.', 'The men ordered Homer to free the god.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὦ ξένε, ζῷα πέμπεις εἰς ἀγορὰν ἢ οὔ;', displayGreek: true,
+          correct: 'Stranger, are you sending animals to the marketplace or not?',
+          options: ['Stranger, are you sending animals to the marketplace or not?', 'The stranger sent animals to the marketplace.', 'Stranger, do you order animals?', 'The animals are sent to the stranger.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'τοὺς πολέμους ἢ λόγοις ἢ ἔργοις ἐλύομεν.', displayGreek: true,
+          correct: 'We used to resolve the wars either by words or by deeds.',
+          options: ['We used to resolve the wars either by words or by deeds.', 'We shall resolve the wars by words.', 'We resolved the war by deeds (once).', 'The wars freed us by word and deed.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ Ὅμηρος τοὺς ἐν τῇ οἰκίᾳ φίλους εὖ παιδεύσει.', displayGreek: true,
+          correct: 'Homer will educate the friends in the house well.',
+          options: ['Homer will educate the friends in the house well.', 'Homer educated the friends well.', 'Homer was educating the friends.', 'The friends educate Homer well.']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['γάρ', 'for (postpositive)'],
+            ['μέν...δέ', 'on one hand...on the other'],
+            ['ἆρα', 'introduces a question'],
+            ['οὐ', 'not'],
+            ['εὖ', 'well']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ἔργῳ, οὐ λόγῳ, τοὺς φίλους ἔλῡον.', displayGreek: true,
+          correct: 'By deed, not by word, I used to free my friends.',
+          options: ['By deed, not by word, I used to free my friends.', 'By word, not by deed, I freed my friends.', 'The friends freed me by deeds.', 'I did not free my friends by deed.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'οἱ ἕξ ἀδελφοὶ χρῡσοῦ στέφανον ἔπεμπον παρὰ τὸν Ὅμηρον.', displayGreek: true,
+          correct: 'The six brothers were sending a crown of gold to Homer.',
+          options: ['The six brothers were sending a crown of gold to Homer.', 'Homer sent six golden crowns.', 'The brothers will send a gold crown.', 'Six crowns were sent from Homer.']
+        }
+      ]
     }
   ];
 
@@ -2644,6 +3910,14 @@ var Data = (function() {
     unit1Vocab: unit1Vocab,
     unit1VocabAll: unit1VocabAll,
     unit1Sentences: unit1Sentences,
+    unit2Vocab: unit2Vocab,
+    unit2VocabAll: unit2VocabAll,
+    allVocabAll: allVocabAll,
+    unit2Verbs: unit2Verbs,
+    personLabels: personLabels,
+    unit2Particles: unit2Particles,
+    unit2Cognates: unit2Cognates,
+    unit2Sentences: unit2Sentences,
     lessons: lessons,
     buildLetterTable: buildLetterTable
   };

@@ -143,6 +143,20 @@ var Engine = (function() {
         return generateVocabGender(def);
       case 'vocab-article':
         return generateVocabArticle(def);
+      case 'u2vocab-intro':
+        return generateU2VocabIntro(def);
+      case 'u2vocab-gre':
+        return generateU2VocabGre(def);
+      case 'u2vocab-eng':
+        return generateU2VocabEng(def);
+      case 'u2vocab-match':
+        return generateU2VocabMatch(def);
+      case 'u2vocab-gender':
+        return generateU2VocabGender(def);
+      case 'verb-form-id':
+        return generateVerbFormId(def);
+      case 'verb-form-select':
+        return generateVerbFormSelect(def);
       default:
         return null;
     }
@@ -337,6 +351,135 @@ var Engine = (function() {
       displayGreek: true,
       correct: target.article,
       options: shuffle(['ὁ', 'ἡ', 'τό', 'οἱ']),
+      optionsGreek: true
+    };
+  }
+
+  // ===== Unit 2 Vocabulary Exercise Generators =====
+
+  function generateU2VocabIntro(def) {
+    var words = Data.unit2Vocab[def.vocabGroup];
+    var cards = words.map(function(w) {
+      return {
+        html: '<div class="vocab-card">' +
+          '<div class="vocab-article">' + w.article + '</div>' +
+          '<div class="vocab-greek">' + w.greek + '</div>' +
+          '<div class="vocab-english">' + w.english + '</div>' +
+          '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
+          '</div>'
+      };
+    });
+    return { type: 'intro', title: 'New Vocabulary', cards: cards, graded: false };
+  }
+
+  function generateU2VocabGre(def) {
+    var words = Data.unit2Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
+    var distractors = pick(pool.map(function(w) { return w.english; }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What does this word mean?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true, correct: target.english,
+      options: shuffle([target.english].concat(distractors))
+    };
+  }
+
+  function generateU2VocabEng(def) {
+    var words = Data.unit2Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.greek !== target.greek; });
+    var distractors = pick(pool.map(function(w) { return w.greek; }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What is "' + target.english + '" in Greek?',
+      display: target.english, correct: target.greek,
+      options: shuffle([target.greek].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateU2VocabMatch(def) {
+    var words = Data.unit2Vocab[def.vocabGroup];
+    var selected = shuffle(words.slice()).slice(0, 5);
+    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
+    return { type: 'match', graded: false, pairs: pairs };
+  }
+
+  function generateU2VocabGender(def) {
+    var words = Data.unit2Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What gender is this noun?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true, correct: target.gender,
+      options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
+    };
+  }
+
+  // ===== Verb Conjugation Exercise Generators =====
+
+  function generateVerbFormId(def) {
+    var verb = Data.unit2Verbs[def.verbIndex];
+    var tense = def.tense;
+    var forms = verb[tense];
+    var labels = Data.personLabels;
+    var idx = Math.floor(Math.random() * 6);
+    var form = forms[idx];
+    var label = labels[idx];
+
+    var tenseNames = { present: 'present', imperfect: 'imperfect', future: 'future', aorist: 'aorist' };
+    var correctAnswer = label + ', ' + tenseNames[tense] + ' ind. act.';
+
+    // Build distractors from other person/number combos and other tenses
+    var allTenses = ['present', 'imperfect', 'future', 'aorist'];
+    var distractorPool = [];
+    allTenses.forEach(function(t) {
+      labels.forEach(function(l) {
+        var ans = l + ', ' + tenseNames[t] + ' ind. act.';
+        if (ans !== correctAnswer) distractorPool.push(ans);
+      });
+    });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: 'Identify this verb form:',
+      display: form,
+      displayGreek: true,
+      correct: correctAnswer,
+      options: shuffle([correctAnswer].concat(distractors))
+    };
+  }
+
+  function generateVerbFormSelect(def) {
+    var verb = Data.unit2Verbs[def.verbIndex];
+    var tense = def.tense;
+    var forms = verb[tense];
+    var labels = Data.personLabels;
+    var idx = Math.floor(Math.random() * 6);
+    var correctForm = forms[idx];
+    var label = labels[idx];
+
+    var tenseNames = { present: 'present', imperfect: 'imperfect', future: 'future', aorist: 'aorist' };
+    var prompt = 'Select the ' + label + ' ' + tenseNames[tense] + ' ind. act. of ' + verb.verb + ':';
+
+    // Build distractors from other forms of same verb
+    var allForms = [];
+    ['present', 'imperfect', 'future', 'aorist'].forEach(function(t) {
+      verb[t].forEach(function(f) {
+        if (f !== correctForm) allForms.push(f);
+      });
+    });
+    var distractors = pick(allForms, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      correct: correctForm,
+      options: shuffle([correctForm].concat(distractors)),
       optionsGreek: true
     };
   }
