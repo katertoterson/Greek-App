@@ -1095,7 +1095,7 @@ var Data = (function() {
               html: '<p>When a labial or palatal combines with σ:</p><div class="info-box"><p>Labial + σ → <span class="greek" style="font-size:22px">ψ</span> (π+σ, β+σ, φ+σ = ψ)</p><p>Palatal + σ → <span class="greek" style="font-size:22px">ξ</span> (κ+σ, γ+σ, χ+σ = ξ)</p></div>'
             },
             {
-              html: '<p><strong>Gamma before palatals</strong> = "ng" sound:</p><div class="info-box"><p><span class="greek" style="font-size:22px">γγ</span> = "anger" — <span class="greek">ἄγγελος</span></p><p><span class="greek" style="font-size:22px">γκ</span> = "banker" — <span class="greek">ἄγκῡρα</span></p><p><span class="greek" style="font-size:22px">γξ</span> = "larynx" — <span class="greek">λάρυγξ</span></p><p><span class="greek" style="font-size:22px">γχ</span> = "lunkhead" — <span class="greek">Ὀξύρρυγχος</span></p></div>'
+              html: '<p><strong>Gamma before palatals and ξ</strong> = "ng" sound:</p><div class="info-box"><p><span class="greek" style="font-size:22px">γγ</span> = "anger" — <span class="greek">ἄγγελος</span></p><p><span class="greek" style="font-size:22px">γκ</span> = "banker" — <span class="greek">ἄγκῡρα</span></p><p><span class="greek" style="font-size:22px">γξ</span> = "larynx" — <span class="greek">λάρυγξ</span></p><p><span class="greek" style="font-size:22px">γχ</span> = "lunkhead" — <span class="greek">Ὀξύρρυγχος</span></p></div>'
             }
           ]
         },
