@@ -701,7 +701,7 @@ var Data = (function() {
               html: '<p><strong>Always long:</strong> <span class="greek" style="font-size:28px">η</span> and <span class="greek" style="font-size:28px">ω</span></p><p><strong>Always short:</strong> <span class="greek" style="font-size:28px">ε</span> and <span class="greek" style="font-size:28px">ο</span></p><p><strong>Either long or short:</strong> <span class="greek" style="font-size:28px">α, ι, υ</span></p>'
             },
             {
-              html: '<p>When α, ι, or υ are long, a <strong>macron</strong> (¯) is placed above them:</p><p class="greek" style="font-size:32px;margin-top:12px">ᾱ &nbsp; ῑ &nbsp; ῡ</p><p style="margin-top:12px">Short vowels and always-long vowels (η, ω) are not marked.</p>'
+              html: '<p>When α, ι, or υ are long, a <strong>macron</strong> (¯) is placed above them:</p><p class="greek" style="font-size:32px;margin-top:12px">ᾱ &nbsp; ῑ &nbsp; ῡ</p><p style="margin-top:12px">Short vowels and always-long vowels (η, ω) are not marked.</p><p style="margin-top:12px"><em>Note: The macron is only used in this app to help learn pronunciation. It is not present in actual Greek texts.</em></p>'
             }
           ]
         },
