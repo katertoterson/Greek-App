@@ -68,14 +68,14 @@ var Data = (function() {
 
   // ===== DIPHTHONGS =====
   var diphthongs = [
-    { letters: 'αι', pron: 'defy, fine',    example: 'αἰθήρ' },
-    { letters: 'ει', pron: 'wait, bait',    example: 'εἰρήνη' },
-    { letters: 'οι', pron: 'boy',           example: 'οἶνος' },
-    { letters: 'υι', pron: 'wit',           example: 'Εἰλείθυια' },
-    { letters: 'αυ', pron: 'scow, plow',    example: 'αὐτόνομος' },
+    { letters: 'αι', pron: 'defy, fine',    pronHtml: 'def<strong>y</strong>, f<strong>i</strong>ne', example: 'αἰθήρ' },
+    { letters: 'ει', pron: 'wait, bait',    pronHtml: 'w<strong>ai</strong>t, b<strong>ai</strong>t', example: 'εἰρήνη' },
+    { letters: 'οι', pron: 'boy',           pronHtml: 'b<strong>oy</strong>',           example: 'οἶνος' },
+    { letters: 'υι', pron: 'wit',           pronHtml: '<strong>wi</strong>t',           example: 'Εἰλείθυια' },
+    { letters: 'αυ', pron: 'scow, plow',    pronHtml: 'sc<strong>ow</strong>, pl<strong>ow</strong>', example: 'αὐτόνομος' },
     { letters: 'ευ', pron: 'ε + υ together',example: 'Ὀδυσσεύς' },
     { letters: 'ηυ', pron: 'η + υ together',example: 'ηὕρηκα' },
-    { letters: 'ου', pron: 'boot',          example: 'Οὐρανός' }
+    { letters: 'ου', pron: 'boot',          pronHtml: 'b<strong>oo</strong>t',          example: 'Οὐρανός' }
   ];
 
   // ===== IOTA SUBSCRIPT =====
@@ -836,7 +836,7 @@ var Data = (function() {
             {
               html: '<table class="intro-table"><tr><th>Diphthong</th><th>Sounds like</th><th>Example</th></tr>' +
                 diphthongs.map(function(d) {
-                  return '<tr><td class="greek">' + d.letters + '</td><td>' + d.pron + '</td><td class="greek">' + d.example + '</td></tr>';
+                  return '<tr><td class="greek">' + d.letters + '</td><td>' + (d.pronHtml || d.pron) + '</td><td class="greek">' + d.example + '</td></tr>';
                 }).join('') + '</table>'
             },
             {
@@ -850,7 +850,8 @@ var Data = (function() {
           display: 'αι',
           displayGreek: true,
           correct: 'Like "defy" or "fine"',
-          options: ['Like "defy" or "fine"', 'Like "wait" or "bait"', 'Like "boy"', 'Like "boot"']
+          options: ['Like "defy" or "fine"', 'Like "wait" or "bait"', 'Like "boy"', 'Like "boot"'],
+          optionsHtml: ['Like "def<strong>y</strong>" or "f<strong>i</strong>ne"', 'Like "w<strong>ai</strong>t" or "b<strong>ai</strong>t"', 'Like "b<strong>oy</strong>"', 'Like "b<strong>oo</strong>t"']
         },
         {
           type: 'mc-translate',
@@ -858,7 +859,8 @@ var Data = (function() {
           display: 'ου',
           displayGreek: true,
           correct: 'Like "boot"',
-          options: ['Like "boot"', 'Like "boy"', 'Like "defy"', 'Like "scow"']
+          options: ['Like "boot"', 'Like "boy"', 'Like "defy"', 'Like "scow"'],
+          optionsHtml: ['Like "b<strong>oo</strong>t"', 'Like "b<strong>oy</strong>"', 'Like "def<strong>y</strong>"', 'Like "sc<strong>ow</strong>"']
         },
         {
           type: 'mc-translate',
@@ -866,7 +868,8 @@ var Data = (function() {
           display: 'οι',
           displayGreek: true,
           correct: 'Like "boy"',
-          options: ['Like "boy"', 'Like "boot"', 'Like "fine"', 'Like "wait"']
+          options: ['Like "boy"', 'Like "boot"', 'Like "fine"', 'Like "wait"'],
+          optionsHtml: ['Like "b<strong>oy</strong>"', 'Like "b<strong>oo</strong>t"', 'Like "f<strong>i</strong>ne"', 'Like "w<strong>ai</strong>t"']
         },
         {
           type: 'mc-translate',
@@ -874,7 +877,8 @@ var Data = (function() {
           display: 'αυ',
           displayGreek: true,
           correct: 'Like "scow" or "plow"',
-          options: ['Like "scow" or "plow"', 'Like "boot"', 'Like "boy"', 'Like "defy"']
+          options: ['Like "scow" or "plow"', 'Like "boot"', 'Like "boy"', 'Like "defy"'],
+          optionsHtml: ['Like "sc<strong>ow</strong>" or "pl<strong>ow</strong>"', 'Like "b<strong>oo</strong>t"', 'Like "b<strong>oy</strong>"', 'Like "def<strong>y</strong>"']
         },
         {
           type: 'mc-translate',
@@ -894,11 +898,11 @@ var Data = (function() {
         {
           type: 'match',
           pairs: [
-            ['αι', '"defy"'],
-            ['ει', '"wait"'],
-            ['οι', '"boy"'],
-            ['ου', '"boot"'],
-            ['αυ', '"plow"']
+            ['αι', '"def<strong>y</strong>"'],
+            ['ει', '"w<strong>ai</strong>t"'],
+            ['οι', '"b<strong>oy</strong>"'],
+            ['ου', '"b<strong>oo</strong>t"'],
+            ['αυ', '"pl<strong>ow</strong>"']
           ]
         },
         {
@@ -928,9 +932,9 @@ var Data = (function() {
           pairs: [
             ['ευ', 'ε + υ together'],
             ['ηυ', 'η + υ together'],
-            ['υι', '"wit"'],
-            ['αι', '"fine"'],
-            ['οι', '"boy"']
+            ['υι', '"<strong>wi</strong>t"'],
+            ['αι', '"f<strong>i</strong>ne"'],
+            ['οι', '"b<strong>oy</strong>"']
           ]
         },
         {

@@ -223,8 +223,12 @@ var Engine = (function() {
   }
 
   function generateMCTranslate(def) {
+    var htmlMap = {};
+    if (def.optionsHtml) {
+      def.options.forEach(function(o, i) { htmlMap[o] = def.optionsHtml[i]; });
+    }
     var options = def.options ? shuffle(def.options.slice()) : [];
-    return {
+    var result = {
       type: 'mc',
       graded: true,
       prompt: def.prompt,
@@ -234,6 +238,10 @@ var Engine = (function() {
       options: options,
       optionsGreek: !!def.optionsGreek
     };
+    if (def.optionsHtml) {
+      result.optionsHtml = options.map(function(o) { return htmlMap[o] || o; });
+    }
+    return result;
   }
 
   function generateMatch(def) {
