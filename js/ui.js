@@ -265,13 +265,13 @@ var UI = (function() {
     var leftItems = Engine.shuffle(pairs.map(function(p) { return p[0]; }));
     var rightItems = Engine.shuffle(pairs.map(function(p) { return p[1]; }));
 
-    // Build lookup
+    // Build lookup: left value → right value
     var pairMap = {};
     pairs.forEach(function(p) { pairMap[p[0]] = p[1]; });
 
-    var matched = {};
-    var selectedLeft = null;
-    var selectedRight = null;
+    var matchCount = 0;
+    var selectedLeftTile = null;
+    var selectedRightTile = null;
 
     var prompt = el('div', { className: 'exercise-prompt' }, [
       el('div', { className: 'prompt-label', textContent: 'Match the pairs' })
@@ -283,28 +283,25 @@ var UI = (function() {
     var rightCol = el('div', { className: 'match-col' });
 
     function checkMatch() {
-      if (selectedLeft && selectedRight) {
-        var correct = pairMap[selectedLeft] === selectedRight;
+      if (selectedLeftTile && selectedRightTile) {
+        var leftVal = selectedLeftTile.dataset.value;
+        var rightVal = selectedRightTile.dataset.value;
+        var correct = pairMap[leftVal] === rightVal;
         if (correct) {
-          matched[selectedLeft] = true;
-          matched[selectedRight] = true;
+          matchCount++;
           AudioFX.play('tap');
 
-          // Mark matched
-          leftCol.querySelectorAll('.match-tile').forEach(function(t) {
-            if (t.dataset.value === selectedLeft) t.classList.add('matched');
-            t.classList.remove('selected');
-          });
-          rightCol.querySelectorAll('.match-tile').forEach(function(t) {
-            if (t.dataset.value === selectedRight) t.classList.add('matched');
-            t.classList.remove('selected');
-          });
+          // Mark only the specific selected tiles as matched
+          selectedLeftTile.classList.add('matched');
+          selectedLeftTile.classList.remove('selected');
+          selectedRightTile.classList.add('matched');
+          selectedRightTile.classList.remove('selected');
 
-          selectedLeft = null;
-          selectedRight = null;
+          selectedLeftTile = null;
+          selectedRightTile = null;
 
           // Check if all matched
-          if (Object.keys(matched).length === pairs.length * 2) {
+          if (matchCount === pairs.length) {
             setTimeout(function() {
               var cont = el('button', {
                 className: 'btn-continue',
@@ -316,18 +313,15 @@ var UI = (function() {
           }
         } else {
           // Wrong match - shake and deselect
-          leftCol.querySelectorAll('.selected').forEach(function(t) {
-            t.classList.add('wrong-match');
-            t.classList.remove('selected');
-            setTimeout(function() { t.classList.remove('wrong-match'); }, 300);
-          });
-          rightCol.querySelectorAll('.selected').forEach(function(t) {
-            t.classList.add('wrong-match');
-            t.classList.remove('selected');
-            setTimeout(function() { t.classList.remove('wrong-match'); }, 300);
-          });
-          selectedLeft = null;
-          selectedRight = null;
+          selectedLeftTile.classList.add('wrong-match');
+          selectedLeftTile.classList.remove('selected');
+          selectedRightTile.classList.add('wrong-match');
+          selectedRightTile.classList.remove('selected');
+          var lt = selectedLeftTile, rt = selectedRightTile;
+          setTimeout(function() { lt.classList.remove('wrong-match'); rt.classList.remove('wrong-match'); }, 300);
+
+          selectedLeftTile = null;
+          selectedRightTile = null;
         }
       }
     }
@@ -338,18 +332,14 @@ var UI = (function() {
       if (item.length > 30) tileClass += ' small';
       else if (item.length > 20) tileClass += ' medium';
 
-      var tile = el('div', {
-        className: tileClass,
-        textContent: item,
-        'data-value': item,
-        onClick: function() {
-          if (matched[item]) return;
-          AudioFX.play('tap');
-          leftCol.querySelectorAll('.match-tile').forEach(function(t) { t.classList.remove('selected'); });
-          tile.classList.add('selected');
-          selectedLeft = item;
-          checkMatch();
-        }
+      var tile = el('div', { className: tileClass, textContent: item, 'data-value': item });
+      tile.addEventListener('click', function() {
+        if (tile.classList.contains('matched')) return;
+        AudioFX.play('tap');
+        leftCol.querySelectorAll('.match-tile').forEach(function(t) { t.classList.remove('selected'); });
+        tile.classList.add('selected');
+        selectedLeftTile = tile;
+        checkMatch();
       });
       leftCol.appendChild(tile);
     });
@@ -365,11 +355,11 @@ var UI = (function() {
       if (item !== itemText) tile.innerHTML = item;
       else tile.textContent = item;
       tile.addEventListener('click', function() {
-        if (matched[item]) return;
+        if (tile.classList.contains('matched')) return;
         AudioFX.play('tap');
         rightCol.querySelectorAll('.match-tile').forEach(function(t) { t.classList.remove('selected'); });
         tile.classList.add('selected');
-        selectedRight = item;
+        selectedRightTile = tile;
         checkMatch();
       });
       rightCol.appendChild(tile);

@@ -620,7 +620,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'True or false: The rough breathing is pronounced.',
           display: 'ῥητορική',
-          correct: 'True — it adds an h-sound',
+          correct: 'False — it is silent',
           options: ['True — it adds an h-sound', 'False — it is silent', 'Only in Attic dialect', 'Only before vowels']
         },
         {
