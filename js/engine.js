@@ -290,7 +290,7 @@ var Engine = (function() {
         html: '<div class="vocab-card">' +
           '<div class="vocab-article">' + w.article + '</div>' +
           '<div class="vocab-greek">' + w.greek + '</div>' +
-          '<div class="vocab-english">' + w.english + '</div>' +
+          '<div class="vocab-english">the ' + w.english + '</div>' +
           '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
           '</div>'
       };
@@ -302,15 +302,15 @@ var Engine = (function() {
     var words = Data.unit1Vocab[def.vocabGroup];
     var target = pickRandom(words);
     var pool = Data.unit1VocabAll.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool.map(function(w) { return w.english; }), 3);
+    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
     return {
       type: 'mc',
       graded: true,
-      prompt: 'What does this word mean?',
+      prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
       displayGreek: true,
-      correct: target.english,
-      options: shuffle([target.english].concat(distractors))
+      correct: 'the ' + target.english,
+      options: shuffle(['the ' + target.english].concat(distractors))
     };
   }
 
@@ -375,7 +375,7 @@ var Engine = (function() {
         html: '<div class="vocab-card">' +
           '<div class="vocab-article">' + w.article + '</div>' +
           '<div class="vocab-greek">' + w.greek + '</div>' +
-          '<div class="vocab-english">' + w.english + '</div>' +
+          '<div class="vocab-english">the ' + w.english + '</div>' +
           '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
           '</div>'
       };
@@ -387,13 +387,13 @@ var Engine = (function() {
     var words = Data.unit2Vocab[def.vocabGroup];
     var target = pickRandom(words);
     var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool.map(function(w) { return w.english; }), 3);
+    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
     return {
       type: 'mc', graded: true,
-      prompt: 'What does this word mean?',
+      prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
-      displayGreek: true, correct: target.english,
-      options: shuffle([target.english].concat(distractors))
+      displayGreek: true, correct: 'the ' + target.english,
+      options: shuffle(['the ' + target.english].concat(distractors))
     };
   }
 
