@@ -1482,18 +1482,13 @@ var Data = (function() {
         { type: 'vocab-intro', vocabGroup: 0 },
         { type: 'vocab-gre', vocabGroup: 0 },
         { type: 'vocab-gre', vocabGroup: 0 },
-        { type: 'vocab-gre', vocabGroup: 0 },
         { type: 'vocab-eng', vocabGroup: 0 },
         { type: 'vocab-eng', vocabGroup: 0 },
         { type: 'vocab-match', vocabGroup: 0 },
         { type: 'vocab-gender', vocabGroup: 0 },
-        { type: 'vocab-gender', vocabGroup: 0 },
-        { type: 'vocab-article', vocabGroup: 0 },
         { type: 'vocab-article', vocabGroup: 0 },
         { type: 'vocab-gre', vocabGroup: 0 },
         { type: 'vocab-eng', vocabGroup: 0 },
-        { type: 'vocab-eng', vocabGroup: 0 },
-        { type: 'vocab-match', vocabGroup: 0 },
         {
           type: 'mc-translate',
           prompt: 'All five of these nouns are:',
@@ -1516,18 +1511,13 @@ var Data = (function() {
         { type: 'vocab-intro', vocabGroup: 1 },
         { type: 'vocab-gre', vocabGroup: 1 },
         { type: 'vocab-gre', vocabGroup: 1 },
-        { type: 'vocab-gre', vocabGroup: 1 },
         { type: 'vocab-eng', vocabGroup: 1 },
         { type: 'vocab-eng', vocabGroup: 1 },
         { type: 'vocab-match', vocabGroup: 1 },
         { type: 'vocab-gender', vocabGroup: 1 },
-        { type: 'vocab-gender', vocabGroup: 1 },
-        { type: 'vocab-article', vocabGroup: 1 },
         { type: 'vocab-article', vocabGroup: 1 },
         { type: 'vocab-gre', vocabGroup: 1 },
         { type: 'vocab-eng', vocabGroup: 1 },
-        { type: 'vocab-eng', vocabGroup: 1 },
-        { type: 'vocab-match', vocabGroup: 1 },
         {
           type: 'mc-translate',
           prompt: 'These nouns belong to which declension?',
@@ -1550,11 +1540,9 @@ var Data = (function() {
         { type: 'vocab-intro', vocabGroup: 2 },
         { type: 'vocab-gre', vocabGroup: 2 },
         { type: 'vocab-gre', vocabGroup: 2 },
-        { type: 'vocab-gre', vocabGroup: 2 },
         { type: 'vocab-eng', vocabGroup: 2 },
         { type: 'vocab-eng', vocabGroup: 2 },
         { type: 'vocab-match', vocabGroup: 2 },
-        { type: 'vocab-gender', vocabGroup: 2 },
         { type: 'vocab-gender', vocabGroup: 2 },
         { type: 'vocab-article', vocabGroup: 2 },
         {
@@ -1566,9 +1554,7 @@ var Data = (function() {
           options: ['Feminine (unusual for 2nd declension)', 'Masculine', 'Neuter', 'No gender']
         },
         { type: 'vocab-gre', vocabGroup: 2 },
-        { type: 'vocab-eng', vocabGroup: 2 },
-        { type: 'vocab-article', vocabGroup: 2 },
-        { type: 'vocab-match', vocabGroup: 2 }
+        { type: 'vocab-eng', vocabGroup: 2 }
       ]
     },
 
