@@ -1338,13 +1338,13 @@ var Data = (function() {
           title: 'Greek Accents',
           cards: [
             {
+              html: '<p><strong>The last three syllables have names:</strong></p><div class="info-box"><p><strong>Ultima</strong> — the last syllable</p><p><strong>Penult</strong> — second-to-last</p><p><strong>Antepenult</strong> — third-from-last</p></div><p style="margin-top:8px" class="greek" style="font-size:18px">ἄν-θρω-πος<br>(a) &nbsp; (p) &nbsp; (u)</p>'
+            },
+            {
               html: '<p>Most Greek words have one accented syllable. Unlike English stress accent, Greek accent was originally a difference in <strong>musical pitch</strong>.</p><p style="margin-top:12px">The accent can only appear on one of the <strong>last three syllables</strong>.</p>'
             },
             {
-              html: '<div class="info-box"><p><strong>´ Acute accent</strong> — raises pitch</p><p>Can appear on: ultima, penult, antepenult</p><p>On: short or long vowels</p></div><div class="info-box" style="margin-top:8px"><p><strong>` Grave accent</strong> — lowers pitch</p><p>Can appear on: <em>ultima only</em></p><p>Replaces acute on ultima when next word follows without pause</p></div><div class="info-box" style="margin-top:8px"><p><strong>῀ Circumflex accent</strong> — rises then falls</p><p>Can appear on: <em>ultima and penult only</em></p><p>Only on: <em>long vowels or diphthongs</em></p></div>'
-            },
-            {
-              html: '<p><strong>The last three syllables have names:</strong></p><div class="info-box"><p><strong>Ultima</strong> — the last syllable</p><p><strong>Penult</strong> — second-to-last</p><p><strong>Antepenult</strong> — third-from-last</p></div><p style="margin-top:8px" class="greek" style="font-size:18px">ἄν-θρω-πος<br>(a) &nbsp; (p) &nbsp; (u)</p>'
+              html: '<div class="info-box"><p><strong>´ Acute accent</strong> — raises pitch</p><p>Can appear on: ultima, penult, antepenult</p><p>On: short or long vowels</p><p>Must change to circumflex on the penult when it contains a long vowel or diphthong and the ultima contains a short vowel</p></div><div class="info-box" style="margin-top:8px"><p><strong>` Grave accent</strong> — lowers pitch</p><p>Can appear on: <em>ultima only</em></p><p>Replaces acute on ultima when next word follows without pause</p></div><div class="info-box" style="margin-top:8px"><p><strong>῀ Circumflex accent</strong> — rises then falls</p><p>Can appear on: <em>ultima and penult only</em></p><p>Only on: <em>long vowels or diphthongs</em></p></div>'
             },
             {
               html: '<p><strong>Two types of accent behavior:</strong></p><div class="info-box"><p><strong>Recessive</strong> — goes back as far as possible (most <em>verbs</em>)</p><p><strong>Persistent</strong> — stays on the same syllable when possible (most <em>nouns</em>)</p></div>'
@@ -1441,8 +1441,8 @@ var Data = (function() {
             ['ἄνθρωπος', 'Acute on antepenult'],
             ['βιβλίον', 'Acute on penult'],
             ['ψῡχή', 'Acute on ultima'],
-            ['νῆσος', 'Circumflex on penult (η)'],
-            ['δρᾶμα', 'Circumflex on penult (α)']
+            ['νῆσος', 'Circumflex on penult'],
+            ['δρᾶμα', 'Circumflex on penult']
           ]
         },
         {
@@ -1463,8 +1463,8 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'The acute accent on the penult MUST become a circumflex when:',
           display: '',
-          correct: 'The penult has a long vowel and the ultima has a short vowel',
-          options: ['The penult has a long vowel and the ultima has a short vowel', 'The penult has a short vowel', 'The word is a verb', 'The word begins with a vowel']
+          correct: 'The penult has a long vowel or a diphthong and the ultima has a short vowel',
+          options: ['The penult has a long vowel or a diphthong and the ultima has a short vowel', 'The penult has a short vowel', 'The word is a verb', 'The word begins with a vowel']
         }
       ]
     },
