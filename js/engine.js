@@ -157,6 +157,16 @@ var Engine = (function() {
         return generateVerbFormId(def);
       case 'verb-form-select':
         return generateVerbFormSelect(def);
+      case 'u3vocab-intro':
+        return generateU3VocabIntro(def);
+      case 'u3vocab-gre':
+        return generateU3VocabGre(def);
+      case 'u3vocab-eng':
+        return generateU3VocabEng(def);
+      case 'u3vocab-match':
+        return generateU3VocabMatch(def);
+      case 'u3vocab-gender':
+        return generateU3VocabGender(def);
       default:
         return null;
     }
@@ -433,23 +443,48 @@ var Engine = (function() {
   // ===== Verb Conjugation Exercise Generators =====
 
   function generateVerbFormId(def) {
-    var verb = Data.unit2Verbs[def.verbIndex];
+    var verb = def.verbSource === 'unit3' ? Data.unit3Verbs[def.verbIndex] : Data.unit2Verbs[def.verbIndex];
     var tense = def.tense;
-    var forms = verb[tense];
     var labels = Data.personLabels;
+
+    var tenseNames = {
+      present: 'present', imperfect: 'imperfect', future: 'future', aorist: 'aorist',
+      perfect: 'perfect', pluperfect: 'pluperfect',
+      presSub: 'present', aorSub: 'aorist',
+      presOpt: 'present', aorOpt: 'aorist'
+    };
+    var moodNames = {
+      present: 'ind. act.', imperfect: 'ind. act.', future: 'ind. act.', aorist: 'ind. act.',
+      perfect: 'ind. act.', pluperfect: 'ind. act.',
+      presSub: 'subj. act.', aorSub: 'subj. act.',
+      presOpt: 'opt. act.', aorOpt: 'opt. act.'
+    };
+
+    // For paideuoFull, merge with unit2Verbs[0]
+    if (def.verbSource === 'unit3' && def.verbIndex === 0 && !verb[tense]) {
+      var full = Data.paideuoFull;
+      if (full[tense]) {
+        verb = {};
+        for (var k in Data.unit2Verbs[0]) verb[k] = Data.unit2Verbs[0][k];
+        for (var k2 in full) verb[k2] = full[k2];
+      }
+    }
+
+    var forms = verb[tense];
     var idx = Math.floor(Math.random() * 6);
     var form = forms[idx];
     var label = labels[idx];
 
-    var tenseNames = { present: 'present', imperfect: 'imperfect', future: 'future', aorist: 'aorist' };
-    var correctAnswer = label + ', ' + tenseNames[tense] + ' ind. act.';
+    var correctAnswer = label + ', ' + tenseNames[tense] + ' ' + moodNames[tense];
 
-    // Build distractors from other person/number combos and other tenses
-    var allTenses = ['present', 'imperfect', 'future', 'aorist'];
+    // Build distractors from available tenses
+    var allTenses = def.verbSource === 'unit3'
+      ? ['present', 'imperfect', 'future', 'aorist', 'perfect', 'pluperfect', 'presSub', 'aorSub', 'presOpt', 'aorOpt']
+      : ['present', 'imperfect', 'future', 'aorist'];
     var distractorPool = [];
     allTenses.forEach(function(t) {
       labels.forEach(function(l) {
-        var ans = l + ', ' + tenseNames[t] + ' ind. act.';
+        var ans = l + ', ' + tenseNames[t] + ' ' + moodNames[t];
         if (ans !== correctAnswer) distractorPool.push(ans);
       });
     });
@@ -492,6 +527,70 @@ var Engine = (function() {
       correct: correctForm,
       options: shuffle([correctForm].concat(distractors)),
       optionsGreek: true
+    };
+  }
+
+  // ===== Unit 3 Vocabulary Exercise Generators =====
+
+  function generateU3VocabIntro(def) {
+    var words = Data.unit3Vocab[def.vocabGroup];
+    var cards = words.map(function(w) {
+      return {
+        html: '<div class="vocab-card">' +
+          '<div class="vocab-article">' + w.article + '</div>' +
+          '<div class="vocab-greek">' + w.greek + '</div>' +
+          '<div class="vocab-english">the ' + w.english + '</div>' +
+          '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
+          '</div>'
+      };
+    });
+    return { type: 'intro', title: 'New Vocabulary', cards: cards, graded: false };
+  }
+
+  function generateU3VocabGre(def) {
+    var words = Data.unit3Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
+    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What does this mean?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true, correct: 'the ' + target.english,
+      options: shuffle(['the ' + target.english].concat(distractors))
+    };
+  }
+
+  function generateU3VocabEng(def) {
+    var words = Data.unit3Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.greek !== target.greek; });
+    var distractors = pick(pool.map(function(w) { return w.greek; }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What is "' + target.english + '" in Greek?',
+      display: target.english, correct: target.greek,
+      options: shuffle([target.greek].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateU3VocabMatch(def) {
+    var words = Data.unit3Vocab[def.vocabGroup];
+    var selected = shuffle(words.slice()).slice(0, 5);
+    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
+    return { type: 'match', graded: false, pairs: pairs };
+  }
+
+  function generateU3VocabGender(def) {
+    var words = Data.unit3Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What gender is this noun?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true, correct: target.gender,
+      options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
     };
   }
 

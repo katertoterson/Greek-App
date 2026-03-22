@@ -221,7 +221,27 @@ var Data = (function() {
     group.forEach(function(w) { unit2VocabAll.push(w); });
   });
 
-  var allVocabAll = unit1VocabAll.concat(unit2VocabAll);
+  var unit3Vocab = [
+    [
+      { greek: 'ἆθλον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'prize' },
+      { greek: 'ἀρετή', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'excellence, virtue' },
+      { greek: 'βουλή', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'will; council' },
+      { greek: 'δῆμος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'the people' },
+      { greek: 'δημοκρατίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'democracy' },
+      { greek: 'εἰρήνη', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'peace' },
+      { greek: 'ἐκκλησίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'assembly' },
+      { greek: 'θυσίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'sacrifice' },
+      { greek: 'νίκη', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'victory' },
+      { greek: 'ὀφθαλμός', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'eye' }
+    ]
+  ];
+
+  var unit3VocabAll = [];
+  unit3Vocab.forEach(function(group) {
+    group.forEach(function(w) { unit3VocabAll.push(w); });
+  });
+
+  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll);
 
   var unit2Verbs = [
     { verb: 'παιδεύω', meaning: 'educate, teach',
@@ -299,6 +319,117 @@ var Data = (function() {
     { greek: 'ὁ Ὅμηρος τοὺς ἐν τῇ οἰκίᾳ φίλους εὖ παιδεύσει.', english: 'Homer will educate the friends in the house well.' },
     { greek: 'ἔργῳ, οὐ λόγῳ, τοὺς φίλους ἔλῡον.', english: 'By deed, not by word, I used to free my friends.' },
     { greek: 'οἱ ἕξ ἀδελφοὶ χρῡσοῦ στέφανον ἔπεμπον παρὰ τὸν Ὅμηρον.', english: 'The six brothers were sending a crown of gold to Homer.' }
+  ];
+
+  var unit3Verbs = [
+    { verb: 'γράφω', meaning: 'write, draw',
+      pp: ['γράφω', 'γράψω', 'ἔγραψα', 'γέγραφα', 'γέγραμμαι', 'ἐγράφην'],
+      present: ['γράφω', 'γράφεις', 'γράφει', 'γράφομεν', 'γράφετε', 'γράφουσι(ν)'],
+      imperfect: ['ἔγραφον', 'ἔγραφες', 'ἔγραφε(ν)', 'ἐγράφομεν', 'ἐγράφετε', 'ἔγραφον'],
+      future: ['γράψω', 'γράψεις', 'γράψει', 'γράψομεν', 'γράψετε', 'γράψουσι(ν)'],
+      aorist: ['ἔγραψα', 'ἔγραψας', 'ἔγραψε(ν)', 'ἐγράψαμεν', 'ἐγράψατε', 'ἔγραψαν'],
+      perfect: ['γέγραφα', 'γέγραφας', 'γέγραφε(ν)', 'γεγράφαμεν', 'γεγράφατε', 'γεγράφᾱσι(ν)'],
+      pluperfect: ['ἐγεγράφη', 'ἐγεγράφης', 'ἐγεγράφει(ν)', 'ἐγεγράφεμεν', 'ἐγεγράφετε', 'ἐγεγράφεσαν'],
+      perfInf: 'γεγραφέναι',
+      presSub: ['γράφω', 'γράφῃς', 'γράφῃ', 'γράφωμεν', 'γράφητε', 'γράφωσι(ν)'],
+      aorSub: ['γράψω', 'γράψῃς', 'γράψῃ', 'γράψωμεν', 'γράψητε', 'γράψωσι(ν)'],
+      presOpt: ['γράφοιμι', 'γράφοις', 'γράφοι', 'γράφοιμεν', 'γράφοιτε', 'γράφοιεν'],
+      aorOpt: ['γράψαιμι', 'γράψαις', 'γράψαι', 'γράψαιμεν', 'γράψαιτε', 'γράψαιεν'],
+      presInf: 'γράφειν', aorInf: 'γράψαι' },
+    { verb: 'θύω', meaning: 'sacrifice',
+      pp: ['θύω', 'θύσω', 'ἔθῡσα', 'τέθυκα', 'τέθυμαι', 'ἐτύθην'],
+      present: ['θύω', 'θύεις', 'θύει', 'θύομεν', 'θύετε', 'θύουσι(ν)'],
+      imperfect: ['ἔθῡον', 'ἔθῡες', 'ἔθῡε(ν)', 'ἐθύομεν', 'ἐθύετε', 'ἔθῡον'],
+      future: ['θύσω', 'θύσεις', 'θύσει', 'θύσομεν', 'θύσετε', 'θύσουσι(ν)'],
+      aorist: ['ἔθῡσα', 'ἔθῡσας', 'ἔθῡσε(ν)', 'ἐθύσαμεν', 'ἐθύσατε', 'ἔθῡσαν'],
+      perfect: ['τέθυκα', 'τέθυκας', 'τέθυκε(ν)', 'τεθύκαμεν', 'τεθύκατε', 'τεθύκᾱσι(ν)'],
+      pluperfect: ['ἐτεθύκη', 'ἐτεθύκης', 'ἐτεθύκει(ν)', 'ἐτεθύκεμεν', 'ἐτεθύκετε', 'ἐτεθύκεσαν'],
+      perfInf: 'τεθυκέναι',
+      presSub: ['θύω', 'θύῃς', 'θύῃ', 'θύωμεν', 'θύητε', 'θύωσι(ν)'],
+      aorSub: ['θύσω', 'θύσῃς', 'θύσῃ', 'θύσωμεν', 'θύσητε', 'θύσωσι(ν)'],
+      presOpt: ['θύοιμι', 'θύοις', 'θύοι', 'θύοιμεν', 'θύοιτε', 'θύοιεν'],
+      aorOpt: ['θύσαιμι', 'θύσαις', 'θύσαι', 'θύσαιμεν', 'θύσαιτε', 'θύσαιεν'],
+      presInf: 'θύειν', aorInf: 'θῦσαι' },
+    { verb: 'παύω', meaning: 'make stop, stop',
+      pp: ['παύω', 'παύσω', 'ἔπαυσα', 'πέπαυκα', 'πέπαυμαι', 'ἐπαύθην'],
+      present: ['παύω', 'παύεις', 'παύει', 'παύομεν', 'παύετε', 'παύουσι(ν)'],
+      imperfect: ['ἔπαυον', 'ἔπαυες', 'ἔπαυε(ν)', 'ἐπαύομεν', 'ἐπαύετε', 'ἔπαυον'],
+      future: ['παύσω', 'παύσεις', 'παύσει', 'παύσομεν', 'παύσετε', 'παύσουσι(ν)'],
+      aorist: ['ἔπαυσα', 'ἔπαυσας', 'ἔπαυσε(ν)', 'ἐπαύσαμεν', 'ἐπαύσατε', 'ἔπαυσαν'],
+      perfect: ['πέπαυκα', 'πέπαυκας', 'πέπαυκε(ν)', 'πεπαύκαμεν', 'πεπαύκατε', 'πεπαύκᾱσι(ν)'],
+      pluperfect: ['ἐπεπαύκη', 'ἐπεπαύκης', 'ἐπεπαύκει(ν)', 'ἐπεπαύκεμεν', 'ἐπεπαύκετε', 'ἐπεπαύκεσαν'],
+      perfInf: 'πεπαυκέναι',
+      presSub: ['παύω', 'παύῃς', 'παύῃ', 'παύωμεν', 'παύητε', 'παύωσι(ν)'],
+      aorSub: ['παύσω', 'παύσῃς', 'παύσῃ', 'παύσωμεν', 'παύσητε', 'παύσωσι(ν)'],
+      presOpt: ['παύοιμι', 'παύοις', 'παύοι', 'παύοιμεν', 'παύοιτε', 'παύοιεν'],
+      aorOpt: ['παύσαιμι', 'παύσαις', 'παύσαι', 'παύσαιμεν', 'παύσαιτε', 'παύσαιεν'],
+      presInf: 'παύειν', aorInf: 'παῦσαι' },
+    { verb: 'φυλάττω', meaning: 'guard',
+      pp: ['φυλάττω', 'φυλάξω', 'ἐφύλαξα', 'πεφύλαχα', 'πεφύλαγμαι', 'ἐφυλάχθην'],
+      present: ['φυλάττω', 'φυλάττεις', 'φυλάττει', 'φυλάττομεν', 'φυλάττετε', 'φυλάττουσι(ν)'],
+      imperfect: ['ἐφύλαττον', 'ἐφύλαττες', 'ἐφύλαττε(ν)', 'ἐφυλάττομεν', 'ἐφυλάττετε', 'ἐφύλαττον'],
+      future: ['φυλάξω', 'φυλάξεις', 'φυλάξει', 'φυλάξομεν', 'φυλάξετε', 'φυλάξουσι(ν)'],
+      aorist: ['ἐφύλαξα', 'ἐφύλαξας', 'ἐφύλαξε(ν)', 'ἐφυλάξαμεν', 'ἐφυλάξατε', 'ἐφύλαξαν'],
+      perfect: ['πεφύλαχα', 'πεφύλαχας', 'πεφύλαχε(ν)', 'πεφυλάχαμεν', 'πεφυλάχατε', 'πεφυλάχᾱσι(ν)'],
+      pluperfect: ['ἐπεφυλάχη', 'ἐπεφυλάχης', 'ἐπεφυλάχει(ν)', 'ἐπεφυλάχεμεν', 'ἐπεφυλάχετε', 'ἐπεφυλάχεσαν'],
+      perfInf: 'πεφυλαχέναι',
+      presSub: ['φυλάττω', 'φυλάττῃς', 'φυλάττῃ', 'φυλάττωμεν', 'φυλάττητε', 'φυλάττωσι(ν)'],
+      aorSub: ['φυλάξω', 'φυλάξῃς', 'φυλάξῃ', 'φυλάξωμεν', 'φυλάξητε', 'φυλάξωσι(ν)'],
+      presOpt: ['φυλάττοιμι', 'φυλάττοις', 'φυλάττοι', 'φυλάττοιμεν', 'φυλάττοιτε', 'φυλάττοιεν'],
+      aorOpt: ['φυλάξαιμι', 'φυλάξαις', 'φυλάξαι', 'φυλάξαιμεν', 'φυλάξαιτε', 'φυλάξαιεν'],
+      presInf: 'φυλάττειν', aorInf: 'φυλάξαι' }
+  ];
+
+  var paideuoFull = {
+    perfect: ['πεπαίδευκα', 'πεπαίδευκας', 'πεπαίδευκε(ν)', 'πεπαιδεύκαμεν', 'πεπαιδεύκατε', 'πεπαιδεύκᾱσι(ν)'],
+    pluperfect: ['ἐπεπαιδεύκη', 'ἐπεπαιδεύκης', 'ἐπεπαιδεύκει(ν)', 'ἐπεπαιδεύκεμεν', 'ἐπεπαιδεύκετε', 'ἐπεπαιδεύκεσαν'],
+    perfInf: 'πεπαιδευκέναι',
+    presSub: ['παιδεύω', 'παιδεύῃς', 'παιδεύῃ', 'παιδεύωμεν', 'παιδεύητε', 'παιδεύωσι(ν)'],
+    aorSub: ['παιδεύσω', 'παιδεύσῃς', 'παιδεύσῃ', 'παιδεύσωμεν', 'παιδεύσητε', 'παιδεύσωσι(ν)'],
+    presOpt: ['παιδεύοιμι', 'παιδεύοις', 'παιδεύοι', 'παιδεύοιμεν', 'παιδεύοιτε', 'παιδεύοιεν'],
+    aorOpt: ['παιδεύσαιμι', 'παιδεύσαις', 'παιδεύσαι', 'παιδεύσαιμεν', 'παιδεύσαιτε', 'παιδεύσαιεν']
+  };
+
+  var unit3Particles = [
+    { greek: 'ἀλλά', english: 'but (stronger than δέ)' },
+    { greek: 'ἀντί', english: 'instead of (+ gen.)' },
+    { greek: 'δή', english: 'in fact, of course (postpos. particle)' },
+    { greek: 'διά', english: 'through (+ gen.); on account of (+ acc.)' },
+    { greek: 'ἐπεί', english: 'after, when, since' },
+    { greek: 'ἐπειδή', english: 'after, when, since' },
+    { greek: 'ἵνα', english: 'in order that' },
+    { greek: 'μή', english: 'not (with non-indicative moods)' },
+    { greek: 'ὅπως', english: 'in order that' },
+    { greek: 'περί', english: 'concerning (+ gen.); around (+ dat./acc.)' },
+    { greek: 'ὡς', english: 'in order that' }
+  ];
+
+  var unit3Cognates = [
+    ['ἆθλον', 'athlete (one who competes for a prize)'],
+    ['ἀντί', 'antipope (set up instead of)'],
+    ['γράφω', 'telegraph, graphic (writing/drawing)'],
+    ['δῆμος', 'democracy, demagogue (the people)'],
+    ['διά', 'diagonal, diameter (through)'],
+    ['εἰρήνη', 'Irene (peace)'],
+    ['ἐκκλησίᾱ', 'ecclesiastical (assembly of God)'],
+    ['νίκη', 'Nike (victory)'],
+    ['ὀφθαλμός', 'ophthalmologist (eye doctor)'],
+    ['παύω', 'pause (a stop in action)'],
+    ['περί', 'perimeter (measure around)'],
+    ['φυλάττω', 'prophylactic (guarding before)']
+  ];
+
+  var unit3Sentences = [
+    { greek: 'ὁ δῆμος ἐν ταῖς ὁδοῖς τοῖς θεοῖς θύσει ἵνα τὸν πόλεμον παύσωσιν.', english: 'The people will sacrifice to the gods in the streets in order that they may stop the war.' },
+    { greek: 'ἀγγέλους ἔπεμψαν ἐξ ἀγορᾶς οἱ ξένοι ὅπως λύσαιεν τὴν εἰρήνην.', english: 'The strangers sent messengers from the marketplace in order that they might break the peace.' },
+    { greek: 'ἵνα λύσωμεν τὸν Ὅμηρον δῶρα πεπόμφᾱσιν.', english: 'In order that we may free Homer, they have sent gifts.' },
+    { greek: 'λόγῳ μὲν τὴν εἰρήνην ἐλελύκεσαν, ἔργῳ δὲ οὔ.', english: 'In word they had broken the peace, but in deed they had not.' },
+    { greek: 'διὰ τὴν τῶν θεῶν βουλὴν ἐπεπαύκεμεν τὸν πόλεμον.', english: 'On account of the will of the gods, we had stopped the war.' },
+    { greek: 'ἐπειδὴ τοὺς παρὰ τῶν ξένων ἀγγέλους ἐφυλάξαμεν, τὴν δημοκρατίᾱν οὐκ ἔλῡσαν.', english: 'After we guarded the messengers from the strangers, they did not destroy the democracy.' },
+    { greek: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', english: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.' },
+    { greek: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', english: 'He ordered the brothers to stop the war before the victory.' },
+    { greek: 'τὰ τοῦ Ὁμήρου βιβλία τοὺς ξένους πεπαίδευκεν.', english: 'The books of Homer have educated the strangers.' },
+    { greek: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', english: 'You were sacrificing to the gods in order that they might educate the strangers.' }
   ];
 
   // ===== LESSON DEFINITIONS =====
@@ -3872,6 +4003,432 @@ var Data = (function() {
           options: ['The six brothers were sending a crown of gold to Homer.', 'Homer sent six golden crowns.', 'The brothers will send a gold crown.', 'Six crowns were sent from Homer.']
         }
       ]
+    },
+    // ---- Unit 3: Perfect, Subjunctive & Optative ----
+    // Lesson 39: Perfect Ind. Active
+    {
+      id: 39,
+      title: 'Perfect Ind. Active',
+      subtitle: 'Completed Aspect',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'π',
+      exercises: [
+        { type: 'intro', title: 'The Perfect Indicative Active', cards: [
+          { html: '<p>The <strong>perfect indicative active</strong> indicates an action complete from the point of view of present time.</p><p class="greek" style="font-size:20px">πεπαίδευκα = I have (now) educated</p><p>The time is <strong>present</strong>; the aspect is <strong>completed</strong>.</p>' },
+          { html: '<p>To form the perfect indicative active, obtain the <strong>perfect active tense stem</strong> by dropping the ending <span class="greek">-α</span> from Principal Part IV.</p><p>Then add these endings:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-α</td><td class="greek">-αμεν</td></tr><tr><td>2nd</td><td class="greek">-ας</td><td class="greek">-ατε</td></tr><tr><td>3rd</td><td class="greek">-ε(ν)</td><td class="greek">-ᾱσι(ν)</td></tr></table>' },
+          { html: '<p>The perfect of <span class="greek">παιδεύω</span> (stem: <span class="greek">πεπαιδευκ-</span>):</p><table class="intro-table"><tr><th></th><th>Form</th><th>Meaning</th></tr><tr><td>1st s.</td><td class="greek">πεπαίδευκα</td><td>I have educated</td></tr><tr><td>2nd s.</td><td class="greek">πεπαίδευκας</td><td>you have educated</td></tr><tr><td>3rd s.</td><td class="greek">πεπαίδευκε(ν)</td><td>he/she/it has educated</td></tr><tr><td>1st pl.</td><td class="greek">πεπαιδεύκαμεν</td><td>we have educated</td></tr><tr><td>2nd pl.</td><td class="greek">πεπαιδεύκατε</td><td>you have educated</td></tr><tr><td>3rd pl.</td><td class="greek">πεπαιδεύκᾱσι(ν)</td><td>they have educated</td></tr></table>' },
+          { html: '<p><strong>Reduplication:</strong> Many perfect stems are formed by reduplicating the initial consonant with <span class="greek">-ε-</span> inserted between:</p><p class="greek" style="font-size:18px">παιδεύω → <strong>πε</strong>παίδευκα</p><p class="greek" style="font-size:18px">λύω → <strong>λέ</strong>λυκα</p><p class="greek" style="font-size:18px">γράφω → <strong>γέ</strong>γραφα</p><p>The perfect endings are identical to the aorist EXCEPT in the 3rd plural. Compare: <span class="greek">πεπαιδεύκ<strong>ᾱσι</strong>(ν)</span> vs. <span class="greek">ἐπαίδευσ<strong>αν</strong></span>.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does the perfect indicative express?', correct: 'An action completed from the point of view of present time', options: ['An action completed from the point of view of present time', 'An action completed in the past', 'An action that will be completed', 'A repeated action in the present'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαίδευκα', displayGreek: true, correct: 'I have educated', options: ['I have educated', 'I was educating', 'I educated', 'I will educate'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'γέγραφας', displayGreek: true, correct: 'you have written', options: ['you have written', 'you were writing', 'you wrote', 'you will write'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'perfect', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'What is the 3rd plural ending of the perfect indicative active?', correct: '-ᾱσι(ν)', options: ['-ᾱσι(ν)', '-αν', '-ατε', '-αμεν'] },
+        { type: 'match', pairs: [
+          ['πεπαίδευκα', 'I have educated'],
+          ['πεπαίδευκας', 'you (s.) have educated'],
+          ['πεπαίδευκε(ν)', 'he/she has educated'],
+          ['πεπαιδεύκαμεν', 'we have educated'],
+          ['πεπαιδεύκᾱσι(ν)', 'they have educated']
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τέθυκα', displayGreek: true, correct: 'I have sacrificed', options: ['I have sacrificed', 'I sacrificed', 'I was sacrificing', 'I will sacrifice'] },
+        { type: 'mc-translate', prompt: 'How is reduplication typically formed in the perfect?', correct: 'Initial consonant + ε + rest of stem', options: ['Initial consonant + ε + rest of stem', 'Prefix ἐ- to the stem', 'Add σ to the stem', 'Double the entire stem'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'perfect', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πεφύλαχε(ν)', displayGreek: true, correct: 'he/she has guarded', options: ['he/she has guarded', 'he/she guarded', 'he/she was guarding', 'he/she will guard'] },
+        { type: 'mc-translate', prompt: 'Which form is the 3rd plural perfect (NOT aorist)?', correct: 'πεπαιδεύκᾱσι(ν)', options: ['πεπαιδεύκᾱσι(ν)', 'ἐπαίδευσαν', 'πεπαιδεύκατε', 'ἐπαιδεύσαμεν'] }
+      ]
+    },
+    // Lesson 40: Pluperfect Ind. Active
+    {
+      id: 40,
+      title: 'Pluperfect Ind. Active',
+      subtitle: 'Past Completed',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'π',
+      exercises: [
+        { type: 'intro', title: 'The Pluperfect Indicative Active', cards: [
+          { html: '<p>The <strong>pluperfect indicative active</strong> indicates an action complete from the point of view of <strong>past</strong> time.</p><p class="greek" style="font-size:20px">ἐπεπαιδεύκη = I had (by then) educated</p><p>Both the perfect and pluperfect have <strong>completed aspect</strong>; they differ only in time (present vs. past).</p>' },
+          { html: '<p>To form the pluperfect, prefix the <strong>past indicative augment</strong> <span class="greek">ἐ-</span> to the perfect active tense stem, then add these endings:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-η</td><td class="greek">-εμεν</td></tr><tr><td>2nd</td><td class="greek">-ης</td><td class="greek">-ετε</td></tr><tr><td>3rd</td><td class="greek">-ει(ν)</td><td class="greek">-εσαν</td></tr></table>' },
+          { html: '<p>The pluperfect of <span class="greek">παιδεύω</span> (stem: <span class="greek">ἐπεπαιδευκ-</span>):</p><table class="intro-table"><tr><th></th><th>Form</th><th>Meaning</th></tr><tr><td>1st s.</td><td class="greek">ἐπεπαιδεύκη</td><td>I had educated</td></tr><tr><td>2nd s.</td><td class="greek">ἐπεπαιδεύκης</td><td>you had educated</td></tr><tr><td>3rd s.</td><td class="greek">ἐπεπαιδεύκει(ν)</td><td>he/she had educated</td></tr><tr><td>1st pl.</td><td class="greek">ἐπεπαιδεύκεμεν</td><td>we had educated</td></tr><tr><td>2nd pl.</td><td class="greek">ἐπεπαιδεύκετε</td><td>you had educated</td></tr><tr><td>3rd pl.</td><td class="greek">ἐπεπαιδεύκεσαν</td><td>they had educated</td></tr></table>' },
+          { html: '<p><strong>Key observations:</strong></p><ul><li>Like other past tenses, the pluperfect takes the <strong>past indicative augment</strong> <span class="greek">ἐ-</span>.</li><li>The tense vowel alternates: <span class="greek">-η-</span> in the singular, <span class="greek">-ε-</span> in the plural (except 3rd sing. <span class="greek">-ει</span>).</li><li>The 3rd singular can take a <strong>nu-movable</strong>.</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does the pluperfect indicative express?', correct: 'An action completed from the point of view of past time', options: ['An action completed from the point of view of past time', 'An action completed from the point of view of present time', 'A continuous past action', 'A future completed action'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπεπαιδεύκη', displayGreek: true, correct: 'I had educated', options: ['I had educated', 'I have educated', 'I was educating', 'I educated'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐγεγράφεσαν', displayGreek: true, correct: 'they had written', options: ['they had written', 'they have written', 'they wrote', 'they were writing'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'pluperfect', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'How does the pluperfect differ from the perfect?', correct: 'The pluperfect refers to past time; the perfect to present time', options: ['The pluperfect refers to past time; the perfect to present time', 'The pluperfect has different endings', 'The pluperfect uses a different stem', 'There is no difference'] },
+        { type: 'match', pairs: [
+          ['ἐπεπαιδεύκη', 'I had educated'],
+          ['ἐπεπαιδεύκης', 'you (s.) had educated'],
+          ['ἐπεπαιδεύκει(ν)', 'he/she had educated'],
+          ['ἐπεπαιδεύκεμεν', 'we had educated'],
+          ['ἐπεπαιδεύκεσαν', 'they had educated']
+        ]},
+        { type: 'mc-translate', prompt: 'What prefix does the pluperfect add to the perfect stem?', correct: 'The past indicative augment ἐ-', options: ['The past indicative augment ἐ-', 'The prefix ἀ-', 'No prefix', 'The prefix προ-'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐτεθύκεσαν', displayGreek: true, correct: 'they had sacrificed', options: ['they had sacrificed', 'they have sacrificed', 'they sacrificed', 'they will sacrifice'] },
+        { type: 'mc-translate', prompt: 'In the pluperfect singular, the tense vowel is:', correct: '-η- (except 3rd sing. -ει)', options: ['-η- (except 3rd sing. -ει)', '-ε- throughout', '-α- throughout', '-ο- throughout'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'pluperfect', verbSource: 'unit3' }
+      ]
+    },
+    // Lesson 41: Perfect Infinitive
+    {
+      id: 41,
+      title: 'Perfect Infinitive',
+      subtitle: '-έναι',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'π',
+      exercises: [
+        { type: 'intro', title: 'The Perfect Infinitive Active', cards: [
+          { html: '<p>To form the <strong>perfect infinitive active</strong>, add <span class="greek"><strong>-έναι</strong></span> to the perfect active tense stem.</p><p class="greek" style="font-size:22px">πεπαιδευκ- + έναι = πεπαιδευκέναι</p><p>"to have educated"</p><p>The perfect infinitive active is always accented on the <strong>penult</strong>.</p>' },
+          { html: '<p>Like other infinitives, the tense of the perfect infinitive shows <strong>aspect only</strong>, not time. Compare:</p><table class="intro-table"><tr><th>Infinitive</th><th>Aspect</th></tr><tr><td class="greek">παιδεύειν</td><td>progressive/repeated</td></tr><tr><td class="greek">παιδεῦσαι</td><td>simple</td></tr><tr><td class="greek">πεπαιδευκέναι</td><td>completed</td></tr></table><p>The present infinitive shows ongoing action, the aorist shows simple action, and the perfect shows completed action.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What ending forms the perfect infinitive active?', correct: '-έναι', options: ['-έναι', '-ειν', '-σαι', '-εῖν'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαιδευκέναι', displayGreek: true, correct: 'to have educated', options: ['to have educated', 'to educate', 'to be educating', 'having educated'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'γεγραφέναι', displayGreek: true, correct: 'to have written', options: ['to have written', 'to write', 'to be writing', 'having written'] },
+        { type: 'match', pairs: [
+          ['παιδεύειν', 'progressive/repeated aspect'],
+          ['παιδεῦσαι', 'simple aspect'],
+          ['πεπαιδευκέναι', 'completed aspect'],
+          ['λύειν', 'to be freeing (progressive)'],
+          ['λελυκέναι', 'to have freed (completed)']
+        ]},
+        { type: 'mc-translate', prompt: 'What does the tense of the perfect infinitive indicate?', correct: 'Completed aspect only, not time', options: ['Completed aspect only, not time', 'Past time', 'Present time', 'Future completed action'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τεθυκέναι', displayGreek: true, correct: 'to have sacrificed', options: ['to have sacrificed', 'to sacrifice', 'to be sacrificing', 'having sacrificed'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαυκέναι', displayGreek: true, correct: 'to have stopped', options: ['to have stopped', 'to stop', 'to be stopping', 'having stopped'] },
+        { type: 'mc-translate', prompt: 'Where is the accent on the perfect infinitive?', correct: 'Always on the penult', options: ['Always on the penult', 'Always on the ultima', 'Always on the antepenult', 'It varies'] },
+        { type: 'match', pairs: [
+          ['πεπαιδευκέναι', 'to have educated'],
+          ['γεγραφέναι', 'to have written'],
+          ['τεθυκέναι', 'to have sacrificed'],
+          ['πεπαυκέναι', 'to have stopped'],
+          ['πεφυλαχέναι', 'to have guarded']
+        ]}
+      ]
+    },
+    // Lesson 42: Present Subjunctive
+    {
+      id: 42,
+      title: 'Present Subjunctive',
+      subtitle: 'Non-Factual Mood',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'σ',
+      exercises: [
+        { type: 'intro', title: 'The Present Subjunctive Active', cards: [
+          { html: '<p>The <strong>subjunctive</strong> and <strong>optative</strong> moods show that the speaker views the action as <strong>non-factual</strong> (non-indicative).</p><p>The translation of a subjunctive varies depending on the type of clause it appears in. One common use is in <strong>purpose clauses</strong>.</p><p>The tense of the subjunctive does <strong>not</strong> indicate time — only <strong>aspect</strong>.</p>' },
+          { html: '<p>To form the present subjunctive active, add these endings to the <strong>present tense stem</strong>:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-ω</td><td class="greek">-ωμεν</td></tr><tr><td>2nd</td><td class="greek">-ῃς</td><td class="greek">-ητε</td></tr><tr><td>3rd</td><td class="greek">-ῃ</td><td class="greek">-ωσι(ν)</td></tr></table>' },
+          { html: '<p>The present subjunctive of <span class="greek">παιδεύω</span>:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύω</td><td class="greek">παιδεύωμεν</td></tr><tr><td>2nd</td><td class="greek">παιδεύῃς</td><td class="greek">παιδεύητε</td></tr><tr><td>3rd</td><td class="greek">παιδεύῃ</td><td class="greek">παιδεύωσι(ν)</td></tr></table><p>The endings are like the present indicative, but with <strong>lengthened thematic vowels</strong> (ο→ω, ε→η). The 1st sing. is identical to the present indicative.</p>' },
+          { html: '<p><strong>Key observations:</strong></p><ul><li>The present subjunctive shows <strong>progressive/repeated aspect</strong>, not present time.</li><li>When <span class="greek">-ε-</span> lengthens to <span class="greek">-η-</span> in the 2nd/3rd sing., the <span class="greek">-ι-</span> becomes an <strong>iota subscript</strong>.</li><li>The 2nd plural <span class="greek">-ητε</span> has no iota subscript.</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What do the subjunctive and optative moods express?', correct: 'Non-factual actions', options: ['Non-factual actions', 'Completed actions', 'Past actions', 'Future actions'] },
+        { type: 'mc-translate', prompt: 'How are subjunctive endings related to indicative endings?', correct: 'Same endings but with lengthened thematic vowels', options: ['Same endings but with lengthened thematic vowels', 'Completely different endings', 'Identical endings', 'Same endings but with shortened vowels'] },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύωμεν', displayGreek: true, correct: 'Present subjunctive active', options: ['Present subjunctive active', 'Present indicative active', 'Aorist subjunctive active', 'Present optative active'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'presSub', verbSource: 'unit3' },
+        { type: 'match', pairs: [
+          ['παιδεύομεν', 'Present indicative (1st pl.)'],
+          ['παιδεύωμεν', 'Present subjunctive (1st pl.)'],
+          ['παιδεύῃς', 'Present subjunctive (2nd s.)'],
+          ['παιδεύεις', 'Present indicative (2nd s.)'],
+          ['παιδεύωσι(ν)', 'Present subjunctive (3rd pl.)']
+        ]},
+        { type: 'mc-translate', prompt: 'What does the present tense of the subjunctive indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Present time', 'Completed aspect', 'Simple aspect'] },
+        { type: 'mc-translate', prompt: 'Which person of the present subjunctive is identical to the present indicative?', correct: '1st person singular', options: ['1st person singular', '2nd person singular', '3rd person singular', '1st person plural'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'presSub', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράφῃ', displayGreek: true, correct: 'Present subjunctive (3rd s.)', options: ['Present subjunctive (3rd s.)', 'Present indicative (3rd s.)', 'Aorist subjunctive (3rd s.)', 'Imperfect indicative (3rd s.)'] },
+        { type: 'match', pairs: [
+          ['γράφω', 'Indicative OR Subjunctive (1st s.)'],
+          ['γράφῃς', 'Subjunctive (2nd s.)'],
+          ['γράφῃ', 'Subjunctive (3rd s.)'],
+          ['γράφωμεν', 'Subjunctive (1st pl.)'],
+          ['γράφωσι(ν)', 'Subjunctive (3rd pl.)']
+        ]}
+      ]
+    },
+    // Lesson 43: Aorist Subjunctive
+    {
+      id: 43,
+      title: 'Aorist Subjunctive',
+      subtitle: 'Simple Aspect',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'σ',
+      exercises: [
+        { type: 'intro', title: 'The Aorist Subjunctive Active', cards: [
+          { html: '<p>To form the <strong>aorist subjunctive active</strong>, add the <strong>same endings</strong> as the present subjunctive to the <strong>unaugmented aorist tense stem</strong>.</p><p>The past indicative augment is <strong>NOT</strong> used in the aorist subjunctive.</p>' },
+          { html: '<p>The aorist subjunctive of <span class="greek">παιδεύω</span> (stem: <span class="greek">παιδευσ-</span>):</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύσω</td><td class="greek">παιδεύσωμεν</td></tr><tr><td>2nd</td><td class="greek">παιδεύσῃς</td><td class="greek">παιδεύσητε</td></tr><tr><td>3rd</td><td class="greek">παιδεύσῃ</td><td class="greek">παιδεύσωσι(ν)</td></tr></table>' },
+          { html: '<p><strong>Key observations:</strong></p><ul><li>The present and aorist subjunctive use the <strong>same endings</strong> — they are distinguished by their <strong>tense stems</strong>.</li><li>The 1st sing. aorist subjunctive often looks like the 1st sing. <strong>future indicative</strong> (e.g., <span class="greek">παιδεύσω</span>). Context distinguishes them.</li><li>There is <strong>NO future subjunctive</strong>.</li><li>The aorist subjunctive shows <strong>simple aspect</strong>, not past time.</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Does the aorist subjunctive use the augment?', correct: 'No — only the indicative uses the augment', options: ['No — only the indicative uses the augment', 'Yes, always', 'Only in the plural', 'Only in the singular'] },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύσωμεν', displayGreek: true, correct: 'Aorist subjunctive active (1st pl.)', options: ['Aorist subjunctive active (1st pl.)', 'Future indicative active (1st pl.)', 'Present subjunctive active (1st pl.)', 'Aorist indicative active (1st pl.)'] },
+        { type: 'mc-translate', prompt: 'What aspect does the aorist subjunctive express?', correct: 'Simple aspect', options: ['Simple aspect', 'Progressive aspect', 'Completed aspect', 'Past time'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'aorSub', verbSource: 'unit3' },
+        { type: 'match', pairs: [
+          ['παιδεύωμεν', 'Present subjunctive (1st pl.)'],
+          ['παιδεύσωμεν', 'Aorist subjunctive (1st pl.)'],
+          ['παιδεύσω', 'Aorist subj. OR Future ind. (1st s.)'],
+          ['ἐπαίδευσα', 'Aorist indicative (1st s.)'],
+          ['παιδεύσῃ', 'Aorist subjunctive (3rd s.)']
+        ]},
+        { type: 'mc-translate', prompt: 'Which form could be EITHER aorist subjunctive OR future indicative?', display: 'παιδεύσω', displayGreek: true, correct: 'Both are possible — context decides', options: ['Both are possible — context decides', 'It is always future indicative', 'It is always aorist subjunctive', 'Neither — they have different forms'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'aorSub', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράψῃς', displayGreek: true, correct: 'Aorist subjunctive (2nd s.)', options: ['Aorist subjunctive (2nd s.)', 'Present subjunctive (2nd s.)', 'Future indicative (2nd s.)', 'Aorist indicative (2nd s.)'] },
+        { type: 'match', pairs: [
+          ['γράψω', 'Aorist subj. OR Future ind. (1st s.)'],
+          ['γράψῃς', 'Aorist subjunctive (2nd s.)'],
+          ['γράψωμεν', 'Aorist subjunctive (1st pl.)'],
+          ['γράψωσι(ν)', 'Aorist subjunctive (3rd pl.)'],
+          ['ἔγραψα', 'Aorist indicative (1st s.)']
+        ]}
+      ]
+    },
+    // Lesson 44: Present Optative
+    {
+      id: 44,
+      title: 'Present Optative',
+      subtitle: '-οι- Suffix',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'ο',
+      exercises: [
+        { type: 'intro', title: 'The Present Optative Active', cards: [
+          { html: '<p>The <strong>optative</strong> is another non-factual mood. Like the subjunctive, its translation varies by clause type.</p><p>To form the present optative active, add these endings to the <strong>present tense stem</strong>:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-οιμι</td><td class="greek">-οιμεν</td></tr><tr><td>2nd</td><td class="greek">-οις</td><td class="greek">-οιτε</td></tr><tr><td>3rd</td><td class="greek">-οι</td><td class="greek">-οιεν</td></tr></table>' },
+          { html: '<p>The present optative of <span class="greek">παιδεύω</span>:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύοιμι</td><td class="greek">παιδεύοιμεν</td></tr><tr><td>2nd</td><td class="greek">παιδεύοις</td><td class="greek">παιδεύοιτε</td></tr><tr><td>3rd</td><td class="greek">παιδεύοι</td><td class="greek">παιδεύοιεν</td></tr></table>' },
+          { html: '<p><strong>Key observations:</strong></p><ul><li>All endings begin with the diphthong <span class="greek"><strong>-οι-</strong></span> (thematic vowel <span class="greek">-ο-</span> + optative suffix <span class="greek">-ι-</span>).</li><li>Compare 1st plural across moods:<br><span class="greek">παιδεύ<strong>ο</strong>μεν</span> (indicative)<br><span class="greek">παιδεύ<strong>ω</strong>μεν</span> (subjunctive)<br><span class="greek">παιδεύ<strong>οι</strong>μεν</span> (optative)</li><li>The final <span class="greek">-οι</span> of the 3rd singular counts as <strong>long</strong> for accentuation.</li><li>Like other non-indicative moods, the present optative shows <strong>progressive/repeated aspect</strong>, not present time.</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What diphthong characterizes all present optative active endings?', correct: '-οι-', options: ['-οι-', '-ει-', '-αι-', '-ου-'] },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύοιμεν', displayGreek: true, correct: 'Present optative active (1st pl.)', options: ['Present optative active (1st pl.)', 'Present subjunctive active (1st pl.)', 'Present indicative active (1st pl.)', 'Aorist optative active (1st pl.)'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'presOpt', verbSource: 'unit3' },
+        { type: 'match', pairs: [
+          ['παιδεύομεν', 'Present indicative (1st pl.)'],
+          ['παιδεύωμεν', 'Present subjunctive (1st pl.)'],
+          ['παιδεύοιμεν', 'Present optative (1st pl.)'],
+          ['παιδεύοιμι', 'Present optative (1st s.)'],
+          ['παιδεύοιεν', 'Present optative (3rd pl.)']
+        ]},
+        { type: 'mc-translate', prompt: 'What aspect does the present optative indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Simple aspect', 'Completed aspect', 'Present time'] },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράφοις', displayGreek: true, correct: 'Present optative (2nd s.)', options: ['Present optative (2nd s.)', 'Present indicative (2nd s.)', 'Present subjunctive (2nd s.)', 'Aorist optative (2nd s.)'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'presOpt', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'In the 3rd sing. present optative, the final -οι counts as:', correct: 'Long for accentuation', options: ['Long for accentuation', 'Short for accentuation', 'It varies', 'Neither long nor short'] },
+        { type: 'match', pairs: [
+          ['γράφοιμι', 'Present optative (1st s.)'],
+          ['γράφοις', 'Present optative (2nd s.)'],
+          ['γράφοι', 'Present optative (3rd s.)'],
+          ['γράφοιμεν', 'Present optative (1st pl.)'],
+          ['γράφοιεν', 'Present optative (3rd pl.)']
+        ]}
+      ]
+    },
+    // Lesson 45: Aorist Optative
+    {
+      id: 45,
+      title: 'Aorist Optative',
+      subtitle: '-αι- Suffix',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'ο',
+      exercises: [
+        { type: 'intro', title: 'The Aorist Optative Active', cards: [
+          { html: '<p>To form the <strong>aorist optative active</strong>, add these endings to the <strong>unaugmented aorist tense stem</strong>:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">-αιμι</td><td class="greek">-αιμεν</td></tr><tr><td>2nd</td><td class="greek">-αις / -ειας</td><td class="greek">-αιτε</td></tr><tr><td>3rd</td><td class="greek">-αι / -ειε(ν)</td><td class="greek">-αιεν / -ειαν</td></tr></table><p>The augment is <strong>NOT</strong> used in the aorist optative.</p>' },
+          { html: '<p>The aorist optative of <span class="greek">παιδεύω</span> (stem: <span class="greek">παιδευσ-</span>):</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύσαιμι</td><td class="greek">παιδεύσαιμεν</td></tr><tr><td>2nd</td><td class="greek">παιδεύσαις</td><td class="greek">παιδεύσαιτε</td></tr><tr><td>3rd</td><td class="greek">παιδεύσαι</td><td class="greek">παιδεύσαιεν</td></tr></table>' },
+          { html: '<p><strong>Key observations:</strong></p><ul><li>The main endings begin with <span class="greek"><strong>-αι-</strong></span> (aorist tense vowel <span class="greek">-α-</span> + optative suffix <span class="greek">-ι-</span>).</li><li>The 2nd s., 3rd s., and 3rd pl. have <strong>alternative forms</strong> with no difference in meaning.</li><li>Compare across moods (1st pl.):<br><span class="greek">ἐπαιδεύσ<strong>α</strong>μεν</span> (aorist indicative)<br><span class="greek">παιδεύσ<strong>ω</strong>μεν</span> (aorist subjunctive)<br><span class="greek">παιδεύσ<strong>αι</strong>μεν</span> (aorist optative)</li><li>The final <span class="greek">-αι</span> of the 3rd singular counts as <strong>long</strong> for accentuation. Distinguish: <span class="greek">παιδεύσαι</span> (optative, long) vs. <span class="greek">παιδεῦσαι</span> (infinitive, short).</li><li>Like the aorist infinitive and subjunctive, the aorist optative indicates only <strong>simple aspect</strong>.</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What diphthong characterizes the aorist optative active endings?', correct: '-αι-', options: ['-αι-', '-οι-', '-ει-', '-ου-'] },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύσαιμεν', displayGreek: true, correct: 'Aorist optative active (1st pl.)', options: ['Aorist optative active (1st pl.)', 'Aorist subjunctive active (1st pl.)', 'Aorist indicative active (1st pl.)', 'Present optative active (1st pl.)'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'aorOpt', verbSource: 'unit3' },
+        { type: 'match', pairs: [
+          ['ἐπαιδεύσαμεν', 'Aorist indicative (1st pl.)'],
+          ['παιδεύσωμεν', 'Aorist subjunctive (1st pl.)'],
+          ['παιδεύσαιμεν', 'Aorist optative (1st pl.)'],
+          ['παιδεύοιμεν', 'Present optative (1st pl.)'],
+          ['παιδεύσαιμι', 'Aorist optative (1st s.)']
+        ]},
+        { type: 'mc-translate', prompt: 'What aspect does the aorist optative express?', correct: 'Simple aspect only, not past time', options: ['Simple aspect only, not past time', 'Past time', 'Progressive aspect', 'Completed aspect'] },
+        { type: 'mc-translate', prompt: 'The 3rd sing. aorist optative παιδεύσαι differs from the aorist infinitive παιδεῦσαι in:', correct: 'Accent and vowel length of final -αι', options: ['Accent and vowel length of final -αι', 'The stem only', 'They are identical', 'The ending only'] },
+        { type: 'verb-form-id', verbIndex: 0, tense: 'aorOpt', verbSource: 'unit3' },
+        { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράψαιεν', displayGreek: true, correct: 'Aorist optative (3rd pl.)', options: ['Aorist optative (3rd pl.)', 'Aorist subjunctive (3rd pl.)', 'Present optative (3rd pl.)', 'Aorist indicative (3rd pl.)'] },
+        { type: 'match', pairs: [
+          ['γράψαιμι', 'Aorist optative (1st s.)'],
+          ['γράψαις', 'Aorist optative (2nd s.)'],
+          ['γράψαι', 'Aorist optative (3rd s.)'],
+          ['γράψαιμεν', 'Aorist optative (1st pl.)'],
+          ['γράψαιεν', 'Aorist optative (3rd pl.)']
+        ]}
+      ]
+    },
+    // Lesson 46: Sequence of Moods
+    {
+      id: 46,
+      title: 'Sequence of Moods',
+      subtitle: 'Primary & Secondary',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'μ',
+      exercises: [
+        { type: 'intro', title: 'Sequence of Moods', cards: [
+          { html: '<p>The indicative tenses are divided into two categories:</p><p><strong>Primary tenses</strong> (present/future time):<br>Present, Future, Perfect, Future Perfect</p><p><strong>Secondary tenses</strong> (past time):<br>Imperfect, Aorist, Pluperfect</p><p>The secondary tenses all have the <strong>past indicative augment</strong>.</p>' },
+          { html: '<p><strong>Sequence of moods</strong> means that certain dependent clauses use either the subjunctive or optative depending on the main verb:</p><table class="intro-table"><tr><th>Main Verb</th><th>Dependent Verb</th></tr><tr><td>Primary tense (present, future, perfect)</td><td><strong>Subjunctive</strong></td></tr><tr><td>Secondary tense (imperfect, aorist, pluperfect)</td><td><strong>Optative</strong></td></tr></table><p>Primary tense → subjunctive = <strong>primary sequence</strong><br>Secondary tense → optative = <strong>secondary sequence</strong></p>' },
+          { html: '<p>In both the subjunctive and optative, tense indicates <strong>aspect</strong>, not time:</p><ul><li><strong>Present</strong> subjunctive/optative → progressive/repeated aspect</li><li><strong>Aorist</strong> subjunctive/optative → simple aspect</li></ul><p>When translating purpose clauses:<br>Primary sequence → use "<strong>may</strong>"<br>Secondary sequence → use "<strong>might</strong>"</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Which tenses are PRIMARY?', correct: 'Present, future, perfect', options: ['Present, future, perfect', 'Imperfect, aorist, pluperfect', 'Present, imperfect, aorist', 'Future, aorist, perfect'] },
+        { type: 'mc-translate', prompt: 'A primary main verb governs which mood in a dependent clause?', correct: 'Subjunctive', options: ['Subjunctive', 'Optative', 'Indicative', 'Imperative'] },
+        { type: 'mc-translate', prompt: 'A secondary main verb governs which mood in a dependent clause?', correct: 'Optative', options: ['Optative', 'Subjunctive', 'Indicative', 'Infinitive'] },
+        { type: 'match', pairs: [
+          ['Present indicative', 'Primary tense → Subjunctive'],
+          ['Future indicative', 'Primary tense → Subjunctive'],
+          ['Perfect indicative', 'Primary tense → Subjunctive'],
+          ['Imperfect indicative', 'Secondary tense → Optative'],
+          ['Aorist indicative', 'Secondary tense → Optative']
+        ]},
+        { type: 'mc-translate', prompt: 'When translating primary sequence, use:', correct: '"may"', options: ['"may"', '"might"', '"will"', '"would"'] },
+        { type: 'mc-translate', prompt: 'When translating secondary sequence, use:', correct: '"might"', options: ['"might"', '"may"', '"will"', '"could have"'] },
+        { type: 'mc-translate', prompt: 'The main verb is πέμπομεν (present). The dependent verb should be in the:', correct: 'Subjunctive (primary sequence)', options: ['Subjunctive (primary sequence)', 'Optative (secondary sequence)', 'Indicative', 'Infinitive'] },
+        { type: 'mc-translate', prompt: 'The main verb is ἐπέμψαμεν (aorist). The dependent verb should be in the:', correct: 'Optative (secondary sequence)', options: ['Optative (secondary sequence)', 'Subjunctive (primary sequence)', 'Indicative', 'Infinitive'] },
+        { type: 'match', pairs: [
+          ['Present subj.', 'Progressive/repeated aspect'],
+          ['Aorist subj.', 'Simple aspect'],
+          ['Present opt.', 'Progressive/repeated aspect'],
+          ['Aorist opt.', 'Simple aspect'],
+          ['Pluperfect ind.', 'Secondary tense → Optative']
+        ]}
+      ]
+    },
+    // Lesson 47: Purpose Clauses
+    {
+      id: 47,
+      title: 'Purpose Clauses',
+      subtitle: 'ἵνα, ὡς, ὅπως',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'ἵ',
+      exercises: [
+        { type: 'intro', title: 'Purpose Clauses', cards: [
+          { html: '<p>Greek expresses purpose with a clause introduced by <span class="greek"><strong>ἵνα</strong></span>, <span class="greek"><strong>ὡς</strong></span>, or <span class="greek"><strong>ὅπως</strong></span> ("in order that").</p><p>A <strong>negative</strong> purpose clause uses <span class="greek"><strong>ἵνα μή</strong></span>, <span class="greek"><strong>ὡς μή</strong></span>, or <span class="greek"><strong>ὅπως μή</strong></span> ("in order that...not, lest").</p><p>Purpose clauses do <strong>NOT</strong> use the infinitive in Greek (unlike English).</p>' },
+          { html: '<p>The mood in a purpose clause follows the <strong>sequence of moods</strong>:</p><p><strong>Primary sequence</strong> (main verb is present, future, or perfect):<br><span class="greek">πέμπομεν δῶρα <strong>ἵνα</strong> λύ<strong>ητε</strong> τοὺς ἀδελφούς.</span><br>"We send gifts <strong>in order that</strong> you <strong>may</strong> free the brothers."</p><p><strong>Secondary sequence</strong> (main verb is imperfect, aorist, or pluperfect):<br><span class="greek">ἐπέμπομεν δῶρα <strong>ἵνα</strong> λύ<strong>οιτε</strong> τοὺς ἀδελφούς.</span><br>"We were sending gifts <strong>in order that</strong> you <strong>might</strong> free the brothers."</p>' },
+          { html: '<p><strong>Negation:</strong> Purpose clauses are negated with <span class="greek"><strong>μή</strong></span> (NOT <span class="greek">οὐ</span>).</p><p><span class="greek">οὐ πέμψομεν χρῡσὸν <strong>ἵνα μὴ</strong> ζῷα <strong>πέμψωσιν</strong>.</span><br>"We will not send gold <strong>in order that</strong> they <strong>may not</strong> send animals."</p><p>Remember: <span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Which conjunctions introduce purpose clauses?', correct: 'ἵνα, ὡς, ὅπως', options: ['ἵνα, ὡς, ὅπως', 'ἐπεί, ἐπειδή', 'ἀλλά, δέ, γάρ', 'καί, ἤ, οὐδέ'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πέμπομεν δῶρα ἵνα λύητε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We send gifts in order that you may free the brothers.', options: ['We send gifts in order that you may free the brothers.', 'We sent gifts in order that you might free the brothers.', 'We send gifts to free the brothers.', 'We will send gifts so that you free the brothers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπέμπομεν δῶρα ἵνα λύοιτε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We were sending gifts in order that you might free the brothers.', options: ['We were sending gifts in order that you might free the brothers.', 'We send gifts in order that you may free the brothers.', 'We sent gifts to free the brothers.', 'We were sending gifts and freeing the brothers.'] },
+        { type: 'mc-translate', prompt: 'How are purpose clauses negated?', correct: 'With μή (not οὐ)', options: ['With μή (not οὐ)', 'With οὐ (not μή)', 'With both μή and οὐ', 'Purpose clauses cannot be negated'] },
+        { type: 'match', pairs: [
+          ['πέμπομεν...ἵνα λύητε', 'Primary: may free'],
+          ['ἐπέμπομεν...ἵνα λύοιτε', 'Secondary: might free'],
+          ['πέμψομεν...ἵνα λύσητε', 'Primary: may free (simple)'],
+          ['ἐπέμψαμεν...ἵνα λύσαιτε', 'Secondary: might free (simple)'],
+          ['ἵνα μή', 'in order that...not']
+        ]},
+        { type: 'mc-translate', prompt: 'The main verb is πεπόμφᾱσιν (perfect). What mood should the purpose clause verb be in?', correct: 'Subjunctive (perfect is primary)', options: ['Subjunctive (perfect is primary)', 'Optative (perfect is secondary)', 'Indicative', 'Infinitive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and educated the strangers.', 'You will sacrifice to the gods to educate the strangers.'] },
+        { type: 'mc-translate', prompt: 'Identify the sequence:', display: 'ἐκέλευσε...ὅπως φυλάξαιεν', displayGreek: true, correct: 'Secondary (aorist main verb → optative)', options: ['Secondary (aorist main verb → optative)', 'Primary (present main verb → subjunctive)', 'No sequence — both are indicative', 'Primary (aorist main verb → subjunctive)'] },
+        { type: 'match', pairs: [
+          ['ἵνα', 'in order that'],
+          ['ὡς', 'in order that'],
+          ['ὅπως', 'in order that'],
+          ['ἵνα μή', 'lest / in order that...not'],
+          ['μή', 'not (non-indicative negation)']
+        ]}
+      ]
+    },
+    // Lesson 48: Vocabulary I (Nouns)
+    {
+      id: 48,
+      title: 'Vocabulary I',
+      subtitle: 'Unit 3 Nouns',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'ἀ',
+      exercises: [
+        { type: 'u3vocab-intro', vocabGroup: 0 },
+        { type: 'u3vocab-gre', vocabGroup: 0 },
+        { type: 'u3vocab-gre', vocabGroup: 0 },
+        { type: 'u3vocab-eng', vocabGroup: 0 },
+        { type: 'u3vocab-eng', vocabGroup: 0 },
+        { type: 'u3vocab-match', vocabGroup: 0 },
+        { type: 'u3vocab-gre', vocabGroup: 0 },
+        { type: 'u3vocab-eng', vocabGroup: 0 },
+        { type: 'u3vocab-gender', vocabGroup: 0 },
+        { type: 'u3vocab-gender', vocabGroup: 0 },
+        { type: 'match', pairs: [
+          ['ἆθλον', 'athlete (prize-winner)'],
+          ['δῆμος', 'democracy (the people)'],
+          ['εἰρήνη', 'Irene (peace)'],
+          ['νίκη', 'Nike (victory)'],
+          ['ὀφθαλμός', 'ophthalmologist (eye doctor)']
+        ]},
+        { type: 'u3vocab-gre', vocabGroup: 0 },
+        { type: 'u3vocab-eng', vocabGroup: 0 },
+        { type: 'u3vocab-match', vocabGroup: 0 }
+      ]
+    },
+    // Lesson 49: Vocabulary II (Verbs & Particles)
+    {
+      id: 49,
+      title: 'Vocabulary II',
+      subtitle: 'Verbs & Particles',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'γ',
+      exercises: [
+        { type: 'intro', title: 'New Verbs', cards: [
+          { html: '<div class="vocab-card"><div class="vocab-greek">γράφω, γράψω, ἔγραψα, γέγραφα</div><div class="vocab-english">write, draw</div><div class="vocab-gender">Originally meant "scratch" or "graze"</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">θύω, θύσω, ἔθῡσα, τέθυκα</div><div class="vocab-english">sacrifice</div><div class="vocab-gender">Note: reduplication shows τ- not θ- (dissimilation of aspirates)</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">παύω, παύσω, ἔπαυσα, πέπαυκα</div><div class="vocab-english">make stop, stop</div><div class="vocab-gender">English "pause" comes from this verb</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">φυλάττω, φυλάξω, ἐφύλαξα, πεφύλαχα</div><div class="vocab-english">guard</div><div class="vocab-gender">PP IV has an aspirated perfect; note dissimilation of aspirates</div></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does γράφω mean?', display: 'γράφω', displayGreek: true, correct: 'write, draw', options: ['write, draw', 'sacrifice', 'guard', 'stop'] },
+        { type: 'mc-translate', prompt: 'What does θύω mean?', display: 'θύω', displayGreek: true, correct: 'sacrifice', options: ['sacrifice', 'write', 'guard', 'stop'] },
+        { type: 'mc-translate', prompt: 'What does παύω mean?', display: 'παύω', displayGreek: true, correct: 'make stop, stop', options: ['make stop, stop', 'sacrifice', 'write', 'guard'] },
+        { type: 'mc-translate', prompt: 'What does φυλάττω mean?', display: 'φυλάττω', displayGreek: true, correct: 'guard', options: ['guard', 'stop', 'sacrifice', 'write'] },
+        { type: 'match', pairs: [
+          ['γράφω', 'write, draw'],
+          ['θύω', 'sacrifice'],
+          ['παύω', 'make stop, stop'],
+          ['φυλάττω', 'guard'],
+          ['γέγραφα', 'I have written']
+        ]},
+        { type: 'intro', title: 'Conjunctions & Particles', cards: [
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἀλλά</td><td>but (stronger than δέ)</td></tr><tr><td class="greek">δή</td><td>in fact, of course (postpositive)</td></tr><tr><td class="greek">ἐπεί</td><td>after, when, since</td></tr><tr><td class="greek">ἐπειδή</td><td>after, when, since (= ἐπεί + δή)</td></tr></table>' },
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἵνα</td><td>in order that</td></tr><tr><td class="greek">ὡς</td><td>in order that</td></tr><tr><td class="greek">ὅπως</td><td>in order that</td></tr><tr><td class="greek">μή</td><td>not (with non-indicative moods)</td></tr></table><p>All three purpose conjunctions mean the same thing.</p><p><span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' },
+          { html: '<table class="intro-table"><tr><th class="greek">Preposition</th><th>Meaning</th></tr><tr><td class="greek">ἀντί + gen.</td><td>instead of</td></tr><tr><td class="greek">διά + gen.</td><td>through</td></tr><tr><td class="greek">διά + acc.</td><td>on account of</td></tr><tr><td class="greek">περί + gen.</td><td>concerning, about</td></tr><tr><td class="greek">περί + dat.</td><td>around</td></tr><tr><td class="greek">περί + acc.</td><td>around, concerning</td></tr></table>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does ἀλλά mean?', correct: 'but (stronger contrast)', options: ['but (stronger contrast)', 'and', 'or', 'for'] },
+        { type: 'mc-translate', prompt: 'What does μή negate?', correct: 'Non-indicative moods (subjunctive, optative, etc.)', options: ['Non-indicative moods (subjunctive, optative, etc.)', 'The indicative mood only', 'All moods equally', 'Only the future tense'] },
+        { type: 'match', pairs: [
+          ['ἵνα', 'in order that'],
+          ['ἀλλά', 'but (strong)'],
+          ['ἐπεί', 'after, when, since'],
+          ['ἀντί', 'instead of (+ gen.)'],
+          ['διά + gen.', 'through']
+        ]},
+        { type: 'mc-translate', prompt: 'What does διά mean with the accusative?', correct: 'on account of', options: ['on account of', 'through', 'around', 'instead of'] },
+        { type: 'match', pairs: [
+          ['γράφω', 'telegraph, graphic'],
+          ['παύω', 'pause'],
+          ['φυλάττω', 'prophylactic'],
+          ['περί', 'perimeter'],
+          ['ἀντί', 'antipope']
+        ]}
+      ]
+    },
+    // Lesson 50: Unit 3 Review
+    {
+      id: 50,
+      title: 'Unit 3 Review',
+      subtitle: 'Translate Sentences',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: '✓',
+      exercises: [
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ δῆμος ἐν ταῖς ὁδοῖς τοῖς θεοῖς θύσει ἵνα τὸν πόλεμον παύσωσιν.', displayGreek: true, correct: 'The people will sacrifice to the gods in the streets in order that they may stop the war.', options: ['The people will sacrifice to the gods in the streets in order that they may stop the war.', 'The people sacrificed to the gods to stop the war.', 'The people were sacrificing to the gods in the streets.', 'The gods stopped the war in the streets.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἵνα λύσωμεν τὸν Ὅμηρον δῶρα πεπόμφᾱσιν.', displayGreek: true, correct: 'In order that we may free Homer, they have sent gifts.', options: ['In order that we may free Homer, they have sent gifts.', 'We freed Homer and sent gifts.', 'They sent gifts to Homer.', 'In order to free Homer, we had sent gifts.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὴν εἰρήνην ἐλελύκεσαν, ἔργῳ δὲ οὔ.', displayGreek: true, correct: 'In word they had broken the peace, but in deed they had not.', options: ['In word they had broken the peace, but in deed they had not.', 'They broke the peace by words and deeds.', 'In word they have broken the peace.', 'They were breaking the peace in word and deed.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὴν τῶν θεῶν βουλὴν ἐπεπαύκεμεν τὸν πόλεμον.', displayGreek: true, correct: 'On account of the will of the gods, we had stopped the war.', options: ['On account of the will of the gods, we had stopped the war.', 'Through the gods\' will, we stopped the war.', 'The gods had stopped the war.', 'We will stop the war because of the gods.'] },
+        { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'πέμπεις χρῡσὸν ἵνα πέμψωμεν βιβλία.', displayGreek: true, correct: 'Primary sequence — aorist subjunctive', options: ['Primary sequence — aorist subjunctive', 'Secondary sequence — aorist optative', 'Primary sequence — present subjunctive', 'No sequence — both are indicative'] },
+        { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'ἔπεμψας χρῡσὸν ἵνα πέμψαιμεν βιβλία.', displayGreek: true, correct: 'Secondary sequence — aorist optative', options: ['Secondary sequence — aorist optative', 'Primary sequence — aorist subjunctive', 'Secondary sequence — present optative', 'Primary sequence — present subjunctive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπειδὴ τοὺς ἀγγέλους ἐφυλάξαμεν, τὴν δημοκρατίᾱν οὐκ ἔλῡσαν.', displayGreek: true, correct: 'After we guarded the messengers, they did not destroy the democracy.', options: ['After we guarded the messengers, they did not destroy the democracy.', 'Since we guard the messengers, they do not destroy the democracy.', 'We guarded the messengers and destroyed the democracy.', 'The messengers guarded the democracy.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ τοῦ Ὁμήρου βιβλία τοὺς ξένους πεπαίδευκεν.', displayGreek: true, correct: 'The books of Homer have educated the strangers.', options: ['The books of Homer have educated the strangers.', 'Homer\'s books educated the strangers.', 'The strangers have educated Homer.', 'Homer wrote books for the strangers.'] },
+        { type: 'match', pairs: [
+          ['πεπαίδευκα', 'I have educated (perfect)'],
+          ['ἐπεπαιδεύκη', 'I had educated (pluperfect)'],
+          ['πεπαιδευκέναι', 'to have educated (perf. inf.)'],
+          ['παιδεύωμεν', 'pres. subjunctive (1st pl.)'],
+          ['παιδεύοιμεν', 'pres. optative (1st pl.)']
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and educated the strangers.', 'The gods were educating the strangers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', displayGreek: true, correct: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', options: ['On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', 'We sent crowns of victory to our virtuous friends.', 'Our friends had sent prizes of virtue.', 'We have sent wreaths because of victory.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', displayGreek: true, correct: 'He ordered the brothers to stop the war before the victory.', options: ['He ordered the brothers to stop the war before the victory.', 'The brothers stopped the war before victory.', 'He will order the brothers to win the war.', 'Before the victory, the brothers were stopping the war.'] }
+      ]
     }
   ];
 
@@ -3908,6 +4465,13 @@ var Data = (function() {
     unit2Particles: unit2Particles,
     unit2Cognates: unit2Cognates,
     unit2Sentences: unit2Sentences,
+    unit3Vocab: unit3Vocab,
+    unit3VocabAll: unit3VocabAll,
+    unit3Verbs: unit3Verbs,
+    paideuoFull: paideuoFull,
+    unit3Particles: unit3Particles,
+    unit3Cognates: unit3Cognates,
+    unit3Sentences: unit3Sentences,
     lessons: lessons,
     buildLetterTable: buildLetterTable
   };
