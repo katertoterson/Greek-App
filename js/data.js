@@ -1790,137 +1790,6 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 19: First Sentences
-    {
-      id: 19,
-      title: 'First Sentences',
-      subtitle: 'παιδεύει & πέμπει',
-      section: 'Unit 1: Nouns & Articles',
-      icon: '→',
-      exercises: [
-        {
-          type: 'intro',
-          title: 'Your First Greek Sentences',
-          cards: [
-            { html: '<p>Let\'s learn two verb forms to make sentences:</p><div class="info-box"><p><span class="greek" style="font-size:24px">παιδεύει</span> — educates, teaches</p><p><span class="greek" style="font-size:24px">πέμπει</span> — sends</p></div><p style="margin-top:8px">These are 3rd person singular present: "he/she/it educates/sends."</p>' },
-            { html: '<p>Also learn the conjunction:</p><div class="info-box"><p><span class="greek" style="font-size:24px">καί</span> — and (conjunction); even, also (adverb)</p><p><span class="greek" style="font-size:18px">καί . . . καί</span> — both . . . and</p></div>' },
-            { html: '<p>Greek shows grammatical relations through <strong>case endings</strong>, not word order. So word order is free to show emphasis!</p><div class="info-box"><p><span class="greek">ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.</span></p><p>Homer educates his brother. (neutral)</p><p style="margin-top:8px"><span class="greek">τὸν ἀδελφὸν ὁ Ὅμηρος παιδεύει.</span></p><p>It is his brother Homer educates. (emphasis on brother)</p></div>' }
-          ]
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'What does παιδεύει mean?',
-          display: 'παιδεύει', displayGreek: true,
-          correct: 'educates, teaches',
-          options: ['educates, teaches', 'sends', 'fights', 'reads']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'What does πέμπει mean?',
-          display: 'πέμπει', displayGreek: true,
-          correct: 'sends',
-          options: ['sends', 'educates', 'gives', 'writes']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'ὁ Ὅμηρος τὸν ἄνθρωπον παιδεύει.',
-          displayGreek: true,
-          correct: 'Homer educates the man.',
-          options: ['Homer educates the man.', 'The man educates Homer.', 'Homer sends the man.', 'The man sends Homer.']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
-          displayGreek: true,
-          correct: 'The brother sends the gifts to the islands.',
-          options: ['The brother sends the gifts to the islands.', 'The brother educates the islands.', 'The gifts send the brother.', 'The islands send the gifts.']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'What does καί mean as a conjunction?',
-          display: 'καί', displayGreek: true,
-          correct: 'and',
-          options: ['and', 'or', 'but', 'not']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'What does καί mean as an adverb?',
-          display: 'καὶ Ὅμηρος', displayGreek: true,
-          correct: 'even / also (even Homer, also Homer)',
-          options: ['even / also (even Homer, also Homer)', 'and Homer', 'but Homer', 'not Homer']
-        },
-        {
-          type: 'match',
-          pairs: [
-            ['παιδεύει', 'educates, teaches'],
-            ['πέμπει', 'sends'],
-            ['καί (conj.)', 'and'],
-            ['καί (adv.)', 'even, also'],
-            ['καί...καί', 'both...and']
-          ]
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'Ὅμηρος τοὺς ἀνθρώπους παιδεύει.',
-          displayGreek: true,
-          correct: 'Homer educates the men.',
-          options: ['Homer educates the men.', 'The men educate Homer.', 'Homer sends the men.', 'Homer educates the man.']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'In Greek, word order primarily shows:',
-          display: '',
-          correct: 'Emphasis (case endings show grammar)',
-          options: ['Emphasis (case endings show grammar)', 'Subject vs. object', 'Tense', 'Gender']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'τὸν Ὅμηρον παιδεύει ὁ ἄνθρωπος.',
-          displayGreek: true,
-          correct: 'The man educates Homer.',
-          options: ['The man educates Homer.', 'Homer educates the man.', 'Homer sends the man.', 'The man sends Homer.']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Which sentence means "Homer educates his brother"?',
-          display: '',
-          correct: 'ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.',
-          options: ['ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.', 'ὁ ἀδελφὸς τὸν Ὅμηρον παιδεύει.', 'ὁ Ὅμηρος τὸν ἀδελφὸν πέμπει.', 'τὸν Ὅμηρον ὁ ἀδελφὸς παιδεύει.'],
-          optionsGreek: true
-        },
-        {
-          type: 'match',
-          pairs: [
-            ['ὁ Ὅμηρος παιδεύει', 'Homer educates'],
-            ['ὁ ἀδελφὸς πέμπει', 'the brother sends'],
-            ['τοὺς ἀνθρώπους', 'the men (acc.)'],
-            ['τὰ δῶρα', 'the gifts (acc.)'],
-            ['καὶ λόγῳ καὶ ἔργῳ', 'both by word and deed']
-          ]
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'ὁ Ὁμήρου ἀδελφὸς παιδεύει τὸν ἄνθρωπον.',
-          displayGreek: true,
-          correct: 'Homer\'s brother educates the man.',
-          options: ['Homer\'s brother educates the man.', 'Homer educates his brother.', 'The man educates Homer\'s brother.', 'The brother of the man educates Homer.']
-        },
-        {
-          type: 'mc-translate',
-          prompt: 'Translate:',
-          display: 'ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
-          displayGreek: true,
-          correct: 'The man educates his brother by word and deed.',
-          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends his brother a word and a deed.', 'The brother sends words and deeds.']
-        }
-      ]
-    },
-
     // ---- Section 4: Unit 1 — Cases & Declensions ----
 
     // Lesson 20: The Five Cases
@@ -2564,6 +2433,137 @@ var Data = (function() {
           display: 'ἐκ τῆς ἀγορᾶς εἰς τὴν νῆσον', displayGreek: true,
           correct: 'from the marketplace to the island',
           options: ['from the marketplace to the island', 'in the marketplace on the island', 'to the marketplace from the island', 'from the island to the marketplace']
+        }
+      ]
+    },
+
+    // Lesson 19: First Sentences
+    {
+      id: 19,
+      title: 'First Sentences',
+      subtitle: 'παιδεύει & πέμπει',
+      section: 'Unit 1: Cases & Declensions',
+      icon: '→',
+      exercises: [
+        {
+          type: 'intro',
+          title: 'Your First Greek Sentences',
+          cards: [
+            { html: '<p>Let\'s learn two verb forms to make sentences:</p><div class="info-box"><p><span class="greek" style="font-size:24px">παιδεύει</span> — educates, teaches</p><p><span class="greek" style="font-size:24px">πέμπει</span> — sends</p></div><p style="margin-top:8px">These are 3rd person singular present: "he/she/it educates/sends."</p>' },
+            { html: '<p>Also learn the conjunction:</p><div class="info-box"><p><span class="greek" style="font-size:24px">καί</span> — and (conjunction); even, also (adverb)</p><p><span class="greek" style="font-size:18px">καί . . . καί</span> — both . . . and</p></div>' },
+            { html: '<p>Greek shows grammatical relations through <strong>case endings</strong>, not word order. So word order is free to show emphasis!</p><div class="info-box"><p><span class="greek">ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.</span></p><p>Homer educates his brother. (neutral)</p><p style="margin-top:8px"><span class="greek">τὸν ἀδελφὸν ὁ Ὅμηρος παιδεύει.</span></p><p>It is his brother Homer educates. (emphasis on brother)</p></div>' }
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does παιδεύει mean?',
+          display: 'παιδεύει', displayGreek: true,
+          correct: 'educates, teaches',
+          options: ['educates, teaches', 'sends', 'fights', 'reads']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does πέμπει mean?',
+          display: 'πέμπει', displayGreek: true,
+          correct: 'sends',
+          options: ['sends', 'educates', 'gives', 'writes']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ Ὅμηρος τὸν ἄνθρωπον παιδεύει.',
+          displayGreek: true,
+          correct: 'Homer educates the man.',
+          options: ['Homer educates the man.', 'The man educates Homer.', 'Homer sends the man.', 'The man sends Homer.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
+          displayGreek: true,
+          correct: 'The brother sends the gifts to the islands.',
+          options: ['The brother sends the gifts to the islands.', 'The brother educates the islands.', 'The gifts send the brother.', 'The islands send the gifts.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does καί mean as a conjunction?',
+          display: 'καί', displayGreek: true,
+          correct: 'and',
+          options: ['and', 'or', 'but', 'not']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'What does καί mean as an adverb?',
+          display: 'καὶ Ὅμηρος', displayGreek: true,
+          correct: 'even / also (even Homer, also Homer)',
+          options: ['even / also (even Homer, also Homer)', 'and Homer', 'but Homer', 'not Homer']
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['παιδεύει', 'educates, teaches'],
+            ['πέμπει', 'sends'],
+            ['καί (conj.)', 'and'],
+            ['καί (adv.)', 'even, also'],
+            ['καί...καί', 'both...and']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'Ὅμηρος τοὺς ἀνθρώπους παιδεύει.',
+          displayGreek: true,
+          correct: 'Homer educates the men.',
+          options: ['Homer educates the men.', 'The men educate Homer.', 'Homer sends the men.', 'Homer educates the man.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'In Greek, word order primarily shows:',
+          display: '',
+          correct: 'Emphasis (case endings show grammar)',
+          options: ['Emphasis (case endings show grammar)', 'Subject vs. object', 'Tense', 'Gender']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'τὸν Ὅμηρον παιδεύει ὁ ἄνθρωπος.',
+          displayGreek: true,
+          correct: 'The man educates Homer.',
+          options: ['The man educates Homer.', 'Homer educates the man.', 'Homer sends the man.', 'The man sends Homer.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Which sentence means "Homer educates his brother"?',
+          display: '',
+          correct: 'ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.',
+          options: ['ὁ Ὅμηρος τὸν ἀδελφὸν παιδεύει.', 'ὁ ἀδελφὸς τὸν Ὅμηρον παιδεύει.', 'ὁ Ὅμηρος τὸν ἀδελφὸν πέμπει.', 'τὸν Ὅμηρον ὁ ἀδελφὸς παιδεύει.'],
+          optionsGreek: true
+        },
+        {
+          type: 'match',
+          pairs: [
+            ['ὁ Ὅμηρος παιδεύει', 'Homer educates'],
+            ['ὁ ἀδελφὸς πέμπει', 'the brother sends'],
+            ['τοὺς ἀνθρώπους', 'the men (acc.)'],
+            ['τὰ δῶρα', 'the gifts (acc.)'],
+            ['καὶ λόγῳ καὶ ἔργῳ', 'both by word and deed']
+          ]
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ Ὁμήρου ἀδελφὸς παιδεύει τὸν ἄνθρωπον.',
+          displayGreek: true,
+          correct: 'Homer\'s brother educates the man.',
+          options: ['Homer\'s brother educates the man.', 'Homer educates his brother.', 'The man educates Homer\'s brother.', 'The brother of the man educates Homer.']
+        },
+        {
+          type: 'mc-translate',
+          prompt: 'Translate:',
+          display: 'ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
+          displayGreek: true,
+          correct: 'The man educates his brother by word and deed.',
+          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends his brother a word and a deed.', 'The brother sends words and deeds.']
         }
       ]
     },
