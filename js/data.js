@@ -4429,6 +4429,191 @@ var Data = (function() {
         { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', displayGreek: true, correct: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', options: ['On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', 'We sent crowns of victory to our virtuous friends.', 'Our friends had sent prizes of virtue.', 'We have sent wreaths because of victory.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', displayGreek: true, correct: 'He ordered the brothers to stop the war before the victory.', options: ['He ordered the brothers to stop the war before the victory.', 'The brothers stopped the war before victory.', 'He will order the brothers to win the war.', 'Before the victory, the brothers were stopping the war.'] }
       ]
+    },
+
+    // ---- Section 7: Review — Units 1–3 ----
+
+    // Lesson 51: Verb Forms Review I — Indicative
+    {
+      id: 51,
+      title: 'Verb Review I',
+      subtitle: 'Indicative Forms (All 8 Verbs)',
+      section: 'Review: Units 1–3',
+      icon: '🔄',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Comprehensive Verb Review</h3><p>You have learned <strong>8 verbs</strong> across Units 2–3:</p><table class="intro-table"><tr><th>Verb</th><th>Meaning</th></tr><tr><td class="greek">παιδεύω</td><td>educate</td></tr><tr><td class="greek">κελεύω</td><td>order</td></tr><tr><td class="greek">λύω</td><td>unbind, free</td></tr><tr><td class="greek">πέμπω</td><td>send</td></tr><tr><td class="greek">γράφω</td><td>write</td></tr><tr><td class="greek">θύω</td><td>sacrifice</td></tr><tr><td class="greek">παύω</td><td>stop</td></tr><tr><td class="greek">φυλάττω</td><td>guard</td></tr></table><p>This lesson reviews all <strong>indicative</strong> forms: present, imperfect, future, aorist, perfect, and pluperfect.</p>' }
+        ]},
+        { type: 'review-verb-id' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-number-change' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-number-change' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-verb-id' }
+      ]
+    },
+
+    // Lesson 52: Verb Forms Review II — Moods & Infinitives
+    {
+      id: 52,
+      title: 'Verb Review II',
+      subtitle: 'Subjunctive, Optative & Infinitives',
+      section: 'Review: Units 1–3',
+      icon: '🔄',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Moods & Infinitives Review</h3><p>Besides the indicative, you have learned two non-factual moods:</p><ul><li><strong>Subjunctive</strong> — lengthened thematic vowel (ω/η)</li><li><strong>Optative</strong> — mood suffix -οι- (present) or -αι- (aorist)</li></ul><p>And three types of infinitive:</p><ul><li><strong>Present</strong>: -ειν (e.g., παιδεύειν)</li><li><strong>Aorist</strong>: -σαι / -ψαι / -ξαι (e.g., παιδεῦσαι)</li><li><strong>Perfect</strong>: -έναι (e.g., πεπαιδευκέναι)</li></ul>' }
+        ]},
+        { type: 'review-verb-id' },
+        { type: 'review-verb-id' },
+        { type: 'review-infinitive' },
+        { type: 'review-verb-select' },
+        { type: 'review-infinitive' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-infinitive' },
+        { type: 'review-verb-id' },
+        { type: 'review-verb-select' },
+        { type: 'review-infinitive' },
+        { type: 'review-verb-id' }
+      ]
+    },
+
+    // Lesson 53: Principal Parts & Synopsis
+    {
+      id: 53,
+      title: 'Principal Parts',
+      subtitle: 'All 8 Verbs',
+      section: 'Review: Units 1–3',
+      icon: '🔄',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Principal Parts Review</h3><p>Every Greek verb has <strong>six principal parts</strong>. Knowing these is the key to forming any tense.</p><table class="intro-table"><tr><th>#</th><th>Tense</th><th>Example (γράφω)</th></tr><tr><td>1st</td><td>Present</td><td class="greek">γράφω</td></tr><tr><td>2nd</td><td>Future</td><td class="greek">γράψω</td></tr><tr><td>3rd</td><td>Aorist</td><td class="greek">ἔγραψα</td></tr><tr><td>4th</td><td>Perfect Active</td><td class="greek">γέγραφα</td></tr><tr><td>5th</td><td>Perfect Mid./Pass.</td><td class="greek">γέγραμμαι</td></tr><tr><td>6th</td><td>Aorist Passive</td><td class="greek">ἐγράφην</td></tr></table>' }
+        ]},
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-synopsis' },
+        { type: 'review-pp' },
+        { type: 'review-synopsis' },
+        { type: 'review-pp' },
+        { type: 'review-synopsis' },
+        { type: 'review-pp' },
+        { type: 'review-synopsis' },
+        { type: 'review-pp' },
+        { type: 'match', pairs: [
+          ['παιδεύω', 'educate, teach'],
+          ['κελεύω', 'order, command'],
+          ['λύω', 'unbind, free, destroy'],
+          ['πέμπω', 'send'],
+          ['γράφω', 'write, draw']
+        ]},
+        { type: 'match', pairs: [
+          ['θύω', 'sacrifice'],
+          ['παύω', 'make stop, stop'],
+          ['φυλάττω', 'guard'],
+          ['γράφω', 'write, draw'],
+          ['λύω', 'unbind, free, destroy']
+        ]}
+      ]
+    },
+
+    // Lesson 54: Vocabulary Review
+    {
+      id: 54,
+      title: 'Vocabulary Review',
+      subtitle: 'All Words (Units 1–3)',
+      section: 'Review: Units 1–3',
+      icon: '📝',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Vocabulary Review</h3><p>You have learned <strong>55 vocabulary words</strong> across three units:</p><ul><li><strong>Unit 1</strong> — 16 nouns (1st & 2nd declension) + 3 prepositions</li><li><strong>Unit 2</strong> — 8 nouns + 12 particles & other words</li><li><strong>Unit 3</strong> — 10 nouns + 11 particles & other words</li></ul><p>This lesson reviews all of them together.</p>' }
+        ]},
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-eng' },
+        { type: 'review-vocab-match' },
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-eng' },
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-eng' },
+        { type: 'review-vocab-match' },
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-eng' },
+        { type: 'review-vocab-gre' },
+        { type: 'review-vocab-eng' }
+      ]
+    },
+
+    // Lesson 55: Grammar Review — Cases, Prepositions & Purpose Clauses
+    {
+      id: 55,
+      title: 'Grammar Review',
+      subtitle: 'Cases, Prepositions & Clauses',
+      section: 'Review: Units 1–3',
+      icon: '📝',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Grammar Review</h3><p>Review the key grammatical concepts from Units 1–3:</p><ul><li><strong>Five Cases</strong>: Nominative, Genitive, Dative, Accusative, Vocative</li><li><strong>Prepositions</strong>: εἰς, ἐκ/ἐξ, ἐν, ἀπό, παρά, πρό, ἀντί, διά, περί</li><li><strong>Purpose Clauses</strong>: ἵνα, ὡς, ὅπως + subjunctive/optative</li><li><strong>Sequence of Moods</strong>: Primary → subjunctive; Secondary → optative</li></ul>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What case is used for the indirect object?', display: 'τοῖς θεοῖς', displayGreek: true, correct: 'Dative', options: ['Dative', 'Genitive', 'Accusative', 'Nominative'] },
+        { type: 'mc-translate', prompt: 'What case does ἐν take?', display: 'ἐν τῇ νήσῳ', displayGreek: true, correct: 'Dative', options: ['Dative', 'Genitive', 'Accusative', 'Nominative'] },
+        { type: 'mc-translate', prompt: 'What case does εἰς take?', display: 'εἰς ἀγοράν', displayGreek: true, correct: 'Accusative', options: ['Accusative', 'Genitive', 'Dative', 'Nominative'] },
+        { type: 'mc-translate', prompt: 'What case does ἐκ take?', display: 'ἐκ τῆς χώρᾱς', displayGreek: true, correct: 'Genitive', options: ['Genitive', 'Dative', 'Accusative', 'Nominative'] },
+        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ἵνα τὸν πόλεμον παύσωσιν', displayGreek: true, correct: 'Purpose clause — primary sequence (aorist subjunctive)', options: ['Purpose clause — primary sequence (aorist subjunctive)', 'Purpose clause — secondary sequence (aorist optative)', 'Result clause — indicative', 'Temporal clause — subjunctive'] },
+        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ὅπως τοὺς ξένους παιδεύοιεν', displayGreek: true, correct: 'Purpose clause — secondary sequence (present optative)', options: ['Purpose clause — secondary sequence (present optative)', 'Purpose clause — primary sequence (present subjunctive)', 'Temporal clause — optative', 'Result clause — optative'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of βιβλίοις in this sentence?', display: 'ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι', displayGreek: true, correct: 'Instrumental dative (by means of books)', options: ['Instrumental dative (by means of books)', 'Indirect object (to the books)', 'Dative of possession (of the books)', 'Locative dative (in the books)'] },
+        { type: 'mc-translate', prompt: 'What case is ψῡχήν?', display: 'τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε', displayGreek: true, correct: 'Accusative — direct object', options: ['Accusative — direct object', 'Nominative — subject', 'Genitive — possession', 'Dative — indirect object'] },
+        { type: 'match', pairs: [
+          ['εἰς', 'into (+ acc.)'],
+          ['ἐκ / ἐξ', 'from out of (+ gen.)'],
+          ['ἐν', 'in (+ dat.)'],
+          ['ἀπό', 'from, away from (+ gen.)'],
+          ['διά', 'through (+ gen.); because of (+ acc.)']
+        ]},
+        { type: 'mc-translate', prompt: 'After a primary main verb, a purpose clause uses:', display: 'πέμπεις ... ἵνα ...', displayGreek: true, correct: 'Subjunctive', options: ['Subjunctive', 'Optative', 'Indicative', 'Infinitive'] },
+        { type: 'mc-translate', prompt: 'After a secondary main verb, a purpose clause uses:', display: 'ἔπεμψας ... ἵνα ...', displayGreek: true, correct: 'Optative', options: ['Optative', 'Subjunctive', 'Indicative', 'Infinitive'] },
+        { type: 'match', pairs: [
+          ['ἵνα', 'in order that'],
+          ['ὡς', 'in order that'],
+          ['ὅπως', 'in order that'],
+          ['ἐπεί / ἐπειδή', 'after, when, since'],
+          ['μή', 'not (non-indicative)']
+        ]}
+      ]
+    },
+
+    // Lesson 56: Comprehensive Exam — Translation & Analysis
+    {
+      id: 56,
+      title: 'Comprehensive Exam',
+      subtitle: 'Translation & Analysis',
+      section: 'Review: Units 1–3',
+      icon: '🏆',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Comprehensive Review Exam</h3><p>This is a cumulative exam covering everything from Units 1–3. Translate sentences, identify forms, and demonstrate your mastery of Greek grammar.</p><p>Drawn from the <em>Self-Correcting Examinations</em>.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα πρὸ τῆς μάχης τὸν ἄγγελον πέμψουσιν ἐξ ἀγορᾶς διὰ τῆς χώρᾱς;', displayGreek: true, correct: 'Before the battle will they send the messenger from the marketplace through the country?', options: ['Before the battle will they send the messenger from the marketplace through the country?', 'After the battle they sent the messenger from the marketplace.', 'Before the battle they are sending the messenger to the marketplace.', 'Will the messenger be sent before the battle from the country?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν Ὅμηρον ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι.', displayGreek: true, correct: 'In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', options: ['In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', 'We ordered Homer not to destroy the peace but to educate the men.', 'Homer was ordering us to educate the men about peace with books.', 'They did not destroy the peace because Homer educated the men.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of λύσειαν?', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν', displayGreek: true, correct: 'Aorist optative in a purpose clause in secondary sequence', options: ['Aorist optative in a purpose clause in secondary sequence', 'Aorist subjunctive in a purpose clause in primary sequence', 'Present optative in a result clause', 'Aorist indicative in a temporal clause'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλίον περὶ τῆς τοῖς θεοῖς θυσίᾱς γέγραφας ἵνα ζῷα καὶ στεφάνους εἰς τὴν νῆσον πέμψωμεν.', displayGreek: true, correct: 'You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', options: ['You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', 'You wrote a book about sacrificing so that animals and wreaths were sent.', 'He has written about the gods so that we sacrifice animals on the island.', 'You are writing about the sacrifice in order to send wreaths.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of πέμψωμεν?', display: 'ἵνα ... πέμψωμεν', displayGreek: true, correct: 'Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', options: ['Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', 'Present subjunctive in primary sequence', 'Aorist optative in secondary sequence', 'Aorist indicative in a temporal clause'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὸν ἐν τῇ χώρᾳ πόλεμον ἐπαύετε, ἔργῳ δὲ τοὺς ἀδελφοὺς εἰς μάχην ἐπέμπετε.', displayGreek: true, correct: 'By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', options: ['By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', 'In words you stopped the war, but in deeds you sent brothers to fight.', 'You stopped the war by speaking, and sent brothers into battle.', 'Words stopped the war in the country, but deeds sent brothers to battle.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε ἵνα τὸν πόλεμον παύσωσιν οἱ ἄνθρωποι;', displayGreek: true, correct: 'Will you destroy the soul of the democracy in order that the men may stop the war?', options: ['Will you destroy the soul of the democracy in order that the men may stop the war?', 'You destroyed the spirit of democracy so that the men stopped the war.', 'Did you free the soul of democracy to end the war?', 'The men are stopping the war to save democracy.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'περὶ τοῦ πολέμου ἔγραψα ὡς τὴν εἰρήνην ἀρετῇ φυλάξειαν.', displayGreek: true, correct: 'I wrote about the war in order that they might guard the peace by means of virtue.', options: ['I wrote about the war in order that they might guard the peace by means of virtue.', 'I am writing about the war so that they guard peace with virtue.', 'He wrote about war and peace and virtue.', 'I wrote about the war because they guarded the peace.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of ἀρετῇ?', display: '... ἀρετῇ φυλάξειαν', displayGreek: true, correct: 'Instrumental dative (by means of virtue)', options: ['Instrumental dative (by means of virtue)', 'Dative of indirect object', 'Dative of possession', 'Locative dative'] },
+        { type: 'review-pp' },
+        { type: 'review-synopsis' },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ μὲν Ὅμηρος τὸν φίλον ἐπεπαιδεύκειν ὅπως τοῖς θεοῖς θύοιεν, ὁ δὲ ἀδελφὸς οὔ.', displayGreek: true, correct: 'Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', options: ['Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', 'Homer educated his friend to sacrifice to the gods, and his brother did too.', 'Homer was educating his friend about sacrificing, but his brother refused.', 'Homer\'s friend had sacrificed to the gods, but his brother had not.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of θύοιεν?', display: 'ὅπως ... θύοιεν', displayGreek: true, correct: 'Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', options: ['Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', 'Aorist optative in secondary sequence', 'Present subjunctive in primary sequence', 'Imperfect indicative in a temporal clause'] }
+      ]
     }
   ];
 

@@ -167,6 +167,25 @@ var Engine = (function() {
         return generateU3VocabMatch(def);
       case 'u3vocab-gender':
         return generateU3VocabGender(def);
+      // Review exercise types
+      case 'review-verb-id':
+        return generateReviewVerbId(def);
+      case 'review-verb-select':
+        return generateReviewVerbSelect(def);
+      case 'review-pp':
+        return generateReviewPP(def);
+      case 'review-vocab-gre':
+        return generateReviewVocabGre(def);
+      case 'review-vocab-eng':
+        return generateReviewVocabEng(def);
+      case 'review-vocab-match':
+        return generateReviewVocabMatch(def);
+      case 'review-synopsis':
+        return generateReviewSynopsis(def);
+      case 'review-number-change':
+        return generateReviewNumberChange(def);
+      case 'review-infinitive':
+        return generateReviewInfinitive(def);
       default:
         return null;
     }
@@ -591,6 +610,304 @@ var Engine = (function() {
       display: target.article + ' ' + target.greek,
       displayGreek: true, correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
+    };
+  }
+
+  // ===== Review Exercise Generators =====
+
+  // Combine all 8 verbs (+paideuoFull) into one pool for review
+  function getAllVerbs() {
+    // Build full παιδεύω with all forms
+    var pFull = {};
+    for (var k in Data.unit2Verbs[0]) pFull[k] = Data.unit2Verbs[0][k];
+    for (var k2 in Data.paideuoFull) pFull[k2] = Data.paideuoFull[k2];
+    return [pFull].concat(Data.unit2Verbs.slice(1)).concat(Data.unit3Verbs);
+  }
+
+  function generateReviewVerbId(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+    var labels = Data.personLabels;
+
+    var tenseNames = {
+      present: 'present', imperfect: 'imperfect', future: 'future', aorist: 'aorist',
+      perfect: 'perfect', pluperfect: 'pluperfect',
+      presSub: 'present', aorSub: 'aorist',
+      presOpt: 'present', aorOpt: 'aorist'
+    };
+    var moodNames = {
+      present: 'ind. act.', imperfect: 'ind. act.', future: 'ind. act.', aorist: 'ind. act.',
+      perfect: 'ind. act.', pluperfect: 'ind. act.',
+      presSub: 'subj. act.', aorSub: 'subj. act.',
+      presOpt: 'opt. act.', aorOpt: 'opt. act.'
+    };
+
+    // Pick a random available tense for this verb
+    var availTenses = Object.keys(tenseNames).filter(function(t) {
+      return verb[t] && Array.isArray(verb[t]);
+    });
+    var tense = pickRandom(availTenses);
+    var forms = verb[tense];
+    var idx = Math.floor(Math.random() * 6);
+    var form = forms[idx];
+    var label = labels[idx];
+
+    var correctAnswer = label + ', ' + tenseNames[tense] + ' ' + moodNames[tense];
+
+    // Distractors: other person/tense/mood combos (no verb name shown)
+    var distractorPool = [];
+    availTenses.forEach(function(t) {
+      labels.forEach(function(l) {
+        var ans = l + ', ' + tenseNames[t] + ' ' + moodNames[t];
+        if (ans !== correctAnswer) distractorPool.push(ans);
+      });
+    });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: 'Identify this verb form:',
+      display: form,
+      displayGreek: true,
+      correct: correctAnswer,
+      options: shuffle([correctAnswer].concat(distractors))
+    };
+  }
+
+  function generateReviewVerbSelect(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+    var labels = Data.personLabels;
+
+    var tenseDisplay = {
+      present: 'present ind. act.', imperfect: 'imperfect ind. act.',
+      future: 'future ind. act.', aorist: 'aorist ind. act.',
+      perfect: 'perfect ind. act.', pluperfect: 'pluperfect ind. act.',
+      presSub: 'present subj. act.', aorSub: 'aorist subj. act.',
+      presOpt: 'present opt. act.', aorOpt: 'aorist opt. act.'
+    };
+
+    var availTenses = Object.keys(tenseDisplay).filter(function(t) {
+      return verb[t] && Array.isArray(verb[t]);
+    });
+    var tense = pickRandom(availTenses);
+    var forms = verb[tense];
+    var idx = Math.floor(Math.random() * 6);
+    var correctForm = forms[idx];
+    var label = labels[idx];
+
+    var prompt = 'Select the ' + label + ' ' + tenseDisplay[tense] + ' of ' + verb.verb + ':';
+
+    // Distractors from same verb only (different tenses/persons)
+    var sameVerbForms = [];
+    availTenses.forEach(function(t) {
+      if (verb[t] && Array.isArray(verb[t])) {
+        verb[t].forEach(function(f) {
+          if (f !== correctForm) sameVerbForms.push(f);
+        });
+      }
+    });
+    var distractors = pick(sameVerbForms, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      correct: correctForm,
+      options: shuffle([correctForm].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateReviewPP(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+    var ppLabels = ['1st (present)', '2nd (future)', '3rd (aorist)', '4th (perfect)', '5th (perf. mid./pass.)', '6th (aorist passive)'];
+    var idx = Math.floor(Math.random() * 6);
+    var correctPP = verb.pp[idx];
+
+    var prompt = 'Give the ' + ppLabels[idx] + ' principal part of ' + verb.verb + ' (' + verb.meaning + '):';
+
+    // Distractors: same position from other verbs
+    var distractorPool = allVerbs.filter(function(v) { return v.verb !== verb.verb; })
+      .map(function(v) { return v.pp[idx]; });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      correct: correctPP,
+      options: shuffle([correctPP].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateReviewVocabGre(def) {
+    var allWords = Data.allVocabAll;
+    var target = pickRandom(allWords);
+    var pool = allWords.filter(function(w) { return w.english !== target.english; });
+    var distractors = pick(pool, 3).map(function(w) { return w.english; });
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What does this word mean?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true,
+      correct: target.english,
+      options: shuffle([target.english].concat(distractors))
+    };
+  }
+
+  function generateReviewVocabEng(def) {
+    var allWords = Data.allVocabAll;
+    var target = pickRandom(allWords);
+    var pool = allWords.filter(function(w) { return w.greek !== target.greek; });
+    var distractors = pick(pool, 3).map(function(w) { return w.article + ' ' + w.greek; });
+    var correct = target.article + ' ' + target.greek;
+    return {
+      type: 'mc', graded: true,
+      prompt: 'Which Greek word means "' + target.english + '"?',
+      correct: correct,
+      options: shuffle([correct].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateReviewVocabMatch(def) {
+    var allWords = Data.allVocabAll;
+    var selected = shuffle(allWords.slice()).slice(0, 5);
+    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
+    return { type: 'match', graded: false, pairs: pairs };
+  }
+
+  function generateReviewSynopsis(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+    var labels = Data.personLabels;
+    var idx = Math.floor(Math.random() * 6);
+    var label = labels[idx];
+
+    // Pick two tenses and ask which form is correct for that person/number
+    var tenseDisplay = {
+      present: 'present ind. act.', imperfect: 'imperfect ind. act.',
+      future: 'future ind. act.', aorist: 'aorist ind. act.',
+      perfect: 'perfect ind. act.', pluperfect: 'pluperfect ind. act.',
+      presSub: 'present subj. act.', aorSub: 'aorist subj. act.',
+      presOpt: 'present opt. act.', aorOpt: 'aorist opt. act.'
+    };
+
+    var availTenses = Object.keys(tenseDisplay).filter(function(t) {
+      return verb[t] && Array.isArray(verb[t]);
+    });
+    var tense = pickRandom(availTenses);
+    var correctForm = verb[tense][idx];
+    var prompt = 'In a synopsis of ' + verb.verb + ' in the ' + label + ', give the ' + tenseDisplay[tense] + ':';
+
+    // Distractors: other persons of the same tense + other tenses same person
+    var distractorPool = [];
+    verb[tense].forEach(function(f, i) {
+      if (i !== idx) distractorPool.push(f);
+    });
+    availTenses.forEach(function(t) {
+      if (t !== tense && verb[t] && Array.isArray(verb[t])) {
+        distractorPool.push(verb[t][idx]);
+      }
+    });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      correct: correctForm,
+      options: shuffle([correctForm].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateReviewNumberChange(def) {
+    // Verb number change: singular ↔ plural
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+
+    var tenseDisplay = {
+      present: 'present ind. act.', imperfect: 'imperfect ind. act.',
+      future: 'future ind. act.', aorist: 'aorist ind. act.',
+      perfect: 'perfect ind. act.', pluperfect: 'pluperfect ind. act.',
+      presSub: 'present subj. act.', aorSub: 'aorist subj. act.',
+      presOpt: 'present opt. act.', aorOpt: 'aorist opt. act.'
+    };
+
+    var availTenses = Object.keys(tenseDisplay).filter(function(t) {
+      return verb[t] && Array.isArray(verb[t]);
+    });
+    var tense = pickRandom(availTenses);
+    var forms = verb[tense];
+
+    // Pick a person (0-2 = sing, 3-5 = plural)
+    var fromIdx = Math.floor(Math.random() * 6);
+    var toIdx = fromIdx < 3 ? fromIdx + 3 : fromIdx - 3;
+    var direction = fromIdx < 3 ? 'singular to plural' : 'plural to singular';
+    var givenForm = forms[fromIdx];
+    var correctForm = forms[toIdx];
+
+    var prompt = 'Change from ' + direction + ':';
+
+    var distractorPool = [];
+    forms.forEach(function(f) {
+      if (f !== correctForm && f !== givenForm) distractorPool.push(f);
+    });
+    // Add forms from other tenses for harder distractors
+    availTenses.forEach(function(t) {
+      if (t !== tense && verb[t] && Array.isArray(verb[t])) {
+        distractorPool.push(verb[t][toIdx]);
+      }
+    });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      display: givenForm,
+      displayGreek: true,
+      correct: correctForm,
+      options: shuffle([correctForm].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateReviewInfinitive(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+
+    var infTypes = [
+      { key: 'presInf', label: 'present infinitive' },
+      { key: 'aorInf', label: 'aorist infinitive' }
+    ];
+    if (verb.perfInf) {
+      infTypes.push({ key: 'perfInf', label: 'perfect infinitive' });
+    }
+    var chosen = pickRandom(infTypes);
+    var correctInf = verb[chosen.key];
+    var prompt = 'Give the ' + chosen.label + ' of ' + verb.verb + ' (' + verb.meaning + '):';
+
+    // Distractors: same inf type from other verbs + other inf types from same verb
+    var distractorPool = [];
+    allVerbs.forEach(function(v) {
+      if (v.verb !== verb.verb && v[chosen.key]) {
+        distractorPool.push(v[chosen.key]);
+      }
+    });
+    infTypes.forEach(function(it) {
+      if (it.key !== chosen.key && verb[it.key]) {
+        distractorPool.push(verb[it.key]);
+      }
+    });
+    var distractors = pick(distractorPool, 3);
+
+    return {
+      type: 'mc', graded: true,
+      prompt: prompt,
+      correct: correctInf,
+      options: shuffle([correctInf].concat(distractors)),
+      optionsGreek: true
     };
   }
 
