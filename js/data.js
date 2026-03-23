@@ -3177,8 +3177,8 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Principal Part I is the:',
           display: 'παιδεύω', displayGreek: true,
-          correct: '1st person singular, present indicative active',
-          options: ['1st person singular, present indicative active', 'Future indicative active', 'Aorist indicative active', 'Perfect indicative active']
+          correct: 'Present indicative active',
+          options: ['Present indicative active', 'Future indicative active', 'Aorist indicative active', 'Perfect indicative active']
         },
         {
           type: 'mc-translate',
