@@ -4433,16 +4433,16 @@ var Data = (function() {
 
     // ---- Section 7: Review — Units 1–3 ----
 
-    // Lesson 51: Verb Forms Review I — Indicative
+    // Lesson 51: Verb Forms Review I
     {
       id: 51,
       title: 'Verb Review I',
-      subtitle: 'Indicative Forms (All 8 Verbs)',
+      subtitle: 'All Forms (All 8 Verbs)',
       section: 'Review: Units 1–3',
       icon: '🔄',
       exercises: [
         { type: 'intro', cards: [
-          { html: '<h3>Comprehensive Verb Review</h3><p>You have learned <strong>8 verbs</strong> across Units 2–3:</p><table class="intro-table"><tr><th>Verb</th><th>Meaning</th></tr><tr><td class="greek">παιδεύω</td><td>educate</td></tr><tr><td class="greek">κελεύω</td><td>order</td></tr><tr><td class="greek">λύω</td><td>unbind, free</td></tr><tr><td class="greek">πέμπω</td><td>send</td></tr><tr><td class="greek">γράφω</td><td>write</td></tr><tr><td class="greek">θύω</td><td>sacrifice</td></tr><tr><td class="greek">παύω</td><td>stop</td></tr><tr><td class="greek">φυλάττω</td><td>guard</td></tr></table><p>This lesson reviews all <strong>indicative</strong> forms: present, imperfect, future, aorist, perfect, and pluperfect.</p>' }
+          { html: '<h3>Comprehensive Verb Review</h3><p>You have learned <strong>8 verbs</strong> across Units 2–3:</p><table class="intro-table"><tr><th>Verb</th><th>Meaning</th></tr><tr><td class="greek">παιδεύω</td><td>educate</td></tr><tr><td class="greek">κελεύω</td><td>order</td></tr><tr><td class="greek">λύω</td><td>unbind, free</td></tr><tr><td class="greek">πέμπω</td><td>send</td></tr><tr><td class="greek">γράφω</td><td>write</td></tr><tr><td class="greek">θύω</td><td>sacrifice</td></tr><tr><td class="greek">παύω</td><td>stop</td></tr><tr><td class="greek">φυλάττω</td><td>guard</td></tr></table><p>This lesson reviews verb forms across <strong>all tenses and moods</strong> — indicative, subjunctive, and optative.</p>' }
         ]},
         { type: 'review-verb-id' },
         { type: 'review-verb-id' },
@@ -4459,16 +4459,16 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 52: Verb Forms Review II — Moods & Infinitives
+    // Lesson 52: Verb Forms Review II — Verbs & Infinitives
     {
       id: 52,
       title: 'Verb Review II',
-      subtitle: 'Subjunctive, Optative & Infinitives',
+      subtitle: 'Verb Forms & Infinitives',
       section: 'Review: Units 1–3',
       icon: '🔄',
       exercises: [
         { type: 'intro', cards: [
-          { html: '<h3>Moods & Infinitives Review</h3><p>Besides the indicative, you have learned two non-factual moods:</p><ul><li><strong>Subjunctive</strong> — lengthened thematic vowel (ω/η)</li><li><strong>Optative</strong> — mood suffix -οι- (present) or -αι- (aorist)</li></ul><p>And three types of infinitive:</p><ul><li><strong>Present</strong>: -ειν (e.g., παιδεύειν)</li><li><strong>Aorist</strong>: -σαι / -ψαι / -ξαι (e.g., παιδεῦσαι)</li><li><strong>Perfect</strong>: -έναι (e.g., πεπαιδευκέναι)</li></ul>' }
+          { html: '<h3>Verb Forms & Infinitives Review</h3><p>This lesson continues drilling verb forms across all tenses and moods, with a focus on <strong>infinitives</strong>:</p><ul><li><strong>Present</strong>: present tense stem + -ειν (e.g., παιδεύ- → παιδεύειν)</li><li><strong>Aorist</strong>: unaugmented aorist tense stem + -αι (e.g., παιδευσ- → παιδεῦσαι)</li><li><strong>Perfect</strong>: perfect active tense stem + -έναι (e.g., πεπαιδευκ- → πεπαιδευκέναι)</li></ul>' }
         ]},
         { type: 'review-verb-id' },
         { type: 'review-verb-id' },
