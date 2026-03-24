@@ -3649,6 +3649,18 @@ var Data = (function() {
           display: 'παιδεύει.', displayGreek: true,
           correct: 'He/she/it educates. (subject in the verb form)',
           options: ['He/she/it educates. (subject in the verb form)', 'We educate. (the subject is first plural)', 'You educate. (the subject is second person)', 'I educate. (the subject is first singular)']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ἆρα εἰς μάχην τοὺς ἀδελφοὺς πέμψεις;', displayGreek: true,
+          answer: ['will', 'you', 'send', 'your', 'brothers', 'into', 'battle'],
+          distractors: ['brother', 'sent', 'from']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'τὰ Ὁμήρου βιβλία ἐπαίδευε τοὺς ἀνθρώπους.', displayGreek: true,
+          answer: ["Homer's", 'books', 'were', 'educating', 'the', 'men'],
+          distractors: ['educated', 'man', 'sending']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'λύσουσιν οἱ θεοὶ τοὺς ἀνθρώπους τοὺς ἐν τῇ νήσῳ.', displayGreek: true,
+          answer: ['the', 'gods', 'will', 'free', 'the', 'men', 'on', 'the', 'island'],
+          distractors: ['freed', 'god', 'sending']
         }
       ]
     },
@@ -4049,6 +4061,18 @@ var Data = (function() {
           display: 'οἱ ἕξ ἀδελφοὶ χρῡσοῦ στέφανον ἔπεμπον παρὰ τὸν Ὅμηρον.', displayGreek: true,
           correct: 'The six brothers were sending a crown of gold to Homer.',
           options: ['The six brothers were sending a crown of gold to Homer.', 'Homer was sending six crowns of gold to the brothers.', 'The six brothers will send a crown of gold to Homer.', 'The six brothers sent a crown of gold from Homer.']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'οἱ θεοὶ λόγοις τὸν Ὅμηρον ἐπαίδευσαν.', displayGreek: true,
+          answer: ['the', 'gods', 'educated', 'Homer', 'with', 'words'],
+          distractors: ['educating', 'god', 'from']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ἡ θεὸς λόγους εἰς τὴν Ὁμήρου ψῡχὴν ἔπεμπεν.', displayGreek: true,
+          answer: ['the', 'goddess', 'was', 'sending', 'words', 'into', "Homer's", 'soul'],
+          distractors: ['sent', 'souls', 'from']
+        },
+        { type: 'word-bank', prompt: 'Translate:', display: 'τὸν ἀδελφὸν ἐκ τῆς χώρᾱς πέμψουσιν.', displayGreek: true,
+          answer: ['they', 'will', 'send', 'their', 'brother', 'out', 'of', 'the', 'land'],
+          distractors: ['brothers', 'sent', 'into']
         }
       ]
     },
