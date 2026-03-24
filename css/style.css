@@ -290,6 +290,80 @@ html, body {
   color: var(--red);
 }
 
+/* ===== Word Bank ===== */
+.wb-answer-zone {
+  min-height: 56px;
+  background: var(--card);
+  border: 2px dashed var(--card-light);
+  border-radius: var(--radius);
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.wb-answer-zone.correct {
+  border-color: var(--green);
+  background: rgba(0, 230, 118, 0.08);
+}
+.wb-answer-zone.wrong {
+  border-color: var(--red);
+  background: rgba(255, 82, 82, 0.08);
+}
+.wb-placeholder {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-style: italic;
+}
+.wb-answer-tile {
+  padding: 6px 12px;
+  background: var(--purple);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.wb-answer-tile:active { transform: scale(0.95); }
+.wb-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.wb-tile {
+  padding: 8px 14px;
+  background: var(--card);
+  border: 2px solid var(--card-light);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, border-color 0.15s;
+}
+.wb-tile:active { transform: scale(0.95); border-color: var(--purple); }
+.wb-tile.used {
+  opacity: 0.25;
+  pointer-events: none;
+}
+.wb-check {
+  opacity: 1;
+}
+.wb-correct-answer {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
 /* ===== Matching ===== */
 .match-area {
   display: flex;

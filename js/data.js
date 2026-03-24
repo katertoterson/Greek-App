@@ -4312,8 +4312,20 @@ var Data = (function() {
           ['ἵνα μή', 'in order that...not']
         ]},
         { type: 'mc-translate', prompt: 'The main verb is πεπόμφᾱσιν (perfect). What mood should the purpose clause verb be in?', correct: 'Subjunctive (perfect is primary)', options: ['Subjunctive (perfect is primary)', 'Optative (perfect is secondary)', 'Indicative (perfect is primary)', 'Infinitive (no sequence applies)'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ἔπεμψας χρῡσὸν ἵνα πέμψαιμεν βιβλία.', displayGreek: true,
+          answer: ['you', 'sent', 'gold', 'in', 'order', 'that', 'we', 'might', 'send', 'books'],
+          distractors: ['sending', 'book', 'may', 'gifts']
+        },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and you educated the strangers as well.', 'You will sacrifice to the gods in order that they may educate the strangers.'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'λελύκατε τοὺς ἀδελφοὺς ὡς πέμψῃ δῶρα.', displayGreek: true,
+          answer: ['you', 'have', 'freed', 'the', 'brothers', 'in', 'order', 'that', 'he', 'may', 'send', 'gifts'],
+          distractors: ['sent', 'brother', 'had', 'sending']
+        },
         { type: 'mc-translate', prompt: 'Identify the sequence:', display: 'ἐκέλευσε...ὅπως φυλάξαιεν', displayGreek: true, correct: 'Secondary (aorist main verb → optative)', options: ['Secondary (aorist main verb → optative)', 'Primary (present main verb → subjunctive)', 'No sequence — both are indicative', 'Primary (aorist main verb → subjunctive)'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ἐπαίδευσε τοὺς ἀδελφοὺς ὅπως χρῡσὸν πέμψαις.', displayGreek: true,
+          answer: ['he', 'educated', 'the', 'brothers', 'in', 'order', 'that', 'you', 'might', 'send', 'gold'],
+          distractors: ['educating', 'brother', 'may', 'sent']
+        },
         { type: 'match', pairs: [
           ['ἵνα', 'in order that'],
           ['ὡς', 'in order that'],
@@ -4414,6 +4426,10 @@ var Data = (function() {
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἵνα λύσωμεν τὸν Ὅμηρον δῶρα πεπόμφᾱσιν.', displayGreek: true, correct: 'In order that we may free Homer, they have sent gifts.', options: ['In order that we may free Homer, they have sent gifts.', 'In order that we might free Homer, they had sent gifts.', 'We freed Homer, and so they have now sent us gifts.', 'In order to free Homer, we ourselves had sent gifts.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὴν εἰρήνην ἐλελύκεσαν, ἔργῳ δὲ οὔ.', displayGreek: true, correct: 'In word they had broken the peace, but in deed they had not.', options: ['In word they had broken the peace, but in deed they had not.', 'In word they have broken the peace, but in deed they have not.', 'They were breaking the peace in word, but not yet in deed.', 'They broke the peace both by their words and by their deeds.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὴν τῶν θεῶν βουλὴν ἐπεπαύκεμεν τὸν πόλεμον.', displayGreek: true, correct: 'On account of the will of the gods, we had stopped the war.', options: ['On account of the will of the gods, we had stopped the war.', 'Through the will of the gods, we have now stopped the war.', 'On account of the will of the gods, they had stopped the war.', 'Because of the will of the gods, we will stop the war.'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ὡς τὸν πόλεμον παύωσιν ὁ δῆμος ταῖς θεοῖς θύει.', displayGreek: true,
+          answer: ['in', 'order', 'that', 'they', 'may', 'stop', 'the', 'war', 'the', 'people', 'sacrifices', 'to', 'the', 'goddesses'],
+          distractors: ['stopped', 'wars', 'gods', 'sacrificing']
+        },
         { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'πέμπεις χρῡσὸν ἵνα πέμψωμεν βιβλία.', displayGreek: true, correct: 'Primary sequence — aorist subjunctive', options: ['Primary sequence — aorist subjunctive', 'Secondary sequence — aorist optative', 'Primary sequence — present subjunctive', 'No sequence — both are indicative'] },
         { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'ἔπεμψας χρῡσὸν ἵνα πέμψαιμεν βιβλία.', displayGreek: true, correct: 'Secondary sequence — aorist optative', options: ['Secondary sequence — aorist optative', 'Primary sequence — aorist subjunctive', 'Secondary sequence — present optative', 'Primary sequence — present subjunctive'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπειδὴ τοὺς ἀγγέλους ἐφυλάξαμεν, τὴν δημοκρατίᾱν οὐκ ἔλῡσαν.', displayGreek: true, correct: 'After we guarded the messengers, they did not destroy the democracy.', options: ['After we guarded the messengers, they did not destroy the democracy.', 'Since we guard the messengers, they do not destroy the democracy.', 'We guarded the messengers and then they destroyed the democracy.', 'After the messengers were guarded, we destroyed the democracy.'] },
@@ -4425,9 +4441,17 @@ var Data = (function() {
           ['παιδεύωμεν', 'pres. subjunctive (1st pl.)'],
           ['παιδεύοιμεν', 'pres. optative (1st pl.)']
         ]},
+        { type: 'word-bank', prompt: 'Translate:', display: 'ἀγγέλους ἔπεμπον περὶ τὴν νῆσον ὅπως μὴ λύσιτε τὴν εἰρήνην.', displayGreek: true,
+          answer: ['they', 'were', 'sending', 'messengers', 'around', 'the', 'island', 'in', 'order', 'that', 'you', 'might', 'not', 'destroy', 'the', 'peace'],
+          distractors: ['sent', 'messenger', 'islands', 'may']
+        },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and you were educating the strangers.', 'You will sacrifice to the gods so that they might educate the strangers.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', displayGreek: true, correct: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', options: ['On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', 'On account of their virtues, we have sent wreaths, prizes of victory, to our friends.', 'Our friends had sent wreaths, prizes of victory, on account of their virtues.', 'Because of their virtues, we were sending wreaths, prizes of victory, to our friends.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', displayGreek: true, correct: 'He ordered the brothers to stop the war before the victory.', options: ['He ordered the brothers to stop the war before the victory.', 'The brothers stopped the war before victory.', 'He will order the brothers to win the war.', 'Before the victory, the brothers were stopping the war.'] }
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', displayGreek: true, correct: 'He ordered the brothers to stop the war before the victory.', options: ['He ordered the brothers to stop the war before the victory.', 'The brothers stopped the war before victory.', 'He will order the brothers to win the war.', 'Before the victory, the brothers were stopping the war.'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'τὸν φίλον κελεύσεις δῶρα καὶ θεοῖς καὶ ἀνθρώποις πέμπειν.', displayGreek: true,
+          answer: ['you', 'will', 'order', 'your', 'friend', 'to', 'send', 'gifts', 'both', 'to', 'gods', 'and', 'to', 'men'],
+          distractors: ['ordered', 'friends', 'sending', 'gift']
+        }
       ]
     },
 
@@ -4603,16 +4627,90 @@ var Data = (function() {
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα πρὸ τῆς μάχης τὸν ἄγγελον πέμψουσιν ἐξ ἀγορᾶς διὰ τῆς χώρᾱς;', displayGreek: true, correct: 'Before the battle will they send the messenger from the marketplace through the country?', options: ['Before the battle will they send the messenger from the marketplace through the country?', 'After the battle they sent the messenger from the marketplace through the country.', 'Before the battle they are sending the messenger from the marketplace to the country.', 'Will the messenger be sent from the marketplace before the battle through the country?'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν Ὅμηρον ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι.', displayGreek: true, correct: 'In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', options: ['In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', 'In order that they may not destroy the peace, we are ordering Homer to educate the men by means of books.', 'In order that he might not destroy the peace, Homer was ordering us to educate the men by means of books.', 'They did not destroy the peace, because we had ordered Homer to educate the men by means of books.'] },
         { type: 'mc-translate', prompt: 'What is the syntax of λύσειαν?', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν', displayGreek: true, correct: 'Aorist optative in a purpose clause in secondary sequence', options: ['Aorist optative in a purpose clause in secondary sequence', 'Aorist subjunctive in a purpose clause in primary sequence', 'Present optative in a result clause in secondary sequence', 'Aorist indicative in a temporal clause in past sequence'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ὦ ἄνθρωπε, τὸν ἀδελφὸν τὴν τέχνην οὐ παιδεύεις;', displayGreek: true,
+          answer: ['man', 'are', 'you', 'not', 'educating', 'your', 'brother', 'in', 'the', 'art'],
+          distractors: ['educated', 'brothers', 'men', 'sending']
+        },
         { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλίον περὶ τῆς τοῖς θεοῖς θυσίᾱς γέγραφας ἵνα ζῷα καὶ στεφάνους εἰς τὴν νῆσον πέμψωμεν.', displayGreek: true, correct: 'You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', options: ['You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', 'You had written a book about the sacrifice to the gods in order that we might send animals and wreaths to the island.', 'He has written a book about the sacrifice to the gods in order that we may sacrifice animals and wreaths on the island.', 'You are writing a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.'] },
         { type: 'mc-translate', prompt: 'What is the syntax of πέμψωμεν?', display: 'ἵνα ... πέμψωμεν', displayGreek: true, correct: 'Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', options: ['Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', 'Present subjunctive: subjunctive in primary sequence (main verb γέγραφας is present indicative)', 'Aorist optative: optative in secondary sequence (main verb γέγραφας is aorist indicative)', 'Aorist indicative: indicative in a temporal clause (main verb γέγραφας is perfect indicative)'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὸν ἐν τῇ χώρᾳ πόλεμον ἐπαύετε, ἔργῳ δὲ τοὺς ἀδελφοὺς εἰς μάχην ἐπέμπετε.', displayGreek: true, correct: 'By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', options: ['By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', 'By word you stopped the war in the country, but by deed you sent your brothers into battle.', 'By word you have stopped the war in the country, but by deed you have sent your brothers into battle.', 'By word you will stop the war in the country, but by deed you will send your brothers into battle.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε ἵνα τὸν πόλεμον παύσωσιν οἱ ἄνθρωποι;', displayGreek: true, correct: 'Will you destroy the soul of the democracy in order that the men may stop the war?', options: ['Will you destroy the soul of the democracy in order that the men may stop the war?', 'Did you destroy the soul of the democracy in order that the men might stop the war?', 'Have you destroyed the soul of the democracy in order that the men may stop the war?', 'Are you destroying the soul of the democracy in order that the men may stop the war?'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'περὶ τοῦ πολέμου ἔγραψα ὡς τὴν εἰρήνην ἀρετῇ φυλάξειαν.', displayGreek: true, correct: 'I wrote about the war in order that they might guard the peace by means of virtue.', options: ['I wrote about the war in order that they might guard the peace by means of virtue.', 'I write about the war in order that they may guard the peace by means of virtue.', 'I had written about the war in order that they might guard the peace by means of virtue.', 'I wrote about the war because they were guarding the peace by means of virtue.'] },
         { type: 'mc-translate', prompt: 'What is the syntax of ἀρετῇ?', display: '... ἀρετῇ φυλάξειαν', displayGreek: true, correct: 'Instrumental dative (by means of virtue)', options: ['Instrumental dative (by means of virtue)', 'Dative of indirect object (to virtue)', 'Dative of possession (belonging to virtue)', 'Locative dative (in the place of virtue)'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'οὐ πέμψομεν χρῡσὸν ἵνα μὴ ζῷα πέμψωσιν.', displayGreek: true,
+          answer: ['we', 'will', 'not', 'send', 'gold', 'in', 'order', 'that', 'they', 'may', 'not', 'send', 'animals'],
+          distractors: ['sending', 'animal', 'sent', 'might']
+        },
         { type: 'review-pp' },
         { type: 'review-synopsis' },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ μὲν Ὅμηρος τὸν φίλον ἐπεπαιδεύκειν ὅπως τοῖς θεοῖς θύοιεν, ὁ δὲ ἀδελφὸς οὔ.', displayGreek: true, correct: 'Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', options: ['Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', 'Homer has educated his friend in order that they may sacrifice to the gods, but his brother has not.', 'Homer was educating his friend in order that they might sacrifice to the gods, but his brother was not.', 'Homer educated his friend in order that they might sacrifice to the gods, but his brother did not.'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of θύοιεν?', display: 'ὅπως ... θύοιεν', displayGreek: true, correct: 'Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', options: ['Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', 'Aorist optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); aorist for simple aspect', 'Present subjunctive: subjunctive in primary sequence (main verb ἐπεπαιδεύκειν is present); present for progressive/repeated aspect', 'Imperfect indicative: indicative in a temporal clause (main verb ἐπεπαιδεύκειν is pluperfect); imperfect for past time'] }
+        { type: 'mc-translate', prompt: 'What is the syntax of θύοιεν?', display: 'ὅπως ... θύοιεν', displayGreek: true, correct: 'Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', options: ['Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', 'Aorist optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); aorist for simple aspect', 'Present subjunctive: subjunctive in primary sequence (main verb ἐπεπαιδεύκειν is present); present for progressive/repeated aspect', 'Imperfect indicative: indicative in a temporal clause (main verb ἐπεπαιδεύκειν is pluperfect); imperfect for past time'] },
+        { type: 'word-bank', prompt: 'Translate:', display: 'ὁ μὲν Ὅμηρος τὰς ἀνθρώπων ψῡχὰς τέχνῃ, δώρῳ τῶν θεῶν, πεπαίδευκεν, ὁ δὲ ἀδελφὸς ἔργοις.', displayGreek: true,
+          answer: ['Homer', 'has', 'educated', 'the', 'souls', 'of', 'men', 'by', 'art', 'with', 'a', 'gift', 'of', 'the', 'gods', 'but', 'his', 'brother', 'by', 'deeds'],
+          distractors: ['educating', 'soul', 'brothers', 'gifts']
+        }
+      ]
+    },
+
+    // Lesson 57: Word Bank Prototype
+    {
+      id: 57,
+      title: 'Word Bank',
+      subtitle: 'Build Translations',
+      section: 'Review: Units 1–3',
+      icon: '🧩',
+      exercises: [
+        { type: 'intro', title: 'Word Bank', cards: [
+          { html: '<h3>Build the Translation</h3><p>A new kind of exercise! You\'ll see a Greek sentence and a set of English words below.</p><p>Tap words in the right order to build the translation. Tap a word in your answer to remove it.</p><p>Watch out — there are extra words to throw you off!</p>' }
+        ]},
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ Ὅμηρος τὸν ἄνθρωπον παιδεύει.',
+          displayGreek: true,
+          answer: ['Homer', 'educates', 'the', 'man'],
+          distractors: ['sending', 'men', 'island']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
+          displayGreek: true,
+          answer: ['the', 'brother', 'sends', 'the', 'gifts', 'to', 'the', 'islands'],
+          distractors: ['educating', 'gift', 'brothers', 'from']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'τὸν Ὅμηρον παιδεύει ὁ ἄνθρωπος.',
+          displayGreek: true,
+          answer: ['the', 'man', 'educates', 'Homer'],
+          distractors: ['sends', 'men', 'educating']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ ἐν τῇ νήσῳ ἄνθρωπος τοὺς ἀδελφοὺς εἰς μάχην πέμπει.',
+          displayGreek: true,
+          answer: ['the', 'man', 'on', 'the', 'island', 'sends', 'the', 'brothers', 'into', 'battle'],
+          distractors: ['educates', 'islands', 'sending', 'brother']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'τοὺς ἀνθρώπους παιδεύομεν.',
+          displayGreek: true,
+          answer: ['we', 'educate', 'the', 'men'],
+          distractors: ['sending', 'man', 'Homer']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ θεὸς δῶρον τῷ ἀδελφῷ πέμπει.',
+          displayGreek: true,
+          answer: ['the', 'god', 'sends', 'a', 'gift', 'to', 'the', 'brother'],
+          distractors: ['educates', 'gifts', 'brothers', 'sending']
+        }
       ]
     }
   ];

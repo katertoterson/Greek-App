@@ -450,12 +450,127 @@ var UI = (function() {
     setTimeout(function() { toast.remove(); }, 1500);
   }
 
+  function renderWordBankExercise(area, exercise, onAnswer) {
+    area.innerHTML = '';
+    var answered = false;
+    var selectedWords = [];
+
+    // Prompt
+    var prompt = el('div', { className: 'exercise-prompt' }, [
+      el('div', { className: 'prompt-label', textContent: exercise.prompt })
+    ]);
+    if (exercise.display) {
+      var displayClass = 'prompt-text' + (exercise.displayGreek ? ' greek' : '');
+      if (exercise.display.length > 30) displayClass += ' small';
+      prompt.appendChild(el('div', { className: displayClass, textContent: exercise.display }));
+    }
+    area.appendChild(prompt);
+
+    // Answer zone — where selected words appear
+    var answerZone = el('div', { className: 'wb-answer-zone' });
+    area.appendChild(answerZone);
+
+    // Word bank
+    var bankDiv = el('div', { className: 'wb-bank' });
+    var wordTiles = [];
+
+    function updateAnswerZone() {
+      answerZone.innerHTML = '';
+      if (selectedWords.length === 0) {
+        answerZone.appendChild(el('span', { className: 'wb-placeholder', textContent: 'Tap words below to build your answer' }));
+        return;
+      }
+      selectedWords.forEach(function(word, idx) {
+        var tile = el('button', {
+          className: 'wb-answer-tile',
+          textContent: word,
+          onClick: function() {
+            if (answered) return;
+            selectedWords.splice(idx, 1);
+            // Re-enable the bank tile
+            wordTiles.forEach(function(t) {
+              if (t.dataset.word === word && t.classList.contains('used')) {
+                t.classList.remove('used');
+                return;
+              }
+            });
+            // Find first used tile with this word and re-enable it
+            for (var i = 0; i < wordTiles.length; i++) {
+              if (wordTiles[i].dataset.word === word && wordTiles[i].classList.contains('used')) {
+                wordTiles[i].classList.remove('used');
+                break;
+              }
+            }
+            updateAnswerZone();
+          }
+        });
+        answerZone.appendChild(tile);
+      });
+    }
+
+    exercise.words.forEach(function(word) {
+      var tile = el('button', {
+        className: 'wb-tile',
+        textContent: word,
+        'data-word': word,
+        onClick: function() {
+          if (answered || tile.classList.contains('used')) return;
+          tile.classList.add('used');
+          selectedWords.push(word);
+          updateAnswerZone();
+        }
+      });
+      wordTiles.push(tile);
+      bankDiv.appendChild(tile);
+    });
+
+    area.appendChild(bankDiv);
+
+    // Check button
+    var checkBtn = el('button', {
+      className: 'btn-continue wb-check',
+      textContent: 'Check',
+      onClick: function() {
+        if (answered) return;
+        answered = true;
+
+        var isCorrect = selectedWords.length === exercise.answer.length &&
+          selectedWords.every(function(w, i) { return w === exercise.answer[i]; });
+
+        // Show feedback
+        answerZone.classList.add(isCorrect ? 'correct' : 'wrong');
+
+        // Disable bank tiles
+        wordTiles.forEach(function(t) { t.style.pointerEvents = 'none'; });
+
+        // Show correct answer if wrong
+        if (!isCorrect) {
+          var correctDiv = el('div', { className: 'wb-correct-answer' }, [
+            el('span', { textContent: 'Correct: ' }),
+            el('span', { textContent: exercise.answer.join(' ') })
+          ]);
+          area.appendChild(correctDiv);
+        }
+
+        AudioFX.play(isCorrect ? 'correct' : 'wrong');
+
+        checkBtn.textContent = 'Continue';
+        checkBtn.classList.remove('wb-check');
+        checkBtn.onclick = function() { onAnswer(isCorrect); };
+      }
+    });
+    area.appendChild(checkBtn);
+
+    updateAnswerZone();
+  }
+
   return {
     renderHome: renderHome,
     renderLesson: renderLesson,
     renderIntroExercise: renderIntroExercise,
     renderMCExercise: renderMCExercise,
     renderMatchExercise: renderMatchExercise,
+    renderWordBankExercise: renderWordBankExercise,
     renderResults: renderResults,
     renderGameOver: renderGameOver
   };

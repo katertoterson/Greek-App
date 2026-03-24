@@ -186,9 +186,25 @@ var Engine = (function() {
         return generateReviewNumberChange(def);
       case 'review-infinitive':
         return generateReviewInfinitive(def);
+      case 'word-bank':
+        return generateWordBank(def);
       default:
         return null;
     }
+  }
+
+  function generateWordBank(def) {
+    var answerWords = def.answer.slice();
+    var allWords = answerWords.concat(def.distractors);
+    return {
+      type: 'word-bank',
+      graded: true,
+      prompt: def.prompt || 'Translate:',
+      display: def.display || '',
+      displayGreek: !!def.displayGreek,
+      answer: answerWords,
+      words: shuffle(allWords)
+    };
   }
 
   function generateIntro(def) {
