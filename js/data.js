@@ -2613,7 +2613,7 @@ var Data = (function() {
           display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
           displayGreek: true,
           correct: 'The brother sends the gifts to the islands.',
-          options: ['The brother sends the gifts to the islands.', 'The brother educates the islands.', 'The gifts send the brother.', 'The islands send the gifts.']
+          options: ['The brother sends the gifts to the islands.', 'The brother educates the men on the islands.', 'The gifts send the brother to the islands.', 'The islands send the gifts to the brother.']
         },
         {
           type: 'mc-translate',
@@ -2626,8 +2626,8 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'What does καί mean as an adverb?',
           display: 'καὶ Ὅμηρος', displayGreek: true,
-          correct: 'even / also (even Homer, also Homer)',
-          options: ['even / also (even Homer, also Homer)', 'and Homer', 'but Homer', 'not Homer']
+          correct: 'even, also (even Homer, also Homer)',
+          options: ['even, also (even Homer, also Homer)', 'and Homer (Homer and someone else)', 'but Homer (contrasting with another)', 'not Homer (negating the subject)']
         },
         {
           type: 'match',
@@ -2694,7 +2694,7 @@ var Data = (function() {
           display: 'ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
           displayGreek: true,
           correct: 'The man educates his brother by word and deed.',
-          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends his brother a word and a deed.', 'The brother sends words and deeds.']
+          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends his brother words and deeds.', 'The brother sends the man words and deeds.']
         }
       ]
     },
@@ -2728,7 +2728,7 @@ var Data = (function() {
           display: 'ὁ Ὁμήρου ἀδελφὸς παιδεύει τὸν ἄνθρωπον.',
           displayGreek: true,
           correct: 'Homer\'s brother educates the man.',
-          options: ['Homer\'s brother educates the man.', 'Homer educates his brother.', 'The man educates Homer\'s brother.', 'The brother sends the man.']
+          options: ['Homer\'s brother educates the man.', 'Homer educates his brother\'s man.', 'The man educates Homer\'s brother.', 'The brother sends the man gifts.']
         },
         {
           type: 'mc-translate',
@@ -2744,7 +2744,7 @@ var Data = (function() {
           display: 'ὁ θεὸς δῶρον τῷ Ὁμήρου ἀδελφῷ πέμπει εἰς τὴν χώρᾱν.',
           displayGreek: true,
           correct: 'The god sends a gift to Homer\'s brother into the land.',
-          options: ['The god sends a gift to Homer\'s brother into the land.', 'Homer\'s brother sends a gift to the god.', 'The god educates Homer\'s brother in the land.', 'The brother sends the god from the land.']
+          options: ['The god sends a gift to Homer\'s brother into the land.', 'Homer\'s brother sends a gift to the god in the land.', 'The god educates Homer\'s brother in the land.', 'The brother sends the god\'s gift from the land.']
         },
         {
           type: 'mc-translate',
@@ -2752,7 +2752,7 @@ var Data = (function() {
           display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
           displayGreek: true,
           correct: 'The brother sends the gifts to the islands.',
-          options: ['The brother sends the gifts to the islands.', 'The brother educates the islands.', 'The gifts send the brother to the islands.', 'The islands send gifts to the brother.']
+          options: ['The brother sends the gifts to the islands.', 'The brother educates the men on the islands.', 'The gifts send the brother to the islands.', 'The islands send the gifts to the brother.']
         },
         {
           type: 'mc-translate',
@@ -2760,7 +2760,7 @@ var Data = (function() {
           display: 'ὁ ἐν τῇ νήσῳ ἄνθρωπος τοὺς ἀδελφοὺς εἰς μάχην πέμπει.',
           displayGreek: true,
           correct: 'The man on the island sends the brothers into battle.',
-          options: ['The man on the island sends the brothers into battle.', 'The brothers send the man to the island.', 'The man in battle sends the brothers to the island.', 'The island sends the brothers into battle.']
+          options: ['The man on the island sends the brothers into battle.', 'The brothers on the island send the man into battle.', 'The man in battle sends the brothers to the island.', 'The island sends the brothers of the man into battle.']
         },
         {
           type: 'match',
@@ -2778,7 +2778,7 @@ var Data = (function() {
           display: 'ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
           displayGreek: true,
           correct: 'The man educates his brother by word and deed.',
-          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends words and deeds.', 'Words and deeds educate the man.']
+          options: ['The man educates his brother by word and deed.', 'The brother educates the man by word and deed.', 'The man sends his brother words and deeds.', 'Words and deeds educate the man\'s brother.']
         },
         {
           type: 'mc-translate',
@@ -2786,7 +2786,7 @@ var Data = (function() {
           display: 'ὦ ἄδελφε, ὁ θεὸς τοὺς ἀνθρώπους παιδεύει.',
           displayGreek: true,
           correct: 'Brother, the god educates the men.',
-          options: ['Brother, the god educates the men.', 'The god educates his brother.', 'The men educate the god, brother.', 'Brother, send the men to the god.']
+          options: ['Brother, the god educates the men.', 'The god educates his brother\'s men.', 'The men educate the god\'s brother.', 'Brother, the men send gifts to the god.']
         },
         {
           type: 'mc-translate',
@@ -2794,7 +2794,7 @@ var Data = (function() {
           display: 'ὁ θεὸς λόγους εἰς τὰς τῶν ἀνθρώπων ψῡχὰς πέμπει.',
           displayGreek: true,
           correct: 'The god sends words into the souls of the men.',
-          options: ['The god sends words into the souls of the men.', 'The men send words to the god\'s soul.', 'Words educate the souls of men.', 'The god educates the men\'s words.']
+          options: ['The god sends words into the souls of the men.', 'The men send words into the soul of the god.', 'The god educates the souls of the men with words.', 'The god sends the men\'s souls into the words.']
         },
         {
           type: 'mc-translate',
@@ -2802,7 +2802,7 @@ var Data = (function() {
           display: 'ὁ Ὅμηρος βιβλίοις παιδεύει τὸν ἀδελφόν.',
           displayGreek: true,
           correct: 'Homer educates his brother with books.',
-          options: ['Homer educates his brother with books.', 'Homer sends books to his brother.', 'The brother educates Homer with books.', 'Homer gives books to his brother.']
+          options: ['Homer educates his brother with books.', 'Homer sends his brother\'s books.', 'The brother educates Homer with books.', 'Homer sends books to his brother.']
         },
         {
           type: 'match',
@@ -2820,7 +2820,7 @@ var Data = (function() {
           display: 'ὁ ἀδελφὸς βιβλίον ἐκ τῆς ἀγορᾶς εἰς τὴν νῆσον πέμπει.',
           displayGreek: true,
           correct: 'The brother sends a book from the marketplace to the island.',
-          options: ['The brother sends a book from the marketplace to the island.', 'The island sends a book to the marketplace.', 'The brother reads a book in the marketplace.', 'The book sends the brother from the island.']
+          options: ['The brother sends a book from the marketplace to the island.', 'The island sends a book from the brother to the marketplace.', 'The brother educates the island with books from the marketplace.', 'The book sends the brother from the island to the marketplace.']
         },
         {
           type: 'mc-translate',
@@ -2835,7 +2835,7 @@ var Data = (function() {
           display: 'ὁ Ὅμηρος τοὺς ἀνθρώπους ἐν τῇ ἀγορᾷ παιδεύει.',
           displayGreek: true,
           correct: 'Homer educates the men in the marketplace.',
-          options: ['Homer educates the men in the marketplace.', 'The men educate Homer in the marketplace.', 'Homer sends the men from the marketplace.', 'The marketplace educates the men.']
+          options: ['Homer educates the men in the marketplace.', 'The men educate Homer in the marketplace.', 'Homer sends the men to the marketplace.', 'Homer educates the men from the marketplace.']
         }
       ]
     },
@@ -2864,7 +2864,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'What does it mean to say a verb is "inflected"?',
           correct: 'It changes form by adding endings to stems',
-          options: ['It changes form by adding endings to stems', 'It always stays the same', 'It only changes in poetry', 'It has no endings']
+          options: ['It changes form by adding endings to stems', 'It always stays the same in every context', 'It only changes form in poetry and prose', 'It has no endings or stem changes at all']
         },
         {
           type: 'mc-translate',
@@ -2904,13 +2904,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'How does Greek differ from English regarding pronouns with verbs?',
           correct: 'Greek verb endings encode person — no pronoun needed',
-          options: ['Greek verb endings encode person — no pronoun needed', 'Greek always requires a pronoun', 'Greek has no person system', 'Greek uses word order instead']
+          options: ['Greek verb endings encode person — no pronoun needed', 'Greek always requires a separate pronoun for clarity', 'Greek has no person system in its verb forms', 'Greek uses word order instead of verb endings']
         },
         {
           type: 'mc-translate',
           prompt: 'The dual number in Attic Greek is:',
           correct: 'Rare — it indicates a pair of subjects',
-          options: ['Rare — it indicates a pair of subjects', 'Very common', 'Used for all plurals', 'Used only in questions']
+          options: ['Rare — it indicates a pair of subjects', 'Very common — used in most verb forms', 'Used for all plurals alongside plural', 'Used only in questions and commands']
         },
         {
           type: 'mc-translate',
@@ -3023,13 +3023,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Secondary tenses receive the:',
           correct: 'Past indicative augment (ἐ-)',
-          options: ['Past indicative augment (ἐ-)', 'Future prefix (σ-)', 'Reduplication', 'No changes']
+          options: ['Past indicative augment (ἐ-)', 'Future tense prefix (σ-)', 'Reduplication prefix (Cε-)', 'No changes to the stem']
         },
         {
           type: 'mc-translate',
           prompt: 'The future tense can express:',
           correct: 'Both simple and progressive/repeated aspect',
-          options: ['Both simple and progressive/repeated aspect', 'Simple aspect only', 'Completed aspect only', 'No aspect']
+          options: ['Both simple and progressive/repeated aspect', 'Simple aspect only, never progressive', 'Completed aspect only, never simple', 'No aspect — only time is expressed']
         },
         {
           type: 'match',
@@ -3045,7 +3045,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: '"I used to fall" — which Greek tense?',
           correct: 'Imperfect (past + progressive/repeated)',
-          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple)', 'Present', 'Perfect']
+          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple aspect)', 'Present (present + progressive)', 'Perfect (present + completed)']
         }
       ]
     },
@@ -3089,13 +3089,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'When a verb is in the passive voice, the subject:',
           correct: 'Receives the action from an outside agency',
-          options: ['Receives the action from an outside agency', 'Performs the action', 'Has personal involvement', 'Gives a command']
+          options: ['Receives the action from an outside agency', 'Performs the action on someone else', 'Has special personal involvement', 'Gives a command to someone else']
         },
         {
           type: 'mc-translate',
           prompt: 'The middle voice is unique to Greek. It indicates:',
           correct: 'The subject performs the action with special personal involvement',
-          options: ['The subject performs the action with special personal involvement', 'The subject receives the action', 'A command', 'A hypothetical action']
+          options: ['The subject performs the action with special personal involvement', 'The subject receives the action from an outside agency', 'A command directed at another person to act', 'A hypothetical action that may or may not occur']
         },
         {
           type: 'match',
@@ -3111,13 +3111,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'How many moods does Greek have?',
           correct: 'Four (indicative, subjunctive, optative, imperative)',
-          options: ['Four (indicative, subjunctive, optative, imperative)', 'Two (active and passive)', 'Three (past, present, future)', 'Six']
+          options: ['Four (indicative, subjunctive, optative, imperative)', 'Two (active and passive voices only)', 'Three (past, present, and future)', 'Six (one for each principal part)']
         },
         {
           type: 'mc-translate',
           prompt: 'How many voices does Greek have?',
           correct: 'Three (active, middle, passive)',
-          options: ['Three (active, middle, passive)', 'Two (active and passive)', 'Four', 'One']
+          options: ['Three (active, middle, passive)', 'Two (active and passive only)', 'Four (active, middle, passive, reflexive)', 'One (active only in all forms)']
         },
         {
           type: 'match',
@@ -3209,7 +3209,7 @@ var Data = (function() {
           prompt: 'PP IV and V often show:',
           display: 'πεπαίδευκα, πεπαίδευμαι', displayGreek: true,
           correct: 'Reduplication (initial consonant doubled with ε)',
-          options: ['Reduplication (initial consonant doubled with ε)', 'The past augment ἐ-', 'A sigma suffix', 'No changes to the stem']
+          options: ['Reduplication (initial consonant doubled with ε)', 'The past indicative augment (prefix ἐ-)', 'A sigma suffix added to the stem', 'No changes at all to the stem']
         },
         {
           type: 'mc-translate',
@@ -3227,7 +3227,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Can one principal part be derived from another?',
           correct: 'No — all six must be learned separately',
-          options: ['No — all six must be learned separately', 'Yes, always', 'Only PP II from PP I', 'Only in regular verbs']
+          options: ['No — all six must be learned separately', 'Yes — always from the present stem', 'Only PP II can be derived from PP I', 'Only in regular verbs of the first conjugation']
         },
         {
           type: 'match',
@@ -3250,7 +3250,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Verb forms are identified by stating:',
           correct: 'Person, number, tense, mood, voice',
-          options: ['Person, number, tense, mood, voice', 'Just the tense', 'Case, number, gender', 'Only person and number']
+          options: ['Person, number, tense, mood, voice', 'Just the tense and voice alone', 'Case, number, gender, and declension', 'Only the person and number of the form']
         }
       ]
     },
@@ -3308,13 +3308,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'What is nu-movable?',
           correct: 'ν added to certain endings before vowels or at sentence end',
-          options: ['ν added to certain endings before vowels or at sentence end', 'A special accent mark', 'An extra syllable added in poetry', 'A prefix for past tense']
+          options: ['ν added to certain endings before vowels or at sentence end', 'A special accent mark placed on the final syllable', 'An extra syllable added in poetry for meter', 'A prefix added to the stem for past tense']
         },
         {
           type: 'mc-translate',
           prompt: 'Most verb forms have what kind of accent?',
           correct: 'Recessive (as far from the end as possible)',
-          options: ['Recessive (as far from the end as possible)', 'Persistent (stays on the same syllable)', 'No accent', 'Circumflex always']
+          options: ['Recessive (as far from the end as possible)', 'Persistent (stays on the same syllable)', 'No accent on the verb form at all', 'Circumflex always on the ultima']
         },
         { type: 'verb-form-id', tense: 'present', verbIndex: 1 },
         { type: 'verb-form-select', tense: 'present', verbIndex: 2 }
@@ -3345,7 +3345,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'What distinguishes the imperfect from the present?',
           correct: 'The augment ἐ- and different endings',
-          options: ['The augment ἐ- and different endings', 'A σ in the stem', 'Reduplication', 'Nothing — they are the same']
+          options: ['The augment ἐ- and different endings', 'A σ added in the tense stem', 'Reduplication of the initial consonant', 'Nothing at all — they are the same']
         },
         {
           type: 'mc-translate',
@@ -3370,7 +3370,7 @@ var Data = (function() {
           prompt: 'ἐπαίδευον can mean:',
           display: 'ἐπαίδευον', displayGreek: true,
           correct: 'Both "I was educating" and "they were educating"',
-          options: ['Both "I was educating" and "they were educating"', 'Only "I was educating"', 'Only "they were educating"', '"We were educating"']
+          options: ['Both "I was educating" and "they were educating"', 'Only "I was educating" (1st singular)', 'Only "they were educating" (3rd plural)', '"We were educating" (1st person plural)']
         },
         { type: 'verb-form-id', tense: 'imperfect', verbIndex: 2 },
         { type: 'verb-form-id', tense: 'imperfect', verbIndex: 3 },
@@ -3413,7 +3413,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'What distinguishes the future from the present?',
           correct: 'The σ in the future tense stem',
-          options: ['The σ in the future tense stem', 'The augment ἐ-', 'Different endings', 'Reduplication']
+          options: ['The σ in the future tense stem', 'The augment ἐ- prefix', 'Different personal endings', 'Reduplication of initial consonant']
         },
         { type: 'verb-form-select', tense: 'future', verbIndex: 0 },
         { type: 'verb-form-select', tense: 'future', verbIndex: 0 },
@@ -3442,7 +3442,7 @@ var Data = (function() {
           prompt: 'παιδεύσομεν can mean:',
           display: 'παιδεύσομεν', displayGreek: true,
           correct: 'Both "we shall educate" and "we shall be educating"',
-          options: ['Both "we shall educate" and "we shall be educating"', 'Only "we shall educate (once)"', 'Only "we shall be educating"', '"We educated"']
+          options: ['Both "we shall educate" and "we shall be educating"', 'Only "we shall educate (once, simple aspect)"', 'Only "we shall be educating (progressive)"', '"We educated (past tense, not future)"']
         }
       ]
     },
@@ -3497,13 +3497,13 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: '"I fell once" vs "I used to fall" — which is aorist?',
           correct: '"I fell once" (simple, single occurrence)',
-          options: ['"I fell once" (simple, single occurrence)', '"I used to fall" (habitual)', 'Both are aorist', 'Neither is aorist']
+          options: ['"I fell once" (simple, single occurrence)', '"I used to fall" (habitual, repeated)', 'Both are aorist forms of the verb', 'Neither is aorist — both are imperfect']
         },
         {
           type: 'mc-translate',
           prompt: 'The 3rd person singular aorist ending -ε(ν) is like which imperfect ending?',
           correct: 'The 3rd person singular imperfect ending -ε(ν)',
-          options: ['The 3rd person singular imperfect ending -ε(ν)', 'The 1st person singular', 'The 2nd person plural', 'No similarity']
+          options: ['The 3rd person singular imperfect ending -ε(ν)', 'The 1st person singular imperfect ending -ον', 'The 2nd person plural imperfect ending -ετε', 'No similarity to any imperfect ending']
         },
         { type: 'verb-form-id', tense: 'aorist', verbIndex: 1 },
         { type: 'verb-form-select', tense: 'aorist', verbIndex: 3 }
@@ -3531,7 +3531,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Can a single Greek verb form express a complete sentence?',
           correct: 'Yes — it encodes person and number in its ending',
-          options: ['Yes — it encodes person and number in its ending', 'No — a pronoun is always required', 'Only in poetry', 'Only with 3rd person']
+          options: ['Yes — it encodes person and number in its ending', 'No — a separate pronoun is always required', 'Only in poetry and elevated prose', 'Only with 3rd person singular forms']
         },
         {
           type: 'mc-translate',
@@ -3544,13 +3544,13 @@ var Data = (function() {
           prompt: 'Translate: τὰ τῶν θεῶν ἔργα τοὺς ἀνθρώπους παιδεύει.',
           display: 'τὰ τῶν θεῶν ἔργα τοὺς ἀνθρώπους παιδεύει.', displayGreek: true,
           correct: 'The deeds of the gods educate the men.',
-          options: ['The deeds of the gods educate the men.', 'The gods\' deeds are educated by men.', 'The men educate the deeds of the gods.', 'The deed of the god educates the man.']
+          options: ['The deeds of the gods educate the men.', 'The gods\' deeds are educated by the men.', 'The men educate the deeds of the gods.', 'The deed of the god educates the man.']
         },
         {
           type: 'mc-translate',
           prompt: 'Why is παιδεύει (singular) used with τὰ ἔργα (plural)?',
           correct: 'Neuter plural subjects take singular verbs',
-          options: ['Neuter plural subjects take singular verbs', 'It is a mistake in the text', 'ἔργα is actually singular', 'The verb agrees with θεῶν']
+          options: ['Neuter plural subjects take singular verbs', 'It is a mistake in the Greek text', 'ἔργα is actually a singular noun form', 'The verb agrees with θεῶν not ἔργα']
         },
         {
           type: 'mc-translate',
@@ -3563,14 +3563,14 @@ var Data = (function() {
           prompt: 'ἆρα at the start of a clause indicates:',
           display: 'ἆρα', displayGreek: true,
           correct: 'A question is being asked (not separately translated)',
-          options: ['A question is being asked (not separately translated)', '"Therefore"', '"But"', '"And"']
+          options: ['A question is being asked (not separately translated)', 'A conclusion is drawn (translated as "therefore")', 'A contrast follows (translated as "but")', 'An addition follows (translated as "and")']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate: ἆρα ὁ ἄνθρωπος παιδεύει;',
           display: 'ἆρα ὁ ἄνθρωπος παιδεύει;', displayGreek: true,
           correct: 'Does the man educate? / Is the man educating?',
-          options: ['Does the man educate? / Is the man educating?', 'Therefore the man educates.', 'The man does not educate.', 'The man educated.']
+          options: ['Does the man educate? / Is the man educating?', 'Therefore the man educates the brothers.', 'The man does not educate anyone at all.', 'The man educated his brother yesterday.']
         },
         {
           type: 'match',
@@ -3586,7 +3586,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'Does Greek change word order to form questions?',
           correct: 'No — only the question mark (and optionally ἆρα) signals a question',
-          options: ['No — only the question mark (and optionally ἆρα) signals a question', 'Yes, the verb moves to the front', 'Yes, like English', 'Only in formal prose']
+          options: ['No — only the question mark (and optionally ἆρα) signals a question', 'Yes — the verb always moves to the front of the clause', 'Yes — Greek follows the same rules as English does', 'Only in formal prose — informal Greek changes order']
         },
         {
           type: 'mc-translate',
@@ -3600,7 +3600,7 @@ var Data = (function() {
           prompt: 'Translate: παιδεύει.',
           display: 'παιδεύει.', displayGreek: true,
           correct: 'He/she/it educates. (subject in the verb form)',
-          options: ['He/she/it educates. (subject in the verb form)', 'We educate.', 'You educate.', 'I educate.']
+          options: ['He/she/it educates. (subject in the verb form)', 'We educate. (the subject is first plural)', 'You educate. (the subject is second person)', 'I educate. (the subject is first singular)']
         }
       ]
     },
@@ -3650,7 +3650,7 @@ var Data = (function() {
           prompt: 'What is the aorist infinitive active of λύω?',
           display: 'PP III: ἔλῡσα', displayGreek: true,
           correct: 'λῦσαι (drop augment, add -αι)',
-          options: ['λῦσαι (drop augment, add -αι)', 'λύειν', 'ἐλῦσαι', 'λύσειν'],
+          options: ['λῦσαι (drop augment, add -αι)', 'λύειν (present stem, add -ειν)', 'ἐλῦσαι (keep augment, add -αι)', 'λύσειν (aorist stem, add -ειν)'],
           optionsGreek: false
         },
         {
@@ -3708,7 +3708,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'The accent on the aorist infinitive active is:',
           correct: 'Always on the penult (not recessive)',
-          options: ['Always on the penult (not recessive)', 'Always recessive', 'On the ultima', 'On the antepenult']
+          options: ['Always on the penult (not recessive)', 'Always recessive (as far back as possible)', 'Always on the ultima (last syllable)', 'Always on the antepenult (third from end)']
         },
         {
           type: 'match',
@@ -3780,13 +3780,13 @@ var Data = (function() {
           prompt: 'What does γάρ mean?',
           display: 'γάρ', displayGreek: true,
           correct: 'for (explanatory, postpositive)',
-          options: ['for (explanatory, postpositive)', 'but', 'and', 'therefore']
+          options: ['for (explanatory, postpositive)', 'but (contrastive conjunction)', 'and (connective conjunction)', 'therefore (conclusive adverb)']
         },
         {
           type: 'mc-translate',
           prompt: 'A postpositive conjunction:',
           correct: 'Never stands first in its clause',
-          options: ['Never stands first in its clause', 'Always stands first', 'Has no position rule', 'Comes only at the end']
+          options: ['Never stands first in its clause', 'Always stands first in its clause', 'Has no fixed position rule', 'Comes only at the end of a clause']
         },
         {
           type: 'mc-translate',
@@ -3799,7 +3799,7 @@ var Data = (function() {
           type: 'mc-translate',
           prompt: 'When is οὐχ used instead of οὐ or οὐκ?',
           correct: 'Before words with a rough breathing',
-          options: ['Before words with a rough breathing', 'Before consonants', 'Before smooth breathing', 'At the end of sentences']
+          options: ['Before words with a rough breathing', 'Before words beginning with consonants', 'Before words with a smooth breathing', 'At the end of sentences or clauses']
         },
         {
           type: 'match',
@@ -3823,7 +3823,7 @@ var Data = (function() {
           prompt: 'παρά + dative means:',
           display: 'παρά + dat.', displayGreek: true,
           correct: 'At the side of, at the house of',
-          options: ['At the side of, at the house of', 'From the side of', 'To the side of', 'Before']
+          options: ['At the side of, at the house of', 'From the side of, away from', 'To the side of, toward', 'Before, in front of']
         },
         {
           type: 'mc-translate',
@@ -3903,42 +3903,42 @@ var Data = (function() {
           prompt: 'Translate:',
           display: 'οἱ θεοὶ δῶρα ἔπεμπον εἰς τὴν χώρᾱν.', displayGreek: true,
           correct: 'The gods used to send gifts into the land.',
-          options: ['The gods used to send gifts into the land.', 'The gods will send gifts into the land.', 'The gods send gifts into the land.', 'The gods sent gifts into the land (once).']
+          options: ['The gods used to send gifts into the land.', 'The gods will send gifts into the land.', 'The gods send gifts from the land.', 'The gods sent gifts into the land once.']
         },
         {
           type: 'mc-translate',
           prompt: 'ἔπεμπον is what tense?',
           display: 'ἔπεμπον', displayGreek: true,
           correct: 'Imperfect (past + progressive/repeated)',
-          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple)', 'Present', 'Future']
+          options: ['Imperfect (past + progressive/repeated)', 'Aorist (past + simple aspect)', 'Present (present + progressive)', 'Future (future + simple aspect)']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'πέντε βιβλία τοῖς ξένοις ἔπεμψεν ὁ Ὅμηρος.', displayGreek: true,
           correct: 'Homer sent five books to the guest-friends.',
-          options: ['Homer sent five books to the guest-friends.', 'Homer was sending five books.', 'Homer will send five books.', 'The guest-friends sent Homer five books.']
+          options: ['Homer sent five books to the guest-friends.', 'Homer was sending five books to the brothers.', 'Homer will send five books to the strangers.', 'The guest-friends sent Homer five books.']
         },
         {
           type: 'mc-translate',
           prompt: 'ἔπεμψεν is what tense?',
           display: 'ἔπεμψεν', displayGreek: true,
           correct: 'Aorist (past + simple — a single action)',
-          options: ['Aorist (past + simple — a single action)', 'Imperfect (past + progressive)', 'Present', 'Future']
+          options: ['Aorist (past + simple — a single action)', 'Imperfect (past + progressive/repeated)', 'Present (present + progressive aspect)', 'Future (future + simple aspect)']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'ἆρα λύσετε καὶ τὴν τῆς θεοῦ φιλίᾱν;', displayGreek: true,
           correct: 'Will you (pl.) destroy even the friendship of the goddess?',
-          options: ['Will you (pl.) destroy even the friendship of the goddess?', 'Did you destroy the goddess\'s friendship?', 'You are destroying the goddess\'s friendship.', 'The goddess destroyed your friendship.']
+          options: ['Will you (pl.) destroy even the friendship of the goddess?', 'Did you (pl.) destroy the friendship of the goddess?', 'You are destroying the friendship of the goddess.', 'The goddess destroyed the friendship of the men.']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'τοῖς μὲν ξένοις στεφάνους πέμψομεν, τοῖς δὲ φίλοις βιβλία.', displayGreek: true,
           correct: 'To the strangers we shall send crowns, but to the friends, books.',
-          options: ['To the strangers we shall send crowns, but to the friends, books.', 'The strangers sent crowns, the friends sent books.', 'We were sending crowns and books.', 'The friends and strangers send crowns.']
+          options: ['To the strangers we shall send crowns, but to the friends, books.', 'The strangers sent crowns to the friends and books to us.', 'We were sending crowns to the strangers and books to friends.', 'The friends and strangers will send crowns and books to us.']
         },
         {
           type: 'match',
@@ -3955,28 +3955,28 @@ var Data = (function() {
           prompt: 'Translate:',
           display: 'ὁ θεὸς τὸν Ὅμηρον λῦσαι τοὺς ἀνθρώπους ἐκέλευσεν.', displayGreek: true,
           correct: 'The god ordered Homer to free the men (once and for all).',
-          options: ['The god ordered Homer to free the men (once and for all).', 'The god was ordering Homer to free the men.', 'Homer ordered the god to free the men.', 'The men ordered Homer to free the god.']
+          options: ['The god ordered Homer to free the men (once and for all).', 'The god was ordering Homer to keep freeing the men.', 'Homer ordered the god to free the men at once.', 'The men ordered Homer to free the god from the land.']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'ὦ ξένε, ζῷα πέμπεις εἰς ἀγορὰν ἢ οὔ;', displayGreek: true,
           correct: 'Stranger, are you sending animals to the marketplace or not?',
-          options: ['Stranger, are you sending animals to the marketplace or not?', 'The stranger sent animals to the marketplace.', 'Stranger, do you order animals?', 'The animals are sent to the stranger.']
+          options: ['Stranger, are you sending animals to the marketplace or not?', 'The stranger sent animals to the marketplace from the island.', 'Stranger, are you ordering animals from the marketplace?', 'The animals are being sent to the stranger in the marketplace.']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'τοὺς πολέμους ἢ λόγοις ἢ ἔργοις ἐλύομεν.', displayGreek: true,
           correct: 'We used to resolve the wars either by words or by deeds.',
-          options: ['We used to resolve the wars either by words or by deeds.', 'We shall resolve the wars by words.', 'We resolved the war by deeds (once).', 'The wars freed us by word and deed.']
+          options: ['We used to resolve the wars either by words or by deeds.', 'We shall resolve the wars either by words or by deeds.', 'We resolved the war by deeds, not by words at all.', 'The wars freed us both by words and by deeds.']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'ὁ Ὅμηρος τοὺς ἐν τῇ οἰκίᾳ φίλους εὖ παιδεύσει.', displayGreek: true,
           correct: 'Homer will educate the friends in the house well.',
-          options: ['Homer will educate the friends in the house well.', 'Homer educated the friends well.', 'Homer was educating the friends.', 'The friends educate Homer well.']
+          options: ['Homer will educate the friends in the house well.', 'Homer educated the friends in the house well.', 'Homer was educating the friends in the house well.', 'The friends will educate Homer in the house well.']
         },
         {
           type: 'match',
@@ -3993,14 +3993,14 @@ var Data = (function() {
           prompt: 'Translate:',
           display: 'ἔργῳ, οὐ λόγῳ, τοὺς φίλους ἔλῡον.', displayGreek: true,
           correct: 'By deed, not by word, I used to free my friends.',
-          options: ['By deed, not by word, I used to free my friends.', 'By word, not by deed, I freed my friends.', 'The friends freed me by deeds.', 'I did not free my friends by deed.']
+          options: ['By deed, not by word, I used to free my friends.', 'By word, not by deed, I used to free my friends.', 'By deed, not by word, my friends used to free me.', 'I did not free my friends by deed or by word.']
         },
         {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'οἱ ἕξ ἀδελφοὶ χρῡσοῦ στέφανον ἔπεμπον παρὰ τὸν Ὅμηρον.', displayGreek: true,
           correct: 'The six brothers were sending a crown of gold to Homer.',
-          options: ['The six brothers were sending a crown of gold to Homer.', 'Homer sent six golden crowns.', 'The brothers will send a gold crown.', 'Six crowns were sent from Homer.']
+          options: ['The six brothers were sending a crown of gold to Homer.', 'Homer was sending six crowns of gold to the brothers.', 'The six brothers will send a crown of gold to Homer.', 'The six brothers sent a crown of gold from Homer.']
         }
       ]
     },
@@ -4019,11 +4019,11 @@ var Data = (function() {
           { html: '<p>The perfect of <span class="greek">παιδεύω</span> (stem: <span class="greek">πεπαιδευκ-</span>):</p><table class="intro-table"><tr><th></th><th>Form</th><th>Meaning</th></tr><tr><td>1st s.</td><td class="greek">πεπαίδευκα</td><td>I have educated</td></tr><tr><td>2nd s.</td><td class="greek">πεπαίδευκας</td><td>you have educated</td></tr><tr><td>3rd s.</td><td class="greek">πεπαίδευκε(ν)</td><td>he/she/it has educated</td></tr><tr><td>1st pl.</td><td class="greek">πεπαιδεύκαμεν</td><td>we have educated</td></tr><tr><td>2nd pl.</td><td class="greek">πεπαιδεύκατε</td><td>you have educated</td></tr><tr><td>3rd pl.</td><td class="greek">πεπαιδεύκᾱσι(ν)</td><td>they have educated</td></tr></table>' },
           { html: '<p><strong>Reduplication:</strong> Many perfect stems are formed by reduplicating the initial consonant with <span class="greek">-ε-</span> inserted between:</p><p class="greek" style="font-size:18px">παιδεύω → <strong>πε</strong>παίδευκα</p><p class="greek" style="font-size:18px">λύω → <strong>λέ</strong>λυκα</p><p class="greek" style="font-size:18px">γράφω → <strong>γέ</strong>γραφα</p><p>The perfect endings are identical to the aorist EXCEPT in the 3rd plural. Compare: <span class="greek">πεπαιδεύκ<strong>ᾱσι</strong>(ν)</span> vs. <span class="greek">ἐπαίδευσ<strong>αν</strong></span>.</p>' }
         ]},
-        { type: 'mc-translate', prompt: 'What does the perfect indicative express?', correct: 'An action completed from the point of view of present time', options: ['An action completed from the point of view of present time', 'An action completed in the past', 'An action that will be completed', 'A repeated action in the present'] },
+        { type: 'mc-translate', prompt: 'What does the perfect indicative express?', correct: 'An action completed from the point of view of present time', options: ['An action completed from the point of view of present time', 'An action completed from the point of view of past time', 'An action that will be completed at a future time', 'A repeated action from the point of view of present time'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαίδευκα', displayGreek: true, correct: 'I have educated', options: ['I have educated', 'I was educating', 'I educated', 'I will educate'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'γέγραφας', displayGreek: true, correct: 'you have written', options: ['you have written', 'you were writing', 'you wrote', 'you will write'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'perfect', verbSource: 'unit3' },
-        { type: 'mc-translate', prompt: 'What is the 3rd plural ending of the perfect indicative active?', correct: '-ᾱσι(ν)', options: ['-ᾱσι(ν)', '-αν', '-ατε', '-αμεν'] },
+        { type: 'mc-translate', prompt: 'What is the 3rd plural ending of the perfect indicative active?', correct: '-ᾱσι(ν)', options: ['-ᾱσι(ν)', '-ᾱσα(ν)', '-ατε(ν)', '-αμε(ν)'] },
         { type: 'match', pairs: [
           ['πεπαίδευκα', 'I have educated'],
           ['πεπαίδευκας', 'you (s.) have educated'],
@@ -4032,7 +4032,7 @@ var Data = (function() {
           ['πεπαιδεύκᾱσι(ν)', 'they have educated']
         ]},
         { type: 'mc-translate', prompt: 'Translate:', display: 'τέθυκα', displayGreek: true, correct: 'I have sacrificed', options: ['I have sacrificed', 'I sacrificed', 'I was sacrificing', 'I will sacrifice'] },
-        { type: 'mc-translate', prompt: 'How is reduplication typically formed in the perfect?', correct: 'Initial consonant + ε + rest of stem', options: ['Initial consonant + ε + rest of stem', 'Prefix ἐ- to the stem', 'Add σ to the stem', 'Double the entire stem'] },
+        { type: 'mc-translate', prompt: 'How is reduplication typically formed in the perfect?', correct: 'Initial consonant + ε + rest of stem', options: ['Initial consonant + ε + rest of stem', 'Prefix ἐ- to the beginning of stem', 'Add σ between the stem and ending', 'Double the entire stem and ending'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'perfect', verbSource: 'unit3' },
         { type: 'mc-translate', prompt: 'Translate:', display: 'πεφύλαχε(ν)', displayGreek: true, correct: 'he/she has guarded', options: ['he/she has guarded', 'he/she guarded', 'he/she was guarding', 'he/she will guard'] },
         { type: 'mc-translate', prompt: 'Which form is the 3rd plural perfect (NOT aorist)?', correct: 'πεπαιδεύκᾱσι(ν)', options: ['πεπαιδεύκᾱσι(ν)', 'ἐπαίδευσαν', 'πεπαιδεύκατε', 'ἐπαιδεύσαμεν'] }
@@ -4052,11 +4052,11 @@ var Data = (function() {
           { html: '<p>The pluperfect of <span class="greek">παιδεύω</span> (stem: <span class="greek">ἐπεπαιδευκ-</span>):</p><table class="intro-table"><tr><th></th><th>Form</th><th>Meaning</th></tr><tr><td>1st s.</td><td class="greek">ἐπεπαιδεύκη</td><td>I had educated</td></tr><tr><td>2nd s.</td><td class="greek">ἐπεπαιδεύκης</td><td>you had educated</td></tr><tr><td>3rd s.</td><td class="greek">ἐπεπαιδεύκει(ν)</td><td>he/she had educated</td></tr><tr><td>1st pl.</td><td class="greek">ἐπεπαιδεύκεμεν</td><td>we had educated</td></tr><tr><td>2nd pl.</td><td class="greek">ἐπεπαιδεύκετε</td><td>you had educated</td></tr><tr><td>3rd pl.</td><td class="greek">ἐπεπαιδεύκεσαν</td><td>they had educated</td></tr></table>' },
           { html: '<p><strong>Key observations:</strong></p><ul><li>Like other past tenses, the pluperfect takes the <strong>past indicative augment</strong> <span class="greek">ἐ-</span>.</li><li>The tense vowel alternates: <span class="greek">-η-</span> in the singular, <span class="greek">-ε-</span> in the plural (except 3rd sing. <span class="greek">-ει</span>).</li><li>The 3rd singular can take a <strong>nu-movable</strong>.</li></ul>' }
         ]},
-        { type: 'mc-translate', prompt: 'What does the pluperfect indicative express?', correct: 'An action completed from the point of view of past time', options: ['An action completed from the point of view of past time', 'An action completed from the point of view of present time', 'A continuous past action', 'A future completed action'] },
+        { type: 'mc-translate', prompt: 'What does the pluperfect indicative express?', correct: 'An action completed from the point of view of past time', options: ['An action completed from the point of view of past time', 'An action completed from the point of view of present time', 'A continuous action from the point of view of past time', 'A future action completed from the point of view of present time'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπεπαιδεύκη', displayGreek: true, correct: 'I had educated', options: ['I had educated', 'I have educated', 'I was educating', 'I educated'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἐγεγράφεσαν', displayGreek: true, correct: 'they had written', options: ['they had written', 'they have written', 'they wrote', 'they were writing'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'pluperfect', verbSource: 'unit3' },
-        { type: 'mc-translate', prompt: 'How does the pluperfect differ from the perfect?', correct: 'The pluperfect refers to past time; the perfect to present time', options: ['The pluperfect refers to past time; the perfect to present time', 'The pluperfect has different endings', 'The pluperfect uses a different stem', 'There is no difference'] },
+        { type: 'mc-translate', prompt: 'How does the pluperfect differ from the perfect?', correct: 'The pluperfect refers to past time; the perfect to present time', options: ['The pluperfect refers to past time; the perfect to present time', 'The pluperfect has different endings from the imperfect tense', 'The pluperfect uses a different stem from the perfect tense', 'There is no meaningful difference between the two tenses'] },
         { type: 'match', pairs: [
           ['ἐπεπαιδεύκη', 'I had educated'],
           ['ἐπεπαιδεύκης', 'you (s.) had educated'],
@@ -4064,9 +4064,9 @@ var Data = (function() {
           ['ἐπεπαιδεύκεμεν', 'we had educated'],
           ['ἐπεπαιδεύκεσαν', 'they had educated']
         ]},
-        { type: 'mc-translate', prompt: 'What prefix does the pluperfect add to the perfect stem?', correct: 'The past indicative augment ἐ-', options: ['The past indicative augment ἐ-', 'The prefix ἀ-', 'No prefix', 'The prefix προ-'] },
+        { type: 'mc-translate', prompt: 'What prefix does the pluperfect add to the perfect stem?', correct: 'The past indicative augment ἐ-', options: ['The past indicative augment ἐ-', 'The reduplication prefix ἀ-', 'No prefix is added at all', 'The temporal augment προ-'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'ἐτεθύκεσαν', displayGreek: true, correct: 'they had sacrificed', options: ['they had sacrificed', 'they have sacrificed', 'they sacrificed', 'they will sacrifice'] },
-        { type: 'mc-translate', prompt: 'In the pluperfect singular, the tense vowel is:', correct: '-η- (except 3rd sing. -ει)', options: ['-η- (except 3rd sing. -ει)', '-ε- throughout', '-α- throughout', '-ο- throughout'] },
+        { type: 'mc-translate', prompt: 'In the pluperfect singular, the tense vowel is:', correct: '-η- (except 3rd sing. -ει)', options: ['-η- (except 3rd sing. -ει)', '-ε- (except 3rd sing. -ει)', '-α- (except 3rd sing. -ου)', '-ο- (except 3rd sing. -ᾱ)'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'pluperfect', verbSource: 'unit3' }
       ]
     },
@@ -4092,7 +4092,7 @@ var Data = (function() {
           ['λύειν', 'to be freeing (progressive)'],
           ['λελυκέναι', 'to have freed (completed)']
         ]},
-        { type: 'mc-translate', prompt: 'What does the tense of the perfect infinitive indicate?', correct: 'Completed aspect only, not time', options: ['Completed aspect only, not time', 'Past time', 'Present time', 'Future completed action'] },
+        { type: 'mc-translate', prompt: 'What does the tense of the perfect infinitive indicate?', correct: 'Completed aspect only, not time', options: ['Completed aspect only, not time', 'Past time only, not aspect', 'Present time only, not aspect', 'Future time only, not aspect'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'τεθυκέναι', displayGreek: true, correct: 'to have sacrificed', options: ['to have sacrificed', 'to sacrifice', 'to be sacrificing', 'having sacrificed'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαυκέναι', displayGreek: true, correct: 'to have stopped', options: ['to have stopped', 'to stop', 'to be stopping', 'having stopped'] },
         { type: 'mc-translate', prompt: 'Where is the accent on the perfect infinitive?', correct: 'Always on the penult', options: ['Always on the penult', 'Always on the ultima', 'Always on the antepenult', 'It varies'] },
@@ -4120,7 +4120,7 @@ var Data = (function() {
           { html: '<p><strong>Key observations:</strong></p><ul><li>The present subjunctive shows <strong>progressive/repeated aspect</strong>, not present time.</li><li>When <span class="greek">-ε-</span> lengthens to <span class="greek">-η-</span> in the 2nd/3rd sing., the <span class="greek">-ι-</span> becomes an <strong>iota subscript</strong>.</li><li>The 2nd plural <span class="greek">-ητε</span> has no iota subscript.</li></ul>' }
         ]},
         { type: 'mc-translate', prompt: 'What do the subjunctive and optative moods express?', correct: 'Non-factual actions', options: ['Non-factual actions', 'Completed actions', 'Past actions', 'Future actions'] },
-        { type: 'mc-translate', prompt: 'How are subjunctive endings related to indicative endings?', correct: 'Same endings but with lengthened thematic vowels', options: ['Same endings but with lengthened thematic vowels', 'Completely different endings', 'Identical endings', 'Same endings but with shortened vowels'] },
+        { type: 'mc-translate', prompt: 'How are subjunctive endings related to indicative endings?', correct: 'Same endings but with lengthened thematic vowels', options: ['Same endings but with lengthened thematic vowels', 'Completely different endings from the indicative', 'Identical endings to the present indicative', 'Same endings but with shortened thematic vowels'] },
         { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύωμεν', displayGreek: true, correct: 'Present subjunctive active', options: ['Present subjunctive active', 'Present indicative active', 'Aorist subjunctive active', 'Present optative active'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'presSub', verbSource: 'unit3' },
         { type: 'match', pairs: [
@@ -4130,7 +4130,7 @@ var Data = (function() {
           ['παιδεύεις', 'Present indicative (2nd s.)'],
           ['παιδεύωσι(ν)', 'Present subjunctive (3rd pl.)']
         ]},
-        { type: 'mc-translate', prompt: 'What does the present tense of the subjunctive indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Present time', 'Completed aspect', 'Simple aspect'] },
+        { type: 'mc-translate', prompt: 'What does the present tense of the subjunctive indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Present time specifically', 'Completed aspect only', 'Simple aspect only'] },
         { type: 'mc-translate', prompt: 'Which person of the present subjunctive is identical to the present indicative?', correct: '1st person singular', options: ['1st person singular', '2nd person singular', '3rd person singular', '1st person plural'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'presSub', verbSource: 'unit3' },
         { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράφῃ', displayGreek: true, correct: 'Present subjunctive (3rd s.)', options: ['Present subjunctive (3rd s.)', 'Present indicative (3rd s.)', 'Aorist subjunctive (3rd s.)', 'Imperfect indicative (3rd s.)'] },
@@ -4156,7 +4156,7 @@ var Data = (function() {
           { html: '<p>The aorist subjunctive of <span class="greek">παιδεύω</span> (stem: <span class="greek">παιδευσ-</span>):</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύσω</td><td class="greek">παιδεύσωμεν</td></tr><tr><td>2nd</td><td class="greek">παιδεύσῃς</td><td class="greek">παιδεύσητε</td></tr><tr><td>3rd</td><td class="greek">παιδεύσῃ</td><td class="greek">παιδεύσωσι(ν)</td></tr></table>' },
           { html: '<p><strong>Key observations:</strong></p><ul><li>The present and aorist subjunctive use the <strong>same endings</strong> — they are distinguished by their <strong>tense stems</strong>.</li><li>The 1st sing. aorist subjunctive often looks like the 1st sing. <strong>future indicative</strong> (e.g., <span class="greek">παιδεύσω</span>). Context distinguishes them.</li><li>There is <strong>NO future subjunctive</strong>.</li><li>The aorist subjunctive shows <strong>simple aspect</strong>, not past time.</li></ul>' }
         ]},
-        { type: 'mc-translate', prompt: 'Does the aorist subjunctive use the augment?', correct: 'No — only the indicative uses the augment', options: ['No — only the indicative uses the augment', 'Yes, always', 'Only in the plural', 'Only in the singular'] },
+        { type: 'mc-translate', prompt: 'Does the aorist subjunctive use the augment?', correct: 'No — only the indicative uses the augment', options: ['No — only the indicative uses the augment', 'Yes — all moods use the aorist augment', 'No — only the plural uses the augment', 'Yes — only the singular uses the augment'] },
         { type: 'mc-translate', prompt: 'Identify the mood:', display: 'παιδεύσωμεν', displayGreek: true, correct: 'Aorist subjunctive active (1st pl.)', options: ['Aorist subjunctive active (1st pl.)', 'Future indicative active (1st pl.)', 'Present subjunctive active (1st pl.)', 'Aorist indicative active (1st pl.)'] },
         { type: 'mc-translate', prompt: 'What aspect does the aorist subjunctive express?', correct: 'Simple aspect', options: ['Simple aspect', 'Progressive aspect', 'Completed aspect', 'Past time'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'aorSub', verbSource: 'unit3' },
@@ -4202,7 +4202,7 @@ var Data = (function() {
           ['παιδεύοιμι', 'Present optative (1st s.)'],
           ['παιδεύοιεν', 'Present optative (3rd pl.)']
         ]},
-        { type: 'mc-translate', prompt: 'What aspect does the present optative indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Simple aspect', 'Completed aspect', 'Present time'] },
+        { type: 'mc-translate', prompt: 'What aspect does the present optative indicate?', correct: 'Progressive/repeated aspect', options: ['Progressive/repeated aspect', 'Simple aspect only', 'Completed aspect only', 'Present time specifically'] },
         { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράφοις', displayGreek: true, correct: 'Present optative (2nd s.)', options: ['Present optative (2nd s.)', 'Present indicative (2nd s.)', 'Present subjunctive (2nd s.)', 'Aorist optative (2nd s.)'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'presOpt', verbSource: 'unit3' },
         { type: 'mc-translate', prompt: 'In the 3rd sing. present optative, the final -οι counts as:', correct: 'Long for accentuation', options: ['Long for accentuation', 'Short for accentuation', 'It varies', 'Neither long nor short'] },
@@ -4238,8 +4238,8 @@ var Data = (function() {
           ['παιδεύοιμεν', 'Present optative (1st pl.)'],
           ['παιδεύσαιμι', 'Aorist optative (1st s.)']
         ]},
-        { type: 'mc-translate', prompt: 'What aspect does the aorist optative express?', correct: 'Simple aspect only, not past time', options: ['Simple aspect only, not past time', 'Past time', 'Progressive aspect', 'Completed aspect'] },
-        { type: 'mc-translate', prompt: 'The 3rd sing. aorist optative παιδεύσαι differs from the aorist infinitive παιδεῦσαι in:', correct: 'Accent and vowel length of final -αι', options: ['Accent and vowel length of final -αι', 'The stem only', 'They are identical', 'The ending only'] },
+        { type: 'mc-translate', prompt: 'What aspect does the aorist optative express?', correct: 'Simple aspect only, not past time', options: ['Simple aspect only, not past time', 'Past time only, not aspect', 'Progressive aspect, not time', 'Completed aspect, not time'] },
+        { type: 'mc-translate', prompt: 'The 3rd sing. aorist optative παιδεύσαι differs from the aorist infinitive παιδεῦσαι in:', correct: 'Accent and vowel length of final -αι', options: ['Accent and vowel length of final -αι', 'The tense stem used before the ending', 'They are identical in every respect', 'The personal ending after the stem'] },
         { type: 'verb-form-id', verbIndex: 0, tense: 'aorOpt', verbSource: 'unit3' },
         { type: 'mc-translate', prompt: 'Identify the mood:', display: 'γράψαιεν', displayGreek: true, correct: 'Aorist optative (3rd pl.)', options: ['Aorist optative (3rd pl.)', 'Aorist subjunctive (3rd pl.)', 'Present optative (3rd pl.)', 'Aorist indicative (3rd pl.)'] },
         { type: 'match', pairs: [
@@ -4276,8 +4276,8 @@ var Data = (function() {
         ]},
         { type: 'mc-translate', prompt: 'When translating primary sequence, use:', correct: '"may"', options: ['"may"', '"might"', '"will"', '"would"'] },
         { type: 'mc-translate', prompt: 'When translating secondary sequence, use:', correct: '"might"', options: ['"might"', '"may"', '"will"', '"could have"'] },
-        { type: 'mc-translate', prompt: 'The main verb is πέμπομεν (present). The dependent verb should be in the:', correct: 'Subjunctive (primary sequence)', options: ['Subjunctive (primary sequence)', 'Optative (secondary sequence)', 'Indicative', 'Infinitive'] },
-        { type: 'mc-translate', prompt: 'The main verb is ἐπέμψαμεν (aorist). The dependent verb should be in the:', correct: 'Optative (secondary sequence)', options: ['Optative (secondary sequence)', 'Subjunctive (primary sequence)', 'Indicative', 'Infinitive'] },
+        { type: 'mc-translate', prompt: 'The main verb is πέμπομεν (present). The dependent verb should be in the:', correct: 'Subjunctive (primary sequence)', options: ['Subjunctive (primary sequence)', 'Optative (secondary sequence)', 'Indicative (primary sequence)', 'Infinitive (no sequence)'] },
+        { type: 'mc-translate', prompt: 'The main verb is ἐπέμψαμεν (aorist). The dependent verb should be in the:', correct: 'Optative (secondary sequence)', options: ['Optative (secondary sequence)', 'Subjunctive (primary sequence)', 'Indicative (secondary sequence)', 'Infinitive (no sequence)'] },
         { type: 'match', pairs: [
           ['Present subj.', 'Progressive/repeated aspect'],
           ['Aorist subj.', 'Simple aspect'],
@@ -4301,8 +4301,8 @@ var Data = (function() {
           { html: '<p><strong>Negation:</strong> Purpose clauses are negated with <span class="greek"><strong>μή</strong></span> (NOT <span class="greek">οὐ</span>).</p><p><span class="greek">οὐ πέμψομεν χρῡσὸν <strong>ἵνα μὴ</strong> ζῷα <strong>πέμψωσιν</strong>.</span><br>"We will not send gold <strong>in order that</strong> they <strong>may not</strong> send animals."</p><p>Remember: <span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' }
         ]},
         { type: 'mc-translate', prompt: 'Which conjunctions introduce purpose clauses?', correct: 'ἵνα, ὡς, ὅπως', options: ['ἵνα, ὡς, ὅπως', 'ἐπεί, ἐπειδή', 'ἀλλά, δέ, γάρ', 'καί, ἤ, οὐδέ'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'πέμπομεν δῶρα ἵνα λύητε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We send gifts in order that you may free the brothers.', options: ['We send gifts in order that you may free the brothers.', 'We sent gifts in order that you might free the brothers.', 'We send gifts to free the brothers.', 'We will send gifts so that you free the brothers.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπέμπομεν δῶρα ἵνα λύοιτε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We were sending gifts in order that you might free the brothers.', options: ['We were sending gifts in order that you might free the brothers.', 'We send gifts in order that you may free the brothers.', 'We sent gifts to free the brothers.', 'We were sending gifts and freeing the brothers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πέμπομεν δῶρα ἵνα λύητε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We send gifts in order that you may free the brothers.', options: ['We send gifts in order that you may free the brothers.', 'We sent gifts in order that you might free the brothers.', 'We are sending gifts in order to free the brothers.', 'We will send the gifts so that you may free the brothers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπέμπομεν δῶρα ἵνα λύοιτε τοὺς ἀδελφούς.', displayGreek: true, correct: 'We were sending gifts in order that you might free the brothers.', options: ['We were sending gifts in order that you might free the brothers.', 'We are sending gifts in order that you may free the brothers.', 'We had sent the gifts in order that you might free the brothers.', 'We were sending gifts and you were freeing the brothers.'] },
         { type: 'mc-translate', prompt: 'How are purpose clauses negated?', correct: 'With μή (not οὐ)', options: ['With μή (not οὐ)', 'With οὐ (not μή)', 'With both μή and οὐ', 'Purpose clauses cannot be negated'] },
         { type: 'match', pairs: [
           ['πέμπομεν...ἵνα λύητε', 'Primary: may free'],
@@ -4311,8 +4311,8 @@ var Data = (function() {
           ['ἐπέμψαμεν...ἵνα λύσαιτε', 'Secondary: might free (simple)'],
           ['ἵνα μή', 'in order that...not']
         ]},
-        { type: 'mc-translate', prompt: 'The main verb is πεπόμφᾱσιν (perfect). What mood should the purpose clause verb be in?', correct: 'Subjunctive (perfect is primary)', options: ['Subjunctive (perfect is primary)', 'Optative (perfect is secondary)', 'Indicative', 'Infinitive'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and educated the strangers.', 'You will sacrifice to the gods to educate the strangers.'] },
+        { type: 'mc-translate', prompt: 'The main verb is πεπόμφᾱσιν (perfect). What mood should the purpose clause verb be in?', correct: 'Subjunctive (perfect is primary)', options: ['Subjunctive (perfect is primary)', 'Optative (perfect is secondary)', 'Indicative (perfect is primary)', 'Infinitive (no sequence applies)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and you educated the strangers as well.', 'You will sacrifice to the gods in order that they may educate the strangers.'] },
         { type: 'mc-translate', prompt: 'Identify the sequence:', display: 'ἐκέλευσε...ὅπως φυλάξαιεν', displayGreek: true, correct: 'Secondary (aorist main verb → optative)', options: ['Secondary (aorist main verb → optative)', 'Primary (present main verb → subjunctive)', 'No sequence — both are indicative', 'Primary (aorist main verb → subjunctive)'] },
         { type: 'match', pairs: [
           ['ἵνα', 'in order that'],
@@ -4367,10 +4367,10 @@ var Data = (function() {
           { html: '<div class="vocab-card"><div class="vocab-greek">παύω, παύσω, ἔπαυσα, πέπαυκα</div><div class="vocab-english">make stop, stop</div><div class="vocab-gender">English "pause" comes from this verb</div></div>' },
           { html: '<div class="vocab-card"><div class="vocab-greek">φυλάττω, φυλάξω, ἐφύλαξα, πεφύλαχα</div><div class="vocab-english">guard</div><div class="vocab-gender">PP IV has an aspirated perfect; note dissimilation of aspirates</div></div>' }
         ]},
-        { type: 'mc-translate', prompt: 'What does γράφω mean?', display: 'γράφω', displayGreek: true, correct: 'write, draw', options: ['write, draw', 'sacrifice', 'guard', 'stop'] },
-        { type: 'mc-translate', prompt: 'What does θύω mean?', display: 'θύω', displayGreek: true, correct: 'sacrifice', options: ['sacrifice', 'write', 'guard', 'stop'] },
-        { type: 'mc-translate', prompt: 'What does παύω mean?', display: 'παύω', displayGreek: true, correct: 'make stop, stop', options: ['make stop, stop', 'sacrifice', 'write', 'guard'] },
-        { type: 'mc-translate', prompt: 'What does φυλάττω mean?', display: 'φυλάττω', displayGreek: true, correct: 'guard', options: ['guard', 'stop', 'sacrifice', 'write'] },
+        { type: 'mc-translate', prompt: 'What does γράφω mean?', display: 'γράφω', displayGreek: true, correct: 'write, draw', options: ['write, draw', 'sacrifice, offer', 'guard, protect', 'stop, make cease'] },
+        { type: 'mc-translate', prompt: 'What does θύω mean?', display: 'θύω', displayGreek: true, correct: 'sacrifice, offer', options: ['sacrifice, offer', 'write, draw', 'guard, protect', 'stop, make cease'] },
+        { type: 'mc-translate', prompt: 'What does παύω mean?', display: 'παύω', displayGreek: true, correct: 'make stop, stop', options: ['make stop, stop', 'sacrifice, offer', 'write, draw', 'guard, protect'] },
+        { type: 'mc-translate', prompt: 'What does φυλάττω mean?', display: 'φυλάττω', displayGreek: true, correct: 'guard, protect', options: ['guard, protect', 'stop, make cease', 'sacrifice, offer', 'write, draw'] },
         { type: 'match', pairs: [
           ['γράφω', 'write, draw'],
           ['θύω', 'sacrifice'],
@@ -4383,8 +4383,8 @@ var Data = (function() {
           { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἵνα</td><td>in order that</td></tr><tr><td class="greek">ὡς</td><td>in order that</td></tr><tr><td class="greek">ὅπως</td><td>in order that</td></tr><tr><td class="greek">μή</td><td>not (with non-indicative moods)</td></tr></table><p>All three purpose conjunctions mean the same thing.</p><p><span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' },
           { html: '<table class="intro-table"><tr><th class="greek">Preposition</th><th>Meaning</th></tr><tr><td class="greek">ἀντί + gen.</td><td>instead of</td></tr><tr><td class="greek">διά + gen.</td><td>through</td></tr><tr><td class="greek">διά + acc.</td><td>on account of</td></tr><tr><td class="greek">περί + gen.</td><td>concerning, about</td></tr><tr><td class="greek">περί + dat.</td><td>around</td></tr><tr><td class="greek">περί + acc.</td><td>around, concerning</td></tr></table>' }
         ]},
-        { type: 'mc-translate', prompt: 'What does ἀλλά mean?', correct: 'but (stronger contrast)', options: ['but (stronger contrast)', 'and', 'or', 'for'] },
-        { type: 'mc-translate', prompt: 'What does μή negate?', correct: 'Non-indicative moods (subjunctive, optative, etc.)', options: ['Non-indicative moods (subjunctive, optative, etc.)', 'The indicative mood only', 'All moods equally', 'Only the future tense'] },
+        { type: 'mc-translate', prompt: 'What does ἀλλά mean?', correct: 'but (stronger contrast)', options: ['but (stronger contrast)', 'and (simple connection)', 'or (alternative option)', 'for (giving a reason)'] },
+        { type: 'mc-translate', prompt: 'What does μή negate?', correct: 'Non-indicative moods (subjunctive, optative, etc.)', options: ['Non-indicative moods (subjunctive, optative, etc.)', 'The indicative mood only (present, aorist, etc.)', 'All moods equally (indicative, subjunctive, etc.)', 'Only the future tense (indicative and subjunctive)'] },
         { type: 'match', pairs: [
           ['ἵνα', 'in order that'],
           ['ἀλλά', 'but (strong)'],
@@ -4392,7 +4392,7 @@ var Data = (function() {
           ['ἀντί', 'instead of (+ gen.)'],
           ['διά + gen.', 'through']
         ]},
-        { type: 'mc-translate', prompt: 'What does διά mean with the accusative?', correct: 'on account of', options: ['on account of', 'through', 'around', 'instead of'] },
+        { type: 'mc-translate', prompt: 'What does διά mean with the accusative?', correct: 'on account of', options: ['on account of', 'by way of', 'all around', 'in place of'] },
         { type: 'match', pairs: [
           ['γράφω', 'telegraph, graphic'],
           ['παύω', 'pause'],
@@ -4410,14 +4410,14 @@ var Data = (function() {
       section: 'Unit 3: Perfect, Subjunctive & Optative',
       icon: '✓',
       exercises: [
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ δῆμος ἐν ταῖς ὁδοῖς τοῖς θεοῖς θύσει ἵνα τὸν πόλεμον παύσωσιν.', displayGreek: true, correct: 'The people will sacrifice to the gods in the streets in order that they may stop the war.', options: ['The people will sacrifice to the gods in the streets in order that they may stop the war.', 'The people sacrificed to the gods to stop the war.', 'The people were sacrificing to the gods in the streets.', 'The gods stopped the war in the streets.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἵνα λύσωμεν τὸν Ὅμηρον δῶρα πεπόμφᾱσιν.', displayGreek: true, correct: 'In order that we may free Homer, they have sent gifts.', options: ['In order that we may free Homer, they have sent gifts.', 'We freed Homer and sent gifts.', 'They sent gifts to Homer.', 'In order to free Homer, we had sent gifts.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὴν εἰρήνην ἐλελύκεσαν, ἔργῳ δὲ οὔ.', displayGreek: true, correct: 'In word they had broken the peace, but in deed they had not.', options: ['In word they had broken the peace, but in deed they had not.', 'They broke the peace by words and deeds.', 'In word they have broken the peace.', 'They were breaking the peace in word and deed.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὴν τῶν θεῶν βουλὴν ἐπεπαύκεμεν τὸν πόλεμον.', displayGreek: true, correct: 'On account of the will of the gods, we had stopped the war.', options: ['On account of the will of the gods, we had stopped the war.', 'Through the gods\' will, we stopped the war.', 'The gods had stopped the war.', 'We will stop the war because of the gods.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ δῆμος ἐν ταῖς ὁδοῖς τοῖς θεοῖς θύσει ἵνα τὸν πόλεμον παύσωσιν.', displayGreek: true, correct: 'The people will sacrifice to the gods in the streets in order that they may stop the war.', options: ['The people will sacrifice to the gods in the streets in order that they may stop the war.', 'The people sacrificed to the gods in the streets in order that they might stop the war.', 'The people were sacrificing to the gods in the streets so that the war might stop.', 'The gods in the streets will stop the war in order that the people may sacrifice.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἵνα λύσωμεν τὸν Ὅμηρον δῶρα πεπόμφᾱσιν.', displayGreek: true, correct: 'In order that we may free Homer, they have sent gifts.', options: ['In order that we may free Homer, they have sent gifts.', 'In order that we might free Homer, they had sent gifts.', 'We freed Homer, and so they have now sent us gifts.', 'In order to free Homer, we ourselves had sent gifts.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὴν εἰρήνην ἐλελύκεσαν, ἔργῳ δὲ οὔ.', displayGreek: true, correct: 'In word they had broken the peace, but in deed they had not.', options: ['In word they had broken the peace, but in deed they had not.', 'In word they have broken the peace, but in deed they have not.', 'They were breaking the peace in word, but not yet in deed.', 'They broke the peace both by their words and by their deeds.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὴν τῶν θεῶν βουλὴν ἐπεπαύκεμεν τὸν πόλεμον.', displayGreek: true, correct: 'On account of the will of the gods, we had stopped the war.', options: ['On account of the will of the gods, we had stopped the war.', 'Through the will of the gods, we have now stopped the war.', 'On account of the will of the gods, they had stopped the war.', 'Because of the will of the gods, we will stop the war.'] },
         { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'πέμπεις χρῡσὸν ἵνα πέμψωμεν βιβλία.', displayGreek: true, correct: 'Primary sequence — aorist subjunctive', options: ['Primary sequence — aorist subjunctive', 'Secondary sequence — aorist optative', 'Primary sequence — present subjunctive', 'No sequence — both are indicative'] },
         { type: 'mc-translate', prompt: 'Identify the sequence and mood:', display: 'ἔπεμψας χρῡσὸν ἵνα πέμψαιμεν βιβλία.', displayGreek: true, correct: 'Secondary sequence — aorist optative', options: ['Secondary sequence — aorist optative', 'Primary sequence — aorist subjunctive', 'Secondary sequence — present optative', 'Primary sequence — present subjunctive'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπειδὴ τοὺς ἀγγέλους ἐφυλάξαμεν, τὴν δημοκρατίᾱν οὐκ ἔλῡσαν.', displayGreek: true, correct: 'After we guarded the messengers, they did not destroy the democracy.', options: ['After we guarded the messengers, they did not destroy the democracy.', 'Since we guard the messengers, they do not destroy the democracy.', 'We guarded the messengers and destroyed the democracy.', 'The messengers guarded the democracy.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ τοῦ Ὁμήρου βιβλία τοὺς ξένους πεπαίδευκεν.', displayGreek: true, correct: 'The books of Homer have educated the strangers.', options: ['The books of Homer have educated the strangers.', 'Homer\'s books educated the strangers.', 'The strangers have educated Homer.', 'Homer wrote books for the strangers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπειδὴ τοὺς ἀγγέλους ἐφυλάξαμεν, τὴν δημοκρατίᾱν οὐκ ἔλῡσαν.', displayGreek: true, correct: 'After we guarded the messengers, they did not destroy the democracy.', options: ['After we guarded the messengers, they did not destroy the democracy.', 'Since we guard the messengers, they do not destroy the democracy.', 'We guarded the messengers and then they destroyed the democracy.', 'After the messengers were guarded, we destroyed the democracy.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ τοῦ Ὁμήρου βιβλία τοὺς ξένους πεπαίδευκεν.', displayGreek: true, correct: 'The books of Homer have educated the strangers.', options: ['The books of Homer have educated the strangers.', 'The books of Homer had educated the strangers.', 'The strangers have educated Homer with books.', 'Homer has written many books for the strangers.'] },
         { type: 'match', pairs: [
           ['πεπαίδευκα', 'I have educated (perfect)'],
           ['ἐπεπαιδεύκη', 'I had educated (pluperfect)'],
@@ -4425,8 +4425,8 @@ var Data = (function() {
           ['παιδεύωμεν', 'pres. subjunctive (1st pl.)'],
           ['παιδεύοιμεν', 'pres. optative (1st pl.)']
         ]},
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and educated the strangers.', 'The gods were educating the strangers.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', displayGreek: true, correct: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', options: ['On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', 'We sent crowns of victory to our virtuous friends.', 'Our friends had sent prizes of virtue.', 'We have sent wreaths because of victory.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', displayGreek: true, correct: 'You were sacrificing to the gods in order that they might educate the strangers.', options: ['You were sacrificing to the gods in order that they might educate the strangers.', 'You sacrifice to the gods in order that they may educate the strangers.', 'You sacrificed to the gods and you were educating the strangers.', 'You will sacrifice to the gods so that they might educate the strangers.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'διὰ τὰς ἀρετὰς τοῖς φίλοις στεφάνους, ἆθλα νίκης, ἐπεπόμφεμεν.', displayGreek: true, correct: 'On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', options: ['On account of their virtues, we had sent wreaths, prizes of victory, to our friends.', 'On account of their virtues, we have sent wreaths, prizes of victory, to our friends.', 'Our friends had sent wreaths, prizes of victory, on account of their virtues.', 'Because of their virtues, we were sending wreaths, prizes of victory, to our friends.'] },
         { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', displayGreek: true, correct: 'He ordered the brothers to stop the war before the victory.', options: ['He ordered the brothers to stop the war before the victory.', 'The brothers stopped the war before victory.', 'He will order the brothers to win the war.', 'Before the victory, the brothers were stopping the war.'] }
       ]
     },
@@ -4566,9 +4566,9 @@ var Data = (function() {
         { type: 'mc-translate', prompt: 'What case does ἐν take?', display: 'ἐν τῇ νήσῳ', displayGreek: true, correct: 'Dative', options: ['Dative', 'Genitive', 'Accusative', 'Nominative'] },
         { type: 'mc-translate', prompt: 'What case does εἰς take?', display: 'εἰς ἀγοράν', displayGreek: true, correct: 'Accusative', options: ['Accusative', 'Genitive', 'Dative', 'Nominative'] },
         { type: 'mc-translate', prompt: 'What case does ἐκ take?', display: 'ἐκ τῆς χώρᾱς', displayGreek: true, correct: 'Genitive', options: ['Genitive', 'Dative', 'Accusative', 'Nominative'] },
-        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ἵνα τὸν πόλεμον παύσωσιν', displayGreek: true, correct: 'Purpose clause — primary sequence (aorist subjunctive)', options: ['Purpose clause — primary sequence (aorist subjunctive)', 'Purpose clause — secondary sequence (aorist optative)', 'Result clause — indicative', 'Temporal clause — subjunctive'] },
-        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ὅπως τοὺς ξένους παιδεύοιεν', displayGreek: true, correct: 'Purpose clause — secondary sequence (present optative)', options: ['Purpose clause — secondary sequence (present optative)', 'Purpose clause — primary sequence (present subjunctive)', 'Temporal clause — optative', 'Result clause — optative'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of βιβλίοις in this sentence?', display: 'ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι', displayGreek: true, correct: 'Instrumental dative (by means of books)', options: ['Instrumental dative (by means of books)', 'Indirect object (to the books)', 'Dative of possession (of the books)', 'Locative dative (in the books)'] },
+        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ἵνα τὸν πόλεμον παύσωσιν', displayGreek: true, correct: 'Purpose clause — primary sequence (aorist subjunctive)', options: ['Purpose clause — primary sequence (aorist subjunctive)', 'Purpose clause — secondary sequence (aorist optative)', 'Result clause — primary sequence (present indicative)', 'Temporal clause — primary sequence (aorist subjunctive)'] },
+        { type: 'mc-translate', prompt: 'Identify the construction:', display: 'ὅπως τοὺς ξένους παιδεύοιεν', displayGreek: true, correct: 'Purpose clause — secondary sequence (present optative)', options: ['Purpose clause — secondary sequence (present optative)', 'Purpose clause — primary sequence (present subjunctive)', 'Temporal clause — secondary sequence (present optative)', 'Result clause — secondary sequence (present optative)'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of βιβλίοις in this sentence?', display: 'ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι', displayGreek: true, correct: 'Instrumental dative (by means of books)', options: ['Instrumental dative (by means of books)', 'Dative of indirect object (to the books)', 'Dative of possession (of the books)', 'Locative dative (in the place of books)'] },
         { type: 'mc-translate', prompt: 'What case is ψῡχήν?', display: 'τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε', displayGreek: true, correct: 'Accusative — direct object', options: ['Accusative — direct object', 'Nominative — subject', 'Genitive — possession', 'Dative — indirect object'] },
         { type: 'match', pairs: [
           ['εἰς', 'into (+ acc.)'],
@@ -4600,19 +4600,19 @@ var Data = (function() {
         { type: 'intro', cards: [
           { html: '<h3>Comprehensive Review Exam</h3><p>This is a cumulative exam covering everything from Units 1–3. Translate sentences, identify forms, and demonstrate your mastery of Greek grammar.</p><p>Drawn from the <em>Self-Correcting Examinations</em>.</p>' }
         ]},
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα πρὸ τῆς μάχης τὸν ἄγγελον πέμψουσιν ἐξ ἀγορᾶς διὰ τῆς χώρᾱς;', displayGreek: true, correct: 'Before the battle will they send the messenger from the marketplace through the country?', options: ['Before the battle will they send the messenger from the marketplace through the country?', 'After the battle they sent the messenger from the marketplace.', 'Before the battle they are sending the messenger to the marketplace.', 'Will the messenger be sent before the battle from the country?'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν Ὅμηρον ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι.', displayGreek: true, correct: 'In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', options: ['In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', 'We ordered Homer not to destroy the peace but to educate the men.', 'Homer was ordering us to educate the men about peace with books.', 'They did not destroy the peace because Homer educated the men.'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of λύσειαν?', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν', displayGreek: true, correct: 'Aorist optative in a purpose clause in secondary sequence', options: ['Aorist optative in a purpose clause in secondary sequence', 'Aorist subjunctive in a purpose clause in primary sequence', 'Present optative in a result clause', 'Aorist indicative in a temporal clause'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλίον περὶ τῆς τοῖς θεοῖς θυσίᾱς γέγραφας ἵνα ζῷα καὶ στεφάνους εἰς τὴν νῆσον πέμψωμεν.', displayGreek: true, correct: 'You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', options: ['You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', 'You wrote a book about sacrificing so that animals and wreaths were sent.', 'He has written about the gods so that we sacrifice animals on the island.', 'You are writing about the sacrifice in order to send wreaths.'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of πέμψωμεν?', display: 'ἵνα ... πέμψωμεν', displayGreek: true, correct: 'Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', options: ['Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', 'Present subjunctive in primary sequence', 'Aorist optative in secondary sequence', 'Aorist indicative in a temporal clause'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὸν ἐν τῇ χώρᾳ πόλεμον ἐπαύετε, ἔργῳ δὲ τοὺς ἀδελφοὺς εἰς μάχην ἐπέμπετε.', displayGreek: true, correct: 'By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', options: ['By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', 'In words you stopped the war, but in deeds you sent brothers to fight.', 'You stopped the war by speaking, and sent brothers into battle.', 'Words stopped the war in the country, but deeds sent brothers to battle.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε ἵνα τὸν πόλεμον παύσωσιν οἱ ἄνθρωποι;', displayGreek: true, correct: 'Will you destroy the soul of the democracy in order that the men may stop the war?', options: ['Will you destroy the soul of the democracy in order that the men may stop the war?', 'You destroyed the spirit of democracy so that the men stopped the war.', 'Did you free the soul of democracy to end the war?', 'The men are stopping the war to save democracy.'] },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'περὶ τοῦ πολέμου ἔγραψα ὡς τὴν εἰρήνην ἀρετῇ φυλάξειαν.', displayGreek: true, correct: 'I wrote about the war in order that they might guard the peace by means of virtue.', options: ['I wrote about the war in order that they might guard the peace by means of virtue.', 'I am writing about the war so that they guard peace with virtue.', 'He wrote about war and peace and virtue.', 'I wrote about the war because they guarded the peace.'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of ἀρετῇ?', display: '... ἀρετῇ φυλάξειαν', displayGreek: true, correct: 'Instrumental dative (by means of virtue)', options: ['Instrumental dative (by means of virtue)', 'Dative of indirect object', 'Dative of possession', 'Locative dative'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα πρὸ τῆς μάχης τὸν ἄγγελον πέμψουσιν ἐξ ἀγορᾶς διὰ τῆς χώρᾱς;', displayGreek: true, correct: 'Before the battle will they send the messenger from the marketplace through the country?', options: ['Before the battle will they send the messenger from the marketplace through the country?', 'After the battle they sent the messenger from the marketplace through the country.', 'Before the battle they are sending the messenger from the marketplace to the country.', 'Will the messenger be sent from the marketplace before the battle through the country?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν Ὅμηρον ἐκελεύομεν τοὺς ἀνθρώπους βιβλίοις παιδεῦσαι.', displayGreek: true, correct: 'In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', options: ['In order that they might not destroy the peace, we were ordering Homer to educate the men by means of books.', 'In order that they may not destroy the peace, we are ordering Homer to educate the men by means of books.', 'In order that he might not destroy the peace, Homer was ordering us to educate the men by means of books.', 'They did not destroy the peace, because we had ordered Homer to educate the men by means of books.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of λύσειαν?', display: 'ὡς τὴν εἰρήνην μὴ λύσειαν', displayGreek: true, correct: 'Aorist optative in a purpose clause in secondary sequence', options: ['Aorist optative in a purpose clause in secondary sequence', 'Aorist subjunctive in a purpose clause in primary sequence', 'Present optative in a result clause in secondary sequence', 'Aorist indicative in a temporal clause in past sequence'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλίον περὶ τῆς τοῖς θεοῖς θυσίᾱς γέγραφας ἵνα ζῷα καὶ στεφάνους εἰς τὴν νῆσον πέμψωμεν.', displayGreek: true, correct: 'You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', options: ['You have written a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.', 'You had written a book about the sacrifice to the gods in order that we might send animals and wreaths to the island.', 'He has written a book about the sacrifice to the gods in order that we may sacrifice animals and wreaths on the island.', 'You are writing a book about the sacrifice to the gods in order that we may send animals and wreaths to the island.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of πέμψωμεν?', display: 'ἵνα ... πέμψωμεν', displayGreek: true, correct: 'Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', options: ['Aorist subjunctive: subjunctive in primary sequence (main verb γέγραφας is perfect indicative)', 'Present subjunctive: subjunctive in primary sequence (main verb γέγραφας is present indicative)', 'Aorist optative: optative in secondary sequence (main verb γέγραφας is aorist indicative)', 'Aorist indicative: indicative in a temporal clause (main verb γέγραφας is perfect indicative)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λόγῳ μὲν τὸν ἐν τῇ χώρᾳ πόλεμον ἐπαύετε, ἔργῳ δὲ τοὺς ἀδελφοὺς εἰς μάχην ἐπέμπετε.', displayGreek: true, correct: 'By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', options: ['By word you were stopping the war in the country, but by deed you were sending your brothers into battle.', 'By word you stopped the war in the country, but by deed you sent your brothers into battle.', 'By word you have stopped the war in the country, but by deed you have sent your brothers into battle.', 'By word you will stop the war in the country, but by deed you will send your brothers into battle.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα τὴν τῆς δημοκρατίᾱς ψῡχὴν λύσετε ἵνα τὸν πόλεμον παύσωσιν οἱ ἄνθρωποι;', displayGreek: true, correct: 'Will you destroy the soul of the democracy in order that the men may stop the war?', options: ['Will you destroy the soul of the democracy in order that the men may stop the war?', 'Did you destroy the soul of the democracy in order that the men might stop the war?', 'Have you destroyed the soul of the democracy in order that the men may stop the war?', 'Are you destroying the soul of the democracy in order that the men may stop the war?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'περὶ τοῦ πολέμου ἔγραψα ὡς τὴν εἰρήνην ἀρετῇ φυλάξειαν.', displayGreek: true, correct: 'I wrote about the war in order that they might guard the peace by means of virtue.', options: ['I wrote about the war in order that they might guard the peace by means of virtue.', 'I write about the war in order that they may guard the peace by means of virtue.', 'I had written about the war in order that they might guard the peace by means of virtue.', 'I wrote about the war because they were guarding the peace by means of virtue.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of ἀρετῇ?', display: '... ἀρετῇ φυλάξειαν', displayGreek: true, correct: 'Instrumental dative (by means of virtue)', options: ['Instrumental dative (by means of virtue)', 'Dative of indirect object (to virtue)', 'Dative of possession (belonging to virtue)', 'Locative dative (in the place of virtue)'] },
         { type: 'review-pp' },
         { type: 'review-synopsis' },
-        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ μὲν Ὅμηρος τὸν φίλον ἐπεπαιδεύκειν ὅπως τοῖς θεοῖς θύοιεν, ὁ δὲ ἀδελφὸς οὔ.', displayGreek: true, correct: 'Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', options: ['Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', 'Homer educated his friend to sacrifice to the gods, and his brother did too.', 'Homer was educating his friend about sacrificing, but his brother refused.', 'Homer\'s friend had sacrificed to the gods, but his brother had not.'] },
-        { type: 'mc-translate', prompt: 'What is the syntax of θύοιεν?', display: 'ὅπως ... θύοιεν', displayGreek: true, correct: 'Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', options: ['Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', 'Aorist optative in secondary sequence', 'Present subjunctive in primary sequence', 'Imperfect indicative in a temporal clause'] }
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ μὲν Ὅμηρος τὸν φίλον ἐπεπαιδεύκειν ὅπως τοῖς θεοῖς θύοιεν, ὁ δὲ ἀδελφὸς οὔ.', displayGreek: true, correct: 'Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', options: ['Homer had educated his friend in order that they might sacrifice to the gods, but his brother had not.', 'Homer has educated his friend in order that they may sacrifice to the gods, but his brother has not.', 'Homer was educating his friend in order that they might sacrifice to the gods, but his brother was not.', 'Homer educated his friend in order that they might sacrifice to the gods, but his brother did not.'] },
+        { type: 'mc-translate', prompt: 'What is the syntax of θύοιεν?', display: 'ὅπως ... θύοιεν', displayGreek: true, correct: 'Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', options: ['Present optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); present for progressive/repeated aspect', 'Aorist optative: optative in secondary sequence (main verb ἐπεπαιδεύκειν is pluperfect); aorist for simple aspect', 'Present subjunctive: subjunctive in primary sequence (main verb ἐπεπαιδεύκειν is present); present for progressive/repeated aspect', 'Imperfect indicative: indicative in a temporal clause (main verb ἐπεπαιδεύκειν is pluperfect); imperfect for past time'] }
       ]
     }
   ];
