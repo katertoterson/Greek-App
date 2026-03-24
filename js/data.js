@@ -2623,6 +2623,14 @@ var Data = (function() {
           options: ['and', 'or', 'but', 'not']
         },
         {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'τέχνῃ καὶ τὸν ἀδελφὸν παιδεύει ὁ Ὅμηρος.',
+          displayGreek: true,
+          answer: ['Homer', 'educates', 'even', 'his', 'brother', 'with', 'skill'],
+          distractors: ['sends', 'brothers', 'men']
+        },
+        {
           type: 'mc-translate',
           prompt: 'What does καί mean as an adverb?',
           display: 'καὶ Ὅμηρος', displayGreek: true,
@@ -2653,6 +2661,14 @@ var Data = (function() {
           display: '',
           correct: 'Emphasis (case endings show grammar)',
           options: ['Emphasis (case endings show grammar)', 'Subject vs. object', 'Tense', 'Gender']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ ἀδελφὸς τοῦ Ὁμήρου παιδεύει τοὺς ἀνθρώπους τοὺς ἐν τῇ ἀγορᾷ.',
+          displayGreek: true,
+          answer: ['the', 'brother', 'of', 'Homer', 'educates', 'the', 'men', 'in', 'the', 'marketplace'],
+          distractors: ['sends', 'brothers', 'man', 'island']
         },
         {
           type: 'mc-translate',
@@ -2687,6 +2703,14 @@ var Data = (function() {
           displayGreek: true,
           correct: 'Homer\'s brother educates the man.',
           options: ['Homer\'s brother educates the man.', 'Homer educates his brother.', 'The man educates Homer\'s brother.', 'The brother of the man educates Homer.']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ἐν τῇ οἰκίᾳ ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
+          displayGreek: true,
+          answer: ['in', 'the', 'house', 'the', 'man', 'educates', 'his', 'brother', 'by', 'word', 'and', 'deed'],
+          distractors: ['sending', 'brothers', 'men', 'gifts']
         },
         {
           type: 'mc-translate',
@@ -2747,6 +2771,14 @@ var Data = (function() {
           options: ['The god sends a gift to Homer\'s brother into the land.', 'Homer\'s brother sends a gift to the god in the land.', 'The god educates Homer\'s brother in the land.', 'The brother sends the god\'s gift from the land.']
         },
         {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὦ Ὅμηρε, ἡ θεὸς τοῖς ἐν τῇ χώρᾳ ἀνθρώποις δῶρα πέμπει.',
+          displayGreek: true,
+          answer: ['Homer', 'the', 'goddess', 'sends', 'gifts', 'to', 'the', 'men', 'in', 'the', 'country'],
+          distractors: ['educates', 'gift', 'sending', 'brothers']
+        },
+        {
           type: 'mc-translate',
           prompt: 'Translate:',
           display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
@@ -2771,6 +2803,14 @@ var Data = (function() {
             ['τῶν ἀδελφῶν', 'of the brothers'],
             ['τοῖς βιβλίοις', 'with the books']
           ]
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὁ ἄνθρωπος τοὺς ἀδελφοὺς καὶ λόγῳ καὶ ἔργῳ παιδεύει.',
+          displayGreek: true,
+          answer: ['the', 'man', 'educates', 'his', 'brothers', 'both', 'by', 'word', 'and', 'by', 'deed'],
+          distractors: ['sends', 'brother', 'educating', 'men']
         },
         {
           type: 'mc-translate',
@@ -2803,6 +2843,14 @@ var Data = (function() {
           displayGreek: true,
           correct: 'Homer educates his brother with books.',
           options: ['Homer educates his brother with books.', 'Homer sends his brother\'s books.', 'The brother educates Homer with books.', 'Homer sends books to his brother.']
+        },
+        {
+          type: 'word-bank',
+          prompt: 'Translate:',
+          display: 'ὦ ἄδελφε, καὶ ἐν μάχῃ ὁ θεὸς τοὺς ἀνθρώπους, τοὺς τοῦ Ὁμήρου ἀδελφούς, παιδεύει.',
+          displayGreek: true,
+          answer: ['brother', 'even', 'in', 'battle', 'the', 'god', 'educates', 'the', 'men', 'the', 'brothers', 'of', 'Homer'],
+          distractors: ['sends', 'man', 'gifts', 'educating']
         },
         {
           type: 'match',
