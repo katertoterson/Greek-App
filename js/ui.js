@@ -141,13 +141,73 @@ var UI = (function() {
     return area;
   }
 
+  function goldAppleSVG() {
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('width', '28');
+    svg.setAttribute('height', '28');
+    svg.innerHTML =
+      '<defs>' +
+        '<radialGradient id="appleGold" cx="0.4" cy="0.35" r="0.65" fx="0.35" fy="0.3">' +
+          '<stop offset="0%" stop-color="#fff1a8"/>' +
+          '<stop offset="20%" stop-color="#f0d040"/>' +
+          '<stop offset="50%" stop-color="#c89520"/>' +
+          '<stop offset="75%" stop-color="#9a6e10"/>' +
+          '<stop offset="100%" stop-color="#6b4c08"/>' +
+        '</radialGradient>' +
+        '<radialGradient id="appleShine" cx="0.32" cy="0.28" r="0.35">' +
+          '<stop offset="0%" stop-color="rgba(255,255,240,0.85)"/>' +
+          '<stop offset="50%" stop-color="rgba(255,245,200,0.3)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,255,255,0)"/>' +
+        '</radialGradient>' +
+        '<linearGradient id="rimLight" x1="0" y1="0" x2="1" y2="1">' +
+          '<stop offset="0%" stop-color="rgba(255,240,180,0.5)"/>' +
+          '<stop offset="50%" stop-color="rgba(255,255,255,0)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,230,140,0.3)"/>' +
+        '</linearGradient>' +
+        '<linearGradient id="stemGold" x1="0" y1="0" x2="0" y2="1">' +
+          '<stop offset="0%" stop-color="#a07818"/>' +
+          '<stop offset="100%" stop-color="#6b4c08"/>' +
+        '</linearGradient>' +
+        '<radialGradient id="leafGold" cx="0.3" cy="0.4" r="0.7">' +
+          '<stop offset="0%" stop-color="#e8c840"/>' +
+          '<stop offset="40%" stop-color="#c49a1a"/>' +
+          '<stop offset="100%" stop-color="#7a5c0e"/>' +
+        '</radialGradient>' +
+        '<linearGradient id="leafShine" x1="0" y1="0" x2="0.5" y2="1">' +
+          '<stop offset="0%" stop-color="rgba(255,245,180,0.6)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,255,255,0)"/>' +
+        '</linearGradient>' +
+      '</defs>' +
+      // stem
+      '<path d="M50 26 C49 16, 53 6, 60 4" stroke="url(#stemGold)" stroke-width="3.5" fill="none" stroke-linecap="round"/>' +
+      // leaf with vein
+      '<path d="M52 19 Q62 6, 76 10 Q68 18, 54 22Z" fill="url(#leafGold)" stroke="#7a5c0e" stroke-width="0.8"/>' +
+      '<path d="M52 19 Q62 6, 76 10 Q68 18, 54 22Z" fill="url(#leafShine)"/>' +
+      '<path d="M54 20 Q63 12, 72 12" stroke="#9a7a18" stroke-width="0.7" fill="none"/>' +
+      // apple body — curvy with lobes
+      '<path d="M50 30 C36 24, 10 32, 12 58 C13 78, 30 96, 46 94 Q50 88, 54 94 C70 96, 87 78, 88 58 C90 32, 64 24, 50 30Z" fill="url(#appleGold)"/>' +
+      // shine overlay
+      '<path d="M50 30 C36 24, 10 32, 12 58 C13 78, 30 96, 46 94 Q50 88, 54 94 C70 96, 87 78, 88 58 C90 32, 64 24, 50 30Z" fill="url(#appleShine)"/>' +
+      // rim highlight
+      '<path d="M50 30 C36 24, 10 32, 12 58 C13 78, 30 96, 46 94 Q50 88, 54 94 C70 96, 87 78, 88 58 C90 32, 64 24, 50 30Z" fill="none" stroke="url(#rimLight)" stroke-width="1.5"/>' +
+      // specular highlight
+      '<ellipse cx="34" cy="46" rx="9" ry="16" fill="rgba(255,255,240,0.3)" transform="rotate(-25,34,46)"/>' +
+      // small secondary highlight on right
+      '<ellipse cx="68" cy="70" rx="5" ry="8" fill="rgba(255,240,180,0.12)" transform="rotate(15,68,70)"/>' +
+      // bottom dimple shadow
+      '<path d="M44 92 Q50 86, 56 92" stroke="rgba(100,60,5,0.3)" stroke-width="1.5" fill="none"/>';
+    return svg;
+  }
+
   function renderHearts(hearts) {
     var div = el('div', { className: 'hearts' });
     for (var i = 0; i < 3; i++) {
-      div.appendChild(el('span', {
-        className: 'heart' + (i >= hearts ? ' lost' : ''),
-        textContent: '🍎'
-      }));
+      var span = el('span', {
+        className: 'heart' + (i >= hearts ? ' lost' : '')
+      });
+      span.appendChild(goldAppleSVG());
+      div.appendChild(span);
     }
     return div;
   }

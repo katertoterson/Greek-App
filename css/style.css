@@ -212,7 +212,8 @@ html, body {
 }
 .heart {
   transition: opacity 0.3s;
-  filter: hue-rotate(40deg) saturate(1.5) brightness(1.1);
+  display: inline-flex;
+  align-items: center;
 }
 .heart.lost { opacity: 0.2; }
 
