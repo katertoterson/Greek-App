@@ -4723,67 +4723,6 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 57: Word Bank Prototype
-    {
-      id: 57,
-      title: 'Word Bank',
-      subtitle: 'Build Translations',
-      section: 'Review: Units 1–3',
-      icon: '🧩',
-      exercises: [
-        { type: 'intro', title: 'Word Bank', cards: [
-          { html: '<h3>Build the Translation</h3><p>A new kind of exercise! You\'ll see a Greek sentence and a set of English words below.</p><p>Tap words in the right order to build the translation. Tap a word in your answer to remove it.</p><p>Watch out — there are extra words to throw you off!</p>' }
-        ]},
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'ὁ Ὅμηρος τὸν ἄνθρωπον παιδεύει.',
-          displayGreek: true,
-          answer: ['Homer', 'educates', 'the', 'man'],
-          distractors: ['sending', 'men', 'island']
-        },
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'ὁ ἀδελφὸς τὰ δῶρα εἰς τὰς νήσους πέμπει.',
-          displayGreek: true,
-          answer: ['the', 'brother', 'sends', 'the', 'gifts', 'to', 'the', 'islands'],
-          distractors: ['educating', 'gift', 'brothers', 'from']
-        },
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'τὸν Ὅμηρον παιδεύει ὁ ἄνθρωπος.',
-          displayGreek: true,
-          answer: ['the', 'man', 'educates', 'Homer'],
-          distractors: ['sends', 'men', 'educating']
-        },
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'ὁ ἐν τῇ νήσῳ ἄνθρωπος τοὺς ἀδελφοὺς εἰς μάχην πέμπει.',
-          displayGreek: true,
-          answer: ['the', 'man', 'on', 'the', 'island', 'sends', 'the', 'brothers', 'into', 'battle'],
-          distractors: ['educates', 'islands', 'sending', 'brother']
-        },
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'τοὺς ἀνθρώπους παιδεύομεν.',
-          displayGreek: true,
-          answer: ['we', 'educate', 'the', 'men'],
-          distractors: ['sending', 'man', 'Homer']
-        },
-        {
-          type: 'word-bank',
-          prompt: 'Translate:',
-          display: 'ὁ θεὸς δῶρον τῷ ἀδελφῷ πέμπει.',
-          displayGreek: true,
-          answer: ['the', 'god', 'sends', 'a', 'gift', 'to', 'the', 'brother'],
-          distractors: ['educates', 'gifts', 'brothers', 'sending']
-        }
-      ]
-    }
   ];
 
   // Helper to build a letter table HTML
