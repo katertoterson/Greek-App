@@ -4457,9 +4457,47 @@ var Data = (function() {
 
     // ---- Section 7: Review — Units 1–3 ----
 
-    // Lesson 51: Verb Forms Review I
+    // Lesson 51: Principal Parts
     {
       id: 51,
+      title: 'Principal Parts',
+      subtitle: 'All 8 Verbs',
+      section: 'Review: Units 1–3',
+      icon: '🔄',
+      exercises: [
+        { type: 'intro', cards: [
+          { html: '<h3>Principal Parts Review</h3><p>Every Greek verb has <strong>six principal parts</strong>. Knowing these is the key to forming any tense.</p><table class="intro-table"><tr><th>#</th><th>Tense</th><th>Example (γράφω)</th></tr><tr><td>1st</td><td>Present</td><td class="greek">γράφω</td></tr><tr><td>2nd</td><td>Future</td><td class="greek">γράψω</td></tr><tr><td>3rd</td><td>Aorist</td><td class="greek">ἔγραψα</td></tr><tr><td>4th</td><td>Perfect Active</td><td class="greek">γέγραφα</td></tr><tr><td>5th</td><td>Perfect Mid./Pass.</td><td class="greek">γέγραμμαι</td></tr><tr><td>6th</td><td>Aorist Passive</td><td class="greek">ἐγράφην</td></tr></table>' }
+        ]},
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'review-pp' },
+        { type: 'match', pairs: [
+          ['παιδεύω', 'educate, teach'],
+          ['κελεύω', 'order, command'],
+          ['λύω', 'unbind, free, destroy'],
+          ['πέμπω', 'send'],
+          ['γράφω', 'write, draw']
+        ]},
+        { type: 'match', pairs: [
+          ['θύω', 'sacrifice'],
+          ['παύω', 'make stop, stop'],
+          ['φυλάττω', 'guard'],
+          ['γράφω', 'write, draw'],
+          ['λύω', 'unbind, free, destroy']
+        ]}
+      ]
+    },
+
+    // Lesson 52: Verb Forms Review I
+    {
+      id: 52,
       title: 'Verb Review I',
       subtitle: 'All Forms (All 8 Verbs)',
       section: 'Review: Units 1–3',
@@ -4483,9 +4521,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 52: Verb Forms Review II — Verbs & Infinitives
+    // Lesson 53: Verb Forms Review II — Verbs & Infinitives
     {
-      id: 52,
+      id: 53,
       title: 'Verb Review II',
       subtitle: 'Verb Forms & Infinitives',
       section: 'Review: Units 1–3',
@@ -4506,45 +4544,6 @@ var Data = (function() {
         { type: 'review-verb-select' },
         { type: 'review-infinitive' },
         { type: 'review-verb-id' }
-      ]
-    },
-
-    // Lesson 53: Principal Parts & Synopsis
-    {
-      id: 53,
-      title: 'Principal Parts',
-      subtitle: 'All 8 Verbs',
-      section: 'Review: Units 1–3',
-      icon: '🔄',
-      exercises: [
-        { type: 'intro', cards: [
-          { html: '<h3>Principal Parts Review</h3><p>Every Greek verb has <strong>six principal parts</strong>. Knowing these is the key to forming any tense.</p><table class="intro-table"><tr><th>#</th><th>Tense</th><th>Example (γράφω)</th></tr><tr><td>1st</td><td>Present</td><td class="greek">γράφω</td></tr><tr><td>2nd</td><td>Future</td><td class="greek">γράψω</td></tr><tr><td>3rd</td><td>Aorist</td><td class="greek">ἔγραψα</td></tr><tr><td>4th</td><td>Perfect Active</td><td class="greek">γέγραφα</td></tr><tr><td>5th</td><td>Perfect Mid./Pass.</td><td class="greek">γέγραμμαι</td></tr><tr><td>6th</td><td>Aorist Passive</td><td class="greek">ἐγράφην</td></tr></table>' }
-        ]},
-        { type: 'review-pp' },
-        { type: 'review-pp' },
-        { type: 'review-pp' },
-        { type: 'review-synopsis' },
-        { type: 'review-pp' },
-        { type: 'review-synopsis' },
-        { type: 'review-pp' },
-        { type: 'review-synopsis' },
-        { type: 'review-pp' },
-        { type: 'review-synopsis' },
-        { type: 'review-pp' },
-        { type: 'match', pairs: [
-          ['παιδεύω', 'educate, teach'],
-          ['κελεύω', 'order, command'],
-          ['λύω', 'unbind, free, destroy'],
-          ['πέμπω', 'send'],
-          ['γράφω', 'write, draw']
-        ]},
-        { type: 'match', pairs: [
-          ['θύω', 'sacrifice'],
-          ['παύω', 'make stop, stop'],
-          ['φυλάττω', 'guard'],
-          ['γράφω', 'write, draw'],
-          ['λύω', 'unbind, free, destroy']
-        ]}
       ]
     },
 

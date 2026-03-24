@@ -743,9 +743,8 @@ var Engine = (function() {
 
     var prompt = 'Give the ' + ppLabels[idx] + ' principal part of ' + verb.verb + ' (' + verb.meaning + '):';
 
-    // Distractors: same position from other verbs
-    var distractorPool = allVerbs.filter(function(v) { return v.verb !== verb.verb; })
-      .map(function(v) { return v.pp[idx]; });
+    // Distractors: other principal parts of the SAME verb
+    var distractorPool = verb.pp.filter(function(pp, i) { return i !== idx; });
     var distractors = pick(distractorPool, 3);
 
     return {
