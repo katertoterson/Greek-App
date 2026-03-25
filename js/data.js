@@ -4794,67 +4794,6 @@ var Data = (function() {
           distractors: ['educating', 'soul', 'brothers', 'gifts']
         }
       ]
-    },
-
-    // Lesson 57: Spelling Prototype
-    {
-      id: 57,
-      title: 'Spelling',
-      subtitle: 'Spell Principal Parts',
-      section: 'Review: Units 1–3',
-      icon: '✏️',
-      exercises: [
-        { type: 'intro', title: 'Spelling Practice', cards: [
-          { html: '<h3>Spell It Out</h3><p>Spell Greek verb forms using the letter bank below.</p><p><strong>Tap</strong> a letter to add it. <strong>Hold</strong> a vowel for accent marks. Use <strong>⌫</strong> to delete.</p><p>Keys with a <strong>·</strong> dot have accent variants.</p>' }
-        ]},
-        {
-          type: 'spelling',
-          prompt: 'Spell the 2nd principal part (Future Ind. Act.) of λύω:',
-          display: 'λύω → Future',
-          displayGreek: true,
-          answer: 'λύσω',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        },
-        {
-          type: 'spelling',
-          prompt: 'Spell the 4th principal part (Perfect Ind. Act.) of λύω:',
-          display: 'λύω → Perfect',
-          displayGreek: true,
-          answer: 'λέλυκα',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        },
-        {
-          type: 'spelling',
-          prompt: 'Spell the 3rd principal part (Aorist Ind. Act.) of πέμπω:',
-          display: 'πέμπω → Aorist',
-          displayGreek: true,
-          answer: 'ἔπεμψα',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        },
-        {
-          type: 'spelling',
-          prompt: 'Spell the 1st principal part (Present Ind. Act.) of παιδεύω:',
-          display: 'to educate → Present',
-          answer: 'παιδεύω',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        },
-        {
-          type: 'spelling',
-          prompt: 'Spell the 2nd principal part (Future Ind. Act.) of παιδεύω:',
-          display: 'παιδεύω → Future',
-          displayGreek: true,
-          answer: 'παιδεύσω',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        },
-        {
-          type: 'spelling',
-          prompt: 'Spell the 3rd principal part (Aorist Ind. Act.) of κελεύω:',
-          display: 'κελεύω → Aorist',
-          displayGreek: true,
-          answer: 'ἐκέλευσα',
-          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
-        }
-      ]
     }
 
   ];
