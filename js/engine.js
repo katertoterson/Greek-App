@@ -205,7 +205,7 @@ var Engine = (function() {
       display: def.display || '',
       displayGreek: !!def.displayGreek,
       answer: def.answer,
-      letters: shuffle(def.letters.slice())
+      letters: def.letters.slice()
     };
   }
 
@@ -781,33 +781,12 @@ var Engine = (function() {
 
     var prompt = 'Spell the ' + ppLabels[idx] + ' principal part of ' + verb.verb + ' (' + verb.meaning + '):';
 
-    // Build letter bank: base letters only (accents via long-press in UI)
-    // Map accented chars to their base letter
-    var accentToBase = {
-      'ά': 'α', 'ᾱ': 'α',
-      'έ': 'ε', 'ἐ': 'ε', 'ἔ': 'ε',
-      'ή': 'η',
-      'ί': 'ι', 'ῖ': 'ι',
-      'ό': 'ο',
-      'ύ': 'υ', 'ῡ': 'υ',
-      'ώ': 'ω'
-    };
-
-    var baseChars = [];
-    for (var i = 0; i < answer.length; i++) {
-      var ch = answer[i];
-      var base = accentToBase[ch] || ch;
-      if (baseChars.indexOf(base) === -1) baseChars.push(base);
-    }
-
-    // Pool of base Greek consonants and vowels for decoys
-    var decoyPool = [
-      'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ',
-      'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'
+    // Full Greek alphabet — consistent keyboard, accents via long-press
+    var letters = [
+      'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ',
+      'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π',
+      'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'
     ];
-    var decoys = decoyPool.filter(function(c) { return baseChars.indexOf(c) === -1; });
-    var selectedDecoys = pick(decoys, Math.min(8, decoys.length));
-    var letters = shuffle(baseChars.concat(selectedDecoys));
 
     return {
       type: 'spelling',

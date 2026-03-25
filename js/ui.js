@@ -624,16 +624,75 @@ var UI = (function() {
     updateAnswerZone();
   }
 
-  // Accent variants accessible via long-press
-  var accentVariants = {
-    'α': ['ά', 'ᾱ'],
-    'ε': ['έ', 'ἐ', 'ἔ'],
-    'η': ['ή'],
-    'ι': ['ί', 'ῖ'],
-    'ο': ['ό'],
-    'υ': ['ύ', 'ῡ'],
-    'ω': ['ώ']
+  // Full polytonic accent grid: organized by [breathing][accent]
+  // Rows: no breathing, smooth (᾿), rough (῾), iota subscript, smooth+iota, rough+iota, macron
+  // Cols: plain, acute, grave, circumflex
+  var vowelGrid = {
+    'α': {
+      rows: [
+        { label: '',  chars: ['α', 'ά', 'ὰ', 'ᾶ'] },
+        { label: '᾿', chars: ['ἀ', 'ἄ', 'ἂ', 'ἆ'] },
+        { label: '῾', chars: ['ἁ', 'ἅ', 'ἃ', 'ἇ'] },
+        { label: 'ι', chars: ['ᾳ', 'ᾴ', 'ᾲ', 'ᾷ'] },
+        { label: '᾿ι', chars: ['ᾀ', 'ᾄ', 'ᾂ', 'ᾆ'] },
+        { label: '῾ι', chars: ['ᾁ', 'ᾅ', 'ᾃ', 'ᾇ'] }
+      ],
+      extra: ['ᾱ']
+    },
+    'ε': {
+      rows: [
+        { label: '',  chars: ['ε', 'έ', 'ὲ'] },
+        { label: '᾿', chars: ['ἐ', 'ἔ', 'ἒ'] },
+        { label: '῾', chars: ['ἑ', 'ἕ', 'ἓ'] }
+      ]
+    },
+    'η': {
+      rows: [
+        { label: '',  chars: ['η', 'ή', 'ὴ', 'ῆ'] },
+        { label: '᾿', chars: ['ἠ', 'ἤ', 'ἢ', 'ἦ'] },
+        { label: '῾', chars: ['ἡ', 'ἥ', 'ἣ', 'ἧ'] },
+        { label: 'ι', chars: ['ῃ', 'ῄ', 'ῂ', 'ῇ'] },
+        { label: '᾿ι', chars: ['ᾐ', 'ᾔ', 'ᾒ', 'ᾖ'] },
+        { label: '῾ι', chars: ['ᾑ', 'ᾕ', 'ᾓ', 'ᾗ'] }
+      ]
+    },
+    'ι': {
+      rows: [
+        { label: '',  chars: ['ι', 'ί', 'ὶ', 'ῖ'] },
+        { label: '᾿', chars: ['ἰ', 'ἴ', 'ἲ', 'ἶ'] },
+        { label: '῾', chars: ['ἱ', 'ἵ', 'ἳ', 'ἷ'] }
+      ],
+      extra: ['ῑ']
+    },
+    'ο': {
+      rows: [
+        { label: '',  chars: ['ο', 'ό', 'ὸ'] },
+        { label: '᾿', chars: ['ὀ', 'ὄ', 'ὂ'] },
+        { label: '῾', chars: ['ὁ', 'ὅ', 'ὃ'] }
+      ]
+    },
+    'υ': {
+      rows: [
+        { label: '',  chars: ['υ', 'ύ', 'ὺ', 'ῦ'] },
+        { label: '᾿', chars: ['ὐ', 'ὔ', 'ὒ', 'ὖ'] },
+        { label: '῾', chars: ['ὑ', 'ὕ', 'ὓ', 'ὗ'] }
+      ],
+      extra: ['ῡ']
+    },
+    'ω': {
+      rows: [
+        { label: '',  chars: ['ω', 'ώ', 'ὼ', 'ῶ'] },
+        { label: '᾿', chars: ['ὠ', 'ὤ', 'ὢ', 'ὦ'] },
+        { label: '῾', chars: ['ὡ', 'ὥ', 'ὣ', 'ὧ'] },
+        { label: 'ι', chars: ['ῳ', 'ῴ', 'ῲ', 'ῷ'] },
+        { label: '᾿ι', chars: ['ᾠ', 'ᾤ', 'ᾢ', 'ᾦ'] },
+        { label: '῾ι', chars: ['ᾡ', 'ᾥ', 'ᾣ', 'ᾧ'] }
+      ]
+    }
   };
+  // Simple lookup for has-variants check
+  var accentVariants = {};
+  for (var v in vowelGrid) accentVariants[v] = true;
 
   function renderSpellingExercise(area, exercise, onAnswer) {
     area.innerHTML = '';
@@ -689,37 +748,61 @@ var UI = (function() {
 
     function showVariantPopup(key, baseLetter) {
       dismissPopup();
-      var variants = accentVariants[baseLetter];
-      if (!variants || variants.length === 0) return;
+      var grid = vowelGrid[baseLetter];
+      if (!grid) return;
 
       var popup = el('div', { className: 'sp-variant-popup' });
 
-      // Include the base letter as first option
-      var baseBtn = el('button', {
-        className: 'sp-variant-key greek',
-        textContent: baseLetter,
-        onClick: function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          insertLetter(baseLetter);
-          dismissPopup();
-        }
+      // Column headers
+      var headerRow = el('div', { className: 'sp-vgrid-row' });
+      headerRow.appendChild(el('span', { className: 'sp-vgrid-label' }));
+      var colLabels = grid.rows[0].chars.length === 3
+        ? ['–', '´', '`']
+        : ['–', '´', '`', '˜'];
+      colLabels.forEach(function(lbl) {
+        headerRow.appendChild(el('span', { className: 'sp-vgrid-header', textContent: lbl }));
       });
-      popup.appendChild(baseBtn);
+      popup.appendChild(headerRow);
 
-      variants.forEach(function(v) {
-        var btn = el('button', {
-          className: 'sp-variant-key greek',
-          textContent: v,
-          onClick: function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            insertLetter(v);
-            dismissPopup();
-          }
+      // Character rows
+      grid.rows.forEach(function(row) {
+        var rowDiv = el('div', { className: 'sp-vgrid-row' });
+        rowDiv.appendChild(el('span', { className: 'sp-vgrid-label', textContent: row.label }));
+        row.chars.forEach(function(ch) {
+          var btn = el('button', {
+            className: 'sp-variant-key greek',
+            textContent: ch,
+            onClick: function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              insertLetter(ch);
+              dismissPopup();
+            }
+          });
+          rowDiv.appendChild(btn);
         });
-        popup.appendChild(btn);
+        popup.appendChild(rowDiv);
       });
+
+      // Extra row (macron etc.)
+      if (grid.extra && grid.extra.length > 0) {
+        var extraRow = el('div', { className: 'sp-vgrid-row' });
+        extraRow.appendChild(el('span', { className: 'sp-vgrid-label', textContent: 'ˉ' }));
+        grid.extra.forEach(function(ch) {
+          var btn = el('button', {
+            className: 'sp-variant-key greek',
+            textContent: ch,
+            onClick: function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              insertLetter(ch);
+              dismissPopup();
+            }
+          });
+          extraRow.appendChild(btn);
+        });
+        popup.appendChild(extraRow);
+      }
 
       // Stop events from bubbling to the parent key
       popup.addEventListener('mousedown', function(e) { e.stopPropagation(); });
@@ -727,22 +810,22 @@ var UI = (function() {
       popup.addEventListener('touchstart', function(e) { e.stopPropagation(); });
       popup.addEventListener('touchend', function(e) { e.stopPropagation(); });
 
-      // Position relative to the key
-      key.style.position = 'relative';
-      key.appendChild(popup);
+      // Append to exercise area instead of key (for better positioning)
+      popup.style.position = 'fixed';
+      area.appendChild(popup);
       activePopup = popup;
 
-      // Nudge popup if it overflows the viewport
+      // Position above the key, centered
       requestAnimationFrame(function() {
-        var rect = popup.getBoundingClientRect();
-        if (rect.left < 4) {
-          popup.style.left = '0';
-          popup.style.transform = 'none';
-        } else if (rect.right > window.innerWidth - 4) {
-          popup.style.left = 'auto';
-          popup.style.right = '0';
-          popup.style.transform = 'none';
-        }
+        var keyRect = key.getBoundingClientRect();
+        var popRect = popup.getBoundingClientRect();
+        var top = keyRect.top - popRect.height - 8;
+        if (top < 4) top = keyRect.bottom + 8;
+        var left = keyRect.left + keyRect.width / 2 - popRect.width / 2;
+        if (left < 4) left = 4;
+        if (left + popRect.width > window.innerWidth - 4) left = window.innerWidth - popRect.width - 4;
+        popup.style.top = top + 'px';
+        popup.style.left = left + 'px';
       });
     }
 
@@ -806,11 +889,49 @@ var UI = (function() {
       key.addEventListener('mouseleave', cancelPress);
     }
 
-    exercise.letters.forEach(function(letter) {
-      var key = el('button', { className: 'sp-key greek', textContent: letter });
-      setupKey(key, letter);
-      keyboardDiv.appendChild(key);
+    // Standard Greek phone keyboard layout
+    var kbRows = [
+      ['ς', 'ε', 'ρ', 'τ', 'υ', 'θ', 'ι', 'ο', 'π'],
+      ['α', 'σ', 'δ', 'φ', 'γ', 'η', 'ξ', 'κ', 'λ'],
+      ['ζ', 'χ', 'ψ', 'ω', 'β', 'ν', 'μ']
+    ];
+
+    kbRows.forEach(function(row, rowIdx) {
+      var rowDiv = el('div', { className: 'sp-kb-row' });
+      row.forEach(function(letter) {
+        var key = el('button', { className: 'sp-key greek', textContent: letter });
+        setupKey(key, letter);
+        rowDiv.appendChild(key);
+      });
+      // Add backspace to the end of the bottom row
+      if (rowIdx === 2) {
+        var bksp = el('button', {
+          className: 'sp-key sp-backspace-key',
+          textContent: '⌫',
+          onClick: function() {
+            if (answered || builtWord.length === 0) return;
+            builtWord.pop();
+            updateAnswerZone();
+          }
+        });
+        rowDiv.appendChild(bksp);
+      }
+      keyboardDiv.appendChild(rowDiv);
     });
+
+    // Space bar row
+    var spaceRow = el('div', { className: 'sp-kb-row' });
+    var spaceBar = el('button', {
+      className: 'sp-key sp-space-key',
+      textContent: 'space',
+      onClick: function() {
+        if (answered) return;
+        builtWord.push(' ');
+        updateAnswerZone();
+      }
+    });
+    spaceRow.appendChild(spaceBar);
+    keyboardDiv.appendChild(spaceRow);
 
     area.appendChild(keyboardDiv);
 
@@ -821,19 +942,8 @@ var UI = (function() {
       }
     });
 
-    // Controls row: backspace + check
+    // Controls row: just check button
     var controlsDiv = el('div', { className: 'sp-controls' });
-
-    var backspaceBtn = el('button', {
-      className: 'sp-backspace',
-      textContent: '⌫',
-      onClick: function() {
-        if (answered || builtWord.length === 0) return;
-        builtWord.pop();
-        updateAnswerZone();
-      }
-    });
-    controlsDiv.appendChild(backspaceBtn);
 
     var checkBtn = el('button', {
       className: 'btn-continue wb-check',
@@ -850,7 +960,6 @@ var UI = (function() {
         // Disable keyboard
         var keys = keyboardDiv.querySelectorAll('button');
         for (var i = 0; i < keys.length; i++) keys[i].style.pointerEvents = 'none';
-        backspaceBtn.style.pointerEvents = 'none';
 
         if (!isCorrect) {
           var correctDiv = el('div', { className: 'wb-correct-answer greek' }, [
