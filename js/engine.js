@@ -866,7 +866,7 @@ var Engine = (function() {
   function generateReviewVocabMatch(def) {
     var allWords = Data.allVocabAll;
     var selected = shuffle(allWords.slice()).slice(0, 5);
-    var pairs = selected.map(function(w) { return [w.greek, thePrefix(w.english)]; });
+    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
     return { type: 'match', graded: false, pairs: pairs };
   }
 
