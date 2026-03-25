@@ -188,9 +188,25 @@ var Engine = (function() {
         return generateReviewInfinitive(def);
       case 'word-bank':
         return generateWordBank(def);
+      case 'spelling':
+        return generateSpelling(def);
+      case 'review-spelling-pp':
+        return generateReviewSpellingPP(def);
       default:
         return null;
     }
+  }
+
+  function generateSpelling(def) {
+    return {
+      type: 'spelling',
+      graded: true,
+      prompt: def.prompt || 'Spell this form:',
+      display: def.display || '',
+      displayGreek: !!def.displayGreek,
+      answer: def.answer,
+      letters: shuffle(def.letters.slice())
+    };
   }
 
   function generateWordBank(def) {
@@ -753,6 +769,54 @@ var Engine = (function() {
       correct: correctPP,
       options: shuffle([correctPP].concat(distractors)),
       optionsGreek: true
+    };
+  }
+
+  function generateReviewSpellingPP(def) {
+    var allVerbs = getAllVerbs();
+    var verb = pickRandom(allVerbs);
+    var ppLabels = ['1st (Present)', '2nd (Future)', '3rd (Aorist)', '4th (Perfect Act.)', '5th (Perf. Mid./Pass.)', '6th (Aorist Pass.)'];
+    var idx = Math.floor(Math.random() * 6);
+    var answer = verb.pp[idx];
+
+    var prompt = 'Spell the ' + ppLabels[idx] + ' principal part of ' + verb.verb + ' (' + verb.meaning + '):';
+
+    // Build letter bank: base letters only (accents via long-press in UI)
+    // Map accented chars to their base letter
+    var accentToBase = {
+      'ά': 'α', 'ᾱ': 'α',
+      'έ': 'ε', 'ἐ': 'ε', 'ἔ': 'ε',
+      'ή': 'η',
+      'ί': 'ι', 'ῖ': 'ι',
+      'ό': 'ο',
+      'ύ': 'υ', 'ῡ': 'υ',
+      'ώ': 'ω'
+    };
+
+    var baseChars = [];
+    for (var i = 0; i < answer.length; i++) {
+      var ch = answer[i];
+      var base = accentToBase[ch] || ch;
+      if (baseChars.indexOf(base) === -1) baseChars.push(base);
+    }
+
+    // Pool of base Greek consonants and vowels for decoys
+    var decoyPool = [
+      'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ',
+      'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'
+    ];
+    var decoys = decoyPool.filter(function(c) { return baseChars.indexOf(c) === -1; });
+    var selectedDecoys = pick(decoys, Math.min(8, decoys.length));
+    var letters = shuffle(baseChars.concat(selectedDecoys));
+
+    return {
+      type: 'spelling',
+      graded: true,
+      prompt: prompt,
+      display: verb.verb,
+      displayGreek: true,
+      answer: answer,
+      letters: letters
     };
   }
 

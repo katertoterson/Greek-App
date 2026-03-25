@@ -624,6 +624,255 @@ var UI = (function() {
     updateAnswerZone();
   }
 
+  // Accent variants accessible via long-press
+  var accentVariants = {
+    'α': ['ά', 'ᾱ'],
+    'ε': ['έ', 'ἐ', 'ἔ'],
+    'η': ['ή'],
+    'ι': ['ί', 'ῖ'],
+    'ο': ['ό'],
+    'υ': ['ύ', 'ῡ'],
+    'ω': ['ώ']
+  };
+
+  function renderSpellingExercise(area, exercise, onAnswer) {
+    area.innerHTML = '';
+    var answered = false;
+    var builtWord = [];
+    var activePopup = null;
+    var longPressTimer = null;
+
+    // Prompt
+    var prompt = el('div', { className: 'exercise-prompt' }, [
+      el('div', { className: 'prompt-label', textContent: exercise.prompt })
+    ]);
+    if (exercise.display) {
+      var displayClass = 'prompt-text' + (exercise.displayGreek ? ' greek' : '');
+      prompt.appendChild(el('div', { className: displayClass, textContent: exercise.display }));
+    }
+    area.appendChild(prompt);
+
+    // Answer zone
+    var answerZone = el('div', { className: 'sp-answer-zone greek' });
+    area.appendChild(answerZone);
+
+    // Hint text
+    var hintDiv = el('div', { className: 'sp-hint', textContent: 'Hold a key for accent marks' });
+    area.appendChild(hintDiv);
+
+    // Letter keyboard
+    var keyboardDiv = el('div', { className: 'sp-keyboard' });
+
+    function dismissPopup() {
+      if (activePopup) {
+        activePopup.parentNode.removeChild(activePopup);
+        activePopup = null;
+      }
+    }
+
+    function insertLetter(letter) {
+      if (answered) return;
+      builtWord.push(letter);
+      updateAnswerZone();
+    }
+
+    function updateAnswerZone() {
+      answerZone.innerHTML = '';
+      if (builtWord.length === 0) {
+        answerZone.appendChild(el('span', { className: 'wb-placeholder', textContent: 'Tap letters below to spell the word' }));
+        return;
+      }
+      builtWord.forEach(function(letter) {
+        answerZone.appendChild(el('span', { className: 'sp-letter-tile greek', textContent: letter }));
+      });
+    }
+
+    function showVariantPopup(key, baseLetter) {
+      dismissPopup();
+      var variants = accentVariants[baseLetter];
+      if (!variants || variants.length === 0) return;
+
+      var popup = el('div', { className: 'sp-variant-popup' });
+
+      // Include the base letter as first option
+      var baseBtn = el('button', {
+        className: 'sp-variant-key greek',
+        textContent: baseLetter,
+        onClick: function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          insertLetter(baseLetter);
+          dismissPopup();
+        }
+      });
+      popup.appendChild(baseBtn);
+
+      variants.forEach(function(v) {
+        var btn = el('button', {
+          className: 'sp-variant-key greek',
+          textContent: v,
+          onClick: function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            insertLetter(v);
+            dismissPopup();
+          }
+        });
+        popup.appendChild(btn);
+      });
+
+      // Stop events from bubbling to the parent key
+      popup.addEventListener('mousedown', function(e) { e.stopPropagation(); });
+      popup.addEventListener('mouseup', function(e) { e.stopPropagation(); });
+      popup.addEventListener('touchstart', function(e) { e.stopPropagation(); });
+      popup.addEventListener('touchend', function(e) { e.stopPropagation(); });
+
+      // Position relative to the key
+      key.style.position = 'relative';
+      key.appendChild(popup);
+      activePopup = popup;
+
+      // Nudge popup if it overflows the viewport
+      requestAnimationFrame(function() {
+        var rect = popup.getBoundingClientRect();
+        if (rect.left < 4) {
+          popup.style.left = '0';
+          popup.style.transform = 'none';
+        } else if (rect.right > window.innerWidth - 4) {
+          popup.style.left = 'auto';
+          popup.style.right = '0';
+          popup.style.transform = 'none';
+        }
+      });
+    }
+
+    function setupKey(key, letter) {
+      var hasVariants = !!accentVariants[letter];
+      if (hasVariants) {
+        key.classList.add('has-variants');
+      }
+
+      var pressHandled = false;
+
+      function startPress(e) {
+        if (answered) return;
+        pressHandled = false;
+        if (hasVariants) {
+          longPressTimer = setTimeout(function() {
+            pressHandled = true;
+            showVariantPopup(key, letter);
+          }, 400);
+        }
+      }
+
+      function endPress(e) {
+        if (answered) return;
+        if (longPressTimer) {
+          clearTimeout(longPressTimer);
+          longPressTimer = null;
+        }
+        if (!pressHandled && !activePopup) {
+          insertLetter(letter);
+        }
+      }
+
+      function cancelPress() {
+        if (longPressTimer) {
+          clearTimeout(longPressTimer);
+          longPressTimer = null;
+        }
+      }
+
+      // Touch events
+      key.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        startPress(e);
+      });
+      key.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        endPress(e);
+      });
+      key.addEventListener('touchcancel', cancelPress);
+
+      // Mouse events (for desktop)
+      key.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        startPress(e);
+      });
+      key.addEventListener('mouseup', function(e) {
+        e.preventDefault();
+        endPress(e);
+      });
+      key.addEventListener('mouseleave', cancelPress);
+    }
+
+    exercise.letters.forEach(function(letter) {
+      var key = el('button', { className: 'sp-key greek', textContent: letter });
+      setupKey(key, letter);
+      keyboardDiv.appendChild(key);
+    });
+
+    area.appendChild(keyboardDiv);
+
+    // Dismiss popup on tap outside
+    area.addEventListener('click', function(e) {
+      if (activePopup && !activePopup.contains(e.target)) {
+        dismissPopup();
+      }
+    });
+
+    // Controls row: backspace + check
+    var controlsDiv = el('div', { className: 'sp-controls' });
+
+    var backspaceBtn = el('button', {
+      className: 'sp-backspace',
+      textContent: '⌫',
+      onClick: function() {
+        if (answered || builtWord.length === 0) return;
+        builtWord.pop();
+        updateAnswerZone();
+      }
+    });
+    controlsDiv.appendChild(backspaceBtn);
+
+    var checkBtn = el('button', {
+      className: 'btn-continue wb-check',
+      textContent: 'Check',
+      onClick: function() {
+        if (answered || builtWord.length === 0) return;
+        answered = true;
+
+        var userAnswer = builtWord.join('');
+        var isCorrect = userAnswer === exercise.answer;
+
+        answerZone.classList.add(isCorrect ? 'correct' : 'wrong');
+
+        // Disable keyboard
+        var keys = keyboardDiv.querySelectorAll('button');
+        for (var i = 0; i < keys.length; i++) keys[i].style.pointerEvents = 'none';
+        backspaceBtn.style.pointerEvents = 'none';
+
+        if (!isCorrect) {
+          var correctDiv = el('div', { className: 'wb-correct-answer greek' }, [
+            el('span', { textContent: 'Correct: ' }),
+            el('span', { textContent: exercise.answer })
+          ]);
+          area.appendChild(correctDiv);
+        }
+
+        AudioFX.play(isCorrect ? 'correct' : 'wrong');
+
+        checkBtn.textContent = 'Continue';
+        checkBtn.classList.remove('wb-check');
+        checkBtn.onclick = function() { onAnswer(isCorrect); };
+      }
+    });
+    controlsDiv.appendChild(checkBtn);
+
+    area.appendChild(controlsDiv);
+    updateAnswerZone();
+  }
+
   return {
     renderHome: renderHome,
     renderLesson: renderLesson,
@@ -631,6 +880,7 @@ var UI = (function() {
     renderMCExercise: renderMCExercise,
     renderMatchExercise: renderMatchExercise,
     renderWordBankExercise: renderWordBankExercise,
+    renderSpellingExercise: renderSpellingExercise,
     renderResults: renderResults,
     renderGameOver: renderGameOver
   };

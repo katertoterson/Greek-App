@@ -98,6 +98,24 @@ var App = (function() {
           showExercise();
         });
         break;
+      case 'spelling':
+        UI.renderSpellingExercise(area, ex, function(isCorrect) {
+          if (ex.graded) {
+            state.gradedCount++;
+            if (isCorrect) {
+              state.correctCount++;
+            } else {
+              state.hearts--;
+              if (state.hearts <= 0) {
+                gameOver();
+                return;
+              }
+            }
+          }
+          state.exerciseIndex++;
+          showExercise();
+        });
+        break;
       default:
         state.exerciseIndex++;
         showExercise();
