@@ -1627,6 +1627,20 @@ var Data = (function() {
           displayGreek: true,
           correct: 'First declension, feminine',
           options: ['First declension, feminine', 'Second declension, masculine', 'Second declension, neuter', 'Third declension']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the battle" in nominative singular:',
+          display: 'the battle',
+          answer: 'ἡ μάχη',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the soul" in nominative singular:',
+          display: 'the soul',
+          answer: 'ἡ ψῡχή',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
         }
       ]
     },
@@ -1656,6 +1670,20 @@ var Data = (function() {
           displayGreek: true,
           correct: 'Second declension',
           options: ['Second declension', 'First declension', 'Third declension', 'Mixed declension']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the brother" in nominative singular:',
+          display: 'the brother',
+          answer: 'ὁ ἀδελφός',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the word; the speech" in nominative singular:',
+          display: 'the word; the speech',
+          answer: 'ὁ λόγος',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
         }
       ]
     },
@@ -1685,7 +1713,21 @@ var Data = (function() {
           options: ['Feminine (unusual for 2nd declension)', 'Masculine', 'Neuter', 'No gender']
         },
         { type: 'vocab-gre', vocabGroup: 2 },
-        { type: 'vocab-eng', vocabGroup: 2 }
+        { type: 'vocab-eng', vocabGroup: 2 },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the island" in nominative singular:',
+          display: 'the island',
+          answer: 'ἡ νῆσος',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the gift" in nominative singular:',
+          display: 'the gift',
+          answer: 'τό δῶρον',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        }
       ]
     },
 
@@ -3813,7 +3855,21 @@ var Data = (function() {
         },
         { type: 'u2vocab-gre', vocabGroup: 0 },
         { type: 'u2vocab-eng', vocabGroup: 0 },
-        { type: 'u2vocab-match', vocabGroup: 0 }
+        { type: 'u2vocab-match', vocabGroup: 0 },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the war" in nominative singular:',
+          display: 'the war',
+          answer: 'ὁ πόλεμος',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the friendship" in nominative singular:',
+          display: 'the friendship',
+          answer: 'ἡ φιλίᾱ',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        }
       ]
     },
 
@@ -4434,7 +4490,21 @@ var Data = (function() {
         ]},
         { type: 'u3vocab-gre', vocabGroup: 0 },
         { type: 'u3vocab-eng', vocabGroup: 0 },
-        { type: 'u3vocab-match', vocabGroup: 0 }
+        { type: 'u3vocab-match', vocabGroup: 0 },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the victory" in nominative singular:',
+          display: 'the victory',
+          answer: 'ἡ νίκη',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        },
+        {
+          type: 'spelling',
+          prompt: 'Spell the Greek word(s) for "the democracy" in nominative singular:',
+          display: 'the democracy',
+          answer: 'ἡ δημοκρατίᾱ',
+          letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
+        }
       ]
     },
     // Lesson 49: Vocabulary II (Verbs & Particles)
