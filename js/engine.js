@@ -837,14 +837,14 @@ var Engine = (function() {
     var allWords = Data.allVocabAll;
     var target = pickRandom(allWords);
     var pool = allWords.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool, 3).map(function(w) { return w.english; });
+    var distractors = pick(pool, 3).map(function(w) { return thePrefix(w.english); });
     return {
       type: 'mc', graded: true,
-      prompt: 'What does this word mean?',
+      prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
       displayGreek: true,
-      correct: target.english,
-      options: shuffle([target.english].concat(distractors))
+      correct: thePrefix(target.english),
+      options: shuffle([thePrefix(target.english)].concat(distractors))
     };
   }
 
@@ -856,7 +856,7 @@ var Engine = (function() {
     var correct = target.article + ' ' + target.greek;
     return {
       type: 'mc', graded: true,
-      prompt: 'Which Greek word means "' + target.english + '"?',
+      prompt: 'What is "' + thePrefix(target.english) + '" in Greek?',
       correct: correct,
       options: shuffle([correct].concat(distractors)),
       optionsGreek: true
@@ -866,7 +866,7 @@ var Engine = (function() {
   function generateReviewVocabMatch(def) {
     var allWords = Data.allVocabAll;
     var selected = shuffle(allWords.slice()).slice(0, 5);
-    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
+    var pairs = selected.map(function(w) { return [w.greek, thePrefix(w.english)]; });
     return { type: 'match', graded: false, pairs: pairs };
   }
 
