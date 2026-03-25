@@ -392,6 +392,24 @@ html, body {
 .sp-letter-tile {
   font-size: 26px;
 }
+.sp-space-tile {
+  display: inline-block;
+  width: 18px;
+  height: 4px;
+  background: var(--purple);
+  opacity: 0.4;
+  border-radius: 2px;
+  align-self: flex-end;
+  margin: 0 2px 8px;
+}
+.sp-key.pressed {
+  transform: scale(0.9) translateY(2px);
+  box-shadow: none;
+  background: rgba(123, 97, 255, 0.3);
+}
+.sp-space-key.pressed {
+  background: rgba(123, 97, 255, 0.35);
+}
 .sp-keyboard {
   display: flex;
   flex-direction: column;

@@ -742,7 +742,11 @@ var UI = (function() {
         return;
       }
       builtWord.forEach(function(letter) {
-        answerZone.appendChild(el('span', { className: 'sp-letter-tile greek', textContent: letter }));
+        if (letter === ' ') {
+          answerZone.appendChild(el('span', { className: 'sp-space-tile' }));
+        } else {
+          answerZone.appendChild(el('span', { className: 'sp-letter-tile greek', textContent: letter }));
+        }
       });
     }
 
@@ -829,6 +833,11 @@ var UI = (function() {
       });
     }
 
+    function flashKey(keyEl) {
+      keyEl.classList.add('pressed');
+      setTimeout(function() { keyEl.classList.remove('pressed'); }, 120);
+    }
+
     function setupKey(key, letter) {
       var hasVariants = !!accentVariants[letter];
       if (hasVariants) {
@@ -855,6 +864,7 @@ var UI = (function() {
           longPressTimer = null;
         }
         if (!pressHandled && !activePopup) {
+          flashKey(key);
           insertLetter(letter);
         }
       }
@@ -910,6 +920,7 @@ var UI = (function() {
           textContent: '⌫',
           onClick: function() {
             if (answered || builtWord.length === 0) return;
+            flashKey(bksp);
             builtWord.pop();
             updateAnswerZone();
           }
@@ -926,6 +937,7 @@ var UI = (function() {
       textContent: 'space',
       onClick: function() {
         if (answered) return;
+        flashKey(spaceBar);
         builtWord.push(' ');
         updateAnswerZone();
       }
