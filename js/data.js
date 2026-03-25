@@ -4712,7 +4712,10 @@ var Data = (function() {
         { type: 'review-vocab-gre' },
         { type: 'review-vocab-eng' },
         { type: 'review-vocab-gre' },
-        { type: 'review-vocab-eng' }
+        { type: 'review-vocab-eng' },
+        { type: 'review-spelling-vocab' },
+        { type: 'review-spelling-vocab' },
+        { type: 'review-spelling-vocab' }
       ]
     },
 

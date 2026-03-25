@@ -21,6 +21,11 @@ var Engine = (function() {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
+  // Prepend "the" to an English noun, avoiding "the the people" etc.
+  function thePrefix(eng) {
+    return eng.match(/^the\b/) ? eng : 'the ' + eng;
+  }
+
   // ===== Progress =====
   function getProgress() {
     var defaults = { completed: {}, totalXP: 0, streak: 0, lastPlayDate: null };
@@ -192,6 +197,8 @@ var Engine = (function() {
         return generateSpelling(def);
       case 'review-spelling-pp':
         return generateReviewSpellingPP(def);
+      case 'review-spelling-vocab':
+        return generateReviewSpellingVocab(def);
       default:
         return null;
     }
@@ -351,7 +358,7 @@ var Engine = (function() {
         html: '<div class="vocab-card">' +
           '<div class="vocab-article">' + w.article + '</div>' +
           '<div class="vocab-greek">' + w.greek + '</div>' +
-          '<div class="vocab-english">the ' + w.english + '</div>' +
+          '<div class="vocab-english">' + thePrefix(w.english) + '</div>' +
           '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
           '</div>'
       };
@@ -363,15 +370,15 @@ var Engine = (function() {
     var words = Data.unit1Vocab[def.vocabGroup];
     var target = pickRandom(words);
     var pool = Data.unit1VocabAll.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
+    var distractors = pick(pool.map(function(w) { return thePrefix(w.english); }), 3);
     return {
       type: 'mc',
       graded: true,
       prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
       displayGreek: true,
-      correct: 'the ' + target.english,
-      options: shuffle(['the ' + target.english].concat(distractors))
+      correct: thePrefix(target.english),
+      options: shuffle([thePrefix(target.english)].concat(distractors))
     };
   }
 
@@ -436,7 +443,7 @@ var Engine = (function() {
         html: '<div class="vocab-card">' +
           '<div class="vocab-article">' + w.article + '</div>' +
           '<div class="vocab-greek">' + w.greek + '</div>' +
-          '<div class="vocab-english">the ' + w.english + '</div>' +
+          '<div class="vocab-english">' + thePrefix(w.english) + '</div>' +
           '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
           '</div>'
       };
@@ -448,13 +455,13 @@ var Engine = (function() {
     var words = Data.unit2Vocab[def.vocabGroup];
     var target = pickRandom(words);
     var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
+    var distractors = pick(pool.map(function(w) { return thePrefix(w.english); }), 3);
     return {
       type: 'mc', graded: true,
       prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
-      displayGreek: true, correct: 'the ' + target.english,
-      options: shuffle(['the ' + target.english].concat(distractors))
+      displayGreek: true, correct: thePrefix(target.english),
+      options: shuffle([thePrefix(target.english)].concat(distractors))
     };
   }
 
@@ -590,7 +597,7 @@ var Engine = (function() {
         html: '<div class="vocab-card">' +
           '<div class="vocab-article">' + w.article + '</div>' +
           '<div class="vocab-greek">' + w.greek + '</div>' +
-          '<div class="vocab-english">the ' + w.english + '</div>' +
+          '<div class="vocab-english">' + thePrefix(w.english) + '</div>' +
           '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + '</div>' +
           '</div>'
       };
@@ -602,13 +609,13 @@ var Engine = (function() {
     var words = Data.unit3Vocab[def.vocabGroup];
     var target = pickRandom(words);
     var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
-    var distractors = pick(pool.map(function(w) { return 'the ' + w.english; }), 3);
+    var distractors = pick(pool.map(function(w) { return thePrefix(w.english); }), 3);
     return {
       type: 'mc', graded: true,
       prompt: 'What does this mean?',
       display: target.article + ' ' + target.greek,
-      displayGreek: true, correct: 'the ' + target.english,
-      options: shuffle(['the ' + target.english].concat(distractors))
+      displayGreek: true, correct: thePrefix(target.english),
+      options: shuffle([thePrefix(target.english)].concat(distractors))
     };
   }
 
@@ -795,6 +802,33 @@ var Engine = (function() {
       display: verb.verb,
       displayGreek: true,
       answer: answer,
+      letters: letters
+    };
+  }
+
+  function generateReviewSpellingVocab(def) {
+    var allWords = Data.allVocabAll;
+    // Exclude capitalized words (e.g. Ὅμηρος)
+    var eligible = allWords.filter(function(w) {
+      var first = w.greek.charAt(0);
+      return first === first.toLowerCase();
+    });
+    var target = pickRandom(eligible);
+    var display = thePrefix(target.english);
+    var prompt = 'Spell the Greek word(s) for \u201c' + display + '\u201d in nominative singular:';
+
+    var letters = [
+      'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ',
+      'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π',
+      'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'
+    ];
+
+    return {
+      type: 'spelling',
+      graded: true,
+      prompt: prompt,
+      display: display,
+      answer: target.article + ' ' + target.greek,
       letters: letters
     };
   }
