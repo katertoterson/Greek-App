@@ -683,15 +683,10 @@ html, body {
   font-size: 22px;
 }
 
-.intro-table-wrap {
-  width: 100%;
-  overflow-x: auto;
-  margin: 16px 0;
-  -webkit-overflow-scrolling: touch;
-}
 .intro-table {
   width: 100%;
   border-collapse: collapse;
+  margin: 16px 0;
 }
 .intro-table th {
   font-size: 10px;
