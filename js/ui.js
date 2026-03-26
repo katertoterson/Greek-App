@@ -28,9 +28,48 @@ var UI = (function() {
   }
 
   // ===== HOME SCREEN =====
+
+  // Track which sections are collapsed (persists during session)
+  var collapsedSections = null; // initialized on first render
+
+  function findNextLesson(lessons, progress) {
+    for (var i = 0; i < lessons.length; i++) {
+      var l = lessons[i];
+      if (!progress.completed[l.id] && Engine.isLessonUnlocked(l.id, progress)) {
+        return l;
+      }
+    }
+    return null;
+  }
+
   function renderHome(progress, onLessonTap) {
     clear();
     var titleTapCount = 0;
+    var lessons = Data.lessons;
+
+    // Build section info: which sections exist and their completion status
+    var sectionOrder = [];
+    var sectionLessons = {};
+    for (var i = 0; i < lessons.length; i++) {
+      var sec = lessons[i].section;
+      if (!sectionLessons[sec]) {
+        sectionOrder.push(sec);
+        sectionLessons[sec] = [];
+      }
+      sectionLessons[sec].push(lessons[i]);
+    }
+
+    // Initialize collapsed state on first render: collapse fully completed sections
+    if (collapsedSections === null) {
+      collapsedSections = {};
+      for (var si = 0; si < sectionOrder.length; si++) {
+        var secName = sectionOrder[si];
+        var allDone = sectionLessons[secName].every(function(l) {
+          return !!progress.completed[l.id];
+        });
+        collapsedSections[secName] = allDone;
+      }
+    }
 
     var header = el('div', { className: 'home-header' }, [
       el('h1', {
@@ -65,21 +104,78 @@ var UI = (function() {
       ])
     ]);
 
+    // Continue button
+    var nextLesson = findNextLesson(lessons, progress);
+    var continueBtn = null;
+    if (nextLesson) {
+      continueBtn = el('button', {
+        className: 'btn-continue-home',
+        onClick: function() {
+          AudioFX.play('tap');
+          onLessonTap(nextLesson);
+        }
+      }, [
+        el('span', { className: 'continue-label', textContent: 'Continue' }),
+        el('span', { className: 'continue-lesson', textContent:
+          (nextLesson.section.indexOf(':') !== -1
+            ? nextLesson.section.split(':')[0]
+            : nextLesson.section) + ': ' + nextLesson.title
+        })
+      ]);
+    }
+
     var path = el('div', { className: 'lesson-path' });
-    var lessons = Data.lessons;
     var currentSection = '';
+    var currentContainer = null;
+    var lessonIndex = 0;
 
     for (var i = 0; i < lessons.length; i++) {
       var lesson = lessons[i];
 
       if (lesson.section !== currentSection) {
         currentSection = lesson.section;
-        path.appendChild(el('div', { className: 'section-label', textContent: currentSection }));
+
+        // Count completed lessons in this section
+        var secLessons = sectionLessons[currentSection];
+        var secCompleted = secLessons.filter(function(l) { return !!progress.completed[l.id]; }).length;
+        var isCollapsed = !!collapsedSections[currentSection];
+
+        var arrow = el('span', {
+          className: 'section-arrow' + (isCollapsed ? ' collapsed' : ''),
+          textContent: isCollapsed ? '▸' : '▾'
+        });
+        var countBadge = el('span', {
+          className: 'section-count',
+          textContent: secCompleted + '/' + secLessons.length
+        });
+
+        var sectionLabel = el('div', {
+          className: 'section-label clickable',
+          onClick: (function(secName, arrowEl, countEl) {
+            return function() {
+              collapsedSections[secName] = !collapsedSections[secName];
+              renderHome(Engine.getProgress(), onLessonTap);
+            };
+          })(currentSection, arrow, countBadge)
+        }, [
+          arrow,
+          el('span', { textContent: ' ' + currentSection + ' ' }),
+          countBadge
+        ]);
+
+        path.appendChild(sectionLabel);
+
+        // Create a container for this section's lessons
+        currentContainer = el('div', {
+          className: 'section-lessons' + (isCollapsed ? ' collapsed' : '')
+        });
+        path.appendChild(currentContainer);
+        lessonIndex = 0;
       }
 
-      if (i > 0) {
+      if (lessonIndex > 0) {
         var prevCompleted = !!progress.completed[lessons[i - 1].id];
-        path.appendChild(el('div', { className: 'connector' + (prevCompleted ? ' active' : '') }));
+        currentContainer.appendChild(el('div', { className: 'connector' + (prevCompleted ? ' active' : '') }));
       }
 
       var completed = progress.completed[lesson.id];
@@ -112,12 +208,24 @@ var UI = (function() {
         node.appendChild(starsDiv);
       }
 
-      path.appendChild(node);
+      currentContainer.appendChild(node);
+      lessonIndex++;
     }
 
     app.appendChild(header);
     app.appendChild(statsBar);
+    if (continueBtn) app.appendChild(continueBtn);
     app.appendChild(path);
+
+    // Auto-scroll to the next lesson's section if it's visible
+    if (nextLesson) {
+      setTimeout(function() {
+        var available = document.querySelector('.lesson-node.available');
+        if (available) {
+          available.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
   }
 
   // ===== LESSON SCREEN =====
