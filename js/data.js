@@ -241,7 +241,45 @@ var Data = (function() {
     group.forEach(function(w) { unit3VocabAll.push(w); });
   });
 
-  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll);
+  var unit4Vocab = [
+    // Group 0: Vocabulary I (feminine nouns — short -α and regular 1st decl.)
+    [
+      { greek: 'θάλαττα', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'sea' },
+      { greek: 'μοῦσα', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'muse' },
+      { greek: 'γέφῡρα', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'bridge' },
+      { greek: 'μοῖρα', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'fate' },
+      { greek: 'ἀρχή', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'beginning; rule, empire' },
+      { greek: 'δίκη', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'justice; lawsuit' },
+      { greek: 'ἡμέρᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'day' }
+    ],
+    // Group 1: Vocabulary II (masculine 1st decl. + neuter 2nd decl.)
+    [
+      { greek: 'νεᾱνίᾱς', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'young man' },
+      { greek: 'ὁπλίτης', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'hoplite' },
+      { greek: 'ποιητής', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'poet, author' },
+      { greek: 'πολίτης', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'citizen' },
+      { greek: 'στρατιώτης', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'soldier' },
+      { greek: 'ὅπλον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'tool; (pl.) weapons' }
+    ]
+  ];
+
+  var unit4VocabAll = [];
+  unit4Vocab.forEach(function(group) {
+    group.forEach(function(w) { unit4VocabAll.push(w); });
+  });
+
+  var unit4Adjectives = [
+    { greek: 'ἀγαθός', forms: 'ἀγαθός, ἀγαθή, ἀγαθόν', english: 'good', endings: 3 },
+    { greek: 'ἄξιος', forms: 'ἄξιος, ἀξίᾱ, ἄξιον', english: 'worthy, worth (+ gen.)', endings: 3 },
+    { greek: 'κακός', forms: 'κακός, κακή, κακόν', english: 'bad, evil', endings: 3 },
+    { greek: 'καλός', forms: 'καλός, καλή, καλόν', english: 'beautiful, noble, good', endings: 3 },
+    { greek: 'δίκαιος', forms: 'δίκαιος, δικαίᾱ, δίκαιον', english: 'just', endings: 3 },
+    { greek: 'φίλος', forms: 'φίλος, φίλη, φίλον', english: 'dear, beloved', endings: 3 },
+    { greek: 'ἀνάξιος', forms: 'ἀνάξιος, ἀνάξιον', english: 'unworthy (+ gen.)', endings: 2 },
+    { greek: 'ἄδικος', forms: 'ἄδικος, ἄδικον', english: 'unjust', endings: 2 }
+  ];
+
+  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll).concat(unit4VocabAll);
 
   var unit2Verbs = [
     { verb: 'παιδεύω', meaning: 'educate, teach',
@@ -430,6 +468,55 @@ var Data = (function() {
     { greek: 'τοὺς ἀδελφοὺς ἐκέλευσε τὸν πόλεμον παῦσαι πρὸ τῆς νίκης.', english: 'He ordered the brothers to stop the war before the victory.' },
     { greek: 'τὰ τοῦ Ὁμήρου βιβλία τοὺς ξένους πεπαίδευκεν.', english: 'The books of Homer have educated the strangers.' },
     { greek: 'ἔθῡες τοῖς θεοῖς ἵνα παιδεύοιεν τοὺς ξένους.', english: 'You were sacrificing to the gods in order that they might educate the strangers.' }
+  ];
+
+  var unit4Particles = [
+    { greek: 'ἄν', english: 'particle used in certain conditional sentences' },
+    { greek: 'εἰ', english: 'if (with optative, indicative)' },
+    { greek: 'ἐάν', english: 'if (= εἰ + ἄν; with subjunctive)' },
+    { greek: 'καίτοι', english: 'and further, and yet' },
+    { greek: 'μετά + gen.', english: 'with (accompaniment)' },
+    { greek: 'μετά + acc.', english: 'after' },
+    { greek: 'σύν + dat.', english: 'with (joint effort)' },
+    { greek: 'πάλαι', english: 'long ago' }
+  ];
+
+  var unit4Cognates = [
+    ['ἀγαθός', 'Agatha (good)'],
+    ['ἄξιος', 'axiom (self-evident worth)'],
+    ['ἀρχή', 'anarchy (absence of rule)'],
+    ['διδάσκω', 'didactic (of teaching)'],
+    ['δίκη', 'theodicy (vindication of divine justice)'],
+    ['ἡμέρᾱ', 'ephemeral (lasting only a day)'],
+    ['θάλαττα', 'thalassocracy (rule over the sea)'],
+    ['θάπτω', 'epitaph (inscribed at a burial)'],
+    ['κακός', 'cacophony (bad sound)'],
+    ['καλός', 'calisthenics (beautiful strength)'],
+    ['μετά', 'metaphysics (after/beyond physics)'],
+    ['μοῖρα', 'merit (the portion one deserves)'],
+    ['μοῦσα', 'music (art of the Muses)'],
+    ['ὅπλον', 'panoply (full array of weapons)'],
+    ['πάλαι', 'Palaeolithic (Old Stone Age)'],
+    ['ποιητής', 'poet (one who makes)'],
+    ['πολίτης', 'political (of the citizen)'],
+    ['στρατιώτης', 'strategy (leading soldiers)'],
+    ['σύν', 'synchronize (together with in time)'],
+    ['τάττω', 'tactics (stationing of troops)']
+  ];
+
+  var unit4Sentences = [
+    { greek: 'ἐὰν αἱ μοῦσαι τὸν ἀγαθὸν ποιητὴν εὖ διδάξωσιν, γράψει καλὸν βιβλίον περὶ τῶν ἐν ἀγορᾷ θυσιῶν.', english: 'If the muses teach the good poet well, he will write a beautiful book about the sacrifices in the marketplace.' },
+    { greek: 'ἡ μὲν μάχη στρατιώταις κακή, ἀγαθὴ δὲ ἡ νίκη.', english: 'Battle is bad for soldiers, but victory is good.' },
+    { greek: 'εἰ οἱ ποιηταὶ βιβλία περὶ δίκης γράψειαν, ταῖς μούσαις ἔθῡον.', english: 'If the poets should write books about justice, they would sacrifice to the muses.' },
+    { greek: 'εἰ τὴν δημοκρατίᾱν λύοιτε, ὦ κακοὶ πολῖται, λύοιτ\' ἂν καὶ τὴν ἐν ταῖς καλαῖς νήσοις εἰρήνην.', english: 'If you should destroy the democracy, evil citizens, you would also destroy the peace in the beautiful islands.' },
+    { greek: 'ἄξιοι ἀρχῆς οἱ πολῖται οἱ ἀγαθοὶ καὶ δίκαιοι.', english: 'The good and just citizens are worthy of rule.' },
+    { greek: 'μοῖρα στρατιώτου ἡ μάχη.', english: 'Battle is the fate of a soldier.' },
+    { greek: 'εἰ ὁ φίλος Ὅμηρος τῇ θεῷ θύειν μὴ ἠθέλησεν, ἀγαθὸν βιβλίον περὶ ἀνθρώπων ἀρετῆς οὐκ ἂν ἔγραψεν.', english: 'If dear Homer had not been willing to sacrifice to the goddess, he would not have written a good book about the virtue of men.' },
+    { greek: 'ἀγαθὴ δὴ τοῖς ἀνθρώποις ἡ νίκης ἡμέρᾱ.', english: 'The day of victory is indeed good for men.' },
+    { greek: 'ἄθλου ἀνάξιος ἡ τοῦ κακοῦ πολίτου ψῡχή.', english: 'The soul of the bad citizen is unworthy of the prize.' },
+    { greek: 'ἐὰν χρῡσὸν μὴ πέμπητε, τοὺς ἀγαθοὺς νεᾱνίᾱς τὴν τέχνην διδάσκειν οὐκ ἐθέλω.', english: 'If you do not send gold, I am not willing to teach the good young men the art.' },
+    { greek: 'εἰ τοὺς στρατιώτᾱς εἰς τὴν μάχην σὺν ὅπλοις ἔπεμψας, τοὺς νεᾱνίᾱς ἐν τῇ ἀγορᾷ ἐτάξαμεν ἄν.', english: 'If you had sent the soldiers into battle with weapons, we would have stationed the young men in the marketplace.' },
+    { greek: 'ὦ φίλοι, ἐὰν διὰ τὴν τοῦ θεοῦ βουλὴν λύσωμεν τὴν δημοκρατίᾱν, πέμψομεν τοὺς πολίτᾱς τοὺς ἀρχῆς ἀναξίους ἐκ τῆς χώρᾱς.', english: 'Friends, if on account of the will of the god we dissolve the democracy, we will send the citizens unworthy of rule out of the land.' }
   ];
 
   // ===== LESSON DEFINITIONS =====
@@ -4794,6 +4881,511 @@ var Data = (function() {
           distractors: ['educating', 'soul', 'brothers', 'gifts']
         }
       ]
+    },
+
+    // ---- Unit 4: Adjectives & Conditionals ----
+
+    // Lesson 57: First Declension Short -α
+    {
+      id: 57,
+      title: 'First Decl. Short -α',
+      subtitle: 'Feminine Nouns',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'α',
+      exercises: [
+        { type: 'intro', title: 'First Declension: Short -α', cards: [
+          { html: '<p>Some first-declension feminine nouns have a nominative singular ending in <strong>short -α</strong> (not -η or -ᾱ).</p><p>Their declension differs only in the <strong>nom./voc.</strong> and <strong>acc. singular</strong>, which have short -α instead of -η/-ᾱ.</p><p>The gen. and dat. singular and all plural forms are identical to other first-declension nouns.</p>' },
+          { html: '<h3>Endings</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>Nom./Voc.</td><td><strong>-α</strong></td><td>-αι</td></tr><tr><td>Gen.</td><td>-ης / -ᾱς</td><td>-ῶν</td></tr><tr><td>Dat.</td><td>-ῃ / -ᾳ</td><td>-αις</td></tr><tr><td>Acc.</td><td><strong>-αν</strong></td><td>-ᾱς</td></tr></table><p>If the stem ends in <strong>ε, ι, or ρ</strong>, the gen. and dat. singular have <strong>-ᾱς, -ᾳ</strong> instead of <strong>-ης, -ῃ</strong>.</p>' },
+          { html: '<h3>Examples</h3><table class="intro-table"><tr><th></th><th class="greek">θάλαττα</th><th class="greek">μοῦσα</th><th class="greek">γέφῡρα</th><th class="greek">μοῖρα</th></tr><tr><td>Nom.</td><td class="greek">θάλαττα</td><td class="greek">μοῦσα</td><td class="greek">γέφῡρα</td><td class="greek">μοῖρα</td></tr><tr><td>Gen.</td><td class="greek">θαλάττης</td><td class="greek">μούσης</td><td class="greek">γεφύρᾱς</td><td class="greek">μοίρᾱς</td></tr><tr><td>Dat.</td><td class="greek">θαλάττῃ</td><td class="greek">μούσῃ</td><td class="greek">γεφύρᾳ</td><td class="greek">μοίρᾳ</td></tr><tr><td>Acc.</td><td class="greek">θάλατταν</td><td class="greek">μοῦσαν</td><td class="greek">γέφῡραν</td><td class="greek">μοῖραν</td></tr></table><p class="greek" style="font-size:13px">Note: γέφῡρα and μοῖρα have stems ending in ρ → gen. in -ᾱς, dat. in -ᾳ</p>' },
+          { html: '<h3>Plural</h3><table class="intro-table"><tr><th></th><th class="greek">θάλατται</th><th class="greek">μοῦσαι</th><th class="greek">γέφῡραι</th><th class="greek">μοῖραι</th></tr><tr><td>Nom.</td><td class="greek">θάλατται</td><td class="greek">μοῦσαι</td><td class="greek">γέφῡραι</td><td class="greek">μοῖραι</td></tr><tr><td>Gen.</td><td class="greek">θαλαττῶν</td><td class="greek">μουσῶν</td><td class="greek">γεφῡρῶν</td><td class="greek">μοιρῶν</td></tr><tr><td>Dat.</td><td class="greek">θαλάτταις</td><td class="greek">μούσαις</td><td class="greek">γεφύραις</td><td class="greek">μοίραις</td></tr><tr><td>Acc.</td><td class="greek">θαλάττᾱς</td><td class="greek">μούσᾱς</td><td class="greek">γεφύρᾱς</td><td class="greek">μοίρᾱς</td></tr></table><p>As in all first-declension nouns, the <strong>genitive plural</strong> receives a circumflex on the ultima.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'θαλάττης', displayGreek: true, correct: 'Genitive singular', options: ['Genitive singular', 'Nominative singular', 'Accusative singular', 'Dative singular'] },
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'θάλατταν', displayGreek: true, correct: 'Accusative singular', options: ['Accusative singular', 'Nominative singular', 'Genitive singular', 'Nominative plural'] },
+        { type: 'mc-translate', prompt: 'Why does γέφῡρα have genitive γεφύρᾱς (with -ᾱς) instead of γεφύρης (with -ης)?', correct: 'Its stem ends in ρ', options: ['Its stem ends in ρ', 'It is masculine', 'It is a short-α noun', 'It is accented on the ultima'] },
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'θαλάτταις', displayGreek: true, correct: 'Dative plural', options: ['Dative plural', 'Genitive plural', 'Accusative plural', 'Nominative plural'] },
+        { type: 'match', pairs: [
+          ['θάλαττα', 'sea'],
+          ['μοῦσα', 'muse'],
+          ['γέφῡρα', 'bridge'],
+          ['μοῖρα', 'fate'],
+          ['θαλαττῶν', 'of the seas (gen. pl.)']
+        ]},
+        { type: 'mc-translate', prompt: 'What is the genitive singular of μοῖρα?', correct: 'μοίρᾱς', options: ['μοίρᾱς', 'μοίρης', 'μοιρῶν', 'μοίρᾳ'] },
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'γεφύρᾳ', displayGreek: true, correct: 'Dative singular', options: ['Dative singular', 'Genitive singular', 'Nominative singular', 'Accusative singular'] },
+        { type: 'mc-translate', prompt: 'What is the accusative plural of θάλαττα?', correct: 'θαλάττᾱς', options: ['θαλάττᾱς', 'θαλάτταν', 'θαλάτταις', 'θαλαττῶν'] },
+        { type: 'match', pairs: [
+          ['θαλάττῃ', 'dative singular'],
+          ['μούσης', 'genitive singular'],
+          ['γέφῡραν', 'accusative singular'],
+          ['μοῖραι', 'nominative plural'],
+          ['θαλάττᾱς', 'accusative plural']
+        ]}
+      ]
+    },
+
+    // Lesson 58: First Declension Masculine
+    {
+      id: 58,
+      title: 'First Decl. Masculine',
+      subtitle: '-ης and -ᾱς Nouns',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'η',
+      exercises: [
+        { type: 'intro', title: 'Masculine First-Declension Nouns', cards: [
+          { html: '<p>Some first-declension nouns are <strong>masculine</strong>. Their nominative singular ends in <strong>-ης</strong> or (when the stem ends in ε, ι, or ρ) <strong>-ᾱς</strong>.</p><p>They differ from feminine first-declension nouns only in the <strong>nom., gen., and voc. singular</strong>. All other forms are the same.</p>' },
+          { html: '<h3>Endings</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>Nom.</td><td><strong>-ης / -ᾱς</strong></td><td>-αι</td></tr><tr><td>Gen.</td><td><strong>-ου</strong></td><td>-ῶν</td></tr><tr><td>Dat.</td><td>-ῃ / -ᾳ</td><td>-αις</td></tr><tr><td>Acc.</td><td>-ην / -ᾱν</td><td>-ᾱς</td></tr><tr><td>Voc.</td><td><strong>-α / -η / -ᾱ</strong></td><td>-αι</td></tr></table><p>Key: the <strong>-ου genitive</strong> was borrowed from 2nd declension masculine nouns.</p>' },
+          { html: '<h3>Examples</h3><table class="intro-table"><tr><th></th><th class="greek">πολίτης</th><th class="greek">ποιητής</th><th class="greek">νεᾱνίᾱς</th></tr><tr><td>Nom.</td><td class="greek">πολίτης</td><td class="greek">ποιητής</td><td class="greek">νεᾱνίᾱς</td></tr><tr><td>Gen.</td><td class="greek">πολίτου</td><td class="greek">ποιητοῦ</td><td class="greek">νεᾱνίου</td></tr><tr><td>Dat.</td><td class="greek">πολίτῃ</td><td class="greek">ποιητῇ</td><td class="greek">νεᾱνίᾳ</td></tr><tr><td>Acc.</td><td class="greek">πολίτην</td><td class="greek">ποιητήν</td><td class="greek">νεᾱνίᾱν</td></tr><tr><td>Voc.</td><td class="greek">πολῖτα</td><td class="greek">ποιητά</td><td class="greek">νεᾱνίᾱ</td></tr></table>' },
+          { html: '<h3>Plural</h3><table class="intro-table"><tr><th></th><th class="greek">πολῑται</th><th class="greek">ποιηταί</th><th class="greek">νεᾱνίαι</th></tr><tr><td>Nom./Voc.</td><td class="greek">πολῑται</td><td class="greek">ποιηταί</td><td class="greek">νεᾱνίαι</td></tr><tr><td>Gen.</td><td class="greek">πολῑτῶν</td><td class="greek">ποιητῶν</td><td class="greek">νεᾱνιῶν</td></tr><tr><td>Dat.</td><td class="greek">πολίταις</td><td class="greek">ποιηταῖς</td><td class="greek">νεᾱνίαις</td></tr><tr><td>Acc.</td><td class="greek">πολίτᾱς</td><td class="greek">ποιητάς</td><td class="greek">νεᾱνίᾱς</td></tr></table><p>As in all first-declension nouns, the genitive plural takes a circumflex on the ultima.</p>' },
+          { html: '<h3>Key Observations</h3><div class="info-box"><p><strong>1.</strong> The <strong>-ου</strong> genitive singular was borrowed from 2nd declension masculine nouns (cf. ἀνθρώπου).</p><p><strong>2.</strong> Nouns accented on the ultima (like ποιητής) receive a <strong>circumflex</strong> in the gen. and dat., singular and plural.</p><p><strong>3.</strong> When the stem ends in ε, ι, or ρ, nominative has -ᾱς and the vocative has long -ᾱ (νεᾱνίᾱ).</p></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What is the genitive singular of πολίτης?', correct: 'πολίτου', options: ['πολίτου', 'πολίτης', 'πολίτῃ', 'πολιτῶν'] },
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'ποιητοῦ', displayGreek: true, correct: 'Genitive singular', options: ['Genitive singular', 'Nominative singular', 'Dative singular', 'Accusative singular'] },
+        { type: 'mc-translate', prompt: 'What is the vocative singular of πολίτης?', correct: 'πολῖτα (short -α)', options: ['πολῖτα (short -α)', 'πολίτη', 'πολίτης', 'πολῖται'] },
+        { type: 'mc-translate', prompt: 'Why does νεᾱνίᾱς have -ᾱς in the nominative instead of -ης?', correct: 'Its stem ends in ι (ε, ι, or ρ rule)', options: ['Its stem ends in ι (ε, ι, or ρ rule)', 'It is feminine', 'It is a short-α noun', 'It belongs to the second declension'] },
+        { type: 'match', pairs: [
+          ['πολίτης', 'citizen'],
+          ['ποιητής', 'poet'],
+          ['νεᾱνίᾱς', 'young man'],
+          ['ὁπλίτης', 'hoplite'],
+          ['στρατιώτης', 'soldier']
+        ]},
+        { type: 'mc-translate', prompt: 'What case is this?', display: 'νεᾱνίου', displayGreek: true, correct: 'Genitive singular', options: ['Genitive singular', 'Nominative singular', 'Dative singular', 'Genitive plural'] },
+        { type: 'mc-translate', prompt: 'Where does the masculine first-declension genitive -ου ending come from?', correct: 'Borrowed from second-declension masculine nouns', options: ['Borrowed from second-declension masculine nouns', 'Borrowed from the article', 'It is the original first-declension ending', 'It comes from third-declension nouns'] },
+        { type: 'mc-translate', prompt: 'What is the accusative plural of στρατιώτης?', correct: 'στρατιώτᾱς', options: ['στρατιώτᾱς', 'στρατιώτους', 'στρατιώτην', 'στρατιωτῶν'] },
+        { type: 'match', pairs: [
+          ['πολίτου', 'genitive singular'],
+          ['ποιητήν', 'accusative singular'],
+          ['νεᾱνίᾳ', 'dative singular'],
+          ['πολῖτα', 'vocative singular'],
+          ['ποιηταί', 'nominative plural']
+        ]}
+      ]
+    },
+
+    // Lesson 59: Three-Ending Adjectives
+    {
+      id: 59,
+      title: 'Three-Ending Adjectives',
+      subtitle: '-ός, -ή, -όν',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'ἀ',
+      exercises: [
+        { type: 'intro', title: 'Three-Ending Adjectives', cards: [
+          { html: '<p>Adjectives, like articles and nouns, have <strong>gender</strong>, <strong>number</strong>, and <strong>case</strong>.</p><p>An adjective must <strong>agree</strong> with the noun it modifies in gender, number, and case — but the endings don\'t have to look identical.</p><p><strong>Three-ending adjectives</strong> have separate sets of endings for each of the three genders.</p>' },
+          { html: '<h3 class="greek">ἀγαθός, ἀγαθή, ἀγαθόν — good</h3><table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἀγαθός</td><td class="greek">ἀγαθή</td><td class="greek">ἀγαθόν</td></tr><tr><td>Gen.</td><td class="greek">ἀγαθοῦ</td><td class="greek">ἀγαθῆς</td><td class="greek">ἀγαθοῦ</td></tr><tr><td>Dat.</td><td class="greek">ἀγαθῷ</td><td class="greek">ἀγαθῇ</td><td class="greek">ἀγαθῷ</td></tr><tr><td>Acc.</td><td class="greek">ἀγαθόν</td><td class="greek">ἀγαθήν</td><td class="greek">ἀγαθόν</td></tr></table><p>Masculine = 2nd declension (like ἀδελφός). Feminine = 1st declension (like ψῡχή). Neuter = 2nd declension (like ἔργον).</p>' },
+          { html: '<h3 class="greek">ἄξιος, ἀξίᾱ, ἄξιον — worthy</h3><table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἄξιος</td><td class="greek">ἀξίᾱ</td><td class="greek">ἄξιον</td></tr><tr><td>Gen.</td><td class="greek">ἀξίου</td><td class="greek">ἀξίᾱς</td><td class="greek">ἀξίου</td></tr><tr><td>Dat.</td><td class="greek">ἀξίῳ</td><td class="greek">ἀξίᾳ</td><td class="greek">ἀξίῳ</td></tr><tr><td>Acc.</td><td class="greek">ἄξιον</td><td class="greek">ἀξίᾱν</td><td class="greek">ἄξιον</td></tr></table><p>When the stem ends in <strong>ε, ι, or ρ</strong>, the feminine singular has <strong>-ᾱ</strong> instead of <strong>-η</strong> (same rule as nouns).</p>' },
+          { html: '<h3>Key Rules</h3><div class="info-box"><p><strong>Accent:</strong> The accent of adjectives is persistent, given by the neuter nominative singular.</p><p><strong>Ultima rule:</strong> Adjectives accented on the ultima take a <strong>circumflex</strong> in the genitive and dative (like nouns).</p><p><strong>Feminine gen. pl.:</strong> Unlike first-declension <em>nouns</em>, the accent does <strong>NOT</strong> shift to the ultima. It follows regular accent rules: ἀξίων (not ἀξιῶν).</p></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What is the feminine nominative singular of ἀγαθός?', correct: 'ἀγαθή', options: ['ἀγαθή', 'ἀγαθά', 'ἀγαθόν', 'ἀγαθοῦ'] },
+        { type: 'mc-translate', prompt: 'What is the neuter nominative singular of ἄξιος?', correct: 'ἄξιον', options: ['ἄξιον', 'ἀξίᾱ', 'ἄξιος', 'ἀξίου'] },
+        { type: 'mc-translate', prompt: 'Why does ἄξιος have feminine ἀξίᾱ (with -ᾱ) instead of ἀξίη (with -η)?', correct: 'Its stem ends in ι (ε, ι, or ρ rule)', options: ['Its stem ends in ι (ε, ι, or ρ rule)', 'It is a two-ending adjective', 'It is accented on the ultima', 'It is an irregular adjective'] },
+        { type: 'mc-translate', prompt: 'Which declension does the masculine form of ἀγαθός follow?', correct: 'Second declension (like ἀδελφός)', options: ['Second declension (like ἀδελφός)', 'First declension (like ψῡχή)', 'Third declension', 'A unique adjective declension'] },
+        { type: 'match', pairs: [
+          ['ἀγαθός', 'good'],
+          ['κακός', 'bad, evil'],
+          ['καλός', 'beautiful, noble, good'],
+          ['δίκαιος', 'just'],
+          ['φίλος', 'dear, beloved']
+        ]},
+        { type: 'mc-translate', prompt: 'What form of καλός agrees with ψῡχήν (fem. acc. sing.)?', correct: 'καλήν', options: ['καλήν', 'καλόν', 'καλός', 'καλῆς'] },
+        { type: 'mc-translate', prompt: 'In the feminine genitive plural of ἄξιος, where does the accent fall?', correct: 'It follows regular rules (ἀξίων) — unlike nouns, it does NOT shift to the ultima', options: ['It follows regular rules (ἀξίων) — unlike nouns, it does NOT shift to the ultima', 'It shifts to a circumflex on the ultima (ἀξιῶν) — like all first-declension forms', 'It stays on the antepenult (ἄξιων)', 'There is no accent in the genitive plural'] },
+        { type: 'mc-translate', prompt: 'What form of ἀγαθός agrees with ἔργα (neut. nom./acc. pl.)?', correct: 'ἀγαθά', options: ['ἀγαθά', 'ἀγαθοί', 'ἀγαθαί', 'ἀγαθούς'] }
+      ]
+    },
+
+    // Lesson 60: Two-Ending Adjectives
+    {
+      id: 60,
+      title: 'Two-Ending Adjectives',
+      subtitle: '-ος, -ον',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'ἄ',
+      exercises: [
+        { type: 'intro', title: 'Two-Ending Adjectives', cards: [
+          { html: '<p>Some adjectives have only <strong>two</strong> sets of endings: one for <strong>masculine and feminine</strong> together, and another for the <strong>neuter</strong>.</p><p>They follow the <strong>second declension</strong> only — no first-declension feminine forms.</p>' },
+          { html: '<h3 class="greek">ἄδικος, ἄδικον — unjust</h3><table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἄδικος</td><td class="greek">ἄδικον</td></tr><tr><td>Gen.</td><td class="greek">ἀδίκου</td><td class="greek">ἀδίκου</td></tr><tr><td>Dat.</td><td class="greek">ἀδίκῳ</td><td class="greek">ἀδίκῳ</td></tr><tr><td>Acc.</td><td class="greek">ἄδικον</td><td class="greek">ἄδικον</td></tr></table><table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom./Voc. P</td><td class="greek">ἄδικοι</td><td class="greek">ἄδικα</td></tr><tr><td>Gen.</td><td class="greek">ἀδίκων</td><td class="greek">ἀδίκων</td></tr><tr><td>Dat.</td><td class="greek">ἀδίκοις</td><td class="greek">ἀδίκοις</td></tr><tr><td>Acc.</td><td class="greek">ἀδίκους</td><td class="greek">ἄδικα</td></tr></table>' },
+          { html: '<h3>Compound Adjectives</h3><div class="info-box"><p>Most two-ending adjectives are <strong>compound adjectives</strong> — formed by adding a prefix to a word.</p><p><span class="greek">ἄδικος</span> = <strong>ἀ-</strong> (alpha privative, "not") + <span class="greek">δίκη</span> ("justice")</p><p><span class="greek">ἀνάξιος</span> = <strong>ἀν-</strong> (alpha privative before vowels) + <span class="greek">ἄξιος</span> ("worthy")</p><p>This negative prefix is cognate with English <strong>"un-"</strong> and <strong>"in-"</strong>.</p></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'How many sets of endings does ἄδικος have?', correct: 'Two: one for masculine/feminine, one for neuter', options: ['Two: one for masculine/feminine, one for neuter', 'Three: separate for masculine, feminine, neuter', 'One: the same for all genders', 'Four: with a separate vocative set'] },
+        { type: 'mc-translate', prompt: 'What does ἀ- (alpha privative) mean as a prefix?', correct: 'Not, without (like English "un-")', options: ['Not, without (like English "un-")', 'Very, extremely', 'Together with', 'Away from'] },
+        { type: 'mc-translate', prompt: 'What form of ἄδικος modifies ψῡχή (fem. nom. sing.)?', display: '___ ψῡχή', displayGreek: true, correct: 'ἄδικος (same form as masculine)', options: ['ἄδικος (same form as masculine)', 'ἀδίκη', 'ἄδικον', 'ἀδίκᾱ'] },
+        { type: 'match', pairs: [
+          ['ἄδικος', 'unjust (ἀ- + δίκη)'],
+          ['ἀνάξιος', 'unworthy (ἀν- + ἄξιος)'],
+          ['ἀγαθός, -ή, -όν', 'three-ending adjective'],
+          ['ἄδικος, -ον', 'two-ending adjective'],
+          ['ἀ- / ἀν-', 'alpha privative (negation)']
+        ]},
+        { type: 'mc-translate', prompt: 'Why is the prefix ἀν- (not ἀ-) used in ἀνάξιος?', correct: 'Because the next letter is a vowel (ἄξιος)', options: ['Because the next letter is a vowel (ἄξιος)', 'Because ἄξιος is a three-ending adjective', 'Because it means "very worthy"', 'It is an irregular formation'] },
+        { type: 'mc-translate', prompt: 'Agreement check: which phrase shows correct agreement?', correct: 'ἄδικος ψῡχή (fem. nom. sing.)', options: ['ἄδικος ψῡχή (fem. nom. sing.)', 'ἀδίκη ψῡχή (fem. nom. sing.)', 'ἄδικον ψῡχή (fem. nom. sing.)', 'ἀδίκᾱ ψῡχή (fem. nom. sing.)'] }
+      ]
+    },
+
+    // Lesson 61: Adjective Position
+    {
+      id: 61,
+      title: 'Adjective Position',
+      subtitle: 'Attributive & Predicate',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'π',
+      exercises: [
+        { type: 'intro', title: 'Adjective Position', cards: [
+          { html: '<h3>Attributive Position</h3><p>An adjective <strong>preceded by the article</strong> is in the <strong>attributive position</strong>. It forms a <em>phrase</em>, not a complete sentence.</p><table class="intro-table"><tr><th>Greek</th><th>Translation</th></tr><tr><td class="greek">ὁ ἀγαθὸς ἄνθρωπος</td><td>the good man</td></tr><tr><td class="greek">ὁ ἄνθρωπος ὁ ἀγαθός</td><td>the good man</td></tr><tr><td class="greek">ἄνθρωπος ὁ ἀγαθός</td><td>the good man</td></tr></table><p>All three mean the same thing, differing only in emphasis.</p>' },
+          { html: '<h3>Predicate Position</h3><p>An adjective that agrees with a noun + article but is <strong>NOT preceded by the article</strong> is in the <strong>predicate position</strong>. This forms a <em>complete sentence</em> (a <strong>nominal sentence</strong>).</p><table class="intro-table"><tr><th>Greek</th><th>Translation</th></tr><tr><td class="greek">ἀγαθὸς ὁ ἄνθρωπος.</td><td>The man <strong>is</strong> good.</td></tr><tr><td class="greek">ὁ ἄνθρωπος ἀγαθός.</td><td>The man <strong>is</strong> good.</td></tr></table><p>English "is" / "are" must be <strong>supplied</strong> — Greek nominal sentences need no linking verb.</p>' },
+          { html: '<h3>Predicate Nouns</h3><p>A nominal sentence can also use two nouns:</p><table class="intro-table"><tr><td class="greek">τὸ βιβλίον δῶρον.</td><td>The book <strong>is</strong> a gift.</td></tr><tr><td class="greek">δῶρον τὸ βιβλίον.</td><td>The book <strong>is</strong> a gift.</td></tr></table><p>The subject usually has the article; the predicate noun does not.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Is this attributive or predicate?', display: 'ὁ ἀγαθὸς ἄνθρωπος', displayGreek: true, correct: 'Attributive (phrase: "the good man")', options: ['Attributive (phrase: "the good man")', 'Predicate (sentence: "the man is good")', 'Neither — this is a verb phrase', 'Cannot be determined'] },
+        { type: 'mc-translate', prompt: 'Is this attributive or predicate?', display: 'ἀγαθὸς ὁ ἄνθρωπος.', displayGreek: true, correct: 'Predicate (sentence: "The man is good.")', options: ['Predicate (sentence: "The man is good.")', 'Attributive (phrase: "the good man")', 'Neither — this is incomplete', 'Predicate (sentence: "The good man.")'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ ἄνθρωπος ἀγαθός.', displayGreek: true, correct: 'The man is good.', options: ['The man is good.', 'the good man', 'A good man.', 'The good man is.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ ἄνθρωπος ὁ ἀγαθός', displayGreek: true, correct: 'the good man (attributive phrase)', options: ['the good man (attributive phrase)', 'The man is good. (sentence)', 'the man and the good one', 'A good man is the man.'] },
+        { type: 'mc-translate', prompt: 'How do you express "is" or "are" in a Greek nominal sentence?', correct: 'It is implied — you supply it in translation', options: ['It is implied — you supply it in translation', 'You use the verb εἰμί', 'You add ἐστί after the adjective', 'You use the particle δέ'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὸ βιβλίον δῶρον.', displayGreek: true, correct: 'The book is a gift.', options: ['The book is a gift.', 'the gift book', 'A book of gifts.', 'The gift is a book.'] },
+        { type: 'mc-translate', prompt: 'Is this attributive or predicate?', display: 'ὁ ἄνθρωπος ὁ ἀγαθός', displayGreek: true, correct: 'Attributive (adjective is preceded by the article)', options: ['Attributive (adjective is preceded by the article)', 'Predicate (adjective is not preceded by the article)', 'Predicate (it makes a complete sentence)', 'Neither'] },
+        { type: 'match', pairs: [
+          ['ὁ ἀγαθὸς ἄνθρωπος', 'the good man (attributive)'],
+          ['ἀγαθὸς ὁ ἄνθρωπος.', 'The man is good. (predicate)'],
+          ['ὁ ἄνθρωπος ὁ ἀγαθός', 'the good man (attributive)'],
+          ['ὁ ἄνθρωπος ἀγαθός.', 'The man is good. (predicate)'],
+          ['τὸ βιβλίον δῶρον.', 'The book is a gift. (predicate)']
+        ]}
+      ]
+    },
+
+    // Lesson 62: Future Conditionals
+    {
+      id: 62,
+      title: 'Future Conditionals',
+      subtitle: 'More & Less Vivid',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'ε',
+      exercises: [
+        { type: 'intro', title: 'Conditional Sentences', cards: [
+          { html: '<p>A <strong>conditional sentence</strong> has two parts:</p><ul><li><strong>Protasis</strong> — the "if" clause (the assumption)</li><li><strong>Apodosis</strong> — the "then" clause (the conclusion)</li></ul><p>The negative of the protasis is <span class="greek">μή</span>; the negative of the apodosis is <span class="greek">οὐ</span>.</p><p><strong>You cannot translate a conditional sentence until you identify its type.</strong></p>' },
+          { html: '<h3>Future More Vivid</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">ἐάν</span> + <strong>subjunctive</strong></p><p><strong>Apodosis:</strong> <strong>future indicative</strong></p><p><strong>Translation:</strong> "If he <em>does</em> X, they <em>will do</em> Y."</p></div><p class="greek" style="font-size:14px">ἐὰν ἄγγελον πέμψῃ, τὴν μάχην παύσουσιν.</p><p><em>If he sends a messenger, they will stop the battle.</em></p><p>This type assumes something about the future and draws a conclusion.</p>' },
+          { html: '<h3>Future Less Vivid</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">εἰ</span> + <strong>optative</strong></p><p><strong>Apodosis:</strong> <strong>optative</strong> + <span class="greek"><strong>ἄν</strong></span></p><p><strong>Translation:</strong> "If he <em>should do</em> X, they <em>would do</em> Y."</p></div><p class="greek" style="font-size:14px">εἰ ἄγγελον πέμψαι, τὴν μάχην παύσαιεν ἄν.</p><p><em>If he should send a messenger, they would stop the battle.</em></p><p>Like the future more vivid, but the assumption is viewed as <strong>less likely</strong> to come true.</p>' },
+          { html: '<h3>ἐάν vs. εἰ</h3><div class="info-box"><p>Both mean <strong>"if"</strong> but they are <strong>NOT interchangeable</strong>.</p><p><span class="greek">ἐάν</span> (= εἰ + ἄν) goes with the <strong>subjunctive</strong>.</p><p><span class="greek">εἰ</span> goes with the <strong>optative</strong> or <strong>indicative</strong>.</p></div><p>The particle <span class="greek">ἄν</span> in the apodosis of a future less vivid is <strong>not separately translated</strong> but is essential for identifying the sentence type.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What are the two parts of a conditional sentence?', correct: 'Protasis ("if" clause) and Apodosis ("then" clause)', options: ['Protasis ("if" clause) and Apodosis ("then" clause)', 'Subject and Predicate', 'Antecedent and Consequent clause', 'Main clause and Relative clause'] },
+        { type: 'mc-translate', prompt: 'Future More Vivid: what mood is in the protasis?', correct: 'Subjunctive (with ἐάν)', options: ['Subjunctive (with ἐάν)', 'Optative (with εἰ)', 'Future indicative', 'Imperfect indicative'] },
+        { type: 'mc-translate', prompt: 'Future Less Vivid: what mood is in the apodosis?', correct: 'Optative + ἄν', options: ['Optative + ἄν', 'Future indicative', 'Subjunctive', 'Present indicative'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'ἐὰν τοῖς θεοῖς θύσῃς, δῶρα πέμψουσιν.', displayGreek: true, correct: 'Future More Vivid (ἐάν + subjunctive → future indicative)', options: ['Future More Vivid (ἐάν + subjunctive → future indicative)', 'Future Less Vivid (εἰ + optative → optative + ἄν)', 'Present General (ἐάν + subjunctive → present indicative)', 'Past Contrafactual (εἰ + aorist → aorist + ἄν)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοῖς θεοῖς θύσαιτε, δῶρα πέμψαιεν ἄν.', displayGreek: true, correct: 'Future Less Vivid (εἰ + optative → optative + ἄν)', options: ['Future Less Vivid (εἰ + optative → optative + ἄν)', 'Future More Vivid (ἐάν + subjunctive → future indicative)', 'Past General (εἰ + optative → imperfect indicative)', 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐὰν τοῖς θεοῖς θύσῃς, δῶρα πέμψουσιν.', displayGreek: true, correct: 'If you sacrifice to the gods, they will send gifts.', options: ['If you sacrifice to the gods, they will send gifts.', 'If you should sacrifice to the gods, they would send gifts.', 'If you sacrifice to the gods, they send gifts.', 'If you had sacrificed to the gods, they would have sent gifts.'] },
+        { type: 'match', pairs: [
+          ['Future More Vivid', 'ἐάν + subjunctive → future indicative'],
+          ['Future Less Vivid', 'εἰ + optative → optative + ἄν'],
+          ['ἐάν', '"if" (with subjunctive)'],
+          ['εἰ', '"if" (with optative or indicative)'],
+          ['ἄν', 'particle (not separately translated)']
+        ]}
+      ]
+    },
+
+    // Lesson 63: General Conditionals
+    {
+      id: 63,
+      title: 'General Conditionals',
+      subtitle: 'Present & Past',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'γ',
+      exercises: [
+        { type: 'intro', title: 'General Conditional Sentences', cards: [
+          { html: '<h3>Present General</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">ἐάν</span> + <strong>subjunctive</strong></p><p><strong>Apodosis:</strong> <strong>present indicative</strong></p><p><strong>Translation:</strong> "If he <em>does</em> X, they <em>do</em> Y." (= If he <em>ever</em> does X, they <em>always</em> do Y.)</p></div><p class="greek" style="font-size:14px">ἐὰν ἄγγελον πέμψῃ, τὴν μάχην παύουσιν.</p><p><em>If he sends a messenger, they stop the battle.</em></p><p>States a <strong>general rule</strong> in present time.</p>' },
+          { html: '<h3>Present General vs. Future More Vivid</h3><div class="info-box"><p>Both have <span class="greek">ἐάν</span> + subjunctive in the protasis!</p><p>The difference is the <strong>apodosis</strong>:</p><ul><li><strong>Future indicative</strong> → Future More Vivid</li><li><strong>Present indicative</strong> → Present General</li></ul></div><p><strong>You must identify both parts before translating.</strong></p>' },
+          { html: '<h3>Past General</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">εἰ</span> + <strong>optative</strong></p><p><strong>Apodosis:</strong> <strong>imperfect indicative</strong></p><p><strong>Translation:</strong> "If he <em>did</em> X, they <em>did</em> Y." (= If he <em>ever</em> did X, they <em>always</em> did Y.)</p></div><p class="greek" style="font-size:14px">εἰ ἄγγελον πέμποι, τὴν μάχην ἔπαυον.</p><p><em>If he sent a messenger, they stopped the battle.</em></p><p>States a <strong>general rule</strong> in past time.</p>' },
+          { html: '<h3>Past General vs. Future Less Vivid</h3><div class="info-box"><p>Both have <span class="greek">εἰ</span> + optative in the protasis!</p><p>The difference is the <strong>apodosis</strong>:</p><ul><li><strong>Optative + ἄν</strong> → Future Less Vivid</li><li><strong>Imperfect indicative</strong> (no ἄν) → Past General</li></ul></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Present General: what is in the apodosis?', correct: 'Present indicative', options: ['Present indicative', 'Future indicative', 'Optative + ἄν', 'Imperfect indicative'] },
+        { type: 'mc-translate', prompt: 'The protasis ἐάν + subjunctive appears in which TWO types?', correct: 'Future More Vivid AND Present General', options: ['Future More Vivid AND Present General', 'Future Less Vivid AND Past General', 'Present General AND Past General', 'Future More Vivid AND Future Less Vivid'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'ἐὰν τοῖς θεοῖς θύσῃς, δῶρα πέμπουσιν.', displayGreek: true, correct: 'Present General (ἐάν + subjunctive → present indicative)', options: ['Present General (ἐάν + subjunctive → present indicative)', 'Future More Vivid (ἐάν + subjunctive → future indicative)', 'Future Less Vivid (εἰ + optative → optative + ἄν)', 'Past General (εἰ + optative → imperfect indicative)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοῖς θεοῖς θύσαιτε, δῶρα ἔπεμπον.', displayGreek: true, correct: 'Past General (εἰ + optative → imperfect indicative)', options: ['Past General (εἰ + optative → imperfect indicative)', 'Future Less Vivid (εἰ + optative → optative + ἄν)', 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', 'Past Contrafactual (εἰ + aorist → aorist + ἄν)'] },
+        { type: 'mc-translate', prompt: 'How do you distinguish Past General from Future Less Vivid?', correct: 'The apodosis: imperfect indicative (no ἄν) = Past General; optative + ἄν = Future Less Vivid', options: ['The apodosis: imperfect indicative (no ἄν) = Past General; optative + ἄν = Future Less Vivid', 'The protasis: ἐάν = Past General; εἰ = Future Less Vivid', 'The tense of the protasis verb determines the type', 'They cannot be distinguished without context'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐὰν τοῖς θεοῖς θύσῃς, δῶρα πέμπουσιν.', displayGreek: true, correct: 'If you sacrifice to the gods, they send gifts. (general rule)', options: ['If you sacrifice to the gods, they send gifts. (general rule)', 'If you sacrifice to the gods, they will send gifts. (future)', 'If you should sacrifice to the gods, they would send gifts.', 'If you sacrificed to the gods, they sent gifts.'] },
+        { type: 'match', pairs: [
+          ['Present General', 'ἐάν + subj. → present indic.'],
+          ['Past General', 'εἰ + opt. → imperfect indic.'],
+          ['Future More Vivid', 'ἐάν + subj. → future indic.'],
+          ['Future Less Vivid', 'εἰ + opt. → opt. + ἄν'],
+          ['ἄν in apodosis', 'distinguishes FLV from Past General']
+        ]}
+      ]
+    },
+
+    // Lesson 64: Contrafactual Conditionals
+    {
+      id: 64,
+      title: 'Contrafactual Conditionals',
+      subtitle: 'Present & Past',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'κ',
+      exercises: [
+        { type: 'intro', title: 'Contrafactual Conditional Sentences', cards: [
+          { html: '<h3>Present Contrafactual</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">εἰ</span> + <strong>imperfect indicative</strong></p><p><strong>Apodosis:</strong> <strong>imperfect indicative</strong> + <span class="greek"><strong>ἄν</strong></span></p><p><strong>Translation:</strong> "If he <em>were doing</em> X, they <em>would be doing</em> Y."</p></div><p class="greek" style="font-size:14px">εἰ ἄγγελον ἔπεμπεν, τὴν μάχην ἔπαυον ἄν.</p><p><em>If he were sending a messenger, they would be stopping the battle.</em></p><p>The speaker knows the assumption is <strong>untrue right now</strong>. (He is NOT sending a messenger.)</p>' },
+          { html: '<h3>Past Contrafactual</h3><div class="info-box"><p><strong>Protasis:</strong> <span class="greek">εἰ</span> + <strong>aorist indicative</strong></p><p><strong>Apodosis:</strong> <strong>aorist indicative</strong> + <span class="greek"><strong>ἄν</strong></span></p><p><strong>Translation:</strong> "If he <em>had done</em> X, they <em>would have done</em> Y."</p></div><p class="greek" style="font-size:14px">εἰ ἄγγελον ἔπεμψεν, τὴν μάχην ἔπαυσαν ἄν.</p><p><em>If he had sent a messenger, they would have stopped the battle.</em></p><p>The speaker knows the assumption was <strong>untrue in the past</strong>. (He did NOT send a messenger.)</p>' },
+          { html: '<h3>Key Distinctions</h3><div class="info-box"><p><strong>Present contrafactual</strong> uses <strong>imperfect</strong> (ongoing action in present that isn\'t happening).</p><p><strong>Past contrafactual</strong> uses <strong>aorist</strong> (single action in the past that didn\'t happen).</p><p>The <span class="greek">ἄν</span> in the apodosis distinguishes present contrafactual from past general (both can have imperfect indicative).</p></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Present Contrafactual: what is in the protasis?', correct: 'εἰ + imperfect indicative', options: ['εἰ + imperfect indicative', 'ἐάν + subjunctive', 'εἰ + optative', 'εἰ + aorist indicative'] },
+        { type: 'mc-translate', prompt: 'Past Contrafactual: what is in the apodosis?', correct: 'Aorist indicative + ἄν', options: ['Aorist indicative + ἄν', 'Imperfect indicative + ἄν', 'Optative + ἄν', 'Future indicative'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοῖς θεοῖς ἐθύετε, δῶρα ἔπεμπον ἄν.', displayGreek: true, correct: 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', options: ['Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', 'Past Contrafactual (εἰ + aorist → aorist + ἄν)', 'Past General (εἰ + optative → imperfect)', 'Future Less Vivid (εἰ + optative → optative + ἄν)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοῖς θεοῖς ἐθύσατε, δῶρα ἔπεμψαν ἄν.', displayGreek: true, correct: 'Past Contrafactual (εἰ + aorist → aorist + ἄν)', options: ['Past Contrafactual (εἰ + aorist → aorist + ἄν)', 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', 'Past General (εἰ + optative → imperfect)', 'Future More Vivid (ἐάν + subjunctive → future)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'εἰ ἄγγελον ἔπεμψεν, τὴν μάχην ἔπαυσαν ἄν.', displayGreek: true, correct: 'If he had sent a messenger, they would have stopped the battle.', options: ['If he had sent a messenger, they would have stopped the battle.', 'If he were sending a messenger, they would be stopping the battle.', 'If he sent a messenger, they stopped the battle.', 'If he should send a messenger, they would stop the battle.'] },
+        { type: 'mc-translate', prompt: 'In a present contrafactual, the speaker knows that:', correct: 'The assumption is untrue RIGHT NOW', options: ['The assumption is untrue RIGHT NOW', 'The assumption was untrue in the PAST', 'The assumption is likely to come true', 'The assumption is a general rule'] },
+        { type: 'match', pairs: [
+          ['Present Contrafactual', 'εἰ + imperf. → imperf. + ἄν'],
+          ['Past Contrafactual', 'εἰ + aorist → aorist + ἄν'],
+          ['were doing / would be doing', 'Present Contrafactual translation'],
+          ['had done / would have done', 'Past Contrafactual translation'],
+          ['ἄν in apodosis', 'required in both contrafactuals']
+        ]}
+      ]
+    },
+
+    // Lesson 65: Conditional Review
+    {
+      id: 65,
+      title: 'Conditional Review',
+      subtitle: 'All Six Types',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: '⚖',
+      exercises: [
+        { type: 'intro', title: 'Summary of All Six Conditionals', cards: [
+          { html: '<table class="intro-table"><tr><th>Type</th><th>Protasis</th><th>Apodosis</th></tr><tr><td>Future More Vivid</td><td class="greek">ἐάν + subj.</td><td>future indic.</td></tr><tr><td>Future Less Vivid</td><td class="greek">εἰ + opt.</td><td>opt. + <span class="greek">ἄν</span></td></tr><tr><td>Present General</td><td class="greek">ἐάν + subj.</td><td>present indic.</td></tr><tr><td>Past General</td><td class="greek">εἰ + opt.</td><td>imperf. indic.</td></tr><tr><td>Present Contrafactual</td><td class="greek">εἰ + imperf.</td><td>imperf. + <span class="greek">ἄν</span></td></tr><tr><td>Past Contrafactual</td><td class="greek">εἰ + aorist</td><td>aorist + <span class="greek">ἄν</span></td></tr></table>' },
+          { html: '<h3>Quick Tips</h3><div class="info-box"><p><strong>1.</strong> <span class="greek">ἐάν</span> always pairs with the <strong>subjunctive</strong>. <span class="greek">εἰ</span> pairs with <strong>optative</strong> or <strong>indicative</strong>.</p><p><strong>2.</strong> <span class="greek">ἄν</span> in the apodosis appears in: Future Less Vivid, Present Contrafactual, Past Contrafactual.</p><p><strong>3.</strong> Same protasis, different apodosis: FMV vs. Pres. General; FLV vs. Past General.</p><p><strong>4.</strong> Contrafactuals use the <strong>indicative</strong> to describe unreal situations.</p></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Which type? "If she wins, she will celebrate."', correct: 'Future More Vivid (does / will do)', options: ['Future More Vivid (does / will do)', 'Future Less Vivid (should do / would do)', 'Present General (does / does)', 'Present Contrafactual (were doing / would be doing)'] },
+        { type: 'mc-translate', prompt: 'Which type? "If he should win, he would celebrate."', correct: 'Future Less Vivid (should do / would do)', options: ['Future Less Vivid (should do / would do)', 'Future More Vivid (does / will do)', 'Past General (did / did)', 'Past Contrafactual (had done / would have done)'] },
+        { type: 'mc-translate', prompt: 'Which type? "If she wins, she celebrates." (general rule)', correct: 'Present General (does / does)', options: ['Present General (does / does)', 'Future More Vivid (does / will do)', 'Past General (did / did)', 'Present Contrafactual (were doing / would be doing)'] },
+        { type: 'mc-translate', prompt: 'Which type? "If he won, he celebrated." (general past rule)', correct: 'Past General (did / did)', options: ['Past General (did / did)', 'Past Contrafactual (had done / would have done)', 'Present General (does / does)', 'Future Less Vivid (should do / would do)'] },
+        { type: 'mc-translate', prompt: 'Which type? "If he were winning, he would be celebrating."', correct: 'Present Contrafactual (were doing / would be doing)', options: ['Present Contrafactual (were doing / would be doing)', 'Past Contrafactual (had done / would have done)', 'Future Less Vivid (should do / would do)', 'Past General (did / did)'] },
+        { type: 'mc-translate', prompt: 'Which type? "If she had won, she would have celebrated."', correct: 'Past Contrafactual (had done / would have done)', options: ['Past Contrafactual (had done / would have done)', 'Present Contrafactual (were doing / would be doing)', 'Past General (did / did)', 'Future Less Vivid (should do / would do)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'ἐὰν τοὺς ἀδελφοὺς μὴ φυλάττω, λύσουσι τὴν δημοκρατίᾱν.', displayGreek: true, correct: 'Future More Vivid (ἐάν + subjunctive → future indicative)', options: ['Future More Vivid (ἐάν + subjunctive → future indicative)', 'Present General (ἐάν + subjunctive → present indicative)', 'Future Less Vivid (εἰ + optative → optative + ἄν)', 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοὺς ἀδελφοὺς ἐφύλαττον, οὐκ ἂν ἔλῡον τὴν δημοκρατίᾱν.', displayGreek: true, correct: 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', options: ['Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', 'Past General (εἰ + optative → imperfect)', 'Past Contrafactual (εἰ + aorist → aorist + ἄν)', 'Future Less Vivid (εἰ + optative → optative + ἄν)'] },
+        { type: 'mc-translate', prompt: 'Identify:', display: 'εἰ τοὺς ἀδελφοὺς μὴ ἐφύλαξα, ἔλῡσαν ἂν τὴν δημοκρατίᾱν.', displayGreek: true, correct: 'Past Contrafactual (εἰ + aorist → aorist + ἄν)', options: ['Past Contrafactual (εἰ + aorist → aorist + ἄν)', 'Present Contrafactual (εἰ + imperfect → imperfect + ἄν)', 'Past General (εἰ + optative → imperfect)', 'Future Less Vivid (εἰ + optative → optative + ἄν)'] },
+        { type: 'match', pairs: [
+          ['does / will do', 'Future More Vivid'],
+          ['should do / would do', 'Future Less Vivid'],
+          ['does / does (general)', 'Present General'],
+          ['did / did (general)', 'Past General'],
+          ['had done / would have done', 'Past Contrafactual']
+        ]}
+      ]
+    },
+
+    // Lesson 66: Elision
+    {
+      id: 66,
+      title: 'Elision',
+      subtitle: 'Dropped Vowels',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: '\'',
+      exercises: [
+        { type: 'intro', title: 'Elision', cards: [
+          { html: '<p>When a word ends with a <strong>short vowel</strong> and the next word begins with a <strong>vowel or diphthong</strong>, the short vowel at the end of the first word is sometimes dropped. This is called <strong>elision</strong>.</p><p>An <strong>apostrophe</strong> (\') marks the missing vowel.</p>' },
+          { html: '<h3>Examples</h3><table class="intro-table"><tr><th>Unelided</th><th>Elided</th></tr><tr><td class="greek">πέμπετε ἀγγέλους</td><td class="greek">πέμπετ\' ἀγγέλους</td></tr><tr><td class="greek">ἔπεμψα ἀγγέλους</td><td class="greek">ἔπεμψ\' ἀγγέλους</td></tr><tr><td class="greek">οἱ δὲ ἄνθρωποι</td><td class="greek">οἱ δ\' ἄνθρωποι</td></tr></table><p>Elision is never mandatory in writing Greek.</p>' },
+          { html: '<h3>Aspiration Change</h3><div class="info-box"><p>When elision brings an <strong>unaspirated</strong> consonant directly before a <strong>rough breathing</strong> (= h), the consonant becomes <strong>aspirated</strong>:</p><p class="greek">ἐπαιδεύσατε Ὅμηρον → ἐπαιδεύσαθ\' Ὅμηρον</p><p>Here τ → θ because of the rough breathing on Ὅμηρον.</p></div><p><strong>Nu-movable</strong>, where possible, avoids elision entirely:</p><p class="greek">ἔπεμψεν ἀγγέλους (no elision needed)</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What is elision?', correct: 'Dropping a short vowel at the end of a word before a word starting with a vowel', options: ['Dropping a short vowel at the end of a word before a word starting with a vowel', 'Adding a vowel between two consonants', 'Changing the accent of a word', 'Combining two words into one'] },
+        { type: 'mc-translate', prompt: 'What marks an elided vowel?', correct: 'An apostrophe (\')', options: ['An apostrophe (\')', 'A breathing mark', 'An accent', 'Nothing — the vowel simply disappears'] },
+        { type: 'mc-translate', prompt: 'What is the elided form?', display: 'ἐπαιδεύσατε Ὅμηρον', displayGreek: true, correct: 'ἐπαιδεύσαθ\' Ὅμηρον (τ → θ before rough breathing)', options: ['ἐπαιδεύσαθ\' Ὅμηρον (τ → θ before rough breathing)', 'ἐπαιδεύσατ\' Ὅμηρον (τ stays the same)', 'ἐπαιδεύσα Ὅμηρον (both letters drop)', 'Elision cannot occur here'] },
+        { type: 'mc-translate', prompt: 'Why does τ change to θ in ἐπαιδεύσαθ\' Ὅμηρον?', correct: 'The rough breathing on Ὅμηρον aspirates the preceding consonant', options: ['The rough breathing on Ὅμηρον aspirates the preceding consonant', 'θ is the standard elision form of τ', 'It is an irregular spelling', 'The accent causes the change'] },
+        { type: 'mc-translate', prompt: 'How can nu-movable prevent elision?', display: 'ἔπεμψε(ν) ἀγγέλους', displayGreek: true, correct: 'Adding the ν (ἔπεμψεν) means the word no longer ends in a short vowel', options: ['Adding the ν (ἔπεμψεν) means the word no longer ends in a short vowel', 'Nu-movable removes the breathing mark from the next word', 'Nu-movable changes the vowel to a long vowel', 'Nu-movable is unrelated to elision'] },
+        { type: 'match', pairs: [
+          ['πέμπετ\' ἀγγέλους', 'πέμπετε ἀγγέλους'],
+          ['οἱ δ\' ἄνθρωποι', 'οἱ δὲ ἄνθρωποι'],
+          ['ἐπαιδεύσαθ\' Ὅμηρον', 'ἐπαιδεύσατε Ὅμηρον'],
+          ['apostrophe (\')', 'marks elided vowel'],
+          ['nu-movable', 'avoids need for elision']
+        ]}
+      ]
+    },
+
+    // Lesson 67: Vocabulary I (Unit 4 Nouns — Feminine)
+    {
+      id: 67,
+      title: 'Vocabulary I',
+      subtitle: 'Unit 4 Nouns (Feminine)',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'θ',
+      exercises: [
+        { type: 'u4vocab-intro', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-match', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-gender', vocabGroup: 0 },
+        { type: 'u4vocab-gender', vocabGroup: 0 },
+        { type: 'mc-translate', prompt: 'Which of these nouns have short -α in the nominative singular?', display: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα, ἀρχή, δίκη, ἡμέρᾱ', displayGreek: true, correct: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', options: ['θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', 'All seven nouns', 'ἀρχή, δίκη, ἡμέρᾱ (the last three)', 'Only θάλαττα and μοῦσα'] },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-match', vocabGroup: 0 },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the sea" in nominative singular:', display: 'the sea', answer: 'ἡ θάλαττα', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the day" in nominative singular:', display: 'the day', answer: 'ἡ ἡμέρᾱ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 68: Vocabulary II (Unit 4 Nouns — Masculine & Neuter)
+    {
+      id: 68,
+      title: 'Vocabulary II',
+      subtitle: 'Unit 4 Nouns (Masculine)',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'ν',
+      exercises: [
+        { type: 'u4vocab-intro', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-match', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-gender', vocabGroup: 1 },
+        { type: 'u4vocab-gender', vocabGroup: 1 },
+        { type: 'mc-translate', prompt: 'These nouns are all masculine first declension EXCEPT one. Which is the exception?', display: 'νεᾱνίᾱς, ὁπλίτης, ποιητής, πολίτης, στρατιώτης, ὅπλον', displayGreek: true, correct: 'ὅπλον (neuter, second declension)', options: ['ὅπλον (neuter, second declension)', 'νεᾱνίᾱς (it is feminine)', 'στρατιώτης (it is second declension)', 'ποιητής (it is third declension)'] },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-match', vocabGroup: 1 },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the citizen" in nominative singular:', display: 'the citizen', answer: 'ὁ πολίτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the soldier" in nominative singular:', display: 'the soldier', answer: 'ὁ στρατιώτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 69: Vocabulary III (Adjectives, Verbs & Particles)
+    {
+      id: 69,
+      title: 'Vocabulary III',
+      subtitle: 'Adjectives, Verbs & More',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'δ',
+      exercises: [
+        { type: 'intro', title: 'Unit 4 Adjectives', cards: [
+          { html: '<div class="vocab-card"><div class="vocab-greek">ἀγαθός, ἀγαθή, ἀγαθόν</div><div class="vocab-english">good</div><div class="vocab-gender">three-ending; combines moral goodness & serviceability</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">κακός, κακή, κακόν</div><div class="vocab-english">bad, evil</div><div class="vocab-gender">three-ending</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">καλός, καλή, καλόν</div><div class="vocab-english">beautiful, noble, good</div><div class="vocab-gender">three-ending; combines physical beauty & moral goodness</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">δίκαιος, δικαίᾱ, δίκαιον</div><div class="vocab-english">just</div><div class="vocab-gender">three-ending; from δίκη (justice)</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">ἄξιος, ἀξίᾱ, ἄξιον</div><div class="vocab-english">worthy, worth (+ gen.)</div><div class="vocab-gender">three-ending; takes genitive of value</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">φίλος, φίλη, φίλον</div><div class="vocab-english">dear, beloved</div><div class="vocab-gender">three-ending; identical to the noun φίλος (friend) in masculine</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">ἄδικος, ἄδικον</div><div class="vocab-english">unjust</div><div class="vocab-gender">two-ending; compound: ἀ- (not) + δίκη</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">ἀνάξιος, ἀνάξιον</div><div class="vocab-english">unworthy (+ gen.)</div><div class="vocab-gender">two-ending; compound: ἀν- (not) + ἄξιος</div></div>' }
+        ]},
+        { type: 'u4adj-gre' },
+        { type: 'u4adj-gre' },
+        { type: 'u4adj-eng' },
+        { type: 'u4adj-eng' },
+        { type: 'u4adj-match' },
+        { type: 'u4adj-type' },
+        { type: 'u4adj-type' },
+        { type: 'intro', title: 'New Verbs', cards: [
+          { html: '<div class="vocab-card"><div class="vocab-greek">διδάσκω, διδάξω, ἐδίδαξα, δεδίδαχα</div><div class="vocab-english">teach</div><div class="vocab-gender">Narrower than παιδεύω; takes same constructions</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">ἐθέλω, ἐθελήσω, ἠθέλησα, ἠθέληκα</div><div class="vocab-english">be willing, wish</div><div class="vocab-gender">Note: ἐ- is part of the stem (not an augment). Augment: ἐ- → ἠ-. Takes object infinitive. οὐκ ἐθέλω = "refuse"</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">θάπτω, θάψω, ἔθαψα</div><div class="vocab-english">bury</div><div class="vocab-gender">Labial stem (π before τ → πτ)</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">τάττω, τάξω, ἔταξα, τέταχα</div><div class="vocab-english">draw up in order, station, appoint</div><div class="vocab-gender">Dental stem (γ before τ → ττ in Attic)</div></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does διδάσκω mean?', display: 'διδάσκω', displayGreek: true, correct: 'teach', options: ['teach', 'sacrifice', 'bury', 'draw up in order'] },
+        { type: 'mc-translate', prompt: 'What does ἐθέλω mean?', display: 'ἐθέλω', displayGreek: true, correct: 'be willing, wish', options: ['be willing, wish', 'teach', 'guard', 'write'] },
+        { type: 'mc-translate', prompt: 'What does οὐκ ἐθέλω often translate as?', correct: 'refuse', options: ['refuse', 'not wish to be', 'cannot', 'must not'] },
+        { type: 'mc-translate', prompt: 'Why is the aorist of ἐθέλω ἠθέλησα (not ἐθέλησα)?', correct: 'The stem begins with ε-, so the augment lengthens it to η-', options: ['The stem begins with ε-, so the augment lengthens it to η-', 'The ἐ- is a prefix that gets removed', 'It is an irregular verb', 'The η- is a reduplication'] },
+        { type: 'match', pairs: [
+          ['διδάσκω', 'teach'],
+          ['ἐθέλω', 'be willing, wish'],
+          ['θάπτω', 'bury'],
+          ['τάττω', 'draw up in order, station'],
+          ['οὐκ ἐθέλω', 'refuse']
+        ]},
+        { type: 'intro', title: 'Prepositions, Particles & Adverb', cards: [
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">μετά + gen.</td><td>with (accompaniment)</td></tr><tr><td class="greek">μετά + acc.</td><td>after (in space or time)</td></tr><tr><td class="greek">σύν + dat.</td><td>with (joint effort, traditional phrases)</td></tr><tr><td class="greek">πάλαι (adv.)</td><td>long ago</td></tr></table><p class="greek" style="font-size:13px">μετὰ τῶν φίλων = with the friends<br>μετὰ τὴν μάχην = after the battle<br>σὺν θεοῖς = with (the help of the) gods</p>' },
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἄν</td><td>particle in certain conditionals (not separately translated)</td></tr><tr><td class="greek">εἰ</td><td>if (with optative or indicative)</td></tr><tr><td class="greek">ἐάν (= εἰ + ἄν)</td><td>if (with subjunctive)</td></tr><tr><td class="greek">καίτοι</td><td>and further, and yet</td></tr></table>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does μετά mean with the genitive?', correct: 'with (accompaniment)', options: ['with (accompaniment)', 'after', 'instead of', 'through'] },
+        { type: 'mc-translate', prompt: 'What does μετά mean with the accusative?', correct: 'after', options: ['after', 'with (accompaniment)', 'instead of', 'around'] },
+        { type: 'match', pairs: [
+          ['μετά + gen.', 'with (accompaniment)'],
+          ['μετά + acc.', 'after'],
+          ['σύν + dat.', 'with (joint effort)'],
+          ['πάλαι', 'long ago'],
+          ['καίτοι', 'and further, and yet']
+        ]},
+        { type: 'u4adj-gre' },
+        { type: 'u4adj-eng' },
+        { type: 'u4adj-match' }
+      ]
+    },
+
+    // Lesson 70: Cognates
+    {
+      id: 70,
+      title: 'Cognates',
+      subtitle: 'English Derivatives',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: '🔗',
+      exercises: [
+        { type: 'intro', title: 'Cognates & Derivatives', cards: [
+          { html: '<p>Many English words derive from the Greek vocabulary in this unit.</p><p>Recognizing these connections helps you remember both the Greek words and their meanings.</p>' }
+        ]},
+        { type: 'match', pairs: [
+          ['ἀγαθός', 'Agatha (good)'],
+          ['ἄξιος', 'axiom (self-evident worth)'],
+          ['ἀρχή', 'anarchy (absence of rule)'],
+          ['διδάσκω', 'didactic (of teaching)'],
+          ['δίκη', 'theodicy (divine justice)']
+        ]},
+        { type: 'match', pairs: [
+          ['ἡμέρᾱ', 'ephemeral (lasting only a day)'],
+          ['θάλαττα', 'thalassocracy (sea rule)'],
+          ['θάπτω', 'epitaph (burial inscription)'],
+          ['κακός', 'cacophony (bad sound)'],
+          ['καλός', 'calisthenics (beautiful strength)']
+        ]},
+        { type: 'match', pairs: [
+          ['μετά', 'metaphysics (beyond physics)'],
+          ['μοῖρα', 'merit (deserved portion)'],
+          ['μοῦσα', 'music (art of the Muses)'],
+          ['ὅπλον', 'panoply (full array of weapons)'],
+          ['πάλαι', 'Palaeolithic (Old Stone Age)']
+        ]},
+        { type: 'match', pairs: [
+          ['ποιητής', 'poet (one who makes)'],
+          ['πολίτης', 'political (of the citizen)'],
+          ['στρατιώτης', 'strategy (leading soldiers)'],
+          ['σύν', 'synchronize (together in time)'],
+          ['τάττω', 'tactics (stationing troops)']
+        ]},
+        { type: 'mc-translate', prompt: 'The word "ephemeral" (short-lived) derives from:', correct: 'ἡμέρᾱ (day) — lasting only a day', options: ['ἡμέρᾱ (day) — lasting only a day', 'ἀρχή (beginning) — from the start', 'μοῖρα (fate) — destined to end', 'πάλαι (long ago) — from the past'] },
+        { type: 'mc-translate', prompt: '"Syntax" comes from σύν + τάττω. What does it literally mean?', correct: 'Drawing up in order together (arranging words together)', options: ['Drawing up in order together (arranging words together)', 'Writing together', 'Speaking together', 'Teaching together'] },
+        { type: 'mc-translate', prompt: 'An "epitaph" is related to θάπτω. What connection?', correct: 'θάπτω means "bury" — an epitaph is inscribed where someone is buried', options: ['θάπτω means "bury" — an epitaph is inscribed where someone is buried', 'θάπτω means "write" — an epitaph is a type of writing', 'θάπτω means "praise" — an epitaph praises the dead', 'θάπτω means "carve" — an epitaph is carved in stone'] }
+      ]
+    },
+
+    // Lesson 71: Unit 4 Review
+    {
+      id: 71,
+      title: 'Unit 4 Review',
+      subtitle: 'Translate Sentences',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: '✓',
+      exercises: [
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἡ μὲν μάχη στρατιώταις κακή, ἀγαθὴ δὲ ἡ νίκη.', displayGreek: true, correct: 'Battle is bad for soldiers, but victory is good.', options: ['Battle is bad for soldiers, but victory is good.', 'The bad battle is for soldiers, but the good one is for victory.', 'Soldiers fight bad battles, but victory is good.', 'The soldiers\' battle is bad, and their victory is also bad.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἄξιοι ἀρχῆς οἱ πολῖται οἱ ἀγαθοὶ καὶ δίκαιοι.', displayGreek: true, correct: 'The good and just citizens are worthy of rule.', options: ['The good and just citizens are worthy of rule.', 'The citizens are good and just rulers.', 'The worthy citizens rule well and justly.', 'Good and just citizens begin to rule.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'μοῖρα στρατιώτου ἡ μάχη.', displayGreek: true, correct: 'Battle is the fate of a soldier.', options: ['Battle is the fate of a soldier.', 'The soldier fates the battle.', 'Fate battles the soldier.', 'A soldier\'s battle is fated.'] },
+        { type: 'mc-translate', prompt: 'What type of sentence is this?', display: 'ἄξιοι ἀρχῆς οἱ πολῖται.', displayGreek: true, correct: 'Nominal sentence (predicate adjective — no linking verb in Greek)', options: ['Nominal sentence (predicate adjective — no linking verb in Greek)', 'Attributive phrase (adjective modifies the noun)', 'Conditional sentence (protasis)', 'Imperative sentence (command)'] },
+        { type: 'mc-translate', prompt: 'Identify and translate:', display: 'ἐὰν αἱ μοῦσαι τὸν ἀγαθὸν ποιητὴν εὖ διδάξωσιν, γράψει καλὸν βιβλίον.', displayGreek: true, correct: 'Future More Vivid: If the muses teach the good poet well, he will write a beautiful book.', options: ['Future More Vivid: If the muses teach the good poet well, he will write a beautiful book.', 'Present General: If the muses teach the good poet well, he writes a beautiful book.', 'Future Less Vivid: If the muses should teach the good poet well, he would write a beautiful book.', 'Past Contrafactual: If the muses had taught the good poet well, he would have written a beautiful book.'] },
+        { type: 'mc-translate', prompt: 'Identify and translate:', display: 'εἰ οἱ ποιηταὶ βιβλία περὶ δίκης γράψειαν, ταῖς μούσαις ἔθῡον.', displayGreek: true, correct: 'Past General: If the poets wrote books about justice, they (always) sacrificed to the muses.', options: ['Past General: If the poets wrote books about justice, they (always) sacrificed to the muses.', 'Future Less Vivid: If the poets should write books about justice, they would sacrifice to the muses.', 'Past Contrafactual: If the poets had written books about justice, they would have sacrificed to the muses.', 'Present General: If the poets write books about justice, they sacrifice to the muses.'] },
+        { type: 'mc-translate', prompt: 'Identify and translate:', display: 'εἰ ὁ φίλος Ὅμηρος τῇ θεῷ θύειν μὴ ἠθέλησεν, ἀγαθὸν βιβλίον οὐκ ἂν ἔγραψεν.', displayGreek: true, correct: 'Past Contrafactual: If dear Homer had not been willing to sacrifice to the goddess, he would not have written a good book.', options: ['Past Contrafactual: If dear Homer had not been willing to sacrifice to the goddess, he would not have written a good book.', 'Present Contrafactual: If dear Homer were not willing to sacrifice to the goddess, he would not be writing a good book.', 'Past General: If dear Homer was not willing to sacrifice to the goddess, he did not write a good book.', 'Future Less Vivid: If dear Homer should not be willing to sacrifice to the goddess, he would not write a good book.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἀγαθὴ δὴ τοῖς ἀνθρώποις ἡ νίκης ἡμέρᾱ.', displayGreek: true, correct: 'The day of victory is indeed good for men.', options: ['The day of victory is indeed good for men.', 'The good day of victory is for men.', 'Men indeed have a good day of victory.', 'Victory is a good day indeed.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἄθλου ἀνάξιος ἡ τοῦ κακοῦ πολίτου ψῡχή.', displayGreek: true, correct: 'The soul of the bad citizen is unworthy of the prize.', options: ['The soul of the bad citizen is unworthy of the prize.', 'The bad citizen\'s soul is worthy of the prize.', 'The prize is unworthy of the bad citizen\'s soul.', 'The soul of the citizen is bad and unworthy.'] },
+        { type: 'mc-translate', prompt: 'Identify and translate:', display: 'εἰ τοὺς στρατιώτᾱς εἰς τὴν μάχην σὺν ὅπλοις ἔπεμψας, τοὺς νεᾱνίᾱς ἐν τῇ ἀγορᾷ ἐτάξαμεν ἄν.', displayGreek: true, correct: 'Past Contrafactual: If you had sent the soldiers into battle with weapons, we would have stationed the young men in the marketplace.', options: ['Past Contrafactual: If you had sent the soldiers into battle with weapons, we would have stationed the young men in the marketplace.', 'Present Contrafactual: If you were sending the soldiers into battle with weapons, we would be stationing the young men in the marketplace.', 'Past General: If you sent the soldiers into battle with weapons, we stationed the young men in the marketplace.', 'Future More Vivid: If you send the soldiers into battle with weapons, we will station the young men in the marketplace.'] },
+        { type: 'mc-translate', prompt: 'Identify and translate:', display: 'ἐὰν χρῡσὸν μὴ πέμπητε, τοὺς ἀγαθοὺς νεᾱνίᾱς τὴν τέχνην διδάσκειν οὐκ ἐθέλω.', displayGreek: true, correct: 'Present General: If you do not send gold, I am not willing to teach the good young men the art.', options: ['Present General: If you do not send gold, I am not willing to teach the good young men the art.', 'Future More Vivid: If you do not send gold, I will not be willing to teach the good young men the art.', 'Future Less Vivid: If you should not send gold, I would not be willing to teach the good young men the art.', 'Present Contrafactual: If you were not sending gold, I would not be willing to teach the good young men the art.'] },
+        { type: 'match', pairs: [
+          ['ἡ μάχη κακή.', 'Battle is bad. (nominal)'],
+          ['ἡ κακὴ μάχη', 'the bad battle (attributive)'],
+          ['ἄξιοι ἀρχῆς', 'worthy of rule (gen. of value)'],
+          ['μετὰ τῶν φίλων', 'with the friends (μετά + gen.)'],
+          ['μετὰ τὴν μάχην', 'after the battle (μετά + acc.)']
+        ]}
+      ]
     }
 
   ];
@@ -4838,6 +5430,12 @@ var Data = (function() {
     unit3Particles: unit3Particles,
     unit3Cognates: unit3Cognates,
     unit3Sentences: unit3Sentences,
+    unit4Vocab: unit4Vocab,
+    unit4VocabAll: unit4VocabAll,
+    unit4Adjectives: unit4Adjectives,
+    unit4Particles: unit4Particles,
+    unit4Cognates: unit4Cognates,
+    unit4Sentences: unit4Sentences,
     lessons: lessons,
     buildLetterTable: buildLetterTable
   };
