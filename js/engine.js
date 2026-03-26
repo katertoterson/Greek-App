@@ -430,7 +430,7 @@ var Engine = (function() {
       type: 'mc',
       graded: true,
       prompt: 'What gender is this noun?',
-      display: target.article + ' ' + target.greek,
+      display: target.greek,
       displayGreek: true,
       correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
@@ -510,7 +510,7 @@ var Engine = (function() {
     return {
       type: 'mc', graded: true,
       prompt: 'What gender is this noun?',
-      display: target.article + ' ' + target.greek,
+      display: target.greek,
       displayGreek: true, correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
     };
@@ -664,7 +664,7 @@ var Engine = (function() {
     return {
       type: 'mc', graded: true,
       prompt: 'What gender is this noun?',
-      display: target.article + ' ' + target.greek,
+      display: target.greek,
       displayGreek: true, correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
     };
@@ -728,7 +728,7 @@ var Engine = (function() {
     return {
       type: 'mc', graded: true,
       prompt: 'What gender is this noun?',
-      display: target.article + ' ' + target.greek,
+      display: target.greek,
       displayGreek: true, correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
     };
