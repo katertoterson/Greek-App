@@ -73,7 +73,7 @@ var UI = (function() {
 
     var header = el('div', { className: 'home-header' }, [
       el('h1', {
-        textContent: 'HELLENIKA',
+        textContent: 'Hellenika',
         onClick: function() {
           titleTapCount++;
           if (titleTapCount >= 5) {
