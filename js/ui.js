@@ -217,15 +217,6 @@ var UI = (function() {
     if (continueBtn) app.appendChild(continueBtn);
     app.appendChild(path);
 
-    // Auto-scroll to the next lesson's section if it's visible
-    if (nextLesson) {
-      setTimeout(function() {
-        var available = document.querySelector('.lesson-node.available');
-        if (available) {
-          available.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 100);
-    }
   }
 
   // ===== LESSON SCREEN =====
