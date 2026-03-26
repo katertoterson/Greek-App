@@ -581,7 +581,7 @@ var UI = (function() {
   function showConfetti() {
     var container = document.createElement('div');
     container.className = 'confetti-container';
-    var colors = ['#f5c94d', '#e8a84c', '#c89520', '#fff1a8', '#f0d040'];
+    var colors = ['#FCC342', '#e8a84c', '#d4a01c', '#fff1a8', '#f0d040'];
     var shapes = ['★', '✦', '✧', '·'];
 
     for (var i = 0; i < 40; i++) {
