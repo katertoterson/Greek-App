@@ -577,27 +577,27 @@ var UI = (function() {
     app.appendChild(screen);
   }
 
-  // ===== CONFETTI =====
+  // ===== SPARKLE STARS =====
   function showConfetti() {
     var container = document.createElement('div');
     container.className = 'confetti-container';
-    var colors = ['#FFD700', '#6C5CE7', '#00E676', '#FF5252', '#ff9ff3', '#48dbfb'];
+    var colors = ['#f5c94d', '#e8a84c', '#c89520', '#fff1a8', '#f0d040'];
+    var shapes = ['★', '✦', '✧', '·'];
 
-    for (var i = 0; i < 50; i++) {
+    for (var i = 0; i < 40; i++) {
       var piece = document.createElement('div');
-      piece.className = 'confetti-piece';
+      piece.className = 'sparkle-star';
+      piece.textContent = shapes[Math.floor(Math.random() * shapes.length)];
       piece.style.left = Math.random() * 100 + '%';
-      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-      piece.style.animationDelay = (Math.random() * 1) + 's';
-      piece.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
-      piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-      piece.style.width = (6 + Math.random() * 8) + 'px';
-      piece.style.height = piece.style.width;
+      piece.style.color = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.fontSize = (10 + Math.random() * 18) + 'px';
+      piece.style.animationDelay = (Math.random() * 1.2) + 's';
+      piece.style.animationDuration = (2 + Math.random() * 2) + 's';
       container.appendChild(piece);
     }
 
     document.body.appendChild(container);
-    setTimeout(function() { container.remove(); }, 3000);
+    setTimeout(function() { container.remove(); }, 4500);
   }
 
   // ===== XP TOAST =====
