@@ -133,6 +133,8 @@ html, body {
   border-radius: 20px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 4px;
 }
 .section-label.clickable {
