@@ -209,7 +209,7 @@ html, body {
 }
 .lesson-node.available {
   border-color: var(--purple);
-  box-shadow: 0 0 16px rgba(108, 92, 231, 0.3);
+  box-shadow: 0 0 16px rgba(213, 95, 45, 0.3);
 }
 .lesson-node.available .lesson-title { color: var(--purple); }
 .lesson-node.completed {
@@ -638,7 +638,7 @@ html, body {
 .match-tile.greek { font-family: 'Noto Serif', serif; font-size: 18px; }
 .match-tile.selected {
   border-color: var(--purple);
-  background: rgba(108, 92, 231, 0.15);
+  background: rgba(213, 95, 45, 0.15);
 }
 .match-tile.matched {
   opacity: 0.2;
