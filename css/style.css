@@ -136,6 +136,8 @@ html, body {
   justify-content: center;
   text-align: center;
   gap: 4px;
+  width: 100%;
+  max-width: var(--max-w);
 }
 .section-label.clickable {
   cursor: pointer;
