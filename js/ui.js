@@ -563,7 +563,7 @@ var UI = (function() {
     clear();
 
     var screen = el('div', { className: 'game-over-screen' }, [
-      el('div', { className: 'game-over-title', textContent: 'Out of Hearts!' }),
+      el('div', { className: 'game-over-title', textContent: 'Out of Golden Apples!' }),
       el('div', { className: 'game-over-sub', textContent: 'Don\'t worry — practice makes perfect.' }),
       el('button', { className: 'btn-continue', textContent: 'Try Again', onClick: onRetry }),
       el('button', {
