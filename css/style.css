@@ -2,17 +2,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #1a1a2e;
-  --card: #16213e;
-  --card-light: #1e2d50;
-  --purple: #6C5CE7;
-  --purple-dark: #5a4bd1;
-  --green: #00E676;
+  --bg: #0a0a0a;
+  --card: #1a1410;
+  --card-light: #2a1e16;
+  --purple: #d45a3a;
+  --purple-dark: #b84a2e;
+  --green: #c89520;
   --red: #FF5252;
-  --gold: #FFD700;
-  --text: #f0f0f0;
-  --text-dim: #a0a0b0;
-  --text-muted: #6a6a80;
+  --gold: #f5c94d;
+  --text: #f5e8d3;
+  --text-dim: #b0a08a;
+  --text-muted: #6a5a48;
   --radius: 12px;
   --max-w: 480px;
 }
@@ -792,6 +792,20 @@ html, body {
   padding: 32px 16px;
   text-align: center;
   animation: fadeIn 0.5s ease;
+  background: url('../Hesperides.png') no-repeat left bottom;
+  background-size: auto 85%;
+  position: relative;
+}
+.results-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.65) 50%, rgba(10,10,10,0.2) 100%);
+  pointer-events: none;
+}
+.results-screen > * {
+  position: relative;
+  z-index: 1;
 }
 .results-title {
   font-size: min(8vw, 36px);
