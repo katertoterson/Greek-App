@@ -319,9 +319,16 @@ var UI = (function() {
 
     function showCard() {
       area.innerHTML = '';
+      var body = el('div', { className: 'intro-body', innerHTML: cards[cardIndex].html });
+      var tables = body.querySelectorAll('table.intro-table');
+      for (var t = 0; t < tables.length; t++) {
+        var wrap = el('div', { className: 'intro-table-wrap' });
+        tables[t].parentNode.insertBefore(wrap, tables[t]);
+        wrap.appendChild(tables[t]);
+      }
       var card = el('div', { className: 'intro-card' }, [
         el('h2', { textContent: exercise.title }),
-        el('div', { className: 'intro-body', innerHTML: cards[cardIndex].html })
+        body
       ]);
 
       if (cards.length > 1) {

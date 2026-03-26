@@ -683,29 +683,43 @@ html, body {
   font-size: 22px;
 }
 
+.intro-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 16px 0;
+  -webkit-overflow-scrolling: touch;
+}
 .intro-table {
   width: 100%;
-  max-width: 400px;
   border-collapse: collapse;
-  margin: 16px 0;
 }
 .intro-table th {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
   color: var(--text-dim);
-  padding: 6px 4px;
+  padding: 5px 6px;
   border-bottom: 1px solid var(--card-light);
+  white-space: nowrap;
 }
 .intro-table td {
-  padding: 8px 4px;
+  padding: 5px 6px;
   text-align: center;
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  font-size: 15px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.intro-table td:first-child {
+  text-align: left;
+  font-size: 11px;
+  color: var(--text-dim);
 }
 .intro-table td.greek {
   font-family: 'Noto Serif', serif;
-  font-size: 20px;
+  font-size: 14px;
+}
+.intro-table th.greek {
+  font-family: 'Noto Serif', serif;
+  font-size: 13px;
 }
 
 .intro-nav {
