@@ -4885,9 +4885,36 @@ var Data = (function() {
 
     // ---- Unit 4: Adjectives & Conditionals ----
 
-    // Lesson 57: First Declension Short -α
+    // Lesson 57: Vocabulary I (Unit 4 Nouns — Feminine)
     {
       id: 57,
+      title: 'Vocabulary I',
+      subtitle: 'Unit 4 Nouns (Feminine)',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'θ',
+      exercises: [
+        { type: 'u4vocab-intro', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-match', vocabGroup: 0 },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-gender', vocabGroup: 0 },
+        { type: 'u4vocab-gender', vocabGroup: 0 },
+        { type: 'mc-translate', prompt: 'Which of these nouns have short -α in the nominative singular?', display: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα, ἀρχή, δίκη, ἡμέρᾱ', displayGreek: true, correct: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', options: ['θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', 'All seven nouns', 'ἀρχή, δίκη, ἡμέρᾱ (the last three)', 'Only θάλαττα and μοῦσα'] },
+        { type: 'u4vocab-gre', vocabGroup: 0 },
+        { type: 'u4vocab-eng', vocabGroup: 0 },
+        { type: 'u4vocab-match', vocabGroup: 0 },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the sea" in nominative singular:', display: 'the sea', answer: 'ἡ θάλαττα', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the day" in nominative singular:', display: 'the day', answer: 'ἡ ἡμέρᾱ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 58: First Declension Short -α
+    {
+      id: 58,
       title: 'First Decl. Short -α',
       subtitle: 'Feminine Nouns',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -4923,9 +4950,36 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 58: First Declension Masculine
+    // Lesson 59: Vocabulary II (Unit 4 Nouns — Masculine & Neuter)
     {
-      id: 58,
+      id: 59,
+      title: 'Vocabulary II',
+      subtitle: 'Unit 4 Nouns (Masculine)',
+      section: 'Unit 4: Adjectives & Conditionals',
+      icon: 'ν',
+      exercises: [
+        { type: 'u4vocab-intro', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-match', vocabGroup: 1 },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-gender', vocabGroup: 1 },
+        { type: 'u4vocab-gender', vocabGroup: 1 },
+        { type: 'mc-translate', prompt: 'These nouns are all masculine first declension EXCEPT one. Which is the exception?', display: 'νεᾱνίᾱς, ὁπλίτης, ποιητής, πολίτης, στρατιώτης, ὅπλον', displayGreek: true, correct: 'ὅπλον (neuter, second declension)', options: ['ὅπλον (neuter, second declension)', 'νεᾱνίᾱς (it is feminine)', 'στρατιώτης (it is second declension)', 'ποιητής (it is third declension)'] },
+        { type: 'u4vocab-gre', vocabGroup: 1 },
+        { type: 'u4vocab-eng', vocabGroup: 1 },
+        { type: 'u4vocab-match', vocabGroup: 1 },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the citizen" in nominative singular:', display: 'the citizen', answer: 'ὁ πολίτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the soldier" in nominative singular:', display: 'the soldier', answer: 'ὁ στρατιώτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 60: First Declension Masculine
+    {
+      id: 60,
       title: 'First Decl. Masculine',
       subtitle: '-ης and -ᾱς Nouns',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -4962,9 +5016,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 59: Three-Ending Adjectives
+    // Lesson 61: Three-Ending Adjectives
     {
-      id: 59,
+      id: 61,
       title: 'Three-Ending Adjectives',
       subtitle: '-ός, -ή, -όν',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -4993,9 +5047,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 60: Two-Ending Adjectives
+    // Lesson 62: Two-Ending Adjectives
     {
-      id: 60,
+      id: 62,
       title: 'Two-Ending Adjectives',
       subtitle: '-ος, -ον',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5021,9 +5075,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 61: Adjective Position
+    // Lesson 63: Adjective Position
     {
-      id: 61,
+      id: 63,
       title: 'Adjective Position',
       subtitle: 'Attributive & Predicate',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5051,9 +5105,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 62: Future Conditionals
+    // Lesson 64: Future Conditionals
     {
-      id: 62,
+      id: 64,
       title: 'Future Conditionals',
       subtitle: 'More & Less Vivid',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5081,9 +5135,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 63: General Conditionals
+    // Lesson 65: General Conditionals
     {
-      id: 63,
+      id: 65,
       title: 'General Conditionals',
       subtitle: 'Present & Past',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5111,9 +5165,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 64: Contrafactual Conditionals
+    // Lesson 66: Contrafactual Conditionals
     {
-      id: 64,
+      id: 66,
       title: 'Contrafactual Conditionals',
       subtitle: 'Present & Past',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5140,9 +5194,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 65: Conditional Review
+    // Lesson 67: Conditional Review
     {
-      id: 65,
+      id: 67,
       title: 'Conditional Review',
       subtitle: 'All Six Types',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5171,9 +5225,9 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 66: Elision
+    // Lesson 68: Elision
     {
-      id: 66,
+      id: 68,
       title: 'Elision',
       subtitle: 'Dropped Vowels',
       section: 'Unit 4: Adjectives & Conditionals',
@@ -5196,60 +5250,6 @@ var Data = (function() {
           ['apostrophe (\')', 'marks elided vowel'],
           ['nu-movable', 'avoids need for elision']
         ]}
-      ]
-    },
-
-    // Lesson 67: Vocabulary I (Unit 4 Nouns — Feminine)
-    {
-      id: 67,
-      title: 'Vocabulary I',
-      subtitle: 'Unit 4 Nouns (Feminine)',
-      section: 'Unit 4: Adjectives & Conditionals',
-      icon: 'θ',
-      exercises: [
-        { type: 'u4vocab-intro', vocabGroup: 0 },
-        { type: 'u4vocab-gre', vocabGroup: 0 },
-        { type: 'u4vocab-gre', vocabGroup: 0 },
-        { type: 'u4vocab-eng', vocabGroup: 0 },
-        { type: 'u4vocab-eng', vocabGroup: 0 },
-        { type: 'u4vocab-match', vocabGroup: 0 },
-        { type: 'u4vocab-gre', vocabGroup: 0 },
-        { type: 'u4vocab-eng', vocabGroup: 0 },
-        { type: 'u4vocab-gender', vocabGroup: 0 },
-        { type: 'u4vocab-gender', vocabGroup: 0 },
-        { type: 'mc-translate', prompt: 'Which of these nouns have short -α in the nominative singular?', display: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα, ἀρχή, δίκη, ἡμέρᾱ', displayGreek: true, correct: 'θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', options: ['θάλαττα, μοῦσα, γέφῡρα, μοῖρα (the first four)', 'All seven nouns', 'ἀρχή, δίκη, ἡμέρᾱ (the last three)', 'Only θάλαττα and μοῦσα'] },
-        { type: 'u4vocab-gre', vocabGroup: 0 },
-        { type: 'u4vocab-eng', vocabGroup: 0 },
-        { type: 'u4vocab-match', vocabGroup: 0 },
-        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the sea" in nominative singular:', display: 'the sea', answer: 'ἡ θάλαττα', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
-        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the day" in nominative singular:', display: 'the day', answer: 'ἡ ἡμέρᾱ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
-      ]
-    },
-
-    // Lesson 68: Vocabulary II (Unit 4 Nouns — Masculine & Neuter)
-    {
-      id: 68,
-      title: 'Vocabulary II',
-      subtitle: 'Unit 4 Nouns (Masculine)',
-      section: 'Unit 4: Adjectives & Conditionals',
-      icon: 'ν',
-      exercises: [
-        { type: 'u4vocab-intro', vocabGroup: 1 },
-        { type: 'u4vocab-gre', vocabGroup: 1 },
-        { type: 'u4vocab-gre', vocabGroup: 1 },
-        { type: 'u4vocab-eng', vocabGroup: 1 },
-        { type: 'u4vocab-eng', vocabGroup: 1 },
-        { type: 'u4vocab-match', vocabGroup: 1 },
-        { type: 'u4vocab-gre', vocabGroup: 1 },
-        { type: 'u4vocab-eng', vocabGroup: 1 },
-        { type: 'u4vocab-gender', vocabGroup: 1 },
-        { type: 'u4vocab-gender', vocabGroup: 1 },
-        { type: 'mc-translate', prompt: 'These nouns are all masculine first declension EXCEPT one. Which is the exception?', display: 'νεᾱνίᾱς, ὁπλίτης, ποιητής, πολίτης, στρατιώτης, ὅπλον', displayGreek: true, correct: 'ὅπλον (neuter, second declension)', options: ['ὅπλον (neuter, second declension)', 'νεᾱνίᾱς (it is feminine)', 'στρατιώτης (it is second declension)', 'ποιητής (it is third declension)'] },
-        { type: 'u4vocab-gre', vocabGroup: 1 },
-        { type: 'u4vocab-eng', vocabGroup: 1 },
-        { type: 'u4vocab-match', vocabGroup: 1 },
-        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the citizen" in nominative singular:', display: 'the citizen', answer: 'ὁ πολίτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
-        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the soldier" in nominative singular:', display: 'the soldier', answer: 'ὁ στρατιώτης', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
       ]
     },
 
