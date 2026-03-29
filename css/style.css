@@ -258,6 +258,20 @@ html, body {
   flex-direction: column;
   min-height: 100vh;
   padding-bottom: env(safe-area-inset-bottom, 0);
+  background: url('../dragon5.png') no-repeat center 40%;
+  background-size: contain;
+  position: relative;
+}
+.lesson-screen::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(8,19,25,0);
+  pointer-events: none;
+}
+.lesson-screen > * {
+  position: relative;
+  z-index: 1;
 }
 
 .lesson-top-bar {
@@ -683,6 +697,8 @@ html, body {
   justify-content: center;
   padding: 24px 16px;
   text-align: center;
+  background: var(--bg);
+  border-radius: var(--radius);
 }
 .intro-card h2 {
   font-size: min(6vw, 26px);
