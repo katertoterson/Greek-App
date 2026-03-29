@@ -5028,6 +5028,7 @@ var Data = (function() {
       icon: 'ἀ',
       exercises: [
         { type: 'intro', title: 'Three-Ending Adjectives', cards: [
+          { html: '<h3>New Adjectives</h3><table class="intro-table"><tr><th class="greek">Adjective</th><th>Meaning</th></tr><tr><td class="greek">ἀγαθός, ἀγαθή, ἀγαθόν</td><td>good (moral goodness & serviceability)</td></tr><tr><td class="greek">κακός, κακή, κακόν</td><td>bad, evil</td></tr><tr><td class="greek">καλός, καλή, καλόν</td><td>beautiful, noble, good</td></tr><tr><td class="greek">δίκαιος, δικαίᾱ, δίκαιον</td><td>just (from δίκη)</td></tr><tr><td class="greek">ἄξιος, ἀξίᾱ, ἄξιον</td><td>worthy, worth (+ gen.)</td></tr><tr><td class="greek">φίλος, φίλη, φίλον</td><td>dear, beloved</td></tr></table>' },
           { html: '<p>Adjectives, like articles and nouns, have <strong>gender</strong>, <strong>number</strong>, and <strong>case</strong>.</p><p>An adjective must <strong>agree</strong> with the noun it modifies in gender, number, and case — but the endings don\'t have to look identical.</p><p><strong>Three-ending adjectives</strong> have separate sets of endings for each of the three genders.</p>' },
           { html: '<h3 class="greek">ἀγαθός, ἀγαθή, ἀγαθόν — good</h3><table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἀγαθός</td><td class="greek">ἀγαθή</td><td class="greek">ἀγαθόν</td></tr><tr><td>Gen.</td><td class="greek">ἀγαθοῦ</td><td class="greek">ἀγαθῆς</td><td class="greek">ἀγαθοῦ</td></tr><tr><td>Dat.</td><td class="greek">ἀγαθῷ</td><td class="greek">ἀγαθῇ</td><td class="greek">ἀγαθῷ</td></tr><tr><td>Acc.</td><td class="greek">ἀγαθόν</td><td class="greek">ἀγαθήν</td><td class="greek">ἀγαθόν</td></tr></table><p>Masculine = 2nd declension (like ἀδελφός). Feminine = 1st declension (like ψῡχή). Neuter = 2nd declension (like ἔργον).</p>' },
           { html: '<h3 class="greek">ἄξιος, ἀξίᾱ, ἄξιον — worthy</h3><table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἄξιος</td><td class="greek">ἀξίᾱ</td><td class="greek">ἄξιον</td></tr><tr><td>Gen.</td><td class="greek">ἀξίου</td><td class="greek">ἀξίᾱς</td><td class="greek">ἀξίου</td></tr><tr><td>Dat.</td><td class="greek">ἀξίῳ</td><td class="greek">ἀξίᾳ</td><td class="greek">ἀξίῳ</td></tr><tr><td>Acc.</td><td class="greek">ἄξιον</td><td class="greek">ἀξίᾱν</td><td class="greek">ἄξιον</td></tr></table><p>When the stem ends in <strong>ε, ι, or ρ</strong>, the feminine singular has <strong>-ᾱ</strong> instead of <strong>-η</strong> (same rule as nouns).</p>' },
@@ -5059,6 +5060,7 @@ var Data = (function() {
       icon: 'ἄ',
       exercises: [
         { type: 'intro', title: 'Two-Ending Adjectives', cards: [
+          { html: '<h3>New Adjectives</h3><table class="intro-table"><tr><th class="greek">Adjective</th><th>Meaning</th></tr><tr><td class="greek">ἄδικος, ἄδικον</td><td>unjust (ἀ- + δίκη)</td></tr><tr><td class="greek">ἀνάξιος, ἀνάξιον</td><td>unworthy (ἀν- + ἄξιος; + gen.)</td></tr></table><p>These are <strong>two-ending</strong> adjectives — they have no separate feminine form.</p>' },
           { html: '<p>Some adjectives have only <strong>two</strong> sets of endings: one for <strong>masculine and feminine</strong> together, and another for the <strong>neuter</strong>.</p><p>They follow the <strong>second declension</strong> only — no first-declension feminine forms.</p>' },
           { html: '<h3 class="greek">ἄδικος, ἄδικον — unjust</h3><table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ἄδικος</td><td class="greek">ἄδικον</td></tr><tr><td>Gen.</td><td class="greek">ἀδίκου</td><td class="greek">ἀδίκου</td></tr><tr><td>Dat.</td><td class="greek">ἀδίκῳ</td><td class="greek">ἀδίκῳ</td></tr><tr><td>Acc.</td><td class="greek">ἄδικον</td><td class="greek">ἄδικον</td></tr></table><table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom./Voc. P</td><td class="greek">ἄδικοι</td><td class="greek">ἄδικα</td></tr><tr><td>Gen.</td><td class="greek">ἀδίκων</td><td class="greek">ἀδίκων</td></tr><tr><td>Dat.</td><td class="greek">ἀδίκοις</td><td class="greek">ἀδίκοις</td></tr><tr><td>Acc.</td><td class="greek">ἀδίκους</td><td class="greek">ἄδικα</td></tr></table>' },
           { html: '<h3>Compound Adjectives</h3><div class="info-box"><p>Most two-ending adjectives are <strong>compound adjectives</strong> — formed by adding a prefix to a word.</p><p><span class="greek">ἄδικος</span> = <strong>ἀ-</strong> (alpha privative, "not") + <span class="greek">δίκη</span> ("justice")</p><p><span class="greek">ἀνάξιος</span> = <strong>ἀν-</strong> (alpha privative before vowels) + <span class="greek">ἄξιος</span> ("worthy")</p><p>This negative prefix is cognate with English <strong>"un-"</strong> and <strong>"in-"</strong>.</p></div>' }
@@ -5256,31 +5258,14 @@ var Data = (function() {
       ]
     },
 
-    // Lesson 69: Vocabulary III (Adjectives, Verbs & Particles)
+    // Lesson 69: Vocabulary III (Verbs & Particles)
     {
       id: 69,
       title: 'Vocabulary III',
-      subtitle: 'Adjectives, Verbs & More',
+      subtitle: 'Verbs & Particles',
       section: 'Unit 4: Adjectives & Conditionals',
       icon: 'δ',
       exercises: [
-        { type: 'intro', title: 'Unit 4 Adjectives', cards: [
-          { html: '<div class="vocab-card"><div class="vocab-greek">ἀγαθός, ἀγαθή, ἀγαθόν</div><div class="vocab-english">good</div><div class="vocab-gender">three-ending; combines moral goodness & serviceability</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">κακός, κακή, κακόν</div><div class="vocab-english">bad, evil</div><div class="vocab-gender">three-ending</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">καλός, καλή, καλόν</div><div class="vocab-english">beautiful, noble, good</div><div class="vocab-gender">three-ending; combines physical beauty & moral goodness</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">δίκαιος, δικαίᾱ, δίκαιον</div><div class="vocab-english">just</div><div class="vocab-gender">three-ending; from δίκη (justice)</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">ἄξιος, ἀξίᾱ, ἄξιον</div><div class="vocab-english">worthy, worth (+ gen.)</div><div class="vocab-gender">three-ending; takes genitive of value</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">φίλος, φίλη, φίλον</div><div class="vocab-english">dear, beloved</div><div class="vocab-gender">three-ending; identical to the noun φίλος (friend) in masculine</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">ἄδικος, ἄδικον</div><div class="vocab-english">unjust</div><div class="vocab-gender">two-ending; compound: ἀ- (not) + δίκη</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">ἀνάξιος, ἀνάξιον</div><div class="vocab-english">unworthy (+ gen.)</div><div class="vocab-gender">two-ending; compound: ἀν- (not) + ἄξιος</div></div>' }
-        ]},
-        { type: 'u4adj-gre' },
-        { type: 'u4adj-gre' },
-        { type: 'u4adj-eng' },
-        { type: 'u4adj-eng' },
-        { type: 'u4adj-match' },
-        { type: 'u4adj-type' },
-        { type: 'u4adj-type' },
         { type: 'intro', title: 'New Verbs', cards: [
           { html: '<div class="vocab-card"><div class="vocab-greek">διδάσκω, διδάξω, ἐδίδαξα, δεδίδαχα</div><div class="vocab-english">teach</div><div class="vocab-gender">Narrower than παιδεύω; takes same constructions</div></div>' },
           { html: '<div class="vocab-card"><div class="vocab-greek">ἐθέλω, ἐθελήσω, ἠθέλησα, ἠθέληκα</div><div class="vocab-english">be willing, wish</div><div class="vocab-gender">Note: ἐ- is part of the stem (not an augment). Augment: ἐ- → ἠ-. Takes object infinitive. οὐκ ἐθέλω = "refuse"</div></div>' },
@@ -5311,9 +5296,6 @@ var Data = (function() {
           ['πάλαι', 'long ago'],
           ['καίτοι', 'and further, and yet']
         ]},
-        { type: 'u4adj-gre' },
-        { type: 'u4adj-eng' },
-        { type: 'u4adj-match' }
       ]
     },
 
