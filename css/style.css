@@ -406,6 +406,7 @@ html, body {
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
+  margin-top: auto;
   margin-bottom: 12px;
   transition: border-color 0.2s, background 0.2s;
 }
@@ -668,7 +669,7 @@ html, body {
 .match-tile.greek { font-family: 'Noto Serif', serif; font-size: 18px; }
 .match-tile.selected {
   border-color: var(--purple);
-  background: rgba(213, 95, 45, 0.15);
+  background: #271e16;
 }
 .match-tile.matched {
   opacity: 0.2;
