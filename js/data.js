@@ -4223,9 +4223,58 @@ var Data = (function() {
       ]
     },
     // ---- Unit 3: Perfect, Subjunctive & Optative ----
-    // Lesson 39: Perfect Ind. Active
+    // Lesson 39: Vocabulary I (Verbs & Particles)
     {
       id: 39,
+      title: 'Vocabulary I',
+      subtitle: 'Verbs & Particles',
+      section: 'Unit 3: Perfect, Subjunctive & Optative',
+      icon: 'γ',
+      exercises: [
+        { type: 'intro', title: 'New Verbs', cards: [
+          { html: '<div class="vocab-card"><div class="vocab-greek">γράφω, γράψω, ἔγραψα, γέγραφα</div><div class="vocab-english">write, draw</div><div class="vocab-gender">Originally meant "scratch" or "graze"</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">θύω, θύσω, ἔθῡσα, τέθυκα</div><div class="vocab-english">sacrifice</div><div class="vocab-gender">Note: reduplication shows τ- not θ- (dissimilation of aspirates)</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">παύω, παύσω, ἔπαυσα, πέπαυκα</div><div class="vocab-english">make stop, stop</div><div class="vocab-gender">English "pause" comes from this verb</div></div>' },
+          { html: '<div class="vocab-card"><div class="vocab-greek">φυλάττω, φυλάξω, ἐφύλαξα, πεφύλαχα</div><div class="vocab-english">guard</div><div class="vocab-gender">PP IV has an aspirated perfect; note dissimilation of aspirates</div></div>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does γράφω mean?', display: 'γράφω', displayGreek: true, correct: 'write, draw', options: ['write, draw', 'sacrifice, offer', 'guard, protect', 'stop, make cease'] },
+        { type: 'mc-translate', prompt: 'What does θύω mean?', display: 'θύω', displayGreek: true, correct: 'sacrifice, offer', options: ['sacrifice, offer', 'write, draw', 'guard, protect', 'stop, make cease'] },
+        { type: 'mc-translate', prompt: 'What does παύω mean?', display: 'παύω', displayGreek: true, correct: 'make stop, stop', options: ['make stop, stop', 'sacrifice, offer', 'write, draw', 'guard, protect'] },
+        { type: 'mc-translate', prompt: 'What does φυλάττω mean?', display: 'φυλάττω', displayGreek: true, correct: 'guard, protect', options: ['guard, protect', 'stop, make cease', 'sacrifice, offer', 'write, draw'] },
+        { type: 'match', pairs: [
+          ['γράφω', 'write, draw'],
+          ['θύω', 'sacrifice'],
+          ['παύω', 'make stop, stop'],
+          ['φυλάττω', 'guard'],
+          ['γέγραφα', 'I have written']
+        ]},
+        { type: 'intro', title: 'Conjunctions & Particles', cards: [
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἀλλά</td><td>but (stronger than δέ)</td></tr><tr><td class="greek">δή</td><td>in fact, of course (postpositive)</td></tr><tr><td class="greek">ἐπεί</td><td>after, when, since</td></tr><tr><td class="greek">ἐπειδή</td><td>after, when, since (= ἐπεί + δή)</td></tr></table>' },
+          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἵνα</td><td>in order that</td></tr><tr><td class="greek">ὡς</td><td>in order that</td></tr><tr><td class="greek">ὅπως</td><td>in order that</td></tr><tr><td class="greek">μή</td><td>not (with non-indicative moods)</td></tr></table><p>All three purpose conjunctions mean the same thing.</p><p><span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' },
+          { html: '<table class="intro-table"><tr><th class="greek">Preposition</th><th>Meaning</th></tr><tr><td class="greek">ἀντί + gen.</td><td>instead of</td></tr><tr><td class="greek">διά + gen.</td><td>through</td></tr><tr><td class="greek">διά + acc.</td><td>on account of</td></tr><tr><td class="greek">περί + gen.</td><td>concerning, about</td></tr><tr><td class="greek">περί + dat.</td><td>around</td></tr><tr><td class="greek">περί + acc.</td><td>around, concerning</td></tr></table>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does ἀλλά mean?', correct: 'but (stronger contrast)', options: ['but (stronger contrast)', 'and (simple connection)', 'or (alternative option)', 'for (giving a reason)'] },
+        { type: 'mc-translate', prompt: 'What does μή negate?', correct: 'Non-indicative moods (subjunctive, optative, etc.)', options: ['Non-indicative moods (subjunctive, optative, etc.)', 'The indicative mood only (present, aorist, etc.)', 'All moods equally (indicative, subjunctive, etc.)', 'Only the future tense (indicative and subjunctive)'] },
+        { type: 'match', pairs: [
+          ['ἵνα', 'in order that'],
+          ['ἀλλά', 'but (strong)'],
+          ['ἐπεί', 'after, when, since'],
+          ['ἀντί', 'instead of (+ gen.)'],
+          ['διά + gen.', 'through']
+        ]},
+        { type: 'mc-translate', prompt: 'What does διά mean with the accusative?', correct: 'on account of', options: ['on account of', 'by way of', 'all around', 'in place of'] },
+        { type: 'match', pairs: [
+          ['γράφω', 'telegraph, graphic'],
+          ['παύω', 'pause'],
+          ['φυλάττω', 'prophylactic'],
+          ['περί', 'perimeter'],
+          ['ἀντί', 'antipope']
+        ]}
+      ]
+    },
+    // Lesson 40: Perfect Ind. Active
+    {
+      id: 40,
       title: 'Perfect Ind. Active',
       subtitle: 'Completed Aspect',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4256,9 +4305,9 @@ var Data = (function() {
         { type: 'mc-translate', prompt: 'Which form is the 3rd plural perfect (NOT aorist)?', correct: 'πεπαιδεύκᾱσι(ν)', options: ['πεπαιδεύκᾱσι(ν)', 'ἐπαίδευσαν', 'πεπαιδεύκατε', 'ἐπαιδεύσαμεν'] }
       ]
     },
-    // Lesson 40: Pluperfect Ind. Active
+    // Lesson 41: Pluperfect Ind. Active
     {
-      id: 40,
+      id: 41,
       title: 'Pluperfect Ind. Active',
       subtitle: 'Past Completed',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4288,9 +4337,9 @@ var Data = (function() {
         { type: 'verb-form-id', verbIndex: 0, tense: 'pluperfect', verbSource: 'unit3' }
       ]
     },
-    // Lesson 41: Perfect Infinitive
+    // Lesson 42: Perfect Infinitive
     {
-      id: 41,
+      id: 42,
       title: 'Perfect Infinitive',
       subtitle: '-έναι',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4323,9 +4372,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 42: Present Subjunctive
+    // Lesson 43: Present Subjunctive
     {
-      id: 42,
+      id: 43,
       title: 'Present Subjunctive',
       subtitle: 'Non-Factual Mood',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4361,9 +4410,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 43: Aorist Subjunctive
+    // Lesson 44: Aorist Subjunctive
     {
-      id: 43,
+      id: 44,
       title: 'Aorist Subjunctive',
       subtitle: 'Simple Aspect',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4397,9 +4446,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 44: Present Optative
+    // Lesson 45: Present Optative
     {
-      id: 44,
+      id: 45,
       title: 'Present Optative',
       subtitle: '-οι- Suffix',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4433,9 +4482,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 45: Aorist Optative
+    // Lesson 46: Aorist Optative
     {
-      id: 45,
+      id: 46,
       title: 'Aorist Optative',
       subtitle: '-αι- Suffix',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4469,9 +4518,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 46: Sequence of Moods
+    // Lesson 47: Sequence of Moods
     {
-      id: 46,
+      id: 47,
       title: 'Sequence of Moods',
       subtitle: 'Primary & Secondary',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4505,9 +4554,9 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 47: Purpose Clauses
+    // Lesson 48: Purpose Clauses
     {
-      id: 47,
+      id: 48,
       title: 'Purpose Clauses',
       subtitle: 'ἵνα, ὡς, ὅπως',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
@@ -4553,10 +4602,10 @@ var Data = (function() {
         ]}
       ]
     },
-    // Lesson 48: Vocabulary I (Nouns)
+    // Lesson 49: Vocabulary II (Nouns)
     {
-      id: 48,
-      title: 'Vocabulary I',
+      id: 49,
+      title: 'Vocabulary II',
       subtitle: 'Unit 3 Nouns',
       section: 'Unit 3: Perfect, Subjunctive & Optative',
       icon: 'ἀ',
@@ -4595,55 +4644,6 @@ var Data = (function() {
           answer: 'ἡ δημοκρατίᾱ',
           letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω']
         }
-      ]
-    },
-    // Lesson 49: Vocabulary II (Verbs & Particles)
-    {
-      id: 49,
-      title: 'Vocabulary II',
-      subtitle: 'Verbs & Particles',
-      section: 'Unit 3: Perfect, Subjunctive & Optative',
-      icon: 'γ',
-      exercises: [
-        { type: 'intro', title: 'New Verbs', cards: [
-          { html: '<div class="vocab-card"><div class="vocab-greek">γράφω, γράψω, ἔγραψα, γέγραφα</div><div class="vocab-english">write, draw</div><div class="vocab-gender">Originally meant "scratch" or "graze"</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">θύω, θύσω, ἔθῡσα, τέθυκα</div><div class="vocab-english">sacrifice</div><div class="vocab-gender">Note: reduplication shows τ- not θ- (dissimilation of aspirates)</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">παύω, παύσω, ἔπαυσα, πέπαυκα</div><div class="vocab-english">make stop, stop</div><div class="vocab-gender">English "pause" comes from this verb</div></div>' },
-          { html: '<div class="vocab-card"><div class="vocab-greek">φυλάττω, φυλάξω, ἐφύλαξα, πεφύλαχα</div><div class="vocab-english">guard</div><div class="vocab-gender">PP IV has an aspirated perfect; note dissimilation of aspirates</div></div>' }
-        ]},
-        { type: 'mc-translate', prompt: 'What does γράφω mean?', display: 'γράφω', displayGreek: true, correct: 'write, draw', options: ['write, draw', 'sacrifice, offer', 'guard, protect', 'stop, make cease'] },
-        { type: 'mc-translate', prompt: 'What does θύω mean?', display: 'θύω', displayGreek: true, correct: 'sacrifice, offer', options: ['sacrifice, offer', 'write, draw', 'guard, protect', 'stop, make cease'] },
-        { type: 'mc-translate', prompt: 'What does παύω mean?', display: 'παύω', displayGreek: true, correct: 'make stop, stop', options: ['make stop, stop', 'sacrifice, offer', 'write, draw', 'guard, protect'] },
-        { type: 'mc-translate', prompt: 'What does φυλάττω mean?', display: 'φυλάττω', displayGreek: true, correct: 'guard, protect', options: ['guard, protect', 'stop, make cease', 'sacrifice, offer', 'write, draw'] },
-        { type: 'match', pairs: [
-          ['γράφω', 'write, draw'],
-          ['θύω', 'sacrifice'],
-          ['παύω', 'make stop, stop'],
-          ['φυλάττω', 'guard'],
-          ['γέγραφα', 'I have written']
-        ]},
-        { type: 'intro', title: 'Conjunctions & Particles', cards: [
-          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἀλλά</td><td>but (stronger than δέ)</td></tr><tr><td class="greek">δή</td><td>in fact, of course (postpositive)</td></tr><tr><td class="greek">ἐπεί</td><td>after, when, since</td></tr><tr><td class="greek">ἐπειδή</td><td>after, when, since (= ἐπεί + δή)</td></tr></table>' },
-          { html: '<table class="intro-table"><tr><th class="greek">Word</th><th>Meaning</th></tr><tr><td class="greek">ἵνα</td><td>in order that</td></tr><tr><td class="greek">ὡς</td><td>in order that</td></tr><tr><td class="greek">ὅπως</td><td>in order that</td></tr><tr><td class="greek">μή</td><td>not (with non-indicative moods)</td></tr></table><p>All three purpose conjunctions mean the same thing.</p><p><span class="greek">μή</span> negates non-indicative moods; <span class="greek">οὐ</span> negates the indicative.</p>' },
-          { html: '<table class="intro-table"><tr><th class="greek">Preposition</th><th>Meaning</th></tr><tr><td class="greek">ἀντί + gen.</td><td>instead of</td></tr><tr><td class="greek">διά + gen.</td><td>through</td></tr><tr><td class="greek">διά + acc.</td><td>on account of</td></tr><tr><td class="greek">περί + gen.</td><td>concerning, about</td></tr><tr><td class="greek">περί + dat.</td><td>around</td></tr><tr><td class="greek">περί + acc.</td><td>around, concerning</td></tr></table>' }
-        ]},
-        { type: 'mc-translate', prompt: 'What does ἀλλά mean?', correct: 'but (stronger contrast)', options: ['but (stronger contrast)', 'and (simple connection)', 'or (alternative option)', 'for (giving a reason)'] },
-        { type: 'mc-translate', prompt: 'What does μή negate?', correct: 'Non-indicative moods (subjunctive, optative, etc.)', options: ['Non-indicative moods (subjunctive, optative, etc.)', 'The indicative mood only (present, aorist, etc.)', 'All moods equally (indicative, subjunctive, etc.)', 'Only the future tense (indicative and subjunctive)'] },
-        { type: 'match', pairs: [
-          ['ἵνα', 'in order that'],
-          ['ἀλλά', 'but (strong)'],
-          ['ἐπεί', 'after, when, since'],
-          ['ἀντί', 'instead of (+ gen.)'],
-          ['διά + gen.', 'through']
-        ]},
-        { type: 'mc-translate', prompt: 'What does διά mean with the accusative?', correct: 'on account of', options: ['on account of', 'by way of', 'all around', 'in place of'] },
-        { type: 'match', pairs: [
-          ['γράφω', 'telegraph, graphic'],
-          ['παύω', 'pause'],
-          ['φυλάττω', 'prophylactic'],
-          ['περί', 'perimeter'],
-          ['ἀντί', 'antipope']
-        ]}
       ]
     },
     // Lesson 50: Unit 3 Review
