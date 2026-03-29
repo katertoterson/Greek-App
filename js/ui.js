@@ -334,6 +334,8 @@ var UI = (function() {
         card.appendChild(nav);
       }
 
+      var btnRow = el('div', { className: 'intro-btn-row' });
+
       var btnText = cardIndex < cards.length - 1 ? 'Next' : 'Continue';
       var btn = el('button', {
         className: 'btn-continue',
@@ -348,7 +350,22 @@ var UI = (function() {
           }
         }
       });
-      card.appendChild(btn);
+      btnRow.appendChild(btn);
+
+      if (cardIndex > 0) {
+        var backBtn = el('button', {
+          className: 'btn-back',
+          textContent: 'Back',
+          onClick: function() {
+            AudioFX.play('tap');
+            cardIndex--;
+            showCard();
+          }
+        });
+        btnRow.appendChild(backBtn);
+      }
+
+      card.appendChild(btnRow);
       area.appendChild(card);
     }
     showCard();
