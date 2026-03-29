@@ -699,7 +699,11 @@ html, body {
   padding: 24px 16px;
   text-align: center;
   background: var(--bg);
-  border-radius: var(--radius);
+  border-radius: 0;
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .intro-card h2 {
   font-size: min(6vw, 26px);
