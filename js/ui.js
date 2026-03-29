@@ -248,11 +248,11 @@ var UI = (function() {
     svg.innerHTML =
       '<defs>' +
         '<radialGradient id="appleGold" cx="0.4" cy="0.35" r="0.65" fx="0.35" fy="0.3">' +
-          '<stop offset="0%" stop-color="#fff1a8"/>' +
-          '<stop offset="20%" stop-color="#f0d040"/>' +
-          '<stop offset="50%" stop-color="#c89520"/>' +
-          '<stop offset="75%" stop-color="#9a6e10"/>' +
-          '<stop offset="100%" stop-color="#6b4c08"/>' +
+          '<stop offset="0%" stop-color="#fef0a0"/>' +
+          '<stop offset="20%" stop-color="#FCC342"/>' +
+          '<stop offset="50%" stop-color="#d4a020"/>' +
+          '<stop offset="75%" stop-color="#a87a12"/>' +
+          '<stop offset="100%" stop-color="#7a580a"/>' +
         '</radialGradient>' +
         '<radialGradient id="appleShine" cx="0.32" cy="0.28" r="0.35">' +
           '<stop offset="0%" stop-color="rgba(255,255,240,0.85)"/>' +
@@ -265,13 +265,13 @@ var UI = (function() {
           '<stop offset="100%" stop-color="rgba(255,230,140,0.3)"/>' +
         '</linearGradient>' +
         '<linearGradient id="stemGold" x1="0" y1="0" x2="0" y2="1">' +
-          '<stop offset="0%" stop-color="#a07818"/>' +
-          '<stop offset="100%" stop-color="#6b4c08"/>' +
+          '<stop offset="0%" stop-color="#b8901a"/>' +
+          '<stop offset="100%" stop-color="#7a580a"/>' +
         '</linearGradient>' +
         '<radialGradient id="leafGold" cx="0.3" cy="0.4" r="0.7">' +
-          '<stop offset="0%" stop-color="#e8c840"/>' +
-          '<stop offset="40%" stop-color="#c49a1a"/>' +
-          '<stop offset="100%" stop-color="#7a5c0e"/>' +
+          '<stop offset="0%" stop-color="#FCC342"/>' +
+          '<stop offset="40%" stop-color="#d4a020"/>' +
+          '<stop offset="100%" stop-color="#8a6410"/>' +
         '</radialGradient>' +
         '<linearGradient id="leafShine" x1="0" y1="0" x2="0.5" y2="1">' +
           '<stop offset="0%" stop-color="rgba(255,245,180,0.6)"/>' +
