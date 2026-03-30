@@ -279,7 +279,43 @@ var Data = (function() {
     { greek: 'ἄδικος', forms: 'ἄδικος, ἄδικον', english: 'unjust', endings: 2 }
   ];
 
-  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll).concat(unit4VocabAll);
+  var unit5Vocab = [
+    // Group 0: Vocabulary I (first batch of nouns)
+    [
+      { greek: 'ἄργυρος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'silver' },
+      { greek: 'ἀργύριον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'small coin; money' },
+      { greek: 'γῆ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'earth, land' },
+      { greek: 'διδάσκαλος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'teacher' },
+      { greek: 'δόξα', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'expectation; reputation, glory' },
+      { greek: 'θάνατος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'death' },
+      { greek: 'ἵππος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'horse, mare' }
+    ],
+    // Group 1: Vocabulary II (remaining nouns)
+    [
+      { greek: 'κίνδῡνος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'danger' },
+      { greek: 'λίθος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'stone' },
+      { greek: 'πεδίον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'plain' },
+      { greek: 'φόβος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'fear' }
+    ]
+  ];
+
+  var unit5VocabAll = [];
+  unit5Vocab.forEach(function(group) {
+    group.forEach(function(w) { unit5VocabAll.push(w); });
+  });
+
+  var unit5Adjectives = [
+    { greek: 'ἀθάνατος', forms: 'ἀθάνατος, ἀθάνατον', english: 'undying, immortal', endings: 2 },
+    { greek: 'ἱερός', forms: 'ἱερός, ἱερά, ἱερόν', english: 'holy, sacred to (+ gen.)', endings: 3 },
+    { greek: 'ἱκανός', forms: 'ἱκανός, ἱκανή, ἱκανόν', english: 'sufficient, capable', endings: 3 },
+    { greek: 'μακρός', forms: 'μακρός, μακρά, μακρόν', english: 'long, tall', endings: 3 },
+    { greek: 'μῑκρός', forms: 'μῑκρός, μῑκρά, μῑκρόν', english: 'small, little, short', endings: 3 },
+    { greek: 'πολέμιος', forms: 'πολέμιος, πολεμίᾱ, πολέμιον', english: 'hostile (+ dat.)', endings: 3 },
+    { greek: 'πρῶτος', forms: 'πρῶτος, πρώτη, πρῶτον', english: 'first', endings: 3 },
+    { greek: 'φοβερός', forms: 'φοβερός, φοβερά, φοβερόν', english: 'fearful', endings: 3 }
+  ];
+
+  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll).concat(unit4VocabAll).concat(unit5VocabAll);
 
   var unit2Verbs = [
     { verb: 'παιδεύω', meaning: 'educate, teach',
@@ -5381,6 +5417,449 @@ var Data = (function() {
           ['μετὰ τὴν μάχην', 'after the battle (μετά + acc.)']
         ]}
       ]
+    },
+
+    // ===== UNIT 5: PASSIVE VOICE & SYNTAX =====
+
+    // Lesson 72: Vocabulary I (Unit 5 Nouns — first batch)
+    {
+      id: 72,
+      title: 'Vocabulary I',
+      subtitle: 'Unit 5 Nouns',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'ἀ',
+      exercises: [
+        { type: 'u5vocab-intro', vocabGroup: 0 },
+        { type: 'u5vocab-gre', vocabGroup: 0 },
+        { type: 'u5vocab-gre', vocabGroup: 0 },
+        { type: 'u5vocab-eng', vocabGroup: 0 },
+        { type: 'u5vocab-eng', vocabGroup: 0 },
+        { type: 'u5vocab-match', vocabGroup: 0 },
+        { type: 'u5vocab-gre', vocabGroup: 0 },
+        { type: 'u5vocab-eng', vocabGroup: 0 },
+        { type: 'u5vocab-gender', vocabGroup: 0 },
+        { type: 'u5vocab-gender', vocabGroup: 0 },
+        { type: 'mc-translate', prompt: 'ἵππος can be either masculine or feminine. What does the gender indicate?', correct: 'ὁ ἵππος = stallion/horse, ἡ ἵππος = mare', options: ['ὁ ἵππος = stallion/horse, ἡ ἵππος = mare', 'The masculine is singular, the feminine is plural', 'The masculine means horse, the feminine means donkey', 'There is no difference in meaning'] },
+        { type: 'mc-translate', prompt: 'What is ἀργύριον in relation to ἄργυρος?', correct: 'A diminutive — from "silver" to "small coin, money"', options: ['A diminutive — from "silver" to "small coin, money"', 'An adjective form meaning "silvery"', 'The plural form of ἄργυρος', 'A verb meaning "to silver"'] },
+        { type: 'u5vocab-gre', vocabGroup: 0 },
+        { type: 'u5vocab-eng', vocabGroup: 0 },
+        { type: 'u5vocab-match', vocabGroup: 0 },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the death" in nominative singular:', display: 'the death', answer: 'ὁ θάνατος', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the earth" in nominative singular:', display: 'the earth', answer: 'ἡ γῆ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 73: Vocabulary II (Unit 5 Nouns & Adjectives)
+    {
+      id: 73,
+      title: 'Vocabulary II',
+      subtitle: 'Nouns & Adjectives',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'κ',
+      exercises: [
+        { type: 'u5vocab-intro', vocabGroup: 1 },
+        { type: 'u5vocab-gre', vocabGroup: 1 },
+        { type: 'u5vocab-gre', vocabGroup: 1 },
+        { type: 'u5vocab-eng', vocabGroup: 1 },
+        { type: 'u5vocab-eng', vocabGroup: 1 },
+        { type: 'u5vocab-match', vocabGroup: 1 },
+        { type: 'u5vocab-gender', vocabGroup: 1 },
+        { type: 'u5vocab-gender', vocabGroup: 1 },
+        { type: 'intro', title: 'New Adjectives', cards: [
+          { html: '<table class="intro-table"><tr><th>Adjective</th><th>Meaning</th><th>Type</th></tr><tr><td class="greek">ἀθάνατος, -ον</td><td>undying, immortal</td><td>2-ending</td></tr><tr><td class="greek">ἱερός, -ά, -όν</td><td>holy, sacred to (+ gen.)</td><td>3-ending</td></tr><tr><td class="greek">ἱκανός, -ή, -όν</td><td>sufficient; capable</td><td>3-ending</td></tr><tr><td class="greek">μακρός, -ά, -όν</td><td>long, tall</td><td>3-ending</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">ἀθάνατος is a compound (ἀ- + θάνατος) with only 2 endings, like ἄδικος.<br>ἱερόν (τό) as a substantive noun = "shrine"</p>' },
+          { html: '<table class="intro-table"><tr><th>Adjective</th><th>Meaning</th><th>Type</th></tr><tr><td class="greek">μῑκρός, -ά, -όν</td><td>small, little, short</td><td>3-ending</td></tr><tr><td class="greek">πολέμιος, -ᾱ, -ον</td><td>hostile (+ dat.)</td><td>3-ending</td></tr><tr><td class="greek">πρῶτος, -η, -ον</td><td>first</td><td>3-ending</td></tr><tr><td class="greek">φοβερός, -ά, -όν</td><td>fearful</td><td>3-ending</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">πολέμιος as a substantive = "enemy" (in war).<br>πρῶτος in predicate position = adverb "first."<br>φοβερός from φόβος, "fear."</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does ἀθάνατος mean?', display: 'ἀθάνατος', displayGreek: true, correct: 'undying, immortal', options: ['undying, immortal', 'unworthy', 'unjust', 'holy'] },
+        { type: 'mc-translate', prompt: 'What does ἱκανός mean when used of people?', correct: 'capable', options: ['capable', 'holy', 'hostile', 'fearful'] },
+        { type: 'mc-translate', prompt: 'What does πολέμιος mean as a substantive?', correct: 'enemy (in war)', options: ['enemy (in war)', 'war', 'soldier', 'hostile land'] },
+        { type: 'match', pairs: [
+          ['ἀθάνατος', 'undying, immortal'],
+          ['ἱερός', 'holy, sacred'],
+          ['μακρός', 'long, tall'],
+          ['μῑκρός', 'small, short'],
+          ['φοβερός', 'fearful']
+        ]},
+        { type: 'match', pairs: [
+          ['ἱκανός', 'sufficient, capable'],
+          ['πολέμιος', 'hostile'],
+          ['πρῶτος', 'first'],
+          ['κίνδῡνος', 'danger'],
+          ['φόβος', 'fear']
+        ]},
+        { type: 'spelling', prompt: 'Spell the Greek word(s) for "the danger" in nominative singular:', display: 'the danger', answer: 'ὁ κίνδῡνος', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 74: Vocabulary III (Verbs & Preposition)
+    {
+      id: 74,
+      title: 'Vocabulary III',
+      subtitle: 'Verbs & Preposition',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'π',
+      exercises: [
+        { type: 'intro', title: 'New Verbs', cards: [
+          { html: '<p>The six principal parts of <span class="greek" style="font-size:22px">ἄρχω</span> (rule, command + gen.):</p><table class="intro-table"><tr><th>#</th><th>Form</th><th>Identification</th></tr><tr><td>I</td><td class="greek">ἄρχω</td><td>Present Ind. Act.</td></tr><tr><td>II</td><td class="greek">ἄρξω</td><td>Future Ind. Act.</td></tr><tr><td>III</td><td class="greek">ἦρξα</td><td>Aorist Ind. Act.</td></tr><tr><td>IV</td><td class="greek">ἦρχα</td><td>Perfect Ind. Act.</td></tr><tr><td>V</td><td class="greek">ἦργμαι</td><td>Perfect Ind. Pass.</td></tr><tr><td>VI</td><td class="greek">ἤρχθην</td><td>Aorist Ind. Pass.</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Takes genitive (not accusative). Augment lengthens initial ἀ- to ἠ-. Related noun: ἀρχή (beginning; rule)</p>' },
+          { html: '<p>The six principal parts of <span class="greek" style="font-size:22px">βλάπτω</span> (hurt, harm):</p><table class="intro-table"><tr><th>#</th><th>Form</th><th>Identification</th></tr><tr><td>I</td><td class="greek">βλάπτω</td><td>Present Ind. Act.</td></tr><tr><td>II</td><td class="greek">βλάψω</td><td>Future Ind. Act.</td></tr><tr><td>III</td><td class="greek">ἔβλαψα</td><td>Aorist Ind. Act.</td></tr><tr><td>IV</td><td class="greek">βέβλαφα</td><td>Perfect Ind. Act.</td></tr><tr><td>V</td><td class="greek">βέβλαμμαι</td><td>Perfect Ind. Pass.</td></tr><tr><td>VI</td><td class="greek">ἐβλάβην / ἐβλάφθην</td><td>Aorist Ind. Pass.</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Labial root βλαβ-. Two aorist passive forms (no difference in meaning). Compare θάπτω (also labial)</p>' },
+          { html: '<p>The six principal parts of <span class="greek" style="font-size:22px">πείθω</span> (persuade):</p><table class="intro-table"><tr><th>#</th><th>Form</th><th>Identification</th></tr><tr><td>I</td><td class="greek">πείθω</td><td>Present Ind. Act.</td></tr><tr><td>II</td><td class="greek">πείσω</td><td>Future Ind. Act.</td></tr><tr><td>III</td><td class="greek">ἔπεισα</td><td>Aorist Ind. Act.</td></tr><tr><td>IV</td><td class="greek">πέπεικα</td><td>Perfect Ind. Act.</td></tr><tr><td>V</td><td class="greek">πέπεισμαι</td><td>Perfect Ind. Pass.</td></tr><tr><td>VI</td><td class="greek">ἐπείσθην</td><td>Aorist Ind. Pass.</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Root πειθ-; -θ- lost in future/aorist, replaced by -σ- in PP V/VI. Takes object infinitive like κελεύω</p>' },
+          { html: '<p>The six principal parts of <span class="greek" style="font-size:22px">πράττω</span> (do; fare):</p><table class="intro-table"><tr><th>#</th><th>Form</th><th>Identification</th></tr><tr><td>I</td><td class="greek">πράττω</td><td>Present Ind. Act.</td></tr><tr><td>II</td><td class="greek">πράξω</td><td>Future Ind. Act.</td></tr><tr><td>III</td><td class="greek">ἔπρᾱξα</td><td>Aorist Ind. Act.</td></tr><tr><td>IV</td><td class="greek">πέπρᾱχα / πέπρᾱγα</td><td>Perfect Ind. Act.</td></tr><tr><td>V</td><td class="greek">πέπρᾱγμαι</td><td>Perfect Ind. Pass.</td></tr><tr><td>VI</td><td class="greek">ἐπράχθην</td><td>Aorist Ind. Pass.</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Velar root πρᾱκ- (like τάττω, φυλάττω). πέπρᾱχα = transitive ("I have done"); πέπρᾱγα = intransitive ("I have fared")</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does ἄρχω mean?', display: 'ἄρχω', displayGreek: true, correct: 'rule, command', options: ['rule, command', 'begin only', 'hurt, harm', 'persuade'] },
+        { type: 'mc-translate', prompt: 'What case does ἄρχω take?', correct: 'Genitive (not accusative)', options: ['Genitive (not accusative)', 'Accusative', 'Dative', 'Nominative'] },
+        { type: 'mc-translate', prompt: 'What does πράττω mean?', display: 'πράττω', displayGreek: true, correct: 'do; fare', options: ['do; fare', 'persuade', 'rule', 'write'] },
+        { type: 'mc-translate', prompt: 'Why does βλάπτω have two aorist passive forms (ἐβλάβην and ἐβλάφθην)?', correct: 'Both are valid with no difference in meaning', options: ['Both are valid with no difference in meaning', 'ἐβλάβην is active and ἐβλάφθην is passive', 'They have different tenses', 'One is indicative and the other subjunctive'] },
+        { type: 'match', pairs: [
+          ['ἄρχω', 'rule, command (+ gen.)'],
+          ['βλάπτω', 'hurt, harm'],
+          ['πείθω', 'persuade'],
+          ['πράττω', 'do; fare'],
+          ['εὖ πράττω', 'I do/fare well']
+        ]},
+        { type: 'intro', title: 'The Preposition ὑπό', cards: [
+          { html: '<table class="intro-table"><tr><th>Case</th><th>Meaning</th></tr><tr><td class="greek">ὑπό + gen.</td><td>by (personal agent)<br><span style="font-size:12px;color:var(--text-dim)">also: from under</span></td></tr><tr><td class="greek">ὑπό + dat.</td><td>under<br><span style="font-size:12px;color:var(--text-dim)">(position: being under)</span></td></tr><tr><td class="greek">ὑπό + acc.</td><td>under (with motion); toward<br><span style="font-size:12px;color:var(--text-dim)">(of time)</span></td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">The most common use is <strong>ὑπό + genitive</strong> to express the personal agent with passive verbs ("by someone").</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does ὑπό mean with the genitive?', correct: 'by (personal agent)', options: ['by (personal agent)', 'under (position)', 'under (motion)', 'toward'] },
+        { type: 'mc-translate', prompt: 'What is the difference between πέπρᾱχα and πέπρᾱγα?', correct: 'πέπρᾱχα is transitive ("I have done X"), πέπρᾱγα is intransitive ("I have fared")', options: ['πέπρᾱχα is transitive ("I have done X"), πέπρᾱγα is intransitive ("I have fared")', 'πέπρᾱχα is active and πέπρᾱγα is passive', 'πέπρᾱχα is present and πέπρᾱγα is aorist', 'They mean the same thing'] },
+        { type: 'match', pairs: [
+          ['ὑπό + gen.', 'by (personal agent)'],
+          ['ὑπό + dat.', 'under (position)'],
+          ['ὑπό + acc.', 'under (motion); toward'],
+          ['ἀρχή', 'beginning; rule, empire'],
+          ['πείθω + infinitive', 'persuade someone to do']
+        ]}
+      ]
+    },
+
+    // Lesson 75: Present Passive
+    {
+      id: 75,
+      title: 'Present Passive',
+      subtitle: 'Indicative, Subjunctive, Optative, Infinitive',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'Π',
+      exercises: [
+        { type: 'intro', title: 'The Passive Voice', cards: [
+          { html: '<p>In the <strong>active voice</strong>, the subject performs the action:</p><p class="greek" style="font-size:18px">ὁ Ὅμηρος γράφει τὸν λόγον.</p><p>Homer writes the speech.</p><p>In the <strong>passive voice</strong>, the subject receives the action:</p><p class="greek" style="font-size:18px">ὁ λόγος γράφεται ὑπὸ τοῦ Ὁμήρου.</p><p>The speech is being written by Homer.</p>' },
+          { html: '<h3>Present Indicative Passive</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύομαι</td><td class="greek">παιδευόμεθα</td></tr><tr><td>2nd</td><td class="greek">παιδεύῃ / -ει</td><td class="greek">παιδεύεσθε</td></tr><tr><td>3rd</td><td class="greek">παιδεύεται</td><td class="greek">παιδεύονται</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Endings: thematic vowel (-ε/ο-) + primary passive markers (-μαι, -σαι, -ται, -μεθα, -σθε, -νται). The 2nd sg. -ει can also be 3rd sg. active — context decides.</p>' },
+          { html: '<h3>Present Subjunctive Passive</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδεύωμαι</td><td class="greek">παιδευώμεθα</td></tr><tr><td>2nd</td><td class="greek">παιδεύῃ</td><td class="greek">παιδεύησθε</td></tr><tr><td>3rd</td><td class="greek">παιδεύηται</td><td class="greek">παιδεύωνται</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Like active subjunctive: lengthened thematic vowel (ο→ω, ε→η). Uses primary passive markers.</p>' },
+          { html: '<h3>Present Optative Passive</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδευοίμην</td><td class="greek">παιδευοίμεθα</td></tr><tr><td>2nd</td><td class="greek">παιδεύοιο</td><td class="greek">παιδεύοισθε</td></tr><tr><td>3rd</td><td class="greek">παιδεύοιτο</td><td class="greek">παιδεύοιντο</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Optative suffix -οι- (thematic ο + ι) + secondary passive markers (-μην, -σο, -το, etc.).</p>' },
+          { html: '<h3>Present Infinitive Passive</h3><p class="greek" style="font-size:22px;text-align:center;margin:16px 0">παιδεύεσθαι</p><p style="text-align:center">to be being educated / to be educated (habitually)</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Ending: <strong>-εσθαι</strong> added to present stem. Like all infinitives, shows aspect (progressive/repeated), not time.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'παιδεύομαι', displayGreek: true, correct: 'I am being educated', options: ['I am being educated', 'I educate', 'I was educated', 'I will be educated'] },
+        { type: 'mc-translate', prompt: 'What form is this?', display: 'παιδεύεται', displayGreek: true, correct: '3rd sg. present indicative passive', options: ['3rd sg. present indicative passive', '3rd sg. present indicative active', '3rd sg. aorist indicative passive', '3rd sg. imperfect indicative passive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'παιδεύονται', displayGreek: true, correct: 'they are being educated', options: ['they are being educated', 'they educate', 'they were educated', 'they will be educated'] },
+        { type: 'mc-translate', prompt: 'The form παιδεύῃ can be which of the following?', correct: 'All three: 3rd sg. pres. subj. act., 2nd sg. pres. ind. pass., 2nd sg. pres. subj. pass.', options: ['All three: 3rd sg. pres. subj. act., 2nd sg. pres. ind. pass., 2nd sg. pres. subj. pass.', 'Only 3rd sg. present subjunctive active', 'Only 2nd sg. present indicative passive', '2nd sg. present indicative active and passive'] },
+        { type: 'mc-translate', prompt: 'What is the present infinitive passive of παιδεύω?', correct: 'παιδεύεσθαι', options: ['παιδεύεσθαι', 'παιδεύειν', 'παιδευθῆναι', 'πεπαιδεῦσθαι'] },
+        { type: 'mc-translate', prompt: 'How does the present subjunctive passive differ from the present indicative passive?', correct: 'The thematic vowel is lengthened (ο→ω, ε→η)', options: ['The thematic vowel is lengthened (ο→ω, ε→η)', 'Different person markers are used', 'An augment is added', 'A different tense stem is used'] },
+        { type: 'match', pairs: [
+          ['παιδεύομαι', 'I am being educated (ind.)'],
+          ['παιδεύωμαι', 'I ... be educated (subj.)'],
+          ['παιδευοίμην', 'I ... be educated (opt.)'],
+          ['παιδεύεσθαι', 'to be educated (inf.)'],
+          ['παιδεύονται', 'they are being educated']
+        ]}
+      ]
+    },
+
+    // Lesson 76: Imperfect Passive
+    {
+      id: 76,
+      title: 'Imperfect Passive',
+      subtitle: 'Imperfect Indicative Passive',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'ἐ',
+      exercises: [
+        { type: 'intro', title: 'Imperfect Indicative Passive', cards: [
+          { html: '<h3>Formation</h3><p>Prefix the <strong>past indicative augment</strong> to the present tense stem, then add the imperfect passive endings:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">ἐπαιδευόμην</td><td class="greek">ἐπαιδευόμεθα</td></tr><tr><td>2nd</td><td class="greek">ἐπαιδεύου</td><td class="greek">ἐπαιδεύεσθε</td></tr><tr><td>3rd</td><td class="greek">ἐπαιδεύετο</td><td class="greek">ἐπαιδεύοντο</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Translation: "I was being educated" or "I used to be educated"</p>' },
+          { html: '<h3>Endings Breakdown</h3><p>Imperfect passive endings = thematic vowel (-ε/ο-) + <strong>secondary</strong> passive markers:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td>-ομην</td><td>-ομεθα</td></tr><tr><td>2nd</td><td>-ου</td><td>-εσθε</td></tr><tr><td>3rd</td><td>-ετο</td><td>-οντο</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Compare present passive (primary markers: -μαι, -σαι, -ται) vs. imperfect passive (secondary markers: -μην, -σο, -το). The 2nd sg. -ου comes from *-εσο with intervocalic -σ- dropping.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπαιδευόμην', displayGreek: true, correct: 'I was being educated', options: ['I was being educated', 'I am being educated', 'I was educated (once)', 'I had been educated'] },
+        { type: 'mc-translate', prompt: 'What form is this?', display: 'ἐπαιδεύετο', displayGreek: true, correct: '3rd sg. imperfect indicative passive', options: ['3rd sg. imperfect indicative passive', '3rd sg. present indicative passive', '3rd sg. aorist indicative passive', '3rd sg. present optative passive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπαιδεύοντο', displayGreek: true, correct: 'they were being educated / they used to be educated', options: ['they were being educated / they used to be educated', 'they are being educated', 'they were educated (once)', 'they had been educated'] },
+        { type: 'mc-translate', prompt: 'The imperfect passive uses which type of person markers?', correct: 'Secondary passive markers (-μην, -σο, -το, etc.)', options: ['Secondary passive markers (-μην, -σο, -το, etc.)', 'Primary passive markers (-μαι, -σαι, -ται, etc.)', 'Active markers (-ν, -ς, —, etc.)', 'Subjunctive markers'] },
+        { type: 'mc-translate', prompt: 'What distinguishes the imperfect passive from the present passive?', correct: 'The augment (ἐ-) and secondary (instead of primary) person markers', options: ['The augment (ἐ-) and secondary (instead of primary) person markers', 'A different tense stem', 'Different thematic vowels', 'The imperfect passive uses active endings'] },
+        { type: 'match', pairs: [
+          ['ἐπαιδευόμην', 'I was being educated'],
+          ['ἐπαιδεύου', 'you were being educated'],
+          ['ἐπαιδεύετο', 'he/she/it was being educated'],
+          ['ἐπαιδευόμεθα', 'we were being educated'],
+          ['ἐπαιδεύοντο', 'they were being educated']
+        ]},
+        { type: 'mc-translate', prompt: 'Both the present and imperfect passive are built on which stem?', correct: 'The present tense stem (Principal Part I)', options: ['The present tense stem (Principal Part I)', 'The aorist passive stem (Principal Part VI)', 'The perfect passive stem (Principal Part V)', 'The future stem (Principal Part II)'] }
+      ]
+    },
+
+    // Lesson 77: Aorist Passive
+    {
+      id: 77,
+      title: 'Aorist Passive',
+      subtitle: 'Indicative, Subjunctive, Optative, Infinitive',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'θ',
+      exercises: [
+        { type: 'intro', title: 'Aorist Passive', cards: [
+          { html: '<h3>Key Concept</h3><p>Unlike the present/imperfect passive (which use passive endings on the present stem), the <strong>aorist passive</strong> uses a <strong>different tense stem</strong> from <strong>Principal Part VI</strong>.</p><p>Crucially, the aorist passive uses <strong>active</strong> person markers — the voice is shown by the <strong>tense stem itself</strong>, not by the endings.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">To get the aorist passive stem: drop -ην from PP VI.<br>e.g., ἐπαιδεύθην → stem ἐπαιδευθ- (augmented) / παιδευθ- (unaugmented)</p>' },
+          { html: '<h3>Aorist Indicative Passive</h3><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">ἐπαιδεύθην</td><td class="greek">ἐπαιδεύθημεν</td></tr><tr><td>2nd</td><td class="greek">ἐπαιδεύθης</td><td class="greek">ἐπαιδεύθητε</td></tr><tr><td>3rd</td><td class="greek">ἐπαιδεύθη</td><td class="greek">ἐπαιδεύθησαν</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Translation: "I was educated" (simple aspect). Endings: tense vowel -η- + active markers (-ν, -ς, —, -μεν, -τε, -σαν).</p>' },
+          { html: '<h3>Aorist Subjunctive Passive</h3><p>Uses <strong>unaugmented</strong> stem + subjunctive <strong>active</strong> endings with circumflex:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδευθῶ</td><td class="greek">παιδευθῶμεν</td></tr><tr><td>2nd</td><td class="greek">παιδευθῇς</td><td class="greek">παιδευθῆτε</td></tr><tr><td>3rd</td><td class="greek">παιδευθῇ</td><td class="greek">παιδευθῶσι(ν)</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">The circumflex comes from contraction: *παιδευθέω → παιδευθῶ</p>' },
+          { html: '<h3>Aorist Optative Passive</h3><p>Uses unaugmented stem + special passive optative endings:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδευθείην</td><td class="greek">παιδευθεῖμεν</td></tr><tr><td>2nd</td><td class="greek">παιδευθείης</td><td class="greek">παιδευθεῖτε</td></tr><tr><td>3rd</td><td class="greek">παιδευθείη</td><td class="greek">παιδευθεῖεν</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Endings: -ειην, -ειης, -ειη, -εῖμεν, -εῖτε, -εῖεν. The accent never goes back beyond the -ι-.</p>' },
+          { html: '<h3>Aorist Infinitive Passive</h3><p class="greek" style="font-size:22px;text-align:center;margin:16px 0">παιδευθῆναι</p><p style="text-align:center">to be educated (simple aspect)</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Ending: <strong>-ῆναι</strong> on unaugmented aorist passive stem. Rule: the syllable before -ναι is always accented.</p><p style="margin-top:8px">Compare aspects:<br><span class="greek">παιδεύεσθαι</span> — to be educated (progressive/habitual)<br><span class="greek">παιδευθῆναι</span> — to be educated (simple/once)</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπαιδεύθην', displayGreek: true, correct: 'I was educated', options: ['I was educated', 'I was being educated', 'I had been educated', 'I will be educated'] },
+        { type: 'mc-translate', prompt: 'What makes the aorist passive unique among passive forms?', correct: 'It uses active person markers — voice is shown by the tense stem alone', options: ['It uses active person markers — voice is shown by the tense stem alone', 'It uses a special set of passive-only markers', 'It has no subjunctive or optative forms', 'It is formed from the present tense stem'] },
+        { type: 'mc-translate', prompt: 'What form is this?', display: 'παιδευθῶμεν', displayGreek: true, correct: '1st pl. aorist subjunctive passive', options: ['1st pl. aorist subjunctive passive', '1st pl. present subjunctive passive', '1st pl. aorist indicative passive', '1st pl. aorist subjunctive active'] },
+        { type: 'mc-translate', prompt: 'What is the aorist infinitive passive of παιδεύω?', correct: 'παιδευθῆναι', options: ['παιδευθῆναι', 'παιδεύεσθαι', 'πεπαιδεῦσθαι', 'παιδεῦσαι'] },
+        { type: 'mc-translate', prompt: 'What form is this?', display: 'παιδευθείη', displayGreek: true, correct: '3rd sg. aorist optative passive', options: ['3rd sg. aorist optative passive', '3rd sg. present optative passive', '3rd sg. aorist indicative passive', '3rd sg. aorist subjunctive passive'] },
+        { type: 'match', pairs: [
+          ['ἐπαιδεύθην', 'aorist indicative passive'],
+          ['παιδευθῶ', 'aorist subjunctive passive'],
+          ['παιδευθείην', 'aorist optative passive'],
+          ['παιδευθῆναι', 'aorist infinitive passive'],
+          ['παιδεύεσθαι', 'present infinitive passive']
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπαιδεύθησαν', displayGreek: true, correct: 'they were educated', options: ['they were educated', 'they were being educated', 'they had been educated', 'they are being educated'] }
+      ]
+    },
+
+    // Lesson 78: Future & Perfect Passive
+    {
+      id: 78,
+      title: 'Future & Perfect Passive',
+      subtitle: 'Future, Perfect, Pluperfect & Perfect Infinitive',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'φ',
+      exercises: [
+        { type: 'intro', title: 'Future & Perfect Passive', cards: [
+          { html: '<h3>Future Indicative Passive</h3><p>Built on the aorist passive stem (from PP VI) + <strong>-ησ-</strong> + present passive endings:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">παιδευθήσομαι</td><td class="greek">παιδευθησόμεθα</td></tr><tr><td>2nd</td><td class="greek">παιδευθήσῃ</td><td class="greek">παιδευθήσεσθε</td></tr><tr><td>3rd</td><td class="greek">παιδευθήσεται</td><td class="greek">παιδευθήσονται</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Translation: "I shall be educated." The -σ- is like the future active (παιδεύσω).</p>' },
+          { html: '<h3>Perfect Indicative Passive</h3><p>Built from <strong>Principal Part V</strong>. Endings are primary passive markers <strong>without</strong> thematic vowel:</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">πεπαίδευμαι</td><td class="greek">πεπαιδεύμεθα</td></tr><tr><td>2nd</td><td class="greek">πεπαίδευσαι</td><td class="greek">πεπαίδευσθε</td></tr><tr><td>3rd</td><td class="greek">πεπαίδευται</td><td class="greek">πεπαίδευνται</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Translation: "I have been educated." Completed aspect in present time. Note: 2nd sg. retains -σ- (unlike other 2nd sg. passives).</p>' },
+          { html: '<h3>Pluperfect Indicative Passive</h3><p>Augment + perfect passive stem + secondary passive markers (no thematic vowel):</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">ἐπεπαιδεύμην</td><td class="greek">ἐπεπαιδεύμεθα</td></tr><tr><td>2nd</td><td class="greek">ἐπεπαίδευσο</td><td class="greek">ἐπεπαίδευσθε</td></tr><tr><td>3rd</td><td class="greek">ἐπεπαίδευτο</td><td class="greek">ἐπεπαίδευντο</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Translation: "I had been educated." Completed aspect in past time.</p>' },
+          { html: '<h3>Perfect Infinitive Passive</h3><p class="greek" style="font-size:22px;text-align:center;margin:16px 0">πεπαιδεῦσθαι</p><p style="text-align:center">to have been educated</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Ending: <strong>-σθαι</strong> on perfect passive stem (no thematic vowel, unlike present -εσθαι). Always accented on the <strong>penult</strong>. Shows completed aspect only.</p><p style="margin-top:8px">Compare all passive infinitives:<br><span class="greek">παιδεύεσθαι</span> — present (progressive)<br><span class="greek">παιδευθῆναι</span> — aorist (simple)<br><span class="greek">πεπαιδεῦσθαι</span> — perfect (completed)</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'παιδευθήσομαι', displayGreek: true, correct: 'I shall be educated', options: ['I shall be educated', 'I am being educated', 'I was educated', 'I have been educated'] },
+        { type: 'mc-translate', prompt: 'What form is this?', display: 'πεπαίδευται', displayGreek: true, correct: '3rd sg. perfect indicative passive', options: ['3rd sg. perfect indicative passive', '3rd sg. present indicative passive', '3rd sg. aorist indicative passive', '3rd sg. pluperfect indicative passive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πεπαίδευμαι', displayGreek: true, correct: 'I have been educated', options: ['I have been educated', 'I am being educated', 'I was educated', 'I had been educated'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπεπαίδευτο', displayGreek: true, correct: 'he/she/it had been educated', options: ['he/she/it had been educated', 'he/she/it has been educated', 'he/she/it was being educated', 'he/she/it will be educated'] },
+        { type: 'mc-translate', prompt: 'How is the future passive stem formed?', correct: 'Unaugmented aorist passive stem + -ησ-', options: ['Unaugmented aorist passive stem + -ησ-', 'Present stem + -σ-', 'Perfect passive stem + -σ-', 'Aorist active stem + passive endings'] },
+        { type: 'mc-translate', prompt: 'What is the perfect infinitive passive of παιδεύω?', correct: 'πεπαιδεῦσθαι', options: ['πεπαιδεῦσθαι', 'παιδεύεσθαι', 'παιδευθῆναι', 'πεπαιδευκέναι'] },
+        { type: 'match', pairs: [
+          ['παιδευθήσομαι', 'I shall be educated (future)'],
+          ['πεπαίδευμαι', 'I have been educated (perfect)'],
+          ['ἐπεπαιδεύμην', 'I had been educated (pluperfect)'],
+          ['πεπαιδεῦσθαι', 'to have been educated (perf. inf.)'],
+          ['παιδευθῆναι', 'to be educated (aor. inf.)']
+        ]}
+      ]
+    },
+
+    // Lesson 79: Consonant Stems
+    {
+      id: 79,
+      title: 'Consonant Stems',
+      subtitle: 'Perfect Passive of Consonant Stems',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'γ',
+      exercises: [
+        { type: 'intro', title: 'Consonant Stem Complications', cards: [
+          { html: '<h3>The Problem</h3><p>When the perfect passive stem ends in a <strong>vowel</strong> (like πεπαιδευ-), adding passive endings is straightforward.</p><p>But when the stem ends in a <strong>consonant</strong>, the consonant interacts with the ending, producing sound changes. Principal Part V often shows the altered form.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Three patterns based on the consonant type:<br>• Labials (π, β, φ) → PP V ends in <strong>-μμαι</strong><br>• Palatals (κ, γ, χ) → PP V ends in <strong>-γμαι</strong><br>• Dentals (τ, δ, θ) or σ → PP V ends in <strong>-σμαι</strong></p>' },
+          { html: '<h3>Labial Stems (-μμαι)</h3><p>Example: <span class="greek">γράφω</span> → PP V: <span class="greek">γέγραμμαι</span></p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">γέγραμμαι</td><td class="greek">γεγράμμεθα</td></tr><tr><td>2nd</td><td class="greek">γέγραψαι</td><td class="greek">γέγραφθε</td></tr><tr><td>3rd</td><td class="greek">γέγραπται</td><td class="greek">***</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Labial + μ → μμ; + σ → ψ; + τ → πτ; + σθ → φθ. 3rd pl. uses a compound form.</p>' },
+          { html: '<h3>Palatal Stems (-γμαι)</h3><p>Example: <span class="greek">φυλάττω</span> → PP V: <span class="greek">πεφύλαγμαι</span></p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">πεφύλαγμαι</td><td class="greek">πεφυλάγμεθα</td></tr><tr><td>2nd</td><td class="greek">πεφύλαξαι</td><td class="greek">πεφύλαχθε</td></tr><tr><td>3rd</td><td class="greek">πεφύλακται</td><td class="greek">***</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Palatal + μ → γμ; + σ → ξ; + τ → κτ; + σθ → χθ.</p>' },
+          { html: '<h3>Dental/σ Stems (-σμαι)</h3><p>Example: <span class="greek">κελεύω</span> → PP V: <span class="greek">κεκέλευσμαι</span></p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>1st</td><td class="greek">κεκέλευσμαι</td><td class="greek">κεκελεύσμεθα</td></tr><tr><td>2nd</td><td class="greek">κεκέλευσαι</td><td class="greek">κεκέλευσθε</td></tr><tr><td>3rd</td><td class="greek">κεκέλευσται</td><td class="greek">***</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">The -σ- simply stays in most forms. Double -σσ- simplifies to single -σ-: *κεκέλευσσαι → κεκέλευσαι.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'If a verb\'s PP V ends in -μμαι, the original stem consonant was:', correct: 'A labial (π, β, or φ)', options: ['A labial (π, β, or φ)', 'A palatal (κ, γ, or χ)', 'A dental (τ, δ, or θ)', 'A sigma (σ)'] },
+        { type: 'mc-translate', prompt: 'What is the 2nd person singular perfect passive of γράφω?', display: 'γράφω (PP V: γέγραμμαι)', displayGreek: false, correct: 'γέγραψαι', options: ['γέγραψαι', 'γέγραφαι', 'γέγραμσαι', 'γεγράφησαι'] },
+        { type: 'mc-translate', prompt: 'If PP V ends in -γμαι, the stem consonant was:', correct: 'A palatal (κ, γ, or χ)', options: ['A palatal (κ, γ, or χ)', 'A labial (π, β, or φ)', 'A dental (τ, δ, or θ)', 'A gamma (γ) only'] },
+        { type: 'mc-translate', prompt: 'What is the 2nd person plural perfect passive of φυλάττω?', display: 'φυλάττω (PP V: πεφύλαγμαι)', displayGreek: false, correct: 'πεφύλαχθε', options: ['πεφύλαχθε', 'πεφύλαγσθε', 'πεφύλακσθε', 'πεφυλάγθε'] },
+        { type: 'match', pairs: [
+          ['-μμαι', 'labial stem (π, β, φ)'],
+          ['-γμαι', 'palatal stem (κ, γ, χ)'],
+          ['-σμαι', 'dental/σ stem'],
+          ['γέγραμμαι', 'γράφω (I have been written)'],
+          ['πεφύλαγμαι', 'φυλάττω (I have been guarded)']
+        ]},
+        { type: 'mc-translate', prompt: 'What is the perfect infinitive passive of γράφω?', correct: 'γεγράφθαι', options: ['γεγράφθαι', 'γέγραμσθαι', 'γραφθῆναι', 'γεγραφέναι'] }
+      ]
+    },
+
+    // Lesson 80: Agent & Means
+    {
+      id: 80,
+      title: 'Agent & Means',
+      subtitle: 'Personal Agent & Dative of Means',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'ὑ',
+      exercises: [
+        { type: 'intro', title: 'Expressing Agent & Means', cards: [
+          { html: '<h3>Genitive of Personal Agent</h3><p>With most passive verbs, the person performing the action is expressed with <strong>ὑπό + genitive</strong>:</p><p class="greek" style="font-size:17px">ὁ λόγος <strong>ὑπὸ τοῦ Ὁμήρου</strong> γράφεται.</p><p>The speech is being written <strong>by Homer</strong>.</p><p class="greek" style="font-size:17px">ὁ πόλεμος <strong>ὑπὸ τῶν στρατιωτῶν</strong> ἐπαύθη.</p><p>The war was stopped <strong>by the soldiers</strong>.</p>' },
+          { html: '<h3>Dative of Personal Agent</h3><p>With the <strong>perfect and pluperfect</strong> passive, the agent is expressed by the <strong>dative</strong> alone (no preposition):</p><p class="greek" style="font-size:17px">ὁ λόγος <strong>Ὁμήρῳ</strong> γέγραπται.</p><p>The speech has been written <strong>by Homer</strong>.</p><p class="greek" style="font-size:17px">ὁ πόλεμος <strong>τοῖς στρατιώταις</strong> ἐπέπαυτο.</p><p>The war had been stopped <strong>by the soldiers</strong>.</p>' },
+          { html: '<h3>Dative of Means / Instrument</h3><p>The <strong>thing</strong> by which something is done uses the <strong>dative without a preposition</strong> (not ὑπό):</p><p class="greek" style="font-size:17px">ὑπὸ τοῦ Ὁμήρου ἐπαύθησαν οἱ στρατιῶται <strong>λόγῳ</strong>.</p><p>The soldiers were stopped by Homer <strong>by means of a speech</strong>.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Key distinction: <strong>personal agent</strong> (a person) uses ὑπό + gen. (or plain dative with perfect/pluperfect). <strong>Means/instrument</strong> (a thing) always uses the dative alone.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οἱ ποιηταὶ ὑπὸ μουσῶν διδάσκονται.', displayGreek: true, correct: 'The poets are taught by the muses.', options: ['The poets are taught by the muses.', 'The poets are teaching the muses.', 'The muses are being taught by poets.', 'The poets of the muses are teaching.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λέλυται δὴ ἡ δημοκρατίᾱ τοῖς ὁπλίταις.', displayGreek: true, correct: 'The democracy has indeed been destroyed by the hoplites.', options: ['The democracy has indeed been destroyed by the hoplites.', 'The hoplites have destroyed the democracy.', 'The democracy is being destroyed by the hoplites.', 'The democracy of the hoplites has been destroyed.'] },
+        { type: 'mc-translate', prompt: 'Why is the dative (τοῖς ὁπλίταις) used instead of ὑπό + gen. here?', correct: 'Because the verb is in the perfect tense — dative of personal agent', options: ['Because the verb is in the perfect tense — dative of personal agent', 'Because ὁπλίτης is a military word', 'Because the agent is plural', 'Because it expresses means, not agent'] },
+        { type: 'mc-translate', prompt: 'How do you express "by means of a speech" in Greek?', correct: 'λόγῳ (dative without preposition)', options: ['λόγῳ (dative without preposition)', 'ὑπὸ τοῦ λόγου (ὑπό + genitive)', 'ἐκ λόγου (ἐκ + genitive)', 'σὺν λόγῳ (σύν + dative)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἡ μὲν γέφῡρα ἐλέλυτο, τὰ δὲ ζῷα τῷ δήμῳ ἐτέθυτο.', displayGreek: true, correct: 'The bridge had been destroyed, and the animals had been sacrificed by the people.', options: ['The bridge had been destroyed, and the animals had been sacrificed by the people.', 'The bridge was destroyed, and the animals were sacrificed to the people.', 'The bridge is being destroyed, and the people sacrifice animals.', 'The bridge had destroyed the animals for the people.'] },
+        { type: 'match', pairs: [
+          ['ὑπό + genitive', 'personal agent (most tenses)'],
+          ['dative alone (person)', 'personal agent (perf./pluperf.)'],
+          ['dative alone (thing)', 'means / instrument'],
+          ['ὑπὸ τοῦ Ὁμήρου', 'by Homer (agent)'],
+          ['λόγῳ', 'by means of a speech']
+        ]}
+      ]
+    },
+
+    // Lesson 81: Substantive Adjectives
+    {
+      id: 81,
+      title: 'Substantive Adjectives',
+      subtitle: 'Adjectives Used as Nouns',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'ἁ',
+      exercises: [
+        { type: 'intro', title: 'Substantive Use of the Adjective', cards: [
+          { html: '<p>Greek often drops an obvious noun and lets the <strong>adjective stand as a noun</strong>. Compare English: "The <em>good</em> die young."</p><p>The <strong>gender</strong> tells you what kind of noun is implied:</p><table class="intro-table"><tr><th>Greek</th><th>Meaning</th></tr><tr><td class="greek">ὁ ἀγαθός</td><td>the good <strong>man</strong></td></tr><tr><td class="greek">ἡ ἀγαθή</td><td>the good <strong>woman</strong></td></tr><tr><td class="greek">τὸ ἀγαθόν</td><td>the good <strong>thing</strong>, the good</td></tr><tr><td class="greek">οἱ ἀγαθοί</td><td>the good <strong>men</strong></td></tr></table>' },
+          { html: '<h3>Without the Article</h3><p>Substantive adjectives can appear <strong>without the article</strong> for a general meaning:</p><table class="intro-table"><tr><th>Greek</th><th>Meaning</th></tr><tr><td class="greek">ἀγαθοί</td><td>good <strong>men</strong> (in general)</td></tr><tr><td class="greek">ἀγαθά</td><td>good <strong>things</strong>, i.e., goods</td></tr></table><p style="margin-top:8px">Example:</p><p class="greek" style="font-size:17px">δῶρα ταῖς ἀγαθαῖς ἐπέμψαμεν.</p><p>We sent gifts to the good <strong>women</strong>.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Negation: οὐ for specific substantives, μή for generic.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οἱ κακοί', displayGreek: true, correct: 'the bad men / the evil ones', options: ['the bad men / the evil ones', 'the bad things', 'the bad women', 'badly'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ κακά', displayGreek: true, correct: 'bad things, evils', options: ['bad things, evils', 'the bad men', 'the bad woman', 'the bad battle'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς ἀδίκους', displayGreek: true, correct: 'the unjust men (accusative)', options: ['the unjust men (accusative)', 'the unjust women', 'the unjust things', 'unjustly'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'μετὰ τὴν μάχην καὶ οἱ καλοὶ καὶ οἱ κακοὶ ἐν γῇ θάπτονται.', displayGreek: true, correct: 'After the battle both the noble and the base are buried in the earth.', options: ['After the battle both the noble and the base are buried in the earth.', 'The noble and the base battle after being buried.', 'After battle, good and bad things are buried in the earth.', 'Both the noble men and the base men bury things after battle.'] },
+        { type: 'mc-translate', prompt: 'What does τῶν κακῶν mean as a substantive?', correct: 'of the bad men / of the evil ones (genitive)', options: ['of the bad men / of the evil ones (genitive)', 'of bad things', 'badly', 'the evil (nominative)'] },
+        { type: 'match', pairs: [
+          ['ὁ ἀγαθός', 'the good man'],
+          ['ἡ ἀγαθή', 'the good woman'],
+          ['τὸ ἀγαθόν', 'the good thing'],
+          ['οἱ ἀγαθοί', 'the good men'],
+          ['ἀγαθά', 'good things, goods']
+        ]}
+      ]
+    },
+
+    // Lesson 82: Substantive Article
+    {
+      id: 82,
+      title: 'Substantive Article',
+      subtitle: 'Article as Substantive & μέν...δέ',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'μ',
+      exercises: [
+        { type: 'intro', title: 'Substantive Use of the Article', cards: [
+          { html: '<p>The definite article can be used with <strong>an adverb, prepositional phrase, or modifier</strong> to act as a noun:</p><table class="intro-table"><tr><th>Greek</th><th>Meaning</th></tr><tr><td class="greek">οἱ ἐν τῇ νήσῳ</td><td>the <strong>men</strong> on the island</td></tr><tr><td class="greek">τὰς νῦν</td><td>the <strong>women</strong> now / women of the present</td></tr><tr><td class="greek">τὰ τοῦ πολέμου</td><td>the <strong>things</strong> of war (= the affairs of war)</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">The article\'s gender and number indicate who/what is meant; its case shows function in the sentence.</p>' },
+          { html: '<h3>μέν ... δέ with Articles</h3><p>When two substantive articles are contrasted with <strong>μέν</strong> and <strong>δέ</strong>, translate as "the one ... the other" or "some ... others":</p><p class="greek" style="font-size:17px">ὁ μὲν διδάσκει, ὁ δὲ διδάσκεται.</p><p><strong>The one</strong> teaches, <strong>the other</strong> is taught.</p><p class="greek" style="font-size:17px;margin-top:12px">τοὺς μὲν πέμπομεν, τοὺς δὲ φυλάττομεν.</p><p><strong>Some</strong> we send, but <strong>others</strong> we guard.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Negation: οὐ for specific, μή for generic.<br><span class="greek">οἱ οὐκ ἐν τῇ νήσῳ</span> — those specific men not on the island<br><span class="greek">οἱ μὴ ἐν τῇ νήσῳ</span> — whoever are not on the island</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οἱ ἐν τῇ νήσῳ', displayGreek: true, correct: 'the men on the island', options: ['the men on the island', 'the islands', 'on the island of men', 'the things on the island'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ τοῦ πολέμου', displayGreek: true, correct: 'the things/affairs of war', options: ['the things/affairs of war', 'the war\'s end', 'during the war', 'the wars'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ μὲν διδάσκει, ὁ δὲ διδάσκεται.', displayGreek: true, correct: 'The one teaches, the other is taught.', options: ['The one teaches, the other is taught.', 'He teaches and he is taught.', 'The teacher is being taught.', 'Some teach, but others do not.'] },
+        { type: 'mc-translate', prompt: 'What is the difference between οἱ οὐκ ἐν τῇ νήσῳ and οἱ μὴ ἐν τῇ νήσῳ?', correct: 'οὐ = those specific men not there; μή = whoever is not there (generic)', options: ['οὐ = those specific men not there; μή = whoever is not there (generic)', 'There is no difference', 'οὐ is for questions, μή for statements', 'οὐ is poetic, μή is prose'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τοὺς μὲν πέμπομεν, τοὺς δὲ φυλάττομεν.', displayGreek: true, correct: 'Some we send, but others we guard.', options: ['Some we send, but others we guard.', 'We send them and we guard them.', 'The senders and the guards.', 'We send some men to guard others.'] },
+        { type: 'match', pairs: [
+          ['οἱ ἐν τῇ νήσῳ', 'the men on the island'],
+          ['τὰ τοῦ πολέμου', 'the affairs of war'],
+          ['ὁ μέν ... ὁ δέ', 'the one ... the other'],
+          ['τοὺς μέν ... τοὺς δέ', 'some ... others'],
+          ['οἱ μὴ ἀγαθοί', 'those who are not good (generic)']
+        ]}
+      ]
+    },
+
+    // Lesson 83: Articular Infinitive
+    {
+      id: 83,
+      title: 'Articular Infinitive',
+      subtitle: 'τὸ γράφειν — The Infinitive as Noun',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: 'τ',
+      exercises: [
+        { type: 'intro', title: 'The Articular Infinitive', cards: [
+          { html: '<p>The infinitive is a <strong>verbal noun</strong>. Attic Greek can attach a <strong>neuter singular article</strong> to an infinitive, making its case explicit. This is the <strong>articular infinitive</strong>.</p><p>Often best translated by the English gerund ("writing") rather than "to write."</p><table class="intro-table"><tr><th>Case</th><th>Article</th><th>Example</th><th>Translation</th></tr><tr><td>Nom.</td><td class="greek">τό</td><td class="greek">τὸ γράφειν</td><td>writing, to write</td></tr><tr><td>Gen.</td><td class="greek">τοῦ</td><td class="greek">τοῦ γράφειν</td><td>of writing</td></tr><tr><td>Dat.</td><td class="greek">τῷ</td><td class="greek">τῷ γράφειν</td><td>by writing</td></tr><tr><td>Acc.</td><td class="greek">τό</td><td class="greek">τὸ γράφειν</td><td>writing (object)</td></tr></table>' },
+          { html: '<h3>Aspect (Not Time)</h3><p>As with all infinitives, tense shows <strong>aspect</strong>, not time:</p><table class="intro-table"><tr><th>Tense</th><th>Example</th><th>Aspect</th></tr><tr><td>Present</td><td class="greek">τὸ γράφειν</td><td>progressive / repeated</td></tr><tr><td>Aorist</td><td class="greek">τὸ γράψαι</td><td>simple / once</td></tr><tr><td>Perfect</td><td class="greek">τὸ γεγραφέναι</td><td>completed</td></tr></table><p style="margin-top:12px">The negative of the articular infinitive is <strong>μή</strong> (not οὐ):</p><p class="greek" style="font-size:17px">κακὸν τὸ μὴ γράφειν.</p><p>Not writing is bad.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Compare: <span class="greek">οὐ κακὸν τὸ γράφειν.</span> = Writing is <strong>not</strong> bad. (οὐ negates the adjective κακόν, not the infinitive)</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'πρὸ τοῦ κελεῦσαι', displayGreek: true, correct: 'before commanding / before ordering', options: ['before commanding / before ordering', 'first to command', 'for the command', 'without commanding'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῷ πέμπειν', displayGreek: true, correct: 'by sending (progressive/habitual)', options: ['by sending (progressive/habitual)', 'the sending', 'of sending', 'to send'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῷ πέμψαι', displayGreek: true, correct: 'by sending (simple/once)', options: ['by sending (simple/once)', 'by sending (habitually)', 'of having sent', 'the sender'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'καλὸν τὸ πεπαιδεῦσθαι, τὸ δὲ μὴ οὔ.', displayGreek: true, correct: 'To have been educated is good, but not (to have been educated) is not.', options: ['To have been educated is good, but not (to have been educated) is not.', 'Education is good, but not beautiful.', 'The educated one is good, the uneducated is not.', 'It is good to educate, but not to be educated.'] },
+        { type: 'mc-translate', prompt: 'What is the negative used with articular infinitives?', correct: 'μή (not οὐ)', options: ['μή (not οὐ)', 'οὐ (not μή)', 'Either μή or οὐ', 'Neither — infinitives cannot be negated'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οὐκ ἀγαθὸν τὸ θάψαι τοὺς στρατιώτᾱς ἐν τῇ νήσῳ.', displayGreek: true, correct: 'It is not good to bury the soldiers on the island.', options: ['It is not good to bury the soldiers on the island.', 'Not burying the soldiers on the island is good.', 'The soldiers were not buried well on the island.', 'Burying soldiers on islands is not good.'] },
+        { type: 'match', pairs: [
+          ['τὸ γράφειν', 'writing / to write (nom./acc.)'],
+          ['τοῦ γράφειν', 'of writing (gen.)'],
+          ['τῷ γράφειν', 'by writing (dat.)'],
+          ['τὸ γράψαι', 'writing (aorist — simple)'],
+          ['τὸ μὴ γράφειν', 'not writing']
+        ]}
+      ]
+    },
+
+    // Lesson 84: Cognates
+    {
+      id: 84,
+      title: 'Cognates',
+      subtitle: 'English Derivatives',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: '🔗',
+      exercises: [
+        { type: 'intro', title: 'Cognates & Derivatives', cards: [
+          { html: '<p>Many English words derive from the Greek vocabulary in this unit. Recognizing these connections helps you remember both the Greek words and their meanings.</p>' }
+        ]},
+        { type: 'match', pairs: [
+          ['ἄργυρος', 'Argentina (silvery land)'],
+          ['γῆ', 'geography (earth-writing)'],
+          ['δόξα', 'paradox (contrary to belief)'],
+          ['θάνατος', 'euthanasia (dying well)'],
+          ['ἱερός', 'hieroglyphic (sacred writing)']
+        ]},
+        { type: 'match', pairs: [
+          ['ἵππος', 'hippopotamus (river horse)'],
+          ['λίθος', 'lithography (stone printing)'],
+          ['μακρός', 'macron (long mark)'],
+          ['μῑκρός', 'microscope (small viewer)'],
+          ['πεδίον', 'pedestrian (on foot)']
+        ]},
+        { type: 'match', pairs: [
+          ['πείθω', 'faith (from Latin cognate)'],
+          ['πολέμιος', 'polemic (hostile argument)'],
+          ['πράττω', 'pragmatist (doer)'],
+          ['πρῶτος', 'prototype (first form)'],
+          ['ὑπό', 'hypodermic (under the skin)']
+        ]},
+        { type: 'match', pairs: [
+          ['φόβος', 'phobia (fear)'],
+          ['δόξα', 'doxology (prayer of glory)'],
+          ['ἄρχω', 'monarch (sole ruler)'],
+          ['βλάπτω', 'blapsigonia (harming offspring)'],
+          ['ἵππος', 'Philip (lover of horses)']
+        ]},
+        { type: 'mc-translate', prompt: 'The word "euthanasia" derives from:', correct: 'εὖ + θάνατος — dying well', options: ['εὖ + θάνατος — dying well', 'εὖ + θεός — god\'s blessing', 'εὖ + θάπτω — burying well', 'εὖ + θαλάττα — safe at sea'] },
+        { type: 'mc-translate', prompt: '"Hypodermic" literally means:', correct: 'under the skin (ὑπό + δέρμα)', options: ['under the skin (ὑπό + δέρμα)', 'through the skin', 'above the skin', 'without the skin'] },
+        { type: 'mc-translate', prompt: 'A "polemic" is a hostile argument. It derives from:', correct: 'πολέμιος (hostile), from πόλεμος (war)', options: ['πολέμιος (hostile), from πόλεμος (war)', 'πολίτης (citizen)', 'πολύς (many)', 'πόλις (city)'] }
+      ]
+    },
+
+    // Lesson 85: Unit 5 Review
+    {
+      id: 85,
+      title: 'Unit 5 Review',
+      subtitle: 'Translate Sentences',
+      section: 'Unit 5: Passive Voice & Syntax',
+      icon: '✓',
+      exercises: [
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οἱ νεᾱνίαι οὐκ ἐδιδάσκοντο περὶ τῆς στρατιωτῶν ἀρετῆς.', displayGreek: true, correct: 'The young men were not being taught about the soldiers\' excellence.', options: ['The young men were not being taught about the soldiers\' excellence.', 'The young men were not teaching the soldiers about excellence.', 'The soldiers\' excellence was not taught to the young men.', 'Young men do not teach about military virtue.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐὰν διδασκώμεθα ὑφ\' Ὁμήρου, γράψομεν δὴ καλὸν βιβλίον.', displayGreek: true, correct: 'If we are taught by Homer, we shall surely write a beautiful book.', options: ['If we are taught by Homer, we shall surely write a beautiful book.', 'If we teach Homer, we shall write a beautiful book.', 'When Homer taught us, we wrote a beautiful book.', 'If we had been taught by Homer, we would have written a beautiful book.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐὰν διδαχθῶσιν οἱ πολῖται, οὐ λυθήσεται ἡ δημοκρατίᾱ.', displayGreek: true, correct: 'If the citizens are taught, the democracy will not be destroyed.', options: ['If the citizens are taught, the democracy will not be destroyed.', 'If the citizens teach, democracy will not destroy.', 'When the citizens were taught, democracy was not destroyed.', 'The educated citizens will not destroy the democracy.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'εἰ παυθείη ὁ πόλεμος, οὐκ ἂν πεμφθείη ὁ δῆμος ἐκ τῆς χώρᾱς.', displayGreek: true, correct: 'If the war should be stopped, the people would not be sent from the country. (FLV)', options: ['If the war should be stopped, the people would not be sent from the country. (FLV)', 'If the war were stopped, the people would not be sent from the country. (Present CF)', 'If the war had been stopped, the people would not have been sent. (Past CF)', 'When the war stops, the people will not be sent from the country.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρα τῷ ἀγαθῷ διδασκάλῳ τοῦ ἀδελφοῦ ἱκανὸν ἀργύριον πέμψεις ἐὰν ὁ ἀδελφὸς εὖ παιδευθῇ;', displayGreek: true, correct: 'Will you send sufficient money to the brother\'s good teacher if the brother is well educated?', options: ['Will you send sufficient money to the brother\'s good teacher if the brother is well educated?', 'Will the good teacher of the brother send enough silver if the brother is educated?', 'Did you send the teacher money after the brother was educated well?', 'Are you sending money to the brother\'s teacher because the brother was well educated?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'διδάσκαλος τῶν πολῑτῶν ὁ ἀγαθὸς ποιητής.', displayGreek: true, correct: 'The good poet is a teacher of the citizens.', options: ['The good poet is a teacher of the citizens.', 'The teacher of the citizens is a good poet.', 'The good teacher writes poetry for the citizens.', 'Citizens are taught by the good poet.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'εἰ βλάπτοιντο οἱ ἐν τῇ νήσῳ, ἔπεμπον εἰς τὴν ἐκκλησίᾱν ἵνα φυλάττοιντο ὑπὸ τῶν στρατιωτῶν.', displayGreek: true, correct: 'If the men on the island were (ever) being harmed, they used to send to the assembly so that they might be guarded by the soldiers. (Past General)', options: ['If the men on the island were (ever) being harmed, they used to send to the assembly so that they might be guarded by the soldiers. (Past General)', 'If the men on the island are being harmed, they send to the assembly to be guarded.', 'The men on the island were harmed and sent to the assembly to guard the soldiers.', 'If the men should be harmed on the island, they would send to the assembly.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οὐ καλὸν τὸ βλάπτειν, ἀλλὰ καλὸν τὸ μὴ βλάπτεσθαι.', displayGreek: true, correct: 'To harm is not noble, but not to be harmed is noble.', options: ['To harm is not noble, but not to be harmed is noble.', 'Harming and not being harmed are both noble.', 'It is not noble to harm or to be harmed.', 'Harm is not beautiful, but beauty is not harmful.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἀθάνατος ἡ δόξα ἡ τοῦ ποιητοῦ τοῦ τῶν μουσῶν ἱεροῦ.', displayGreek: true, correct: 'Immortal is the glory of the poet sacred to the muses.', options: ['Immortal is the glory of the poet sacred to the muses.', 'The sacred muses give immortal glory to the poet.', 'The immortal poet is glorious and sacred to the muses.', 'The glory of the sacred muses is an immortal poem.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οὐχ ἱκανόν τὸ μὴ βλάπτειν τοὺς φίλους.', displayGreek: true, correct: 'Not harming one\'s friends is not sufficient.', options: ['Not harming one\'s friends is not sufficient.', 'It is not sufficient to harm friends.', 'Friends who are not harmed are sufficient.', 'It is capable of not harming friends.'] },
+        { type: 'match', pairs: [
+          ['ὑπὸ τῶν στρατιωτῶν', 'by the soldiers (agent)'],
+          ['τοῖς στρατιώταις (perf.)', 'by the soldiers (dat. of agent)'],
+          ['λόγῳ', 'by means of a speech'],
+          ['τὸ βλάπτειν', 'to harm / harming'],
+          ['οἱ ἐν τῇ νήσῳ', 'the men on the island']
+        ]}
+      ]
     }
 
   ];
@@ -5431,6 +5910,9 @@ var Data = (function() {
     unit4Particles: unit4Particles,
     unit4Cognates: unit4Cognates,
     unit4Sentences: unit4Sentences,
+    unit5Vocab: unit5Vocab,
+    unit5VocabAll: unit5VocabAll,
+    unit5Adjectives: unit5Adjectives,
     lessons: lessons,
     buildLetterTable: buildLetterTable
   };
