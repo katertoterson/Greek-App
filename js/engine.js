@@ -192,6 +192,16 @@ var Engine = (function() {
         return generateU5VocabMatch(def);
       case 'u5vocab-gender':
         return generateU5VocabGender(def);
+      case 'u6vocab-intro':
+        return generateU6VocabIntro(def);
+      case 'u6vocab-gre':
+        return generateU6VocabGre(def);
+      case 'u6vocab-eng':
+        return generateU6VocabEng(def);
+      case 'u6vocab-match':
+        return generateU6VocabMatch(def);
+      case 'u6vocab-gender':
+        return generateU6VocabGender(def);
       case 'u4adj-gre':
         return generateU4AdjGre(def);
       case 'u4adj-eng':
@@ -805,6 +815,72 @@ var Engine = (function() {
       display: target.greek,
       displayGreek: true, correct: target.gender,
       options: shuffle(['masculine', 'feminine', 'neuter', 'no fixed gender'])
+    };
+  }
+
+  // ===== Unit 6 Vocabulary Generators =====
+
+  function generateU6VocabIntro(def) {
+    var words = Data.unit6Vocab[def.vocabGroup];
+    var cards = words.map(function(w) {
+      var dictEntry = w.genitive ? w.greek + ', ' + w.genitive : w.greek;
+      var stemInfo = w.stem ? ' (stem: ' + w.stem + ')' : '';
+      return {
+        html: '<div class="vocab-card">' +
+          '<div class="vocab-article">' + w.article + '</div>' +
+          '<div class="vocab-greek">' + dictEntry + '</div>' +
+          '<div class="vocab-english">' + thePrefix(w.english) + '</div>' +
+          '<div class="vocab-gender">' + w.declension + ' declension, ' + w.gender + stemInfo + '</div>' +
+          '</div>'
+      };
+    });
+    return { type: 'intro', title: 'New Vocabulary', cards: cards, graded: false };
+  }
+
+  function generateU6VocabGre(def) {
+    var words = Data.unit6Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.english !== target.english; });
+    var distractors = pick(pool.map(function(w) { return thePrefix(w.english); }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What does this mean?',
+      display: target.article + ' ' + target.greek,
+      displayGreek: true, correct: thePrefix(target.english),
+      options: shuffle([thePrefix(target.english)].concat(distractors))
+    };
+  }
+
+  function generateU6VocabEng(def) {
+    var words = Data.unit6Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    var pool = Data.allVocabAll.filter(function(w) { return w.greek !== target.greek; });
+    var distractors = pick(pool.map(function(w) { return w.greek; }), 3);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What is "' + target.english + '" in Greek?',
+      display: target.english, correct: target.greek,
+      options: shuffle([target.greek].concat(distractors)),
+      optionsGreek: true
+    };
+  }
+
+  function generateU6VocabMatch(def) {
+    var words = Data.unit6Vocab[def.vocabGroup];
+    var selected = shuffle(words.slice()).slice(0, 5);
+    var pairs = selected.map(function(w) { return [w.greek, w.english]; });
+    return { type: 'match', graded: false, pairs: pairs };
+  }
+
+  function generateU6VocabGender(def) {
+    var words = Data.unit6Vocab[def.vocabGroup];
+    var target = pickRandom(words);
+    return {
+      type: 'mc', graded: true,
+      prompt: 'What gender is this noun?',
+      display: target.greek,
+      displayGreek: true, correct: target.gender,
+      options: shuffle(['masculine', 'feminine', 'neuter', 'masculine or feminine'])
     };
   }
 

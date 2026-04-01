@@ -315,7 +315,69 @@ var Data = (function() {
     { greek: 'φοβερός', forms: 'φοβερός, φοβερά, φοβερόν', english: 'fearful', endings: 3 }
   ];
 
-  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll).concat(unit4VocabAll).concat(unit5VocabAll);
+  var unit6Vocab = [
+    // Group 0: 3rd declension consonant stems I (paradigm words)
+    [
+      { greek: 'φύλαξ', genitive: 'φύλακος', article: 'ὁ', gender: 'masculine', declension: '3rd', english: 'guard', stem: 'φυλακ-' },
+      { greek: 'αἴξ', genitive: 'αἰγός', article: 'ὁ/ἡ', gender: 'masculine or feminine', declension: '3rd', english: 'goat', stem: 'αἰγ-' },
+      { greek: 'ἐλπίς', genitive: 'ἐλπίδος', article: 'ἡ', gender: 'feminine', declension: '3rd', english: 'hope, expectation', stem: 'ἐλπιδ-' },
+      { greek: 'χάρις', genitive: 'χάριτος', article: 'ἡ', gender: 'feminine', declension: '3rd', english: 'grace, favor, gratitude', stem: 'χαριτ-' },
+      { greek: 'σῶμα', genitive: 'σώματος', article: 'τό', gender: 'neuter', declension: '3rd', english: 'body', stem: 'σωματ-' }
+    ],
+    // Group 1: 3rd declension consonant stems II
+    [
+      { greek: 'γέρων', genitive: 'γέροντος', article: 'ὁ', gender: 'masculine', declension: '3rd', english: 'old man', stem: 'γεροντ-' },
+      { greek: 'Ἕλλην', genitive: 'Ἕλληνος', article: 'ὁ', gender: 'masculine', declension: '3rd', english: 'a Greek', stem: 'Ἑλλην-' },
+      { greek: 'νύξ', genitive: 'νυκτός', article: 'ἡ', gender: 'feminine', declension: '3rd', english: 'night', stem: 'νυκτ-' },
+      { greek: 'πρᾶγμα', genitive: 'πράγματος', article: 'τό', gender: 'neuter', declension: '3rd', english: 'deed, affair, thing', stem: 'πραγματ-' },
+      { greek: 'φάλαγξ', genitive: 'φάλαγγος', article: 'ἡ', gender: 'feminine', declension: '3rd', english: 'line of battle, phalanx', stem: 'φαλαγγ-' }
+    ],
+    // Group 2: 1st/2nd declension nouns
+    [
+      { greek: 'γνώμη', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'opinion, judgment' },
+      { greek: 'δοῦλος', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'slave' },
+      { greek: 'δουλείᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'slavery' },
+      { greek: 'ἐλευθερίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'freedom' },
+      { greek: 'σοφίᾱ', article: 'ἡ', gender: 'feminine', declension: '1st', english: 'wisdom, skill' },
+      { greek: 'στάδιον', article: 'τό', gender: 'neuter', declension: '2nd', english: 'stade (ca. 600 ft.)' },
+      { greek: 'χορός', article: 'ὁ', gender: 'masculine', declension: '2nd', english: 'dance; chorus' },
+      { greek: 'χορευτής', article: 'ὁ', gender: 'masculine', declension: '1st', english: 'choral dancer' }
+    ]
+  ];
+
+  var unit6VocabAll = [];
+  unit6Vocab.forEach(function(group) {
+    group.forEach(function(w) { unit6VocabAll.push(w); });
+  });
+
+  var unit6Adjectives = [
+    { greek: 'δεινός', forms: 'δεινός, δεινή, δεινόν', english: 'fearsome, marvelous, clever', endings: 3 },
+    { greek: 'ἐλεύθερος', forms: 'ἐλεύθερος, ἐλευθέρᾱ, ἐλεύθερον', english: 'free (+ gen.)', endings: 3 },
+    { greek: 'παλαιός', forms: 'παλαιός, παλαιά, παλαιόν', english: 'old, aged, ancient', endings: 3 },
+    { greek: 'σοφός', forms: 'σοφός, σοφή, σοφόν', english: 'wise, skilled', endings: 3 }
+  ];
+
+  var unit6Cognates = [
+    ['γέρων', 'gerontology (study of old people)'],
+    ['γνώμη', 'gnomic (expressing a pithy opinion)'],
+    ['δεινός', 'dinosaur (fearsome lizard)'],
+    ['δοῦλος', 'iconodule (opposite of iconoclast)'],
+    ['ἐλευθερίᾱ', 'liberty (from Latin cognate liber)'],
+    ['Ἕλλην', 'Hellenic'],
+    ['νύξ', 'nocturnal (Latin cognate nox)'],
+    ['παλαιός', 'Palaeolithic (old stone age)'],
+    ['πρᾶγμα', 'pragmatic (dealing with deeds)'],
+    ['σοφός', 'sophomore (wise fool)'],
+    ['σοφίᾱ', 'philosophy (love of wisdom)'],
+    ['στάδιον', 'stadium'],
+    ['σῶμα', 'psychosomatic (mind-body)'],
+    ['φάλαγξ', 'phalanx'],
+    ['φύλαξ', 'prophylactic (guarding before)'],
+    ['χάρις', 'Eucharist (service of gratitude)'],
+    ['χορός', 'chorus, choreography']
+  ];
+
+  var allVocabAll = unit1VocabAll.concat(unit2VocabAll).concat(unit3VocabAll).concat(unit4VocabAll).concat(unit5VocabAll).concat(unit6VocabAll);
 
   var unit2Verbs = [
     { verb: 'παιδεύω', meaning: 'educate, teach',
@@ -5860,6 +5922,429 @@ var Data = (function() {
           ['οἱ ἐν τῇ νήσῳ', 'the men on the island']
         ]}
       ]
+    },
+
+    // ===== UNIT 6: THIRD DECLENSION, RELATIVE PRONOUN, INDEPENDENT SUBJUNCTIVE =====
+
+    // Lesson 86: Vocabulary I (3rd Declension Nouns — Paradigm Words)
+    {
+      id: 86,
+      title: 'Vocabulary I',
+      subtitle: '3rd Declension Nouns I',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'φ',
+      exercises: [
+        { type: 'u6vocab-intro', vocabGroup: 0 },
+        { type: 'u6vocab-gre', vocabGroup: 0 },
+        { type: 'u6vocab-gre', vocabGroup: 0 },
+        { type: 'u6vocab-eng', vocabGroup: 0 },
+        { type: 'u6vocab-eng', vocabGroup: 0 },
+        { type: 'u6vocab-match', vocabGroup: 0 },
+        { type: 'mc-translate', prompt: 'How do you find the stem of a 3rd declension noun?', correct: 'Drop the genitive singular ending -ος', options: ['Drop the genitive singular ending -ος', 'Drop the nominative singular ending', 'Add -ματ- to the nominative', 'Remove the last letter of the nominative'] },
+        { type: 'mc-translate', prompt: 'αἴξ can be either masculine or feminine. What does the article indicate?', correct: 'ὁ αἴξ = male goat, ἡ αἴξ = female goat', options: ['ὁ αἴξ = male goat, ἡ αἴξ = female goat', 'The masculine is singular, the feminine is plural', 'The masculine means goat, the feminine means sheep', 'There is no difference in meaning'] },
+        { type: 'u6vocab-gre', vocabGroup: 0 },
+        { type: 'u6vocab-eng', vocabGroup: 0 },
+        { type: 'u6vocab-gender', vocabGroup: 0 },
+        { type: 'u6vocab-gender', vocabGroup: 0 },
+        { type: 'u6vocab-match', vocabGroup: 0 },
+        { type: 'spelling', prompt: 'Spell the Greek word for "body" (nominative singular, no article):', display: 'body', answer: 'σῶμα', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] },
+        { type: 'spelling', prompt: 'Spell the Greek word for "guard" (nominative singular, no article):', display: 'guard', answer: 'φύλαξ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 87: Vocabulary II (3rd Declension Nouns II)
+    {
+      id: 87,
+      title: 'Vocabulary II',
+      subtitle: '3rd Declension Nouns II',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'Ε',
+      exercises: [
+        { type: 'u6vocab-intro', vocabGroup: 1 },
+        { type: 'u6vocab-gre', vocabGroup: 1 },
+        { type: 'u6vocab-gre', vocabGroup: 1 },
+        { type: 'u6vocab-eng', vocabGroup: 1 },
+        { type: 'u6vocab-eng', vocabGroup: 1 },
+        { type: 'u6vocab-match', vocabGroup: 1 },
+        { type: 'u6vocab-gre', vocabGroup: 1 },
+        { type: 'u6vocab-eng', vocabGroup: 1 },
+        { type: 'u6vocab-gender', vocabGroup: 1 },
+        { type: 'u6vocab-gender', vocabGroup: 1 },
+        { type: 'mc-translate', prompt: 'What does πρᾶγμα often mean in the plural?', correct: 'affairs (of state or mankind)', options: ['affairs (of state or mankind)', 'deeds of war', 'things for sale', 'political offices'] },
+        { type: 'mc-translate', prompt: 'The noun Ἕλλην denotes:', correct: 'a Greek man (not usually used as an adjective)', options: ['a Greek man (not usually used as an adjective)', 'the Greek language', 'anything Greek (noun or adjective)', 'a Greek city'] },
+        { type: 'u6vocab-match', vocabGroup: 1 },
+        { type: 'spelling', prompt: 'Spell the Greek word for "night" (nominative singular, no article):', display: 'night', answer: 'νύξ', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 88: Vocabulary III (Nouns, Adjectives, Verbs & Particles)
+    {
+      id: 88,
+      title: 'Vocabulary III',
+      subtitle: 'Nouns, Adjectives, Verbs & Particles',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'δ',
+      exercises: [
+        { type: 'u6vocab-intro', vocabGroup: 2 },
+        { type: 'u6vocab-gre', vocabGroup: 2 },
+        { type: 'u6vocab-gre', vocabGroup: 2 },
+        { type: 'u6vocab-eng', vocabGroup: 2 },
+        { type: 'u6vocab-eng', vocabGroup: 2 },
+        { type: 'u6vocab-match', vocabGroup: 2 },
+        { type: 'mc-translate', prompt: 'What is the relationship between δοῦλος and δουλείᾱ?', correct: 'δοῦλος = slave (noun), δουλείᾱ = slavery (abstract noun)', options: ['δοῦλος = slave (noun), δουλείᾱ = slavery (abstract noun)', 'They mean the same thing', 'δοῦλος is masculine, δουλείᾱ is the feminine form', 'δουλείᾱ is the plural of δοῦλος'] },
+        { type: 'intro', title: 'New Adjectives', cards: [
+          { html: '<table class="intro-table"><tr><th>Adjective</th><th>Meaning</th></tr><tr><td class="greek">δεινός, δεινή, δεινόν</td><td>fearsome, marvelous, clever</td></tr><tr><td class="greek">ἐλεύθερος, ἐλευθέρᾱ, ἐλεύθερον</td><td>free (+ gen.)</td></tr><tr><td class="greek">παλαιός, παλαιά, παλαιόν</td><td>old, aged, ancient</td></tr><tr><td class="greek">σοφός, σοφή, σοφόν</td><td>wise, skilled</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">δεινός has both negative (fearsome) and positive (clever) senses. With an infinitive: δεινὸς διδάσκειν = "clever at teaching."<br>ἐλεύθερος takes genitive: "free from."<br>Related nouns: ἐλευθερίᾱ, σοφίᾱ, δουλείᾱ.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does δεινός mean?', display: 'δεινός', displayGreek: true, correct: 'fearsome, marvelous, clever', options: ['fearsome, marvelous, clever', 'free', 'old, ancient', 'wise'] },
+        { type: 'match', pairs: [
+          ['δεινός', 'fearsome, clever'],
+          ['ἐλεύθερος', 'free (+ gen.)'],
+          ['παλαιός', 'old, ancient'],
+          ['σοφός', 'wise, skilled'],
+          ['σοφίᾱ', 'wisdom, skill']
+        ]},
+        { type: 'intro', title: 'New Verbs', cards: [
+          { html: '<table class="intro-table"><tr><th>Verb</th><th>Meaning</th><th>Note</th></tr><tr><td class="greek">δουλεύω</td><td>be a slave</td><td>+ dative</td></tr><tr><td class="greek">κωλύω</td><td>hinder, prevent</td><td>+ acc. & inf.</td></tr><tr><td class="greek">πολῑτεύω</td><td>live as a citizen; govern</td><td>pass. = be governed</td></tr><tr><td class="greek">χορεύω</td><td>dance</td><td>from χορός</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">These are all <strong>denominative verbs</strong> — formed from nouns (δοῦλος, πολίτης, χορός).<br>δουλεύω takes dative: ἐδούλευον τοῖς πολίταις = "they were slaves to the citizens."<br>κωλύω takes acc. + inf.: ἐκωλύσαμεν τοὺς κακοὺς θῦσαι = "we prevented the evil men from sacrificing."</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What case does δουλεύω take?', correct: 'Dative (of the person one is a slave to)', options: ['Dative (of the person one is a slave to)', 'Accusative', 'Genitive', 'No object'] },
+        { type: 'intro', title: 'Particles & Prepositions', cards: [
+          { html: '<table class="intro-table"><tr><th>Word</th><th>Meaning</th></tr><tr><td class="greek">γε</td><td>(enclitic) emphasizes or limits preceding word; "at least"</td></tr><tr><td class="greek">τε</td><td>(enclitic conj.) and — usually τε καί = "and"</td></tr><tr><td class="greek">τοι</td><td>(enclitic) "let me tell you, you know"</td></tr><tr><td class="greek">κατά + gen.</td><td>under; against</td></tr><tr><td class="greek">κατά + acc.</td><td>according to</td></tr><tr><td class="greek">χάριν + preceding gen.</td><td>for the sake of (postpositive)</td></tr></table>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What does κατά mean with the genitive?', correct: 'under; against', options: ['under; against', 'according to', 'for the sake of', 'from'] },
+        { type: 'match', pairs: [
+          ['δουλεύω', 'be a slave (+ dat.)'],
+          ['κωλύω', 'hinder, prevent'],
+          ['πολῑτεύω', 'live as a citizen; govern'],
+          ['χορεύω', 'dance'],
+          ['κατά + acc.', 'according to']
+        ]},
+        { type: 'spelling', prompt: 'Spell the Greek word for "slave" (nominative singular, no article):', display: 'slave', answer: 'δοῦλος', letters: ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω'] }
+      ]
+    },
+
+    // Lesson 89: Third Declension: Consonant Stems
+    {
+      id: 89,
+      title: 'Consonant Stems',
+      subtitle: '3rd Declension Paradigms',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'Γ',
+      exercises: [
+        { type: 'intro', title: 'Third Declension Endings', cards: [
+          { html: '<p>Third-declension nouns can be masculine, feminine, or neuter. The <strong>stem</strong> is found by dropping <strong>-ος</strong> from the genitive singular.</p><table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom. S</td><td>———</td><td>———</td></tr><tr><td>Gen.</td><td class="greek">-ος</td><td class="greek">-ος</td></tr><tr><td>Dat.</td><td class="greek">-ι</td><td class="greek">-ι</td></tr><tr><td>Acc.</td><td class="greek">-α, -ν</td><td>= Nom.</td></tr><tr><td>Voc.</td><td>———</td><td>= Nom.</td></tr></table>' },
+          { html: '<table class="intro-table"><tr><th></th><th>M/F</th><th>N</th></tr><tr><td>Nom./Voc. P</td><td class="greek">-ες</td><td class="greek">-α</td></tr><tr><td>Gen.</td><td class="greek">-ων</td><td class="greek">-ων</td></tr><tr><td>Dat.</td><td class="greek">-σι(ν)</td><td class="greek">-σι(ν)</td></tr><tr><td>Acc.</td><td class="greek">-ας</td><td class="greek">-α</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Note: neuter nom./voc./acc. plural always ends in <strong>-α</strong>. Neuter nom./voc./acc. singular are always identical.</p>' }
+        ]},
+        { type: 'intro', title: 'Velar Stems: φύλαξ', cards: [
+          { html: '<p><span class="greek" style="font-size:20px">φύλαξ, φύλακος, ὁ</span> — guard (stem: φυλακ-)</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>Nom.</td><td class="greek">φύλαξ</td><td class="greek">φύλακες</td></tr><tr><td>Gen.</td><td class="greek">φύλακος</td><td class="greek">φυλάκων</td></tr><tr><td>Dat.</td><td class="greek">φύλακι</td><td class="greek">φύλαξι(ν)</td></tr><tr><td>Acc.</td><td class="greek">φύλακα</td><td class="greek">φύλακας</td></tr><tr><td>Voc.</td><td class="greek">φύλαξ</td><td class="greek">φύλακες</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Velar stem (κ, γ, χ): κ + σι = ξι in dat. pl. Nom. sg. shows κ + ς = ξ.</p>' }
+        ]},
+        { type: 'intro', title: 'Dental Stems & Neuter', cards: [
+          { html: '<p><span class="greek" style="font-size:20px">ἐλπίς, ἐλπίδος, ἡ</span> — hope (stem: ἐλπιδ-)</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>Nom.</td><td class="greek">ἐλπίς</td><td class="greek">ἐλπίδες</td></tr><tr><td>Gen.</td><td class="greek">ἐλπίδος</td><td class="greek">ἐλπίδων</td></tr><tr><td>Dat.</td><td class="greek">ἐλπίδι</td><td class="greek">ἐλπίσι(ν)</td></tr><tr><td>Acc.</td><td class="greek">ἐλπίδα</td><td class="greek">ἐλπίδας</td></tr><tr><td>Voc.</td><td class="greek">ἐλπί</td><td class="greek">ἐλπίδες</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Dental stem (τ, δ, θ): dental + σι → dental drops, leaving -σι. Nom. sg.: δ + ς = ς.</p>' },
+          { html: '<p><span class="greek" style="font-size:20px">σῶμα, σώματος, τό</span> — body (stem: σωματ-)</p><table class="intro-table"><tr><th></th><th>Singular</th><th>Plural</th></tr><tr><td>Nom.</td><td class="greek">σῶμα</td><td class="greek">σώματα</td></tr><tr><td>Gen.</td><td class="greek">σώματος</td><td class="greek">σωμάτων</td></tr><tr><td>Dat.</td><td class="greek">σώματι</td><td class="greek">σώμασι(ν)</td></tr><tr><td>Acc.</td><td class="greek">σῶμα</td><td class="greek">σώματα</td></tr><tr><td>Voc.</td><td class="greek">σῶμα</td><td class="greek">σώματα</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Neuter: nom., acc., and voc. are always identical. Plural nom./acc./voc. always end in -α.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What is the genitive singular of φύλαξ?', correct: 'φύλακος', options: ['φύλακος', 'φυλάκων', 'φύλαξος', 'φυλάκι'] },
+        { type: 'mc-translate', prompt: 'What is the dative plural of ἐλπίς?', correct: 'ἐλπίσι(ν)', options: ['ἐλπίσι(ν)', 'ἐλπίδσι(ν)', 'ἐλπίξι(ν)', 'ἐλπίδι'] },
+        { type: 'mc-translate', prompt: 'What is the accusative singular of σῶμα?', correct: 'σῶμα (neuter nom. = acc.)', options: ['σῶμα (neuter nom. = acc.)', 'σώματα', 'σώματον', 'σωμάτων'] },
+        { type: 'mc-translate', prompt: 'What is the nominative plural of σῶμα?', correct: 'σώματα', options: ['σώματα', 'σῶμαι', 'σώματες', 'σωμάτων'] },
+        { type: 'mc-translate', prompt: 'What happens to a velar (κ, γ, χ) before -σι in the dative plural?', correct: 'It combines to form -ξι', options: ['It combines to form -ξι', 'It drops out', 'It combines to form -ψι', 'Nothing changes'] },
+        { type: 'mc-translate', prompt: 'What happens to a dental (τ, δ, θ) before -σι in the dative plural?', correct: 'The dental drops, leaving -σι', options: ['The dental drops, leaving -σι', 'It combines to form -ξι', 'It combines to form -ψι', 'Nothing changes'] },
+        { type: 'match', pairs: [
+          ['φύλαξι(ν)', 'dat. pl. (velar κ + σ = ξ)'],
+          ['ἐλπίσι(ν)', 'dat. pl. (dental δ + σ = σ)'],
+          ['σώμασι(ν)', 'dat. pl. (dental τ + σ = σ)'],
+          ['φυλάκων', 'gen. pl.'],
+          ['σώματα', 'nom./acc. pl. (neuter)']
+        ]}
+      ]
+    },
+
+    // Lesson 90: Third Declension: Case Rules
+    {
+      id: 90,
+      title: 'Case Rules',
+      subtitle: '3rd Declension Special Forms',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'ξ',
+      exercises: [
+        { type: 'intro', title: 'Accent Rule', cards: [
+          { html: '<p>Third-declension consonant-stem nouns have <strong>persistent accent</strong>. But:</p><p style="font-size:15px;font-weight:bold;margin:12px 0">Monosyllabic stems accent the <em>ultima</em> in the genitive and dative (singular and plural). The genitive plural takes a circumflex.</p><table class="intro-table"><tr><th></th><th class="greek">φύλαξ (φυλακ-)</th><th class="greek">αἴξ (αἰγ-)</th></tr><tr><td>Gen. S</td><td class="greek">φύλακ-ος</td><td class="greek">αἰγ-ός</td></tr><tr><td>Dat. S</td><td class="greek">φύλακ-ι</td><td class="greek">αἰγ-ί</td></tr><tr><td>Gen. P</td><td class="greek">φυλάκ-ων</td><td class="greek">αἰγ-ῶν</td></tr><tr><td>Dat. P</td><td class="greek">φύλαξ-ι(ν)</td><td class="greek">αἰξ-ί(ν)</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">φυλακ- is a polysyllabic stem → normal persistent accent. αἰγ- is monosyllabic → accent shifts to ultima in gen./dat.</p>' }
+        ]},
+        { type: 'intro', title: 'Accusative Singular', cards: [
+          { html: '<p>Most M/F consonant-stem nouns use <strong>-α</strong> in the acc. sg.:</p><p class="greek" style="font-size:18px;text-align:center">φύλακ-α, αἶγ-α, ἐλπίδ-α</p><p>But nouns whose stems end in <strong>-ιτ, -ιδ, or -ῑθ</strong> and which <strong>do not accent this iota</strong> drop the final consonant and use <strong>-ν</strong>:</p><p class="greek" style="font-size:18px;text-align:center">χάρι-ν (not *χάριτ-α)</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Compare: ἐλπίδ-α (the iota IS accented, so it uses -α).</p>' }
+        ]},
+        { type: 'intro', title: 'Vocative Singular', cards: [
+          { html: '<h3>When is voc. sg. = nom. sg.?</h3><p>The vocative singular equals the nominative when:</p><ol><li>The nom. sg. ends in <strong>-ξ</strong> or <strong>-ψ</strong> (e.g., αἴξ, φύλαξ)</li><li>The nom. sg. ends in <strong>-ν</strong> or <strong>-ρ</strong> and accents the ultima</li></ol><p>Otherwise, the voc. sg. = the bare stem, with any final dental dropped:</p><table class="intro-table"><tr><th>Noun</th><th>Voc. Sg.</th><th>Reason</th></tr><tr><td class="greek">φύλαξ</td><td class="greek">φύλαξ</td><td>ends in -ξ</td></tr><tr><td class="greek">ἐλπίς</td><td class="greek">ἐλπί</td><td>stem ἐλπιδ-, dental dropped</td></tr><tr><td class="greek">χάρις</td><td class="greek">χάρι</td><td>stem χαριτ-, dental dropped</td></tr><tr><td class="greek">γέρων</td><td class="greek">γέρον</td><td>stem γεροντ-, dental dropped</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">All neuter nouns: voc. = nom. (always).</p>' }
+        ]},
+        { type: 'intro', title: 'Dative Plural Combinations', cards: [
+          { html: '<p>When the stem\'s final consonant meets the dative plural ending <strong>-σι</strong>:</p><table class="intro-table"><tr><th>Stem ends in</th><th>+ σι =</th><th>Example</th></tr><tr><td>π, β, φ (labial)</td><td class="greek">-ψι</td><td></td></tr><tr><td>κ, γ, χ (velar)</td><td class="greek">-ξι</td><td class="greek">φύλαξι(ν)</td></tr><tr><td>τ, δ, θ (dental)</td><td class="greek">-σι</td><td class="greek">ἐλπίσι(ν)</td></tr><tr><td>ν</td><td class="greek">-σι</td><td class="greek">Ἕλλησι(ν)</td></tr><tr><td>-αντ-</td><td class="greek">-ᾱσι</td><td></td></tr><tr><td>-εντ-</td><td class="greek">-εισι</td><td></td></tr><tr><td>-οντ-</td><td class="greek">-ουσι</td><td class="greek">γέρουσι(ν)</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">When -αντ-, -εντ-, or -οντ- meet -σι, the ντ is lost and the vowel lengthens (<strong>compensatory lengthening</strong>). The resulting diphthong is called a <strong>spurious diphthong</strong>.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Why does αἴξ accent the ultima in αἰγός?', correct: 'Because αἰγ- is a monosyllabic stem', options: ['Because αἰγ- is a monosyllabic stem', 'Because it is a velar stem', 'Because it is feminine', 'Because it is irregular'] },
+        { type: 'mc-translate', prompt: 'What is the accusative singular of χάρις?', correct: 'χάριν (stem in -ιτ with unaccented ι → -ν)', options: ['χάριν (stem in -ιτ with unaccented ι → -ν)', 'χάριτα', 'χάρισα', 'χάριξα'] },
+        { type: 'mc-translate', prompt: 'What is the vocative singular of γέρων?', correct: 'γέρον (stem γεροντ-, dental dropped)', options: ['γέρον (stem γεροντ-, dental dropped)', 'γέρων (same as nom.)', 'γέροντε', 'γέρωνε'] },
+        { type: 'mc-translate', prompt: 'What is the dative plural of γέρων (stem γεροντ-)?', correct: 'γέρουσι(ν) (-οντ- + σι → -ουσι)', options: ['γέρουσι(ν) (-οντ- + σι → -ουσι)', 'γέροντσι(ν)', 'γέρονσι(ν)', 'γερόντων'] },
+        { type: 'mc-translate', prompt: 'What is the dative plural of νύξ (stem νυκτ-)?', correct: 'νυξί(ν) (dental τ drops, then κ + σ = ξ)', options: ['νυξί(ν) (dental τ drops, then κ + σ = ξ)', 'νυκτσί(ν)', 'νύξσι(ν)', 'νυκτί(ν)'] },
+        { type: 'match', pairs: [
+          ['φύλακα', 'acc. sg. (regular -α)'],
+          ['χάριν', 'acc. sg. (-ιτ stem → -ν)'],
+          ['γέρον', 'voc. sg. (dental dropped)'],
+          ['γέρουσι(ν)', 'dat. pl. (-οντ + σι → -ουσι)'],
+          ['αἰγῶν', 'gen. pl. (monosyl. stem → circumflex)']
+        ]}
+      ]
+    },
+
+    // Lesson 91: The Relative Pronoun
+    {
+      id: 91,
+      title: 'The Relative Pronoun',
+      subtitle: 'ὅς, ἥ, ὅ — who, which',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'ὅ',
+      exercises: [
+        { type: 'intro', title: 'The Relative Pronoun', cards: [
+          { html: '<p>The <strong>relative pronoun</strong> introduces a dependent (relative) clause that modifies a noun or pronoun in the main clause (its <strong>antecedent</strong>).</p><p>It performs two functions:</p><ol><li>It refers back to an antecedent — taking its <strong>gender</strong> and <strong>number</strong> from it.</li><li>It has its own grammatical function within the relative clause — its <strong>case</strong> depends on that function.</li></ol>' },
+          { html: '<h3>Declension of ὅς, ἥ, ὅ</h3><table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. S</td><td class="greek">ὅς</td><td class="greek">ἥ</td><td class="greek">ὅ</td></tr><tr><td>Gen.</td><td class="greek">οὗ</td><td class="greek">ἧς</td><td class="greek">οὗ</td></tr><tr><td>Dat.</td><td class="greek">ᾧ</td><td class="greek">ᾗ</td><td class="greek">ᾧ</td></tr><tr><td>Acc.</td><td class="greek">ὅν</td><td class="greek">ἥν</td><td class="greek">ὅ</td></tr></table>' },
+          { html: '<table class="intro-table"><tr><th></th><th>M</th><th>F</th><th>N</th></tr><tr><td>Nom. P</td><td class="greek">οἵ</td><td class="greek">αἵ</td><td class="greek">ἅ</td></tr><tr><td>Gen.</td><td class="greek">ὧν</td><td class="greek">ὧν</td><td class="greek">ὧν</td></tr><tr><td>Dat.</td><td class="greek">οἷς</td><td class="greek">αἷς</td><td class="greek">οἷς</td></tr><tr><td>Acc.</td><td class="greek">οὕς</td><td class="greek">ἅς</td><td class="greek">ἅ</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Compare with the article: the relative pronoun differs in that <strong>all</strong> its forms have a rough breathing and an accent. Its masc. nom. sg. ends in -ς (ὅς vs ὁ). It has no vocative.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'What is the masculine singular dative of the relative pronoun?', correct: 'ᾧ', options: ['ᾧ', 'ὅς', 'οὗ', 'ὅν'] },
+        { type: 'mc-translate', prompt: 'What is the feminine singular accusative of the relative pronoun?', correct: 'ἥν', options: ['ἥν', 'ἥ', 'ἧς', 'ᾗ'] },
+        { type: 'mc-translate', prompt: 'What is the neuter plural nominative/accusative of the relative pronoun?', correct: 'ἅ', options: ['ἅ', 'οἵ', 'ὧν', 'αἵ'] },
+        { type: 'mc-translate', prompt: 'How does the relative pronoun differ from the article?', correct: 'All forms have a rough breathing and an accent; masc. nom. sg. has -ς', options: ['All forms have a rough breathing and an accent; masc. nom. sg. has -ς', 'It uses completely different endings', 'It only has singular forms', 'It has a vocative case'] },
+        { type: 'mc-translate', prompt: 'The relative pronoun gets its gender and number from:', correct: 'Its antecedent in the main clause', options: ['Its antecedent in the main clause', 'Its function in the relative clause', 'The verb of the relative clause', 'The subject of the main clause'] },
+        { type: 'mc-translate', prompt: 'The case of the relative pronoun is determined by:', correct: 'Its function within the relative clause', options: ['Its function within the relative clause', 'Its antecedent in the main clause', 'The verb of the main clause', 'The gender of the antecedent'] },
+        { type: 'match', pairs: [
+          ['ὅς', 'masc. sg. nom.'],
+          ['ἥν', 'fem. sg. acc.'],
+          ['ᾧ', 'masc./neut. sg. dat.'],
+          ['ὧν', 'gen. pl. (all genders)'],
+          ['οἷς', 'masc./neut. pl. dat.']
+        ]}
+      ]
+    },
+
+    // Lesson 92: Relative Clauses
+    {
+      id: 92,
+      title: 'Relative Clauses',
+      subtitle: 'Identifying & Translating',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'ᾧ',
+      exercises: [
+        { type: 'intro', title: 'Relative Clauses in Action', cards: [
+          { html: '<p>When translating, carefully separate the <strong>main clause</strong> from the <strong>relative clause</strong>:</p><p class="greek" style="font-size:17px">ἀγαθὸς ὁ ποιητὴς <strong>ὃς τὸ βιβλίον ἔγραψεν</strong>.</p><p>The poet <strong>who wrote the book</strong> is good.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Antecedent: ποιητής (masc. sg.) → ὅς is masc. sg.<br>Function in relative clause: subject of ἔγραψεν → nominative</p>' },
+          { html: '<p class="greek" style="font-size:17px">ἀγαθὸς ὁ ποιητὴς <strong>ᾧ τὸ βιβλίον ἐπέμψαμεν</strong>.</p><p>The poet <strong>to whom we sent the book</strong> is good.</p><p class="greek" style="font-size:17px;margin-top:12px">ἀγαθὸς ὁ ποιητὴς <strong>ὃν ἐπαιδεύσαμεν</strong>.</p><p>The poet <strong>whom we educated</strong> is good.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Same antecedent (ποιητής = masc. sg.) but different cases:<br>ᾧ = dative (indirect object), ὅν = accusative (direct object)</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'παιδεύσει ὁ Ὅμηρος τοὺς πολίτᾱς οἷς δῶρα ἐπέμψατε.', displayGreek: true, correct: 'Homer will educate the citizens to whom you sent gifts.', options: ['Homer will educate the citizens to whom you sent gifts.', 'Homer will educate the citizens who sent you gifts.', 'Homer sent gifts to the citizens whom he will educate.', 'The citizens to whom Homer sent gifts will be educated.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἀγαθαὶ αἱ ψῡχαὶ ἃς παιδεύει ὁ Ὅμηρος.', displayGreek: true, correct: 'Good are the souls which Homer educates.', options: ['Good are the souls which Homer educates.', 'Homer educates good souls.', 'The good souls educate Homer.', 'Good are the souls who educate Homer.'] },
+        { type: 'mc-translate', prompt: 'In the sentence "δῶρα ἐπέμψαμεν εἰς τὴν νῆσον ἐν ᾗ ὁ Ὅμηρος φυλάττεται," what is the antecedent of ᾗ?', correct: 'νῆσον (feminine singular)', options: ['νῆσον (feminine singular)', 'δῶρα (neuter plural)', 'Ὅμηρος (masculine singular)', 'ἐπέμψαμεν (verb)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰ ὅπλα ἐπέμψατε οἷς ἔβλαψαν τὰ ζῷα.', displayGreek: true, correct: 'You sent the weapons with which they harmed the animals.', options: ['You sent the weapons with which they harmed the animals.', 'The weapons you sent harmed the animals.', 'They sent you weapons and harmed the animals.', 'The animals which they harmed were sent weapons.'] },
+        { type: 'mc-translate', prompt: 'In "ἀγαθὴ ἡ ψῡχὴ ἣν παιδεύεις," why is the relative pronoun ἥν (fem. sg. acc.)?', correct: 'Feminine singular from antecedent ψῡχή; accusative because it is the direct object of παιδεύεις', options: ['Feminine singular from antecedent ψῡχή; accusative because it is the direct object of παιδεύεις', 'Because ψῡχή is in the accusative', 'Because παιδεύεις is feminine', 'Because the subject of the main clause is feminine'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλία πέμψουσιν οἷς παιδευθήσεσθε.', displayGreek: true, correct: 'They will send books by which you will be educated.', options: ['They will send books by which you will be educated.', 'You will send books to educate them.', 'Books will be sent to those who educate you.', 'They will send books which will educate.'] },
+        { type: 'match', pairs: [
+          ['ὅς (nom.)', 'subject of relative clause'],
+          ['ὅν (acc.)', 'direct object in relative clause'],
+          ['ᾧ (dat.)', 'indirect object / means'],
+          ['οὗ (gen.)', 'possession in relative clause'],
+          ['ἅς (fem. pl. acc.)', 'fem. pl. direct object']
+        ]}
+      ]
+    },
+
+    // Lesson 93: Independent Subjunctive
+    {
+      id: 93,
+      title: 'Independent Subjunctive',
+      subtitle: 'Hortatory, Deliberative & Prohibitive',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'ω',
+      exercises: [
+        { type: 'intro', title: 'Hortatory Subjunctive', cards: [
+          { html: '<p>The <strong>1st person</strong> subjunctive (present or aorist) expresses the speaker\'s will emphatically. The plural is more common.</p><p style="font-weight:bold">Translation: "let us" / "let me"</p><p style="font-weight:bold">Negative: μή</p><p class="greek" style="font-size:17px;margin-top:8px">παύσωμεν τὴν μάχην.</p><p>Let us stop the battle.</p><p class="greek" style="font-size:17px;margin-top:8px">μὴ παύωμεν τὴν μάχην.</p><p>Let us not be stopping the battle.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Tense shows aspect only: present = progressive, aorist = simple.</p>' }
+        ]},
+        { type: 'intro', title: 'Deliberative Subjunctive', cards: [
+          { html: '<p>The <strong>1st person</strong> subjunctive in a <strong>question</strong> expresses uncertainty about what to do.</p><p style="font-weight:bold">Translation: "am I to...?" / "are we to...?"</p><p style="font-weight:bold">Negative: μή</p><p class="greek" style="font-size:17px;margin-top:8px">παύσωμεν τὴν μάχην;</p><p>Are we to stop the battle?</p><p class="greek" style="font-size:17px;margin-top:8px">ἄγγελον μὴ πέμπω;</p><p>Am I not to be sending a messenger?</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Same forms as hortatory — the question mark (;) distinguishes them.</p>' }
+        ]},
+        { type: 'intro', title: 'Prohibitive Subjunctive', cards: [
+          { html: '<p><strong>μή</strong> + <strong>2nd person aorist</strong> subjunctive expresses a prohibition ("do not!").</p><p style="font-weight:bold">Translation: "do not..."</p><p class="greek" style="font-size:17px;margin-top:8px">μὴ παύσητε τὴν μάχην.</p><p>Do not stop the battle.</p><p class="greek" style="font-size:17px;margin-top:8px">μὴ πέμψῃς τὸν ἄγγελον.</p><p>Do not send the messenger.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Important: only the <strong>aorist</strong> subjunctive is used for prohibition, NOT the present. Positive commands use the imperative mood (later unit).</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λύωμεν τοὺς νεᾱνίᾱς.', displayGreek: true, correct: 'Let us release the young men. (hortatory)', options: ['Let us release the young men. (hortatory)', 'We are releasing the young men. (indicative)', 'Are we to release the young men? (deliberative)', 'Do not release the young men. (prohibitive)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λύωμεν τοὺς νεᾱνίᾱς;', displayGreek: true, correct: 'Are we to release the young men? (deliberative)', options: ['Are we to release the young men? (deliberative)', 'Let us release the young men. (hortatory)', 'We are releasing the young men. (indicative)', 'Do not release the young men. (prohibitive)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'μὴ λύσητε τοὺς νεᾱνίᾱς.', displayGreek: true, correct: 'Do not release the young men. (prohibitive)', options: ['Do not release the young men. (prohibitive)', 'Let us not release the young men. (hortatory)', 'You are not releasing the young men. (indicative)', 'Are you not to release the young men? (deliberative)'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἀγγέλους μὴ πέμψῃς.', displayGreek: true, correct: 'Do not send messengers. (prohibitive)', options: ['Do not send messengers. (prohibitive)', 'You are not sending messengers.', 'Let us not send messengers.', 'Are we not to send messengers?'] },
+        { type: 'mc-translate', prompt: 'What distinguishes a hortatory subjunctive from a deliberative one?', correct: 'The hortatory is a statement (.), the deliberative is a question (;)', options: ['The hortatory is a statement (.), the deliberative is a question (;)', 'They use different verb forms', 'The hortatory uses μή, the deliberative uses οὐ', 'The hortatory is 1st person, the deliberative is 2nd person'] },
+        { type: 'mc-translate', prompt: 'The prohibitive subjunctive uses which person and tense?', correct: '2nd person, aorist subjunctive only', options: ['2nd person, aorist subjunctive only', '1st person, present subjunctive', '2nd person, present or aorist subjunctive', '3rd person, aorist subjunctive'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τὰς μὲν ἀδίκους βλάψωμεν, ταῖς δὲ δικαίαις αἶγάς τε καὶ ἄργυρον πέμψωμεν.', displayGreek: true, correct: 'Let us harm the unjust women, and let us send goats and silver to the just.', options: ['Let us harm the unjust women, and let us send goats and silver to the just.', 'We harmed the unjust women and sent goats and silver to the just.', 'Are we to harm the unjust women and send goats and silver to the just?', 'Do not harm the unjust women, but send goats and silver to the just.'] },
+        { type: 'match', pairs: [
+          ['παύσωμεν (statement)', 'hortatory — let us stop'],
+          ['παύσωμεν; (question)', 'deliberative — are we to stop?'],
+          ['μὴ παύσητε', 'prohibitive — do not stop'],
+          ['μὴ πέμψῃς', 'prohibitive — do not send (sg.)'],
+          ['πέμψω;', 'deliberative — am I to send?']
+        ]}
+      ]
+    },
+
+    // Lesson 94: Partitive Genitive
+    {
+      id: 94,
+      title: 'Partitive Genitive',
+      subtitle: 'Genitive of the Divided Whole',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'μ',
+      exercises: [
+        { type: 'intro', title: 'Partitive Genitive', cards: [
+          { html: '<p>The genitive case can indicate the <strong>larger group</strong> to which particular persons or things belong. This is the <strong>partitive genitive</strong> (genitive of the divided whole).</p><p class="greek" style="font-size:17px;margin-top:8px">ἓξ <strong>τῶν ὁπλῑτῶν</strong> ἐπέμφθησαν.</p><p>Six <strong>of the hoplites</strong> were sent.</p><p class="greek" style="font-size:17px;margin-top:8px">τοὺς ἀδίκους <strong>τῶν πολῑτῶν</strong> εἰς τὰς νήσους πέμψετε.</p><p>You will send the unjust ones <strong>of the citizens</strong> to the islands.</p>' },
+          { html: '<h3>Partitive vs. Possessive Genitive</h3><p>Both use "of" in English, but they are different:</p><table class="intro-table"><tr><th>Type</th><th>Greek</th><th>Translation</th></tr><tr><td>Partitive</td><td class="greek">οἱ ἄδικοι τῶν ὁπλῑτῶν</td><td>the unjust ones <strong>of</strong> the hoplites</td></tr><tr><td>Possessive</td><td class="greek">ἡ τῶν ὁπλῑτῶν οἰκίᾱ</td><td>the house <strong>of</strong> the hoplites</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Key difference: the partitive genitive <strong>cannot</strong> stand in the attributive position. It stands before or after the word it modifies, but NOT between the article and noun.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῶν γεφῡρῶν πέντε ἐλύθησαν.', displayGreek: true, correct: 'Five of the bridges were destroyed.', options: ['Five of the bridges were destroyed.', 'The five bridges were destroyed.', 'Five bridges destroyed themselves.', 'The bridges of the five were destroyed.'] },
+        { type: 'mc-translate', prompt: 'Which is a partitive genitive?', correct: 'ἓξ τῶν στρατιωτῶν (six of the soldiers)', options: ['ἓξ τῶν στρατιωτῶν (six of the soldiers)', 'ἡ τῶν στρατιωτῶν ἀρχή (the rule of the soldiers)', 'τοὺς τῶν στρατιωτῶν ἵππους (the horses of the soldiers)', 'ὑπὸ τῶν στρατιωτῶν (by the soldiers)'] },
+        { type: 'mc-translate', prompt: 'Can the partitive genitive stand in the attributive position?', correct: 'No — unlike the possessive genitive', options: ['No — unlike the possessive genitive', 'Yes — it always stands between article and noun', 'Only in the plural', 'Only with neuter nouns'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῶν στρατιωτῶν πέντε παρὰ τὴν θάλατταν τάξει.', displayGreek: true, correct: 'He will station five of the soldiers beside the sea.', options: ['He will station five of the soldiers beside the sea.', 'The five soldiers will be stationed at the sea.', 'Five soldiers will go to the sea by the station.', 'He will send five soldiers from the sea.'] },
+        { type: 'match', pairs: [
+          ['ἓξ τῶν ὁπλῑτῶν', 'six of the hoplites (partitive)'],
+          ['ἡ τῶν ὁπλῑτῶν οἰκίᾱ', 'the house of the hoplites (possessive)'],
+          ['τοὺς ἀδίκους τῶν πολῑτῶν', 'the unjust of the citizens (partitive)'],
+          ['τὰ τοῦ πολέμου', 'the affairs of war (possessive)'],
+          ['τῶν γεφῡρῶν πέντε', 'five of the bridges (partitive)']
+        ]}
+      ]
+    },
+
+    // Lesson 95: Expressions of Time & Space
+    {
+      id: 95,
+      title: 'Time & Space',
+      subtitle: 'Genitive, Dative & Accusative of Time; Extent of Space',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'ἡ',
+      exercises: [
+        { type: 'intro', title: 'Three Expressions of Time', cards: [
+          { html: '<h3>Genitive of Time Within Which</h3><p>"During what span of time?" — places an event at an unspecified point within a span.</p><p class="greek" style="font-size:17px"><strong>τῆς ἡμέρᾱς</strong> τοὺς νεᾱνίᾱς ἐδιδάξαμεν.</p><p><strong>During the day</strong> we taught the young men.</p><p class="greek" style="font-size:17px;margin-top:8px"><strong>ἓξ ἡμερῶν</strong> διδάξει τοὺς νεᾱνίᾱς ὁ Ὅμηρος.</p><p><strong>Within six days</strong> Homer will teach the young men.</p>' },
+          { html: '<h3>Dative of Time At Which</h3><p>"When?" — places an event at a specific point in time. No preposition needed.</p><p class="greek" style="font-size:17px"><strong>τῇ πρώτῃ ἡμέρᾳ</strong> ὁπλίτᾱς ἐν τῇ ἀγορᾷ τάξομεν.</p><p><strong>On the first day</strong> we shall station hoplites in the market place.</p>' },
+          { html: '<h3>Accusative of Extent of Time</h3><p>"For how long?" — indicates the duration of an event. No preposition needed.</p><p class="greek" style="font-size:17px"><strong>πέντε ἡμέρᾱς</strong> τοὺς νεᾱνίᾱς διδάξομεν.</p><p><strong>For five days</strong> we shall teach the young men.</p>' },
+          { html: '<h3>Comparison</h3><table class="intro-table"><tr><th>Case</th><th>Question</th><th>Translation</th></tr><tr><td>Genitive</td><td>During what span?</td><td>during, within</td></tr><tr><td>Dative</td><td>When? At what point?</td><td>on, at</td></tr><tr><td>Accusative</td><td>For how long?</td><td>for (duration)</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Think of it as: genitive = ○ (circle, somewhere within), dative = • (point), accusative = → (arrow, extent).</p>' }
+        ]},
+        { type: 'intro', title: 'Accusative of Extent of Space', cards: [
+          { html: '<p>The accusative also indicates <strong>distance traveled</strong>, without a preposition:</p><p class="greek" style="font-size:17px">τὸν ἄγγελον <strong>πέντε σταδίους</strong> πέμψετε.</p><p>You will send the messenger <strong>five stades</strong>.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Like the accusative of extent of time, this functions as an adverb and is independent of other cases in the sentence.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῇ πρώτῃ ἡμέρᾳ τοὺς ἀγαθοὺς ἐπέμψαμεν πέντε σταδίους.', displayGreek: true, correct: 'On the first day we sent the good men five stades.', options: ['On the first day we sent the good men five stades.', 'During the first day we sent the good men for five stades.', 'For the first day we sent the good men within five stades.', 'The first day five good men were sent to the stade.'] },
+        { type: 'mc-translate', prompt: 'What case expresses "during the day" (an unspecified point within a span)?', correct: 'Genitive (τῆς ἡμέρᾱς)', options: ['Genitive (τῆς ἡμέρᾱς)', 'Dative (τῇ ἡμέρᾳ)', 'Accusative (τὴν ἡμέρᾱν)', 'Nominative (ἡ ἡμέρᾱ)'] },
+        { type: 'mc-translate', prompt: 'What case expresses "on the first day" (a specific point in time)?', correct: 'Dative (τῇ πρώτῃ ἡμέρᾳ)', options: ['Dative (τῇ πρώτῃ ἡμέρᾳ)', 'Genitive (τῆς πρώτης ἡμέρᾱς)', 'Accusative (τὴν πρώτην ἡμέρᾱν)', 'Nominative (ἡ πρώτη ἡμέρᾱ)'] },
+        { type: 'mc-translate', prompt: 'What case expresses "for six days" (duration)?', correct: 'Accusative (ἓξ ἡμέρᾱς)', options: ['Accusative (ἓξ ἡμέρᾱς)', 'Genitive (ἓξ ἡμερῶν)', 'Dative (ἓξ ἡμέραις)', 'Ablative'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἓξ ἡμέρᾱς ἐφυλάττομεν τοὺς κακούς.', displayGreek: true, correct: 'For six days we were guarding the evil men.', options: ['For six days we were guarding the evil men.', 'Within six days we guarded the evil men.', 'On the sixth day we guarded the evil men.', 'The six-day guard watched the evil men.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῆς πρώτης ἡμέρᾱς τοὺς ἀγαθοὺς ἐπαιδεύετε.', displayGreek: true, correct: 'During the first day you were educating the good men.', options: ['During the first day you were educating the good men.', 'On the first day you were educating the good men.', 'For the first day you educated the good men.', 'The first day educated the good men.'] },
+        { type: 'match', pairs: [
+          ['τῆς ἡμέρᾱς (gen.)', 'during the day (within a span)'],
+          ['τῇ πρώτῃ ἡμέρᾳ (dat.)', 'on the first day (point in time)'],
+          ['πέντε ἡμέρᾱς (acc.)', 'for five days (duration)'],
+          ['πέντε σταδίους (acc.)', 'five stades (extent of space)'],
+          ['ἓξ ἡμερῶν (gen.)', 'within six days']
+        ]}
+      ]
+    },
+
+    // Lesson 96: Enclitics
+    {
+      id: 96,
+      title: 'Enclitics',
+      subtitle: 'γε, τε, τοι — Accent Rules & Usage',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: 'γ',
+      exercises: [
+        { type: 'intro', title: 'What Are Enclitics?', cards: [
+          { html: '<p><strong>Enclitics</strong> are words closely attached in pronunciation to the preceding word. They usually have no accent themselves but can affect the accent of the preceding word.</p><p>Unit 6 introduces three monosyllabic enclitics:</p><table class="intro-table"><tr><th>Word</th><th>Type</th><th>Meaning</th></tr><tr><td class="greek">γε</td><td>particle</td><td>emphasizes or limits preceding word; "at least"</td></tr><tr><td class="greek">τε</td><td>conjunction</td><td>and (usually τε καί)</td></tr><tr><td class="greek">τοι</td><td>particle</td><td>let me tell you, you know</td></tr></table>' },
+          { html: '<h3>Accent Rules for Monosyllabic Enclitics</h3><table class="intro-table"><tr><th>Preceding Word</th><th>Effect</th><th>Example</th></tr><tr><td>Acute on ultima</td><td>Stays acute (not → grave)</td><td class="greek">ἀγαθοί γε</td></tr><tr><td>Circumflex on penult</td><td>Adds acute on ultima</td><td class="greek">δῆμός γε</td></tr><tr><td>Acute on antepenult</td><td>Adds acute on ultima</td><td class="greek">ἄνθρωποί γε</td></tr><tr><td>Proclitic</td><td>Proclitic gets acute</td><td class="greek">εἴ γε</td></tr></table><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Rule of thumb: when the accent is as far from the ultima as possible, an extra acute appears on the ultima.</p>' }
+        ]},
+        { type: 'intro', title: 'Usage of γε, τε, τοι', cards: [
+          { html: '<h3>γε — Emphasis or Limitation</h3><p>Postpositive. In article + noun phrases, γε follows the article:</p><p class="greek" style="font-size:17px">τούς γε ἵππους ἐβλάψατε.</p><p>You harmed the <em>horses</em>. (emphasis) / You harmed the horses, <em>at any rate</em>. (limitation)</p><p class="greek" style="font-size:17px;margin-top:8px">μετά γε τὴν μάχην — after the battle (at least)</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">With a relative pronoun, γε can give causal force: ὅς γε = "since he..."</p>' },
+          { html: '<h3>τε — "And"</h3><p>Usually paired with καί: A <strong>τε καὶ</strong> B = "A <strong>and</strong> B"</p><p class="greek" style="font-size:17px">αἶγες <strong>τε καὶ</strong> ἵπποι — goats <strong>and</strong> horses</p><p class="greek" style="font-size:17px;margin-top:8px">Ὅμηρός <strong>τε καὶ</strong> ὁ ἀδελφός — Homer <strong>and</strong> his brother</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">τε is a "signpost" that tells you καί is coming. Like καί...καί, τε...τε = "both...and."</p>' },
+          { html: '<h3>τοι — "You Know"</h3><p>Used when the speaker expects the hearer to agree:</p><p class="greek" style="font-size:17px">ἀγαθή <strong>τοι</strong> ἡ δημοκρατίᾱ.</p><p>Democracy, <strong>you know</strong>, is good.</p><p style="font-size:13px;color:var(--text-dim);margin-top:8px">Compare δή ("in fact, of course") which draws attention to external reality. When τοι follows οὐ, they are written as one word: <strong>οὔτοι</strong>.</p>' }
+        ]},
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἐπειδὴ ὁ πόλεμός γε ἐπαύθη, ὁ τοῦ δήμου φόβος ἐλύθη.', displayGreek: true, correct: 'Since the war at least was stopped, the fear of the people was released.', options: ['Since the war at least was stopped, the fear of the people was released.', 'When the war was stopped, the people\'s fear destroyed them.', 'The war at least stopped the people\'s fear and released them.', 'After the war, the people feared being released.'] },
+        { type: 'mc-translate', prompt: 'Why does πόλεμός have an acute on the ultima in "ὁ πόλεμός γε"?', correct: 'Because γε is an enclitic and πόλεμος has an acute on the antepenult', options: ['Because γε is an enclitic and πόλεμος has an acute on the antepenult', 'Because it is in the accusative case', 'Because it is a proper noun', 'Because of the following word ἐπαύθη'] },
+        { type: 'mc-translate', prompt: 'What does τε καί mean?', correct: 'and (connecting two items)', options: ['and (connecting two items)', 'but', 'or', 'for'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'δεινόν τοι ἡ τῆς ἀδίκου σοφίᾱ, ὦ γέρον.', displayGreek: true, correct: 'A fearsome thing, you know, is the wisdom of the unjust woman, old man.', options: ['A fearsome thing, you know, is the wisdom of the unjust woman, old man.', 'The unjust wisdom is clever, you know, old man.', 'Old man, the fearsome injustice was wise.', 'The clever one, you know, was unjust to the old wise woman.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'κατὰ γε τὴν τοῦ γέροντος γνώμην κακοὶ οἱ σοφοί.', displayGreek: true, correct: 'According to the old man\'s opinion at least, the wise are evil.', options: ['According to the old man\'s opinion at least, the wise are evil.', 'The old man\'s wise opinion is at least evil.', 'Against the old man\'s judgement, the wise are evil.', 'The wise evil ones were judged by the old man.'] },
+        { type: 'match', pairs: [
+          ['γε', 'emphasizes/limits; "at least"'],
+          ['τε (usually τε καί)', '"and" (connecting two items)'],
+          ['τοι', '"let me tell you, you know"'],
+          ['οὔτοι', 'οὐ + τοι written as one word'],
+          ['ὅς γε', 'relative + γε → causal force']
+        ]}
+      ]
+    },
+
+    // Lesson 97: Cognates
+    {
+      id: 97,
+      title: 'Cognates',
+      subtitle: 'English Derivatives',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: '🔗',
+      exercises: [
+        { type: 'intro', title: 'Cognates & Derivatives', cards: [
+          { html: '<p>Many English words derive from the Greek vocabulary in this unit. Recognizing these connections helps you remember both the Greek words and their meanings.</p>' }
+        ]},
+        { type: 'match', pairs: [
+          ['γέρων', 'gerontology (study of old people)'],
+          ['γνώμη', 'gnomic (expressing a pithy opinion)'],
+          ['δεινός', 'dinosaur (fearsome lizard)'],
+          ['δοῦλος', 'iconodule (opposite of iconoclast)'],
+          ['Ἕλλην', 'Hellenic']
+        ]},
+        { type: 'match', pairs: [
+          ['νύξ', 'nocturnal (Latin cognate nox)'],
+          ['παλαιός', 'Palaeolithic (old stone age)'],
+          ['πρᾶγμα', 'pragmatic (dealing with deeds)'],
+          ['σοφός', 'sophomore (wise fool)'],
+          ['σοφίᾱ', 'philosophy (love of wisdom)']
+        ]},
+        { type: 'match', pairs: [
+          ['στάδιον', 'stadium'],
+          ['σῶμα', 'psychosomatic (mind-body)'],
+          ['φάλαγξ', 'phalanx'],
+          ['φύλαξ', 'prophylactic (guarding before)'],
+          ['χάρις', 'Eucharist (service of gratitude)']
+        ]},
+        { type: 'mc-translate', prompt: 'A "dinosaur" literally means:', correct: 'fearsome lizard (δεινός + σαῦρος)', options: ['fearsome lizard (δεινός + σαῦρος)', 'ancient lizard (παλαιός + σαῦρος)', 'wise lizard (σοφός + σαῦρος)', 'giant lizard (μέγας + σαῦρος)'] },
+        { type: 'mc-translate', prompt: '"Prophylactic" literally means:', correct: 'guarding before (πρό + φύλαξ)', options: ['guarding before (πρό + φύλαξ)', 'against the body (πρό + σῶμα)', 'before battle (πρό + φάλαγξ)', 'first guard (πρῶτος + φύλαξ)'] },
+        { type: 'mc-translate', prompt: '"Philosophy" literally means:', correct: 'love of wisdom (φίλος + σοφίᾱ)', options: ['love of wisdom (φίλος + σοφίᾱ)', 'wise love (σοφός + φιλίᾱ)', 'ancient wisdom (παλαιός + σοφίᾱ)', 'love of learning (φίλος + μάθησις)'] },
+        { type: 'match', pairs: [
+          ['ἐλευθερίᾱ', 'liberty (Latin cognate liber)'],
+          ['χορός', 'chorus, choreography'],
+          ['δεινός', 'dinosaur (fearsome lizard)'],
+          ['σῶμα', 'somatic (of the body)'],
+          ['παλαιός', 'paleontology (study of old things)']
+        ]}
+      ]
+    },
+
+    // Lesson 98: Unit 6 Review
+    {
+      id: 98,
+      title: 'Unit 6 Review',
+      subtitle: 'Translate Sentences',
+      section: 'Unit 6: Third Declension & Relative Pronoun',
+      icon: '✓',
+      exercises: [
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ἆρ\' αἶγες τοῖς θεοῖς ὑπό γε δούλων θύονται;', displayGreek: true, correct: 'Are goats sacrificed to the gods by slaves at least?', options: ['Are goats sacrificed to the gods by slaves at least?', 'The slaves sacrificed goats to the gods.', 'Are the gods sacrificing goats to the slaves?', 'Do the slaves at least sacrifice to the goat-gods?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'οὐκ ἐν σώματι ἀλλ\' ἐν ψῡχῇ ἥ γε χάρις ἡ τῶν ἀγαθῶν.', displayGreek: true, correct: 'Not in the body but in the soul is the grace of the good, at least.', options: ['Not in the body but in the soul is the grace of the good, at least.', 'The body is not good but the soul is gracious.', 'The good do not have grace in body but in soul.', 'Neither the body nor the soul has the grace of the good.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'λύσωμεν δὴ τὴν δημοκρατίᾱν. δεινὰ γὰρ τῷ δήμῳ πέπρᾱκται.', displayGreek: true, correct: 'Let us indeed destroy the democracy. For terrible things have been done to the people.', options: ['Let us indeed destroy the democracy. For terrible things have been done to the people.', 'We shall destroy the democracy. The people have done terrible things.', 'The democracy was destroyed. For the people did terrible things.', 'Are we to destroy the democracy? Terrible things happened to the people.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'τῷ σώματι θάνατος ἡ μοῑρα, ἀλλ\' ἥ γε ψῡχὴ ἀθάνατος.', displayGreek: true, correct: 'For the body, death is fate, but the soul at least is immortal.', options: ['For the body, death is fate, but the soul at least is immortal.', 'The body dies by fate, but the soul does not die.', 'Death is the fate of bodies and souls alike.', 'The fate of the body is death and the soul is not immortal.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὦ φίλε, μακροῖς λόγοις μὴ πείσῃς ἀγαθοὺς ἄδικά τε καὶ κακὰ πρᾶξαι.', displayGreek: true, correct: 'Friend, do not persuade good men with long speeches to do unjust and evil things.', options: ['Friend, do not persuade good men with long speeches to do unjust and evil things.', 'Friend, the long speeches persuaded good men to do evil.', 'Good friend, persuade them not to speak long about unjust and evil deeds.', 'Do not, friend, write long speeches about the unjust and evil deeds of good men.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'δῶρον δὴ οὐ μῑκρὸν ἡ σοφίᾱ.', displayGreek: true, correct: 'Wisdom is indeed no small gift.', options: ['Wisdom is indeed no small gift.', 'The small gift is not wise.', 'A gift of wisdom is indeed small.', 'Wisdom does not give small gifts.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'ὁ φύλαξ ὃς τῆς ἡμέρᾱς εἰς τὴν νῆσον ἐπέμφθη τοὺς δούλους πέντε νύκτας ἐκώλῡσε τὰς ἐλευθέρᾱς βλάψαι.', displayGreek: true, correct: 'The guard who was sent to the island during the day prevented the slaves for five nights from harming the free women.', options: ['The guard who was sent to the island during the day prevented the slaves for five nights from harming the free women.', 'The guard sent five slaves to the island during the day to prevent harm to the free women at night.', 'During the day the guard on the island sent five slaves to prevent the free women from being harmed at night.', 'The five night guards who were sent to the island prevented the slaves from freeing the women.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'κακός τοι ὁ ποιητὴς ᾧ γε βιβλία περὶ μῑκρῶν πρᾱγμάτων γέγραπται.', displayGreek: true, correct: 'Bad, you know, is the poet by whom books about small affairs have been written.', options: ['Bad, you know, is the poet by whom books about small affairs have been written.', 'The bad poet, you know, writes books about small affairs.', 'The poet who wrote bad books about small things, you know.', 'You know the bad poet whose small books have been written about affairs.'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'βιβλίον γράψωμεν περὶ αἰγῶν ἐὰν οἱ πολῖται ἀργύριον πέμψωσιν;', displayGreek: true, correct: 'Are we to write a book about goats if the citizens send money?', options: ['Are we to write a book about goats if the citizens send money?', 'Let us write a book about goats if the citizens send money.', 'We shall write a book about goats when the citizens send money.', 'Did we write a book about goats because the citizens sent money?'] },
+        { type: 'mc-translate', prompt: 'Translate:', display: 'δεινὰ τοῖς γε σοφοῖς τὰ τῆς θαλάττης.', displayGreek: true, correct: 'The affairs of the sea are fearsome to the wise, at least.', options: ['The affairs of the sea are fearsome to the wise, at least.', 'The wise are fearsome at sea.', 'The sea is marvelous and wise.', 'To the wise, the sea was frightening.'] },
+        { type: 'match', pairs: [
+          ['partitive genitive', 'ἓξ τῶν ὁπλῑτῶν (six of the hoplites)'],
+          ['gen. of time within which', 'τῆς ἡμέρᾱς (during the day)'],
+          ['dat. of time at which', 'τῇ πρώτῃ νυκτί (on the first night)'],
+          ['acc. of extent of time', 'πέντε νύκτας (for five nights)'],
+          ['acc. of extent of space', 'πέντε σταδίους (five stades)']
+        ]}
+      ]
     }
 
   ];
@@ -5913,6 +6398,10 @@ var Data = (function() {
     unit5Vocab: unit5Vocab,
     unit5VocabAll: unit5VocabAll,
     unit5Adjectives: unit5Adjectives,
+    unit6Vocab: unit6Vocab,
+    unit6VocabAll: unit6VocabAll,
+    unit6Adjectives: unit6Adjectives,
+    unit6Cognates: unit6Cognates,
     lessons: lessons,
     buildLetterTable: buildLetterTable
   };
