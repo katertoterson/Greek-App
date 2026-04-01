@@ -224,6 +224,17 @@ var UI = (function() {
     clear();
     var screen = el('div', { className: 'lesson-screen' });
 
+    // Rotate background art randomly
+    var bgs = [
+      { url: 'dragon5.png', pos: 'center 45%', size: 'contain' },
+      { url: 'Medea2.png', pos: 'center 55%', size: 'contain' },
+      { url: 'Erich3.png', pos: 'center center', size: 'auto 60%' }
+    ];
+    var bg = bgs[Math.floor(Math.random() * bgs.length)];
+    screen.style.backgroundImage = 'url(' + bg.url + ')';
+    screen.style.backgroundPosition = bg.pos;
+    screen.style.backgroundSize = bg.size;
+
     var progress = Math.round((exerciseIndex / totalExercises) * 100);
     var topBar = el('div', { className: 'lesson-top-bar' }, [
       el('button', { className: 'btn-close', textContent: '×', onClick: onClose }),
