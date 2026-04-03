@@ -21,9 +21,10 @@ var Engine = (function() {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  // Prepend "the" to an English noun, avoiding "the the people" etc.
+  // Prepend "the" to an English noun, avoiding "the the people" or "the a Greek" etc.
   function thePrefix(eng) {
-    return eng.match(/^the\b/) ? eng : 'the ' + eng;
+    if (eng.match(/^the\b/)) return eng;
+    return 'the ' + eng.replace(/^an?\s+/, '');
   }
 
   // ===== Progress =====
