@@ -2937,6 +2937,7 @@ var Data = (function() {
           display: 'ἐν τῇ οἰκίᾳ ὁ ἄνθρωπος τὸν ἀδελφὸν λόγῳ καὶ ἔργῳ παιδεύει.',
           displayGreek: true,
           answer: ['in', 'the', 'house', 'the', 'man', 'educates', 'his', 'brother', 'by', 'word', 'and', 'deed'],
+          altAnswers: [['the', 'man', 'in', 'the', 'house', 'educates', 'his', 'brother', 'by', 'word', 'and', 'deed']],
           distractors: ['sending', 'brothers', 'men', 'gifts']
         },
         {

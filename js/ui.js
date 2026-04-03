@@ -722,8 +722,14 @@ var UI = (function() {
         if (answered) return;
         answered = true;
 
-        var isCorrect = selectedWords.length === exercise.answer.length &&
-          selectedWords.every(function(w, i) { return w === exercise.answer[i]; });
+        var answersMatch = function(selected, answer) {
+          return selected.length === answer.length &&
+            selected.every(function(w, i) { return w === answer[i]; });
+        };
+        var isCorrect = answersMatch(selectedWords, exercise.answer) ||
+          (exercise.altAnswers && exercise.altAnswers.some(function(alt) {
+            return answersMatch(selectedWords, alt);
+          }));
 
         // Show feedback
         answerZone.classList.add(isCorrect ? 'correct' : 'wrong');

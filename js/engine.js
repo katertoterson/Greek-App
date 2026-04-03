@@ -272,6 +272,7 @@ var Engine = (function() {
       display: def.display || '',
       displayGreek: !!def.displayGreek,
       answer: answerWords,
+      altAnswers: def.altAnswers || null,
       words: shuffle(allWords)
     };
   }
