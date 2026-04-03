@@ -871,21 +871,22 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 32px 16px;
+  justify-content: flex-end;
+  padding: 32px 16px 48px;
   text-align: center;
   animation: fadeIn 0.5s ease;
-  background: url('../Hesperides.png') no-repeat left bottom;
-  background-size: auto 85%;
+  background: url('../Hesperides2.png') no-repeat center top;
+  background-size: contain;
   position: relative;
 }
+/* TEMPORARILY DISABLED — previewing art without gradient
 .results-screen::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(8,19,25,0.75) 0%, rgba(8,19,25,0.65) 50%, rgba(8,19,25,0.2) 100%);
   pointer-events: none;
-}
+} */
 .results-screen > * {
   position: relative;
   z-index: 1;
@@ -929,13 +930,14 @@ html, body {
   background-size: contain;
   position: relative;
 }
+/* TEMPORARILY DISABLED — previewing art without gradient
 .game-over-screen::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(8,19,25,0.15) 0%, rgba(8,19,25,0.6) 45%, rgba(8,19,25,0.95) 70%);
   pointer-events: none;
-}
+} */
 .game-over-screen > * {
   position: relative;
   z-index: 1;
