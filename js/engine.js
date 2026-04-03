@@ -86,8 +86,14 @@ var Engine = (function() {
   }
 
   function isLessonUnlocked(lessonId, progress) {
-    if (lessonId === 1) return true;
-    return !!progress.completed[lessonId - 1];
+    var lessons = Data.lessons;
+    for (var i = 0; i < lessons.length; i++) {
+      if (lessons[i].id === lessonId) {
+        if (i === 0) return true;
+        return !!progress.completed[lessons[i - 1].id];
+      }
+    }
+    return false;
   }
 
   function unlockNext(progress) {
@@ -96,7 +102,8 @@ var Engine = (function() {
       var id = lessons[i].id;
       if (!progress.completed[id] && !isLessonUnlocked(id, progress)) {
         // Unlock by completing the previous lesson minimally
-        progress.completed[id - 1] = progress.completed[id - 1] || { stars: 1, xp: 10 };
+        var prevId = lessons[i - 1].id;
+        progress.completed[prevId] = progress.completed[prevId] || { stars: 1, xp: 10 };
         saveProgress(progress);
         return id;
       }
