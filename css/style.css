@@ -66,6 +66,12 @@ html, body {
   color: var(--text-dim);
   margin-top: 4px;
 }
+.home-header .subtitle-hint {
+  font-size: 11px;
+  color: var(--text-dim);
+  opacity: 0.5;
+  margin-top: 4px;
+}
 
 .stats-bar {
   display: flex;

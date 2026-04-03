@@ -76,7 +76,7 @@ var UI = (function() {
         textContent: 'Attikore',
         onClick: function() {
           titleTapCount++;
-          if (titleTapCount >= 5) {
+          if (titleTapCount >= 3) {
             titleTapCount = 0;
             var unlocked = Engine.unlockNext(progress);
             if (unlocked) {
@@ -85,7 +85,8 @@ var UI = (function() {
           }
         }
       }),
-      el('div', { className: 'subtitle', textContent: 'Learn Attic Greek' })
+      el('div', { className: 'subtitle', textContent: 'Learn Attic Greek' }),
+      el('div', { className: 'subtitle-hint', textContent: '(click Attikore three times to skip to the next lesson)' })
     ]);
 
     var completedCount = Object.keys(progress.completed || {}).length;
