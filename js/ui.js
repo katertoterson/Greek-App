@@ -229,7 +229,8 @@ var UI = (function() {
     var bgs = [
       { url: 'dragon5.png', pos: 'center 45%', size: 'contain' },
       { url: 'Medea2.png', pos: 'center 55%', size: 'contain' },
-      { url: 'Erich3.png', pos: 'center center', size: 'auto 60%' }
+      { url: 'Erich3.png', pos: 'center center', size: 'auto 60%' },
+      { url: 'BlendChariot3.png', pos: 'center 45%', size: 'contain' }
     ];
     var bg = bgs[Math.floor(Math.random() * bgs.length)];
     screen.style.backgroundImage = 'url(' + bg.url + ')';
