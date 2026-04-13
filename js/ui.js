@@ -231,7 +231,7 @@ var UI = (function() {
       { url: 'Medea2.png', pos: 'center 55%', size: 'contain' },
       { url: 'Erich3.png', pos: 'center center', size: 'auto 60%' },
       { url: 'BlendChariot3.png', pos: 'center 45%', size: 'contain' },
-      { url: 'Thyrsus.png', pos: 'center center', size: 'contain' }
+      { url: 'Thyrsus9.png', pos: 'center 40%', size: 'contain' }
     ];
     var bg = bgs[Math.floor(Math.random() * bgs.length)];
     screen.style.backgroundImage = 'url(' + bg.url + ')';
